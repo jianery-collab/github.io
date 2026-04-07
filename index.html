@@ -721,8 +721,14 @@
   </footer>
 
   <script>
+    // Auto-detect Chinese browser language
     const toggle = document.getElementById('langToggle');
-    let isZh = false;
+    let isZh = navigator.language.startsWith('zh');
+    if (isZh) {
+      document.body.classList.add('zh');
+      toggle.textContent = 'EN';
+      document.documentElement.lang = 'zh-Hans';
+    }
     toggle.addEventListener('click', () => {
       isZh = !isZh;
       document.body.classList.toggle('zh', isZh);
