@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imprint · PricingGoat</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png" />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://www.pricinggoat.com/imprint.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&family=Noto+Serif+SC:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0f0e0d; --paper: #f6f4f0; --accent: #b5956a;
+      --accent-light: #ece5d8; --muted: #8a8580; --line: rgba(15,14,13,0.1);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --serif-zh: 'Noto Serif SC', 'SimSun', serif;
+      --mono: 'DM Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 18px; line-height: 1.7; overflow-x: hidden; }
+    body.zh { font-family: var(--serif-zh); }
+    .lang-en { display: block; } .lang-zh { display: none; }
+    body.zh .lang-en { display: none; } body.zh .lang-zh { display: block; }
+    span.lang-en { display: inline; } span.lang-zh { display: none; }
+    body.zh span.lang-en { display: none; } body.zh span.lang-zh { display: inline; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.5rem 4rem; background: var(--paper); border-bottom: 1px solid var(--line);
+    }
+    .nav-logo { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); text-decoration: none; }
+    .nav-logo span { color: var(--accent); }
+    .nav-back { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-back:hover { color: var(--ink); }
+    .lang-toggle { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; color: var(--muted); background: none; border: 1px solid var(--line); padding: 0.4rem 0.85rem; border-radius: 2px; cursor: pointer; transition: color 0.2s, border-color 0.2s; white-space: nowrap; }
+    .lang-toggle:hover { color: var(--ink); border-color: var(--muted); }
+
+    .page-wrap { max-width: 720px; margin: 0 auto; padding: 10rem 4rem 7rem; }
+
+    .page-eyebrow { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
+    .page-eyebrow::after { content: ''; display: block; height: 1px; width: 3rem; background: var(--accent); opacity: 0.5; }
+    .page-title { font-size: clamp(2.2rem, 3.5vw, 3.5rem); font-weight: 300; line-height: 1.15; margin-bottom: 4rem; }
+    .page-title em { font-style: italic; color: var(--accent); }
+
+    .imprint-block { margin-bottom: 3rem; }
+    .imprint-block h2 { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+    .imprint-block p { font-size: 1rem; font-weight: 300; color: var(--ink); line-height: 1.8; }
+    .imprint-block a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(181,149,106,0.3); transition: border-color 0.2s; }
+    .imprint-block a:hover { border-color: var(--accent); }
+    .placeholder { color: var(--muted); font-style: italic; }
+
+    .legal-note { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--line); font-size: 0.9rem; font-weight: 300; color: var(--muted); line-height: 1.8; }
+
+    footer { border-top: 1px solid var(--line); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; }
+    .footer-logo { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); text-decoration: none; }
+    .footer-logo span { color: var(--accent); }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--ink); }
+    .footer-copy { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; color: var(--muted); }
+
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 2rem; }
+      .page-wrap { padding: 8rem 2rem 5rem; }
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Pricing<span>Goat</span></a>
+    <div style="display:flex;align-items:center;gap:2rem;">
+      <a href="index.html" class="nav-back"><span class="lang-en">← Back</span><span class="lang-zh">← 返回</span></a>
+      <button class="lang-toggle" id="langToggle">中文</button>
+    </div>
+  </nav>
+
+  <div class="page-wrap">
+
+    <div class="page-eyebrow lang-en">Legal</div>
+    <div class="page-eyebrow lang-zh">法律声明</div>
+
+    <h1 class="page-title lang-en">Imprint</h1>
+    <h1 class="page-title lang-zh">版权与法律<em>声明</em></h1>
+
+    <!-- EN -->
+    <div class="lang-en">
+      <div class="imprint-block">
+        <h2>Information according to § 5 TMG</h2>
+        <p>
+          Dr. Jan Y. Yang<br />
+          Freier Berater<br />
+          Am Gebrannten Hof 9<br />
+          55218 Ingelheim am Rhein<br />
+          Germany
+        </p>
+      </div>
+
+      <div class="imprint-block">
+        <h2>Contact</h2>
+        <p>
+          Email: <a href="/cdn-cgi/l/email-protection#4228232c6c3b232c250232302b212b2c25252d23366c212d2f"><span class="__cf_email__" data-cfemail="ed878c83c3948c838aad9d9f848e84838a8a828c99c38e8280">[email&#160;protected]</span></a><br />
+          Website: <a href="https://www.pricinggoat.com">www.pricinggoat.com</a>
+        </p>
+      </div>
+
+      <div class="imprint-block">
+        <h2>Tax identification</h2>
+        <p>Steuernummer: <span class="placeholder">[to be added]</span></p>
+      </div>
+
+      <div class="imprint-block">
+        <h2>Professional title and regulatory body</h2>
+        <p>
+          Professional title: Freier Berater (Freelance Consultant)<br />
+          Country of title award: Germany
+        </p>
+      </div>
+
+      <div class="imprint-block">
+        <h2>Responsible for content according to § 18 Abs. 2 MStV</h2>
+        <p>
+          Dr. Jan Y. Yang<br />
+          Am Gebrannten Hof 9<br />
+          55218 Ingelheim am Rhein<br />
+          Germany
+        </p>
+      </div>
+
+      <div class="legal-note">
+        <p><strong>Liability for content:</strong> The contents of this website have been created with the utmost care. However, we cannot guarantee the accuracy, completeness, or timeliness of the content. As a service provider, we are responsible for our own content on these pages in accordance with general laws pursuant to § 7 Abs. 1 TMG. According to §§ 8 to 10 TMG, however, we are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.</p>
+        <p style="margin-top:1rem;"><strong>Liability for links:</strong> Our website contains links to external websites of third parties, the content of which we have no influence over. Therefore, we cannot accept any liability for this external content. The respective provider or operator of the linked pages is always responsible for the content of those pages.</p>
+        <p style="margin-top:1rem;"><strong>Copyright:</strong> The content and works created by the site operator on these pages are subject to German copyright law. Duplication, processing, distribution, or any form of commercialisation of such material beyond the scope of the copyright law requires the prior written consent of the respective author or creator.</p>
+      </div>
+    </div>
+
+    <!-- ZH -->
+    <div class="lang-zh">
+      <div class="imprint-block">
+        <h2>网站运营者信息（依据德国《电信媒体法》§ 5 TMG）</h2>
+        <p>
+          杨一安（Dr. Jan Y. Yang）<br />
+          自由顾问（Freier Berater）<br />
+          Am Gebrannten Hof 9<br />
+          55218 Ingelheim am Rhein<br />
+          德国
+        </p>
+      </div>
+
+      <div class="imprint-block">
+        <h2>联系方式</h2>
+        <p>
+          电子邮件：<a href="/cdn-cgi/l/email-protection#9ef4fff0b0e7fff0f9deeeecf7fdf7f0f9f9f1ffeab0fdf1f3"><span class="__cf_email__" data-cfemail="0369626d2d7a626d644373716a606a6d64646c62772d606c6e">[email&#160;protected]</span></a><br />
+          网站：<a href="https://www.pricinggoat.com">www.pricinggoat.com</a>
+        </p>
+      </div>
+
+      <div class="imprint-block">
+        <h2>税务信息</h2>
+        <p>税号（Steuernummer）：<span class="placeholder">【待补充】</span></p>
+      </div>
+
+      <div class="imprint-block">
+        <h2>内容责任人（依据 § 18 Abs. 2 MStV）</h2>
+        <p>
+          杨一安（Dr. Jan Y. Yang）<br />
+          Am Gebrannten Hof 9<br />
+          55218 Ingelheim am Rhein<br />
+          德国
+        </p>
+      </div>
+
+      <div class="legal-note">
+        <p><strong>内容免责声明：</strong>本网站内容经过认真核实，但无法保证其完整性、准确性与时效性。作为服务提供方，我们依据 § 7 Abs. 1 TMG 对本站自有内容承担责任。依据 §§ 8–10 TMG，我们无义务监控第三方传输或存储的内容，亦无义务主动排查违法行为的迹象。</p>
+        <p style="margin-top:1rem;"><strong>外部链接免责声明：</strong>本站包含指向第三方网站的链接，我们对其内容不承担任何责任。相关页面的内容由其各自运营方负责。</p>
+        <p style="margin-top:1rem;"><strong>版权声明：</strong>本站运营者创作的内容受德国版权法保护。未经作者书面授权，不得复制、处理、传播或以任何商业形式使用。</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <a href="index.html" class="footer-logo">Pricing<span>Goat</span></a>
+    <ul class="footer-links">
+      <li><a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a></li>
+      <li><a href="imprint.html"><span class="lang-en">Imprint</span><span class="lang-zh">版权声明</span></a></li>
+      <li><a href="privacy.html"><span class="lang-en">Privacy</span><span class="lang-zh">隐私政策</span></a></li>
+    </ul>
+    <span class="footer-copy">© 2026 PricingGoat.com</span>
+  </footer>
+
+  <script

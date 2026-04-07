@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Dark background rounded square -->
+  <rect width="32" height="32" rx="6" fill="#0f0e0d"/>
+  <!-- Gold serif G — drawn as paths for crisp rendering at small sizes -->
+  <text x="16" y="24" 
+        font-family="Georgia, 'Times New Roman', serif" 
+        font-size="26" 
+        font-weight="400"
+        fill="#b5956a" 
+        text-anchor="middle"
+        dominant-baseline="auto">G</text>
+</svg>
