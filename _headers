@@ -1,0 +1,22 @@
+/*
+  # Prevent clickjacking — disallow embedding in iframes
+  X-Frame-Options: DENY
+
+  # Prevent MIME type sniffing
+  X-Content-Type-Options: nosniff
+
+  # Control referrer information sent to external sites
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Force HTTPS for 2 years, include subdomains, submit to preload list
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+  # Restrict browser feature access — this site needs none of these
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+
+  # Content Security Policy
+  # - Only loads fonts from Google Fonts
+  # - No external scripts permitted
+  # - No iframes (frame-ancestors 'none')
+  # - No plugins or media
+  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'none'; object-src 'none'; media-src 'none'; frame-ancestors 'none'; base-uri 'self';
