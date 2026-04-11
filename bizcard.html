@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Card · Dr. Jan Y. Yang · PricingGoat</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&family=Noto+Serif+SC:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Design tokens — mirrors pricinggoat.com ────────────────── */
+    :root {
+      --ink:          #0f0e0d;
+      --paper:        #f6f4f0;
+      --accent:       #b5956a;
+      --accent-light: #ece5d8;
+      --muted:        #8a8580;
+      --line:         rgba(15,14,13,0.12);
+      --serif:        'Cormorant Garamond', Georgia, serif;
+      --serif-zh:     'Noto Serif SC', 'SimSun', serif;
+      --mono:         'DM Mono', 'Courier New', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Preview shell ──────────────────────────────────────────── */
+    body {
+      background: #d8d3cb;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      padding: 3.5rem 2rem;
+    }
+
+    .side-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(15,14,13,0.35);
+      margin-bottom: 0.5rem;
+      align-self: flex-start;
+      margin-left: calc(50vw - 340px);
+    }
+
+    /* ── Card — 90 × 54 mm, displayed at 2× ────────────────────── */
+    .card {
+      width: 680px;
+      height: 408px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 3px;
+      box-shadow:
+        0 12px 48px rgba(15,14,13,0.22),
+        0  2px  8px rgba(15,14,13,0.10);
+    }
+
+    /* ═══════════════════════════════════════════
+       FRONT  —  light side
+    ═══════════════════════════════════════════ */
+    .card-front { background: var(--paper); }
+
+    /* gold left bar */
+    .card-front::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--accent);
+    }
+
+    .front-inner {
+      position: absolute;
+      inset: 0;
+      padding: 36px 44px 36px 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* — top row — */
+    .front-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .brand-block { display: flex; flex-direction: column; gap: 5px; }
+
+    .brand-name {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+    .brand-name span { color: var(--accent); }
+
+    .brand-zh {
+      font-family: var(--serif-zh);
+      font-size: 10px;
+      font-weight: 300;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+
+    .tagline-right {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-top: 2px;
+    }
+
+    /* — divider — */
+    .front-rule {
+      height: 1px;
+      background: var(--line);
+    }
+
+    /* — name — */
+    .name-block {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .name-en {
+      font-family: var(--serif);
+      font-size: 40px;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      line-height: 1;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .name-sep {
+      width: 1px;
+      height: 44px;
+      background: var(--accent);
+      opacity: 0.55;
+      flex-shrink: 0;
+    }
+
+    .name-zh {
+      font-family: var(--serif-zh);
+      font-size: 34px;
+      font-weight: 300;
+      color: var(--ink);
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    /* — contact — */
+    .contact-block { display: flex; flex-direction: column; gap: 9px; }
+
+    .contact-line {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      color: var(--ink);
+    }
+
+    .contact-icon {
+      color: var(--accent);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    /* ═══════════════════════════════════════════
+       BACK  —  dark side
+    ═══════════════════════════════════════════ */
+    .card-back { background: var(--ink); }
+
+    .back-inner {
+      position: absolute;
+      inset: 0;
+      padding: 40px 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .back-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .back-logo {
+      font-family: var(--serif);
+      font-size: 54px;
+      font-weight: 300;
+      color: var(--paper);
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+    .back-logo span { color: var(--accent); }
+
+    .back-rule {
+      width: 36px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .back-tagline {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(246,244,240,0.5);
+      letter-spacing: 0.02em;
+    }
+
+    .back-qr-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .back-qr-wrap img {
+      width: 140px;
+      height: 140px;
+      object-fit: contain;
+      display: block;
+      /* invert so the QR is white-on-transparent on dark bg */
+      mix-blend-mode: lighten;
+      border-radius: 2px;
+    }
+
+    .back-qr-label {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(246,244,240,0.35);
+    }
+
+    /* ── Print ──────────────────────────────────────────────────── */
+    @media print {
+      body {
+        background: white;
+        padding: 10mm;
+        gap: 6mm;
+        display: block;
+      }
+
+      .side-label { display: none; }
+
+      .card {
+        width: 90mm;
+        height: 54mm;
+        box-shadow: none;
+        border: 0.2mm solid rgba(0,0,0,0.08);
+        page-break-inside: avoid;
+        margin: 0 auto 6mm;
+      }
+
+      /* scale fonts back to pt for print */
+      .brand-name   { font-size: 5.5pt; }
+      .brand-zh     { font-size: 5pt;   }
+      .tagline-right{ font-size: 5pt;   }
+      .name-en      { font-size: 16pt;  letter-spacing: -0.01em; }
+      .name-zh      { font-size: 13.5pt;}
+      .name-sep     { height: 18mm;     }
+      .contact-line { font-size: 5.5pt; }
+
+      .back-logo    { font-size: 22pt;  }
+      .back-tagline { font-size: 7.5pt; }
+      .back-qr-label{ font-size: 4pt;   }
+      .back-qr-wrap img { width: 22mm; height: 22mm; }
+
+      .front-inner { padding: 5.5mm 7mm 5.5mm 8mm; }
+      .back-inner  { padding: 6mm 8mm; }
+      .name-block  { gap: 4mm; }
+      .back-brand  { gap: 2.5mm; }
+      .back-rule   { width: 10mm; }
+      .contact-block { gap: 2mm; }
+      .contact-line  { gap: 2mm; }
+      .name-sep    { width: 0.3mm; }
+    }
+
+    @media (max-width: 720px) {
+      .card { width: 100%; max-width: 480px; height: auto; aspect-ratio: 90 / 54; }
+      .side-label { margin-left: 0; }
+      .name-en  { font-size: 6.5vw; }
+      .name-zh  { font-size: 5.5vw; }
+      .back-logo{ font-size: 8.5vw; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="side-label">Front</div>
+
+  <!-- ░░░ FRONT ░░░ -->
+  <div class="card card-front">
+    <div class="front-inner">
+
+      <div class="front-top">
+        <div class="brand-block">
+          <div class="brand-name">Pricing<span>Goat</span></div>
+          <div class="brand-zh">上海开泰麦乐管理咨询有限公司</div>
+        </div>
+        <div class="tagline-right">Pricing by Design</div>
+      </div>
+
+      <div class="front-rule"></div>
+
+      <div class="name-block">
+        <div class="name-en">Dr. Jan Y. Yang</div>
+        <div class="name-sep"></div>
+        <div class="name-zh">杨一安 博士</div>
+      </div>
+
+      <div class="front-rule"></div>
+
+      <div class="contact-block">
+        <div class="contact-line">
+          <span class="contact-icon">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1"/>
+              <path d="M5.5 6.5c.3-.7.8-1 1.2-.8l.5.2c.4.2.5.7.3 1.2L7.2 7.7c.4.7 1 1.3 1.6 1.6l.6-.3c.5-.2 1-.1 1.2.3l.2.5c.2.4 0 1-.8 1.3-1.5.5-3.8-1.2-4.3-2.8-.2-.7-.1-1.3.3-1.8z" fill="currentColor"/>
+            </svg>
+          </span>
+          +49 176 6417 2330 &thinsp;/&thinsp; +86 139 1810 9441
+        </div>
+        <div class="contact-line">
+          <span class="contact-icon">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="1.5" y="3.5" width="13" height="9" rx="1" stroke="currentColor" stroke-width="1"/>
+              <path d="M1.5 4.5L8 9l6.5-4.5" stroke="currentColor" stroke-width="1"/>
+            </svg>
+          </span>
+          jan.yang@pricinggoat.com
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="side-label">Back</div>
+
+  <!-- ░░░ BACK ░░░ -->
+  <div class="card card-back">
+    <div class="back-inner">
+
+      <div class="back-brand">
+        <div class="back-logo">pricing<span>goat</span></div>
+        <div class="back-rule"></div>
+        <div class="back-tagline">Pricing by Design</div>
+      </div>
+
+      <div class="back-qr-wrap">
+        <img src="wechat-qr.jpg" alt="PricingGoat QR code" />
+        <div class="back-qr-label">Pricinggoat.com</div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
