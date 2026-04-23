@@ -1,12 +1,476 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The First Principles of Pricing · Jan Y. Yang</title>
+
+<!-- Open Graph / LinkedIn preview -->
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="The First Principles of Pricing" />
+<meta property="og:description" content="Most companies don't reason about pricing. They copy it. What Elon Musk's first principles method reveals about the way we set prices — and why it's costing us more than we think." />
+<meta property="og:site_name"   content="PricingGoat" />
+<meta property="og:url"         content="https://pricinggoat.com" />
+<meta name="author"             content="Jan Y. Yang" />
+<meta name="description"        content="Most companies don't reason about pricing. They copy it. What Elon Musk's first principles method reveals about the way we set prices — and why it's costing us more than we think." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #16120a;
+    --paper:    #f7f3ec;
+    --gold:     #b8882a;
+    --gold-lt:  #d4a84b;
+    --muted:    #7a6e5a;
+    --rule:     #ddd5c0;
+    --accent:   #f0e8d4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.85;
+    padding: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    padding: 80px 48px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,136,42,.18) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+  }
+  .hero-eyebrow::after {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+    opacity: .6;
+  }
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    max-width: 720px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold-lt);
+  }
+  .hero-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(240,232,212,.6);
+    max-width: 580px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  .hero-rule { width: 32px; height: 1px; background: var(--gold); opacity: .5; }
+  .hero-author {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: rgba(240,232,212,.4);
+    letter-spacing: 1px;
+  }
+
+  /* ── ARTICLE ── */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+  }
+
+  p { margin-bottom: 24px; color: #3a3020; }
+
+  /* ── DROP CAP ── */
+  .drop-cap::first-letter {
+    font-family: 'Lora', serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: .8;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+    color: var(--gold);
+  }
+
+  /* ── SECTION HEADS ── */
+  h2 {
+    font-family: 'Lora', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 48px 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    margin: 36px 0;
+    background: var(--accent);
+  }
+  .pullquote p {
+    font-family: 'Lora', serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: var(--ink);
+    color: #f0e8d4;
+    padding: 32px 36px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .callout::before {
+    content: '"';
+    font-family: 'Lora', serif;
+    font-size: 100px;
+    color: rgba(184,136,42,.15);
+    position: absolute;
+    top: -10px; left: 16px;
+    line-height: 1;
+  }
+  .callout p {
+    font-family: 'Lora', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #e8dcc8;
+    margin: 0;
+    position: relative;
+  }
+  .callout p strong { color: #ffffff; }
+  .callout-source {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-top: 14px;
+    display: block;
+    position: relative;
+  }
+
+  /* ── THREE AXIOMS ── */
+  .axioms {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin: 36px 0;
+  }
+  .axiom {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .axiom:last-child { border-bottom: none; }
+  .axiom-num {
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .axiom-body { padding: 20px 24px; }
+  .axiom-title {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .axiom-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── DIAGNOSTIC ── */
+  .diagnostic {
+    background: var(--accent);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    margin: 36px 0;
+  }
+  .diagnostic-title {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .diagnostic-title::before {
+    content: '';
+    display: block;
+    width: 4px; height: 18px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .diag-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .diag-item:last-child { margin-bottom: 0; }
+  .diag-num {
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 20px;
+    padding-top: 1px;
+  }
+  .diag-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: #3a3020;
+    line-height: 1.65;
+  }
+  .diag-text strong { color: var(--ink); }
+
+  /* ── CLOSING ── */
+  .closing {
+    border-top: 2px solid var(--ink);
+    padding-top: 40px;
+    margin-top: 56px;
+  }
+  .closing-statement {
+    font-family: 'Lora', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+  .closing-statement em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .closing p { font-size: 17px; }
+
+  /* ── BRAND FOOTER ── */
+  .brand-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 32px;
+    background: var(--ink);
+    margin-top: 0;
+  }
+  .brand-logo {
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    font-weight: 400;
+  }
+  .brand-logo .pricing { color: #f0e8d4; }
+  .brand-logo .goat { color: var(--gold); }
+  .brand-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .brand-tagline {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(240,232,212,.45);
+  }
+  .brand-url {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 56px 24px 56px; }
+    .article { padding: 48px 20px 64px; }
+    .callout { padding: 24px 22px; }
+    .brand-footer { flex-direction: column; gap: 16px; text-align: center; }
+    .brand-right { align-items: center; }
+  }
+</style>
 </head>
 <body>
-    <h1>Pricing</h1>
-    <p>Details about pricing go here.</p>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Pricing Strategy</div>
+  <h1>Most companies don't <em>reason</em> about pricing.<br>They just copy it.</h1>
+  <p class="hero-sub">What Elon Musk's first principles method reveals about the way we set prices — and why it's costing us more than we think.</p>
+  <div class="hero-meta">
+    <div class="hero-rule"></div>
+    <span class="hero-author">Jan Y. Yang · pricinggoat.com</span>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<article class="article">
+
+  <p class="drop-cap">There's a famous story about Elon Musk and rocket costs. When SpaceX was starting out, he got a quote for buying a refurbished ICBM from Russia. The number was absurd. So instead of negotiating, he did something different: he looked up the raw material costs for every component of a rocket — aluminium, titanium, copper, carbon fibre — and added them up.</p>
+
+  <p>The total came to about <strong>2% of the asking price</strong>. The rest was markup, habit, and the assumption that rockets just cost what rockets cost.</p>
+
+  <p>That's first principles thinking. Strip away every assumption. Get back to what is actually, physically, undeniably true. Then reason forward from there.</p>
+
+  <p>Now here's what I want to ask you: <strong>when did you last apply that kind of thinking to your pricing?</strong></p>
+
+  <h2>The pricing equivalent of "rockets just cost that much"</h2>
+
+  <p>Most pricing decisions I've seen — across industries, across company sizes — aren't really decisions at all. They're habits dressed up as strategy.</p>
+
+  <p>"We benchmarked competitors." <br>
+  "We added a standard margin to cost." <br>
+  "We've always priced this way."</p>
+
+  <p>This is what Musk calls analogical thinking. You look at how others have solved the problem and copy the answer. It's fast, it's safe, and it's almost certainly leaving money on the table — or worse, pricing you out of markets you deserve to be in.</p>
+
+  <div class="pullquote">
+    <p>"The problem with analogical pricing isn't that it's wrong. It's that it borrows someone else's mistakes — and you have no idea what those mistakes are."</p>
+  </div>
+
+  <p>First principles pricing asks a harder question: <em>why would a customer pay for this at all?</em> Not what the market charges. Not what your spreadsheet says. Why, from first principles, does this product create value — and how much of that value is it reasonable to capture?</p>
+
+  <h2>Three axioms that don't change</h2>
+
+  <p>When you strip pricing down to its foundations, three things hold true regardless of industry, product, or market:</p>
+
+  <div class="axioms">
+    <div class="axiom">
+      <div class="axiom-num">I</div>
+      <div class="axiom-body">
+        <div class="axiom-title">Price is a currency translation of value — not an arithmetic result of cost</div>
+        <p class="axiom-desc">Customers pay for outcomes, not your inputs. Cost sets your floor. Value sets your ceiling. Everything between is a strategic choice.</p>
+      </div>
+    </div>
+    <div class="axiom">
+      <div class="axiom-num">II</div>
+      <div class="axiom-body">
+        <div class="axiom-title">Willingness to pay (WTP) is real, measurable, and moveable</div>
+        <p class="axiom-desc">Every customer has a mental price range for every product. It's not fixed. Reference points, value framing, and context all shift it — legally and legitimately.</p>
+      </div>
+    </div>
+    <div class="axiom">
+      <div class="axiom-num">III</div>
+      <div class="axiom-body">
+        <div class="axiom-title">Price is a signal — it actively shapes how customers judge your value</div>
+        <p class="axiom-desc">In markets where quality is hard to observe — professional services, enterprise software, high-stakes decisions — a low price doesn't attract buyers. It makes them nervous.</p>
+      </div>
+    </div>
+  </div>
+
+  <p>These aren't pricing tactics. They're the physics of pricing. Violate them, and no amount of sales skill or marketing budget will fully compensate.</p>
+
+  <h2>The three diagnoses behind "it's too expensive"</h2>
+
+  <p>Here's where first principles thinking gets practically useful. When a customer says your price is too high, that sentence could mean three completely different things:</p>
+
+  <p><strong>1. Their WTP is genuinely below your price.</strong> This is a real pricing problem. Rare, but it happens.<br>
+  <strong>2. They don't fully perceive the value.</strong> This is a communication problem. Far more common.<br>
+  <strong>3. They're testing you.</strong> This is a negotiation tactic. Also very common.</p>
+
+  <p>The default response — discounting — only solves case one. In cases two and three, it actively damages you. You've just told the customer that your price had no logic behind it, and that pressure works.</p>
+
+  <div class="callout">
+    <p>McKinsey doesn't discount. Part of the reason is exactly this: <strong>a lower price would cause clients to question why they're so cheap</strong> — and once that question is in the room, it's very hard to remove.</p>
+    <span class="callout-source">On pricing as a quality signal</span>
+  </div>
+
+  <h2>A quick diagnostic</h2>
+
+  <p>If you want to know whether your pricing is built on first principles or habit, answer these honestly:</p>
+
+  <div class="diagnostic">
+    <div class="diagnostic-title">First Principles Pricing Audit</div>
+    <div class="diag-item"><div class="diag-num">1.</div><div class="diag-text">Can you name the <strong>specific customer outcome</strong> your price is anchored to — not your cost, not a competitor's price?</div></div>
+    <div class="diag-item"><div class="diag-num">2.</div><div class="diag-text">Have you ever <strong>actually measured</strong> your customers' WTP — with a Van Westendorp test, conjoint analysis, or even structured interviews?</div></div>
+    <div class="diag-item"><div class="diag-num">3.</div><div class="diag-text">Do you know what your customer's <strong>best alternative</strong> costs — including their switching costs?</div></div>
+    <div class="diag-item"><div class="diag-num">4.</div><div class="diag-text">When a customer pushes back on price, can you <strong>diagnose which of the three cases</strong> it is before you respond?</div></div>
+    <div class="diag-item"><div class="diag-num">5.</div><div class="diag-text">If your top competitor raised prices by 30% tomorrow, would your pricing logic <strong>stand on its own</strong> — or would you just follow?</div></div>
+  </div>
+
+  <p>If you answered "no" or "not sure" to three or more of these, your pricing is most likely analogical — borrowed from the market, inherited from history, or arrived at by gut feel. That's not necessarily a crisis. But it is an opportunity.</p>
+
+  <h2>One reframe to take away</h2>
+
+  <p>Tesla didn't succeed because it priced cheaply. It succeeded because it redefined what value meant in the car category — and then priced accordingly. The price followed the value logic, not the other way around.</p>
+
+  <div class="closing">
+    <div class="closing-statement">Pricing is <em>strategy</em>,<br>not arithmetic.</div>
+    <p>The market's price is just the average of everyone else's assumptions. It has no authority over what your product is worth.</p>
+    <p>Go back to first principles. Figure out what value you actually create, for whom, and under what conditions. Then build your price from there — not from what everyone else charges.</p>
+    <p style="color:var(--muted); font-size:16px; margin-top:32px;">— Jan Y. Yang writes about pricing strategy, willingness-to-pay measurement, and pricing institutionalization at <strong style="color:var(--gold);">pricinggoat.com</strong></p>
+  </div>
+
+</article>
+
+<!-- BRAND FOOTER -->
+<div class="brand-footer">
+  <div class="brand-logo"><span class="pricing">pricing</span><span class="goat">goat</span></div>
+  <div class="brand-right">
+    <div class="brand-tagline">Pricing by Design</div>
+    <div class="brand-url">PRICINGGOAT.COM</div>
+  </div>
+</div>
+
 </body>
 </html>
