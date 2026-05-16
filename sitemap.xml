@@ -5,27 +5,19 @@
   <!-- Main page — bilingual, highest priority -->
   <url>
     <loc>https://www.pricinggoat.com/</loc>
-    <lastmod>2026-05-02</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/"/>
   </url>
 
-  <!-- Imprint -->
+  <!-- Article: The First Principles of Pricing -->
   <url>
-    <loc>https://www.pricinggoat.com/imprint.html</loc>
-    <lastmod>2026-04-07</lastmod>
+    <loc>https://www.pricinggoat.com/pricinggoat-articles/first-principles-pricing.html</loc>
+    <lastmod>2026-04-23</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
-  </url>
-
-  <!-- Privacy Policy -->
-  <url>
-    <loc>https://www.pricinggoat.com/privacy.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
+    <priority>0.7</priority>
   </url>
 
 </urlset>
