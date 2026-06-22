@@ -4,7 +4,7 @@
 
 ## Who is Dr. Jan Y. Yang?
 
-Dr. Jan Y. Yang (杨一安, Dr. Pricing) is a Pricing Architect with over 20 years of frontline experience. He embeds pricing by design across the full business lifecycle — from product ideation through go-to-market to customer lifetime management. He has advised 100+ companies and is a Springer-published author with 10+ books on pricing.
+Dr. Jan Y. Yang (杨一安, Dr. Pricing) is a Pricing Architect with over 20 years of frontline experience. He embeds pricing by design across the full business lifecycle — from product ideation through go-to-market to customer lifetime management. He has advised 100+ companies and is a published author with 11 books on pricing and Chinese business strategy, published by Springer and Ethics Press.
 
 His core thesis: most businesses price their products, but few become organisations that truly know how to price. His work starts earlier than conventional consultants — at the product design and customer segmentation stage, not after the price tag needs fixing.
 
@@ -17,7 +17,8 @@ His core thesis: most businesses price their products, but few become organisati
 
 ## Books
 
-### English (Springer)
+### English
+- *The Quiet Leap — Decoding the Evolution of Made in China* (2026) — Ethics Press
 - *Reimagine Pricing — How AI is Changing Everything* (2025) — Springer
 - *Preisgestaltung neu denken — Wie KI alles verändert* (2025) — Springer Gabler [DE]
 - *The Pricing Compass* (2024) — Springer
@@ -63,7 +64,7 @@ He works with companies that want to build pricing as an organisational capabili
 A bespoke programme that transfers Dr. Yang's 20+ years of frontline pricing architecture experience to consultancy teams and in-house teams. It is not a training course — it is a guided transformation that results in independent pricing leadership capability.
 
 **What books has Dr. Jan Y. Yang written?**
-Dr. Yang has published 10+ books, primarily with Springer, covering pricing strategy, AI-driven pricing, value-based pricing, and Chinese business strategy. Key titles include *Reimagine Pricing*, *The Pricing Compass*, and *定价制胜* (Win with Pricing).
+Dr. Yang has published 11 books with Springer and Ethics Press, covering pricing strategy, AI-driven pricing, value-based pricing, and Chinese business strategy. Key titles include *The Quiet Leap* (2026, Ethics Press), *Reimagine Pricing*, *The Pricing Compass*, and *定价制胜* (Win with Pricing).
 
 **Where is Dr. Jan Y. Yang based?**
 He is based in Shanghai, China and Ingelheim am Rhein, Germany, and works with clients globally.
