@@ -24,7 +24,7 @@ Audit of www.pricinggoat.com as of 2026-10-02 (branch `claude/foundations-articl
 3. **Google Fonts block rendering and are unreliable in mainland China.** Every page loads `fonts.googleapis.com` as a render-blocking stylesheet, and the homepage also loads the large Noto Serif SC family. From China the request often stalls, which delays first paint for Chinese visitors and slows Baidu crawling.
    *Fix:* self-host subsetted WOFF2 files (or fall back to system serif fonts for ZH) and drop the Google Fonts links.
 
-4. **The article was orphaned and still links nowhere.** Before this PR nothing linked to `first-principles-pricing.html`. **Fixed in this PR:** it's now linked from the homepage and from the articles index. Still open: the article itself has zero outbound links (no home, no articles index, no contact), so it passes no authority back and has no conversion path.
+4. **The article was orphaned and still links nowhere.** Before this PR nothing linked to `first-principles-pricing.html`. **Fixed in this PR:** it's now linked from the homepage and from the articles index. Also fixed (article nav PR): the article now links to the articles index and home. Previously it had zero outbound links (no home, no articles index, no contact), so it passes no authority back and has no conversion path.
    *Fix:* link the `brand-footer` wordmark to `/` and add an "All articles" link.
 
 ### Medium

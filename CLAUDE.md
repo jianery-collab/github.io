@@ -45,7 +45,7 @@ Every public page exists twice: English at the root, Chinese under `/zh/`.
 **Articles** (`articles/*.html`, except the listing page)
 - Editorial style: Lora serif (headings) + DM Sans (body) via Google Fonts
 - CSS variables: `--ink`, `--paper`, `--gold` (#b8882a), `--gold-lt`, `--muted`, `--rule`, `--accent`
-- Component classes: `.hero`, `.pullquote`, `.callout`, `.axioms` / `.axiom`, `.diagnostic`, `.closing`, `.brand-footer`
+- Component classes: `.hero`, `.hero-nav` (links back to the articles index and home; keep it on every article), `.pullquote`, `.callout`, `.axioms` / `.axiom`, `.diagnostic`, `.closing`, `.brand-footer`
 - Each article is a self-contained HTML file with all CSS inlined
 
 ### Bilingual content
