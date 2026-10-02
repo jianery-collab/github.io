@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Primary meta -->
@@ -47,26 +47,17 @@
   <!-- LLMs.txt — AI crawler index -->
   <link rel="llms-txt" href="https://www.pricinggoat.com/llms.txt" />
 
-  <!-- Show all language content when JS is unavailable (helps crawlers index Chinese) -->
-  <noscript>
-    <style>
-      .lang-zh { display: block !important; }
-      span.lang-zh { display: inline !important; }
-      a.lang-zh { display: inline-block !important; }
-    </style>
-  </noscript>
-
-  <!-- Chinese AI search: Kimi (Moonshot), Qwen (Alibaba), DeepSeek, MiniMax, Baidu -->
-  <meta name="description:zh" content="杨一安（Dr. Pricing）是中国定价第一人、定价架构师，专注于「定价即设计」——将定价体系嵌入企业全生命周期。同时为大型咨询公司与企业内部定价团队提供定价能力建设服务。Springer出版作者，常驻上海与英格尔海姆。" />
-  <meta name="keywords:zh" content="中国定价第一人, 定价架构师, 定价即设计, 定价能力建设, 定价培训, 定价战略, 定价体系, 定价咨询, 杨一安, Dr. Pricing, 定价制胜, 企业定价, 价值定价, AI定价, GTM定价, 定价治理, 咨询公司定价培训, 内部定价团队" />
-  <link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/" />
+  <!-- Language versions -->
   <link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/" />
 
   <!-- JSON-LD: Person -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://www.pricinggoat.com/#person",
     "name": "Jan Yang",
     "honorificPrefix": "Dr.",
     "alternateName": ["杨一安", "Jan Y. Yang", "Dr. Pricing", "中国定价第一人"],
@@ -165,6 +156,7 @@
     "description": "Official professional profile of Dr. Jan Y. Yang — 中国定价第一人, Pricing Architect with unparalleled experience in China, and Springer-published author. Pricing by Design. Pricing Capability Building.",
     "mainEntity": {
       "@type": "Person",
+      "@id": "https://www.pricinggoat.com/#person",
       "name": "Jan Yang",
       "honorificPrefix": "Dr.",
       "alternateName": ["杨一安", "Jan Y. Yang", "Dr. Pricing"],
@@ -258,8 +250,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Noto+Serif+SC:wght@300;400;500&display=swap" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Noto+Serif+SC:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -283,23 +275,6 @@
       font-family: var(--serif); font-size: 18px; line-height: 1.7; overflow-x: hidden;
     }
 
-    body.zh { font-family: var(--serif-zh); }
-    body.zh .hero-headline { letter-spacing: 0.04em; line-height: 1.2; }
-    body.zh .section-title { letter-spacing: 0.03em; }
-    body.zh .about-body { font-size: 1.05rem; line-height: 2; }
-    body.zh .service-desc, body.zh .special-desc { font-size: 0.95rem; line-height: 1.95; }
-    body.zh .hero-eyebrow, body.zh .section-label, body.zh .nav-links a,
-    body.zh .btn-primary, body.zh .btn-ghost, body.zh .service-link,
-    body.zh .contact-item-label, body.zh .footer-copy,
-    body.zh .footer-links a, body.zh .nav-logo { font-family: var(--mono); }
-
-    .lang-en { display: block; } .lang-zh { display: none; }
-    body.zh .lang-en { display: none; } body.zh .lang-zh { display: block; }
-    span.lang-en { display: inline; } span.lang-zh { display: none; }
-    body.zh span.lang-en { display: none; } body.zh span.lang-zh { display: inline; }
-    a.lang-en { display: inline-block; } a.lang-zh { display: none; }
-    body.zh a.lang-en { display: none; } body.zh a.lang-zh { display: inline-block; }
-
     /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -313,7 +288,7 @@
     .nav-links a:hover { color: var(--ink); }
     .nav-cta { color: var(--paper) !important; background: var(--ink); padding: 0.55rem 1.2rem !important; border-radius: 2px; transition: background 0.2s !important; letter-spacing: 0.08em !important; white-space: nowrap; }
     .nav-cta:hover { background: var(--accent) !important; }
-    .lang-toggle { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; color: var(--muted); background: none; border: 1px solid var(--line); padding: 0.4rem 0.85rem; border-radius: 2px; cursor: pointer; transition: color 0.2s, border-color 0.2s; white-space: nowrap; }
+    .lang-toggle { display: inline-block; text-decoration: none; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; color: var(--muted); background: none; border: 1px solid var(--line); padding: 0.4rem 0.85rem; border-radius: 2px; cursor: pointer; transition: color 0.2s, border-color 0.2s; white-space: nowrap; }
     .lang-toggle:hover { color: var(--ink); border-color: var(--muted); }
 
     /* HERO */
@@ -465,24 +440,18 @@
 </head>
 <body>
 
-  <!-- Site summary for search engines and AI crawlers -->
-  <div id="site-summary" style="font-size:0.01px;line-height:0;color:transparent;pointer-events:none;user-select:none;" role="note">
-    <span lang="en">Dr. Jan Y. Yang (also known as 杨一安 and Dr. Pricing) is a Pricing Architect with unparalleled experience in China, based in Shanghai and Ingelheim am Rhein. He embeds pricing by design across the full business lifecycle — from product ideation through GTM to customer lifetime management. He builds pricing capability for major consultancies and in-house pricing teams. He is a Springer-published author with 10+ pricing books. He writes in English on LinkedIn and in Chinese on WeChat Official Account 定价制胜-Dr. Pricing.</span>
-    <span lang="zh-Hans">杨一安（Jan Yang，Dr. Pricing）是中国定价第一人、定价架构师，常驻上海与英格尔海姆。他专注于「定价即设计」，将定价体系嵌入企业全生命周期。他为大型咨询公司与企业内部定价团队提供定价能力建设服务。20年以上经验，服务企业逾百家，典型投资回报超20倍。Springer出版作者，著有《定价制胜》《定价逻辑》《定价指南》等多部定价专著。微信公众号：定价制胜-Dr. Pricing。</span>
-  </div>
-
   <!-- NAV -->
   <nav aria-label="Main navigation">
     <a href="#hero" class="nav-logo">Pricing<span>Goat</span></a>
     <ul class="nav-links">
-      <li class="hide-mobile"><a href="#about"><span class="lang-en">About</span><span class="lang-zh">关于</span></a></li>
-      <li class="hide-mobile"><a href="#services"><span class="lang-en">Services</span><span class="lang-zh">服务</span></a></li>
-      <li class="hide-mobile"><a href="#capability"><span class="lang-en">Capability</span><span class="lang-zh">能力建设</span></a></li>
-      <li class="hide-mobile"><a href="#books"><span class="lang-en">Books</span><span class="lang-zh">著作</span></a></li>
-      <li class="hide-mobile"><a href="#articles"><span class="lang-en">Articles</span><span class="lang-zh">文章</span></a></li>
-      <li class="hide-mobile"><a href="#writing"><span class="lang-en">Writing</span><span class="lang-zh">持续输出</span></a></li>
-      <li><a href="#contact" class="nav-cta"><span class="lang-en">Get in Touch</span><span class="lang-zh">联系我</span></a></li>
-      <li><button class="lang-toggle" id="langToggle">中文</button></li>
+      <li class="hide-mobile"><a href="#about">About</a></li>
+      <li class="hide-mobile"><a href="#services">Services</a></li>
+      <li class="hide-mobile"><a href="#capability">Capability</a></li>
+      <li class="hide-mobile"><a href="#books">Books</a></li>
+      <li class="hide-mobile"><a href="#articles">Articles</a></li>
+      <li class="hide-mobile"><a href="#writing">Writing</a></li>
+      <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+      <li><a href="/zh/" class="lang-toggle" lang="zh-Hans" hreflang="zh-Hans">中文</a></li>
     </ul>
   </nav>
 
@@ -490,23 +459,20 @@
   <section id="hero" aria-label="Introduction">
     <div class="hero-left">
       <p class="hero-eyebrow">
-        <span class="lang-en">Pricing Architect — Pricing by Design</span>
-        <span class="lang-zh">定价架构师 — 以设计思维构建定价体系</span>
+        Pricing Architect — Pricing by Design
       </p>
-      <h1 class="hero-headline lang-en">Pricing, built<br>in by <em>design.</em></h1>
-      <h1 class="hero-headline lang-zh">定价，从<em>源头</em>开始<br>系统设计。</h1>
-      <p class="hero-sub lang-en">Most businesses price their products. I help businesses become organisations that price. Pricing intelligence embedded from product ideation through GTM to customer lifetime management. The pricing architect with unparalleled experience in China.</p>
-      <p class="hero-sub lang-zh">大多数企业只是在给产品定价。我帮助企业成为真正懂得定价的组织，将定价能力嵌入产品构思、市场进入，直至客户全生命周期管理。中国定价第一人。</p>
+      <h1 class="hero-headline">Pricing, built<br>in by <em>design.</em></h1>
+      <p class="hero-sub">Most businesses price their products. I help businesses become organisations that price. Pricing intelligence embedded from product ideation through GTM to customer lifetime management. The pricing architect with unparalleled experience in China.</p>
       <div class="hero-actions">
-        <a href="#services" class="btn-primary"><span class="lang-en">Explore Services</span><span class="lang-zh">了解服务</span></a>
-        <a href="#books" class="btn-ghost"><span class="lang-en">View Books</span><span class="lang-zh">查看著作</span></a>
+        <a href="#services" class="btn-primary">Explore Services</a>
+        <a href="#books" class="btn-ghost">View Books</a>
       </div>
     </div>
   </section>
 
   <!-- TICKER -->
   <div class="ticker-wrap">
-    <div class="ticker-track lang-en">
+    <div class="ticker-track">
       <span class="ticker-item">Pricing Architecture <span class="ticker-sep">✦</span></span>
       <span class="ticker-item">Pricing by Design <span class="ticker-sep">✦</span></span>
       <span class="ticker-item">Value-Based Pricing <span class="ticker-sep">✦</span></span>
@@ -523,137 +489,96 @@
       <span class="ticker-item">AI-Powered Pricing <span class="ticker-sep">✦</span></span>
       <span class="ticker-item">Pricing Governance <span class="ticker-sep">✦</span></span>
       <span class="ticker-item">Revenue Optimisation <span class="ticker-sep">✦</span></span>
-    </div>
-    <div class="ticker-track lang-zh">
-      <span class="ticker-item">定价架构 <span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">定价即设计 <span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">价值导向定价 <span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">定价能力建设 <span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">市场进入策略 <span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">AI智能定价 <span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">定价治理 <span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">收入增长 <span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">定价架构 <span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">定价即设计 <span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">价值导向定价 <span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">定价能力建设 <span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">市场进入策略 <span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">AI智能定价 <span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">定价治理 <span class="ticker-sep">✦</span></span>
-      <span class="ticker-item">收入增长 <span class="ticker-sep">✦</span></span>
     </div>
   </div>
 
   <!-- ABOUT -->
   <section id="about" aria-label="About Dr. Jan Y. Yang">
     <div class="about-left reveal">
-      <div class="section-label"><span class="lang-en">About</span><span class="lang-zh">关于我</span></div>
-      <h2 class="section-title lang-en">Pricing is not a price tag.<br>It is a <em>business system.</em></h2>
-      <h2 class="section-title lang-zh">定价不是一个数字，<br>而是一套<em>经营体系</em>。</h2>
-      <div class="about-body lang-en">
+      <div class="section-label">About</div>
+      <h2 class="section-title">Pricing is not a price tag.<br>It is a <em>business system.</em></h2>
+      <div class="about-body">
         <p>I'm Dr. Jan Y. Yang — Pricing Architect with over 20 years of experience helping companies build pricing as an organisational capability, not an afterthought.</p>
         <p>Most consultants arrive after the product is built, fix the price tag, and leave. By then the decisions that shape pricing power — product design, customer targeting, GTM — have already been made. <strong>My work starts earlier.</strong></p>
         <p>I embed pricing by design across the full business lifecycle: product ideation, customer segmentation, go-to-market, sales, pricing governance, and customer lifetime management. The result is a business with a real pricing system, not just a price.</p>
         <p>Springer-published author. Based in Shanghai and Ingelheim am Rhein. Writing regularly on LinkedIn.</p>
       </div>
-      <div class="about-body lang-zh">
-        <p>我是杨一安，定价架构师。二十余年来，我专注于帮助企业将定价能力真正内化为组织竞争力，而非事后补救的临时方案。</p>
-        <p>大多数顾问在产品上市后才介入，修改一下价格标签就离开。而此时，真正决定定价能力的关键早已尘埃落定：产品设计、客户定位、市场进入策略。<strong>我的工作，从更早开始。</strong></p>
-        <p>我将定价以设计思维嵌入企业全生命周期：从产品构思与客户分层，到市场进入与销售执行，再到定价治理与客户长期价值管理。最终交付的不只是一个价格，而是一套可持续运转的定价体系。</p>
-        <p>Springer出版作者。常驻上海与英格尔海姆。在微信公众号「定价制胜-Dr. Pricing」持续输出。</p>
-      </div>
     </div>
     <div class="about-right reveal">
       <div class="stat-row">
         <div class="stat-number word">Springer</div>
-        <div class="stat-label"><span class="lang-en">Published Author</span><span class="lang-zh">出版作者</span></div>
+        <div class="stat-label">Published Author</div>
       </div>
       <div class="stat-row">
         <div class="stat-number">20+</div>
-        <div class="stat-label"><span class="lang-en">Years in Pricing</span><span class="lang-zh">定价从业年限</span></div>
+        <div class="stat-label">Years in Pricing</div>
       </div>
       <div class="stat-row">
         <div class="stat-number">100+</div>
-        <div class="stat-label"><span class="lang-en">Companies Advised</span><span class="lang-zh">服务企业数量</span></div>
+        <div class="stat-label">Companies Advised</div>
       </div>
       <div class="stat-row">
         <div class="stat-number">&gt;20&times;</div>
-        <div class="stat-label"><span class="lang-en">Typical Return on Investment</span><span class="lang-zh">典型投资回报倍数</span></div>
+        <div class="stat-label">Typical Return on Investment</div>
       </div>
       <div class="stat-row">
         <div class="stat-number">&infin;</div>
-        <div class="stat-label"><span class="lang-en">Opinions on Bad Pricing</span><span class="lang-zh">对糟糕定价的意见</span></div>
+        <div class="stat-label">Opinions on Bad Pricing</div>
       </div>
     </div>
   </section>
 
   <!-- SERVICES -->
   <section id="services" aria-label="Consulting Services">
-    <div class="section-label reveal"><span class="lang-en">Services</span><span class="lang-zh">服务内容</span></div>
-    <h2 class="section-title reveal lang-en">How I <em>work</em></h2>
-    <h2 class="section-title reveal lang-zh">我如何<em>工作</em></h2>
+    <div class="section-label reveal">Services</div>
+    <h2 class="section-title reveal">How I <em>work</em></h2>
     <div class="services-grid">
       <div class="service-card reveal">
         <div class="service-number">01</div>
-        <h3 class="service-name lang-en">Pricing <em>Diagnostic</em></h3>
-        <h3 class="service-name lang-zh">定价<em>诊断</em></h3>
-        <p class="service-desc lang-en">A structured assessment of your current pricing across product, customer, process, and governance. I identify the gaps and show exactly what a well-designed pricing system would look like for your business.</p>
-        <p class="service-desc lang-zh">对您当前定价现状的系统性评估，涵盖产品、客户、流程与治理四个维度。找准现状与成熟定价体系之间的差距，明确改进方向。</p>
-        <a href="#contact" class="service-link"><span class="lang-en">Enquire →</span><span class="lang-zh">咨询 →</span></a>
+        <h3 class="service-name">Pricing <em>Diagnostic</em></h3>
+        <p class="service-desc">A structured assessment of your current pricing across product, customer, process, and governance. I identify the gaps and show exactly what a well-designed pricing system would look like for your business.</p>
+        <a href="#contact" class="service-link">Enquire →</a>
       </div>
       <div class="service-card reveal">
         <div class="service-number">02</div>
-        <h3 class="service-name lang-en">Pricing <em>Architecture</em></h3>
-        <h3 class="service-name lang-zh">定价<em>架构设计</em></h3>
-        <p class="service-desc lang-en">End-to-end pricing system design. Pricing logic embedded into product ideation, customer segmentation, GTM strategy, sales execution, and customer lifetime management. The deliverable is not a price tag. It is a capability.</p>
-        <p class="service-desc lang-zh">端到端定价体系设计，将定价逻辑嵌入产品构思、客户分层、市场进入、销售执行与客户全生命周期管理。交付的不是一个价格，而是一种组织能力。</p>
-        <a href="#contact" class="service-link"><span class="lang-en">Enquire →</span><span class="lang-zh">咨询 →</span></a>
+        <h3 class="service-name">Pricing <em>Architecture</em></h3>
+        <p class="service-desc">End-to-end pricing system design. Pricing logic embedded into product ideation, customer segmentation, GTM strategy, sales execution, and customer lifetime management. The deliverable is not a price tag. It is a capability.</p>
+        <a href="#contact" class="service-link">Enquire →</a>
       </div>
       <div class="service-card reveal">
         <div class="service-number">03</div>
-        <h3 class="service-name lang-en">Ongoing <em>Advisory</em></h3>
-        <h3 class="service-name lang-zh">长期<em>顾问</em></h3>
-        <p class="service-desc lang-en">A retained relationship for organisations building pricing maturity over time. This covers new product launches, pricing governance reviews, competitive responses, and strategic pricing decisions as they come up.</p>
-        <p class="service-desc lang-zh">为致力于持续提升定价成熟度的企业提供长期支持，涵盖新品上市、定价治理评审、竞争应对与重大定价决策，全程陪跑。</p>
-        <a href="#contact" class="service-link"><span class="lang-en">Enquire →</span><span class="lang-zh">咨询 →</span></a>
+        <h3 class="service-name">Ongoing <em>Advisory</em></h3>
+        <p class="service-desc">A retained relationship for organisations building pricing maturity over time. This covers new product launches, pricing governance reviews, competitive responses, and strategic pricing decisions as they come up.</p>
+        <a href="#contact" class="service-link">Enquire →</a>
       </div>
     </div>
 
     <!-- SPECIAL SERVICE -->
     <div class="special-service-wrap reveal" id="capability">
       <div class="special-service-label">
-        <span class="lang-en">Signature Programme</span>
-        <span class="lang-zh">特色项目</span>
+        Signature Programme
       </div>
       <div class="special-service-card">
         <div class="special-left">
-          <h3 class="special-title lang-en">Pricing <em>Capability</em><br>Building</h3>
-          <h3 class="special-title lang-zh">定价<em>能力</em><br>建设</h3>
-          <div class="special-desc lang-en">
+          <h3 class="special-title">Pricing <em>Capability</em><br>Building</h3>
+          <div class="special-desc">
             <p>For major consultancies and in-house pricing teams who have the ambition but not yet the depth. I transfer 20+ years of frontline pricing architecture experience. Not a training course. A guided transformation.</p>
             <p>Consultancy teams learn to lead pricing engagements with confidence. In-house teams move upstream: from tactical price management to strategic pricing architecture embedded across the business.</p>
           </div>
-          <div class="special-desc lang-zh">
-            <p>专为缺乏定价专业深度的大型咨询公司与企业内部定价团队设计。我将二十余年一线定价架构经验系统传授，不是培训课程，而是一场有引导的能力跃迁。</p>
-            <p>咨询团队将学会自信地主导定价项目；内部团队将从被动的价格管理，跃升为嵌入业务全局的战略定价架构师。</p>
-          </div>
-          <a href="#contact" class="service-link" style="margin-top:2.5rem;"><span class="lang-en">Discuss Your Programme →</span><span class="lang-zh">探讨定制方案 →</span></a>
+          <a href="#contact" class="service-link" style="margin-top:2.5rem;">Discuss Your Programme →</a>
         </div>
         <div class="special-right">
           <div class="special-point">
             <span class="special-point-num">01</span>
-            <span class="special-point-text lang-en"><strong>For consultancies:</strong> capability transfer that lets your teams lead pricing engagements independently. Frameworks, tools, and the thinking behind them.</span>
-            <span class="special-point-text lang-zh"><strong>面向咨询公司：</strong>系统性能力输出，让您的团队具备独立主导定价项目的能力，包括方法论、工具与背后的思维体系。</span>
+            <span class="special-point-text"><strong>For consultancies:</strong> capability transfer that lets your teams lead pricing engagements independently. Frameworks, tools, and the thinking behind them.</span>
           </div>
           <div class="special-point">
             <span class="special-point-num">02</span>
-            <span class="special-point-text lang-en"><strong>For in-house teams:</strong> moving from tactical pricing to strategic pricing architecture, connecting pricing to product, GTM, sales, and governance.</span>
-            <span class="special-point-text lang-zh"><strong>面向内部团队：</strong>从战术性价格管理迈向战略性定价架构，将定价与产品、GTM、销售及公司治理深度打通。</span>
+            <span class="special-point-text"><strong>For in-house teams:</strong> moving from tactical pricing to strategic pricing architecture, connecting pricing to product, GTM, sales, and governance.</span>
           </div>
           <div class="special-point">
             <span class="special-point-num">03</span>
-            <span class="special-point-text lang-en"><strong>Built on depth:</strong> Grounded in 20+ years of frontline experience and 10+ published books. Not theory. Battle-tested pricing architecture thinking.</span>
-            <span class="special-point-text lang-zh"><strong>源于深度积累：</strong>以20余年一线实战经验与十余部定价专著为基础，不是理论，而是经过真实项目检验的定价架构思维。</span>
+            <span class="special-point-text"><strong>Built on depth:</strong> Grounded in 20+ years of frontline experience and 10+ published books. Not theory. Battle-tested pricing architecture thinking.</span>
           </div>
         </div>
       </div>
@@ -662,153 +587,92 @@
 
   <!-- BOOKS -->
   <section id="books" aria-label="Books by Dr. Jan Y. Yang on Pricing and Beyond">
-    <div class="section-label reveal"><span class="lang-en">Books</span><span class="lang-zh">著作</span></div>
-    <h2 class="section-title reveal lang-en">Books on pricing <em>and beyond</em></h2>
-    <h2 class="section-title reveal lang-zh">定价及更多<em>著作</em></h2>
+    <div class="section-label reveal">Books</div>
+    <h2 class="section-title reveal">Books on pricing <em>and beyond</em></h2>
     <div class="books-grid">
 
-      <a href="https://link.springer.com/book/9783032336644" target="_blank" rel="noopener noreferrer" class="book-card reveal lang-en">
+      <a href="https://link.springer.com/book/9783032336644" target="_blank" rel="noopener noreferrer" class="book-card reveal">
         <div class="book-meta"><span class="book-year">2026</span><span class="book-pub">Springer</span><span class="book-lang-badge">EN</span></div>
         <div class="book-title">Pricing Is Human</div>
         <p class="book-desc">A first principle for leading high-performing organizations. Challenges conventional pricing by shifting focus from methodology to execution — examining governance, ownership, and cross-functional collaboration across strategy, marketing, sales, product, finance, and operations.</p>
         <span class="book-link-label">View on Springer →</span>
       </a>
-      <a href="https://link.springer.com/book/9783032336644" target="_blank" rel="noopener noreferrer" class="book-card reveal lang-zh">
-        <div class="book-meta"><span class="book-year">2026</span><span class="book-pub">Springer</span><span class="book-lang-badge">EN</span></div>
-        <div class="book-title">定价即人：高绩效组织领导力的第一原则</div>
-        <p class="book-desc">颠覆传统定价思维，将焦点从方法论转向组织执行力——深入探讨定价治理、所有权架构，以及战略、营销、销售、产品、财务与运营的跨职能协作。</p>
-        <span class="book-link-label">查看详情 →</span>
-      </a>
 
-      <a href="https://ethicspress.com/products/the-quiet-leap" target="_blank" rel="noopener noreferrer" class="book-card reveal lang-en">
+      <a href="https://ethicspress.com/products/the-quiet-leap" target="_blank" rel="noopener noreferrer" class="book-card reveal">
         <div class="book-meta"><span class="book-year">2026</span><span class="book-pub">Ethics Press</span><span class="book-lang-badge">EN</span></div>
         <div class="book-title">The Quiet Leap — Decoding the Evolution of Made in China</div>
         <p class="book-desc">How did "Made in China" evolve from a synonym for cheap copies into a systemic competitive advantage — much as "Made in Germany" once did? Through case studies in EVs, high-speed rail, renewable energy, digital platforms, and AI, this book traces that transformation and derives three strategic postures for Western companies: Compete, Co-Create, Carve-Out.</p>
         <span class="book-link-label">View on Ethics Press →</span>
       </a>
-      <a href="https://ethicspress.com/products/the-quiet-leap" target="_blank" rel="noopener noreferrer" class="book-card reveal lang-zh">
-        <div class="book-meta"><span class="book-year">2026</span><span class="book-pub">Ethics Press</span><span class="book-lang-badge">EN</span></div>
-        <div class="book-title">悄然飞跃 — 解码"中国制造"的演进</div>
-        <p class="book-desc">"中国制造"如何从廉价仿制的代名词，蜕变为堪比十九世纪"德国制造"的系统性竞争优势？本书通过电动汽车、高铁、可再生能源、数字平台与人工智能等领域的深度案例，追溯这一演进历程，并为西方企业提炼出三大战略路径：竞争、共创与专属赛道。</p>
-        <span class="book-link-label">查看详情 →</span>
-      </a>
 
-      <a href="https://link.springer.com/book/10.1007/978-3-032-07469-0" target="_blank" rel="noopener noreferrer" class="book-card reveal lang-en">
+      <a href="https://link.springer.com/book/10.1007/978-3-032-07469-0" target="_blank" rel="noopener noreferrer" class="book-card reveal">
         <div class="book-meta"><span class="book-year">2025</span><span class="book-pub">Springer Gabler</span><span class="book-lang-badge">DE</span></div>
         <div class="book-title">Preisgestaltung neu denken — Wie KI alles verändert</div>
         <p class="book-desc">A practical roadmap for moving from reactive, manual pricing to proactive, AI-driven systems that predict, adapt, and create value in real time. Includes Python code, case studies, and a grounded approach to AI adoption.</p>
         <span class="book-link-label">View on Springer →</span>
       </a>
-      <a href="https://link.springer.com/book/10.1007/978-3-032-07469-0" target="_blank" rel="noopener noreferrer" class="book-card reveal lang-zh">
-        <div class="book-meta"><span class="book-year">2025</span><span class="book-pub">Springer Gabler</span><span class="book-lang-badge">DE</span></div>
-        <div class="book-title">重新思考定价——AI如何改变一切</div>
-        <p class="book-desc">本书为企业提供从被动手工定价迈向主动AI驱动定价的完整路径，涵盖Python代码、行业案例及AI落地的人文关怀视角。</p>
-        <span class="book-link-label">查看详情 →</span>
-      </a>
 
-      <a href="https://link.springer.com/book/10.1007/978-3-031-90418-9" target="_blank" rel="noopener noreferrer" class="book-card reveal lang-en">
+      <a href="https://link.springer.com/book/10.1007/978-3-031-90418-9" target="_blank" rel="noopener noreferrer" class="book-card reveal">
         <div class="book-meta"><span class="book-year">2025</span><span class="book-pub">Springer</span><span class="book-lang-badge">EN</span></div>
         <div class="book-title">Reimagine Pricing — How AI is Changing Everything</div>
         <p class="book-desc">A call to action for business leaders and pricing experts. It makes the case for AI-enabled pricing with clarity and purpose, showing how pricing can shift from a functional necessity to a genuine strategic differentiator.</p>
         <span class="book-link-label">View on Springer →</span>
       </a>
-      <a href="https://link.springer.com/book/10.1007/978-3-031-90418-9" target="_blank" rel="noopener noreferrer" class="book-card reveal lang-zh">
-        <div class="book-meta"><span class="book-year">2025</span><span class="book-pub">Springer</span><span class="book-lang-badge">EN</span></div>
-        <div class="book-title">重构定价——AI正在改变一切</div>
-        <p class="book-desc">写给企业领导者与定价专家的行动指南，以自信与目标感拥抱AI定价，将定价从职能需求转化为真正的战略差异化优势。</p>
-        <span class="book-link-label">查看详情 →</span>
-      </a>
 
       <div class="book-card reveal">
         <div class="book-meta"><span class="book-year">2024</span><span class="book-pub">机械工业出版社</span><span class="book-lang-badge">ZH</span></div>
-        <div class="book-title lang-en">定价指南 — The Pricing Guide</div>
-        <div class="book-title lang-zh">定价指南</div>
-        <p class="book-desc lang-en">A practical guide answering China's most pressing pricing questions: how to price new, flagship, and long-tail products; when dynamic pricing works; and how priorities shift across startup, growth, and mature stages.</p>
-        <p class="book-desc lang-zh">解答企业最迫切的定价难题：新品、旗舰品、长尾品如何定价？何时适合动态定价？初创、成长、成熟阶段的定价侧重各有不同，本书一一解答。</p>
-        <span class="book-link-label lang-en">Chinese Edition</span>
-        <span class="book-link-label lang-zh">中文版</span>
+        <div class="book-title">定价指南 — The Pricing Guide</div>
+        <p class="book-desc">A practical guide answering China's most pressing pricing questions: how to price new, flagship, and long-tail products; when dynamic pricing works; and how priorities shift across startup, growth, and mature stages.</p>
+        <span class="book-link-label">Chinese Edition</span>
       </div>
 
-      <a href="https://link.springer.com/book/10.1007/978-3-031-52060-0" target="_blank" rel="noopener noreferrer" class="book-card reveal lang-en">
+      <a href="https://link.springer.com/book/10.1007/978-3-031-52060-0" target="_blank" rel="noopener noreferrer" class="book-card reveal">
         <div class="book-meta"><span class="book-year">2024</span><span class="book-pub">Springer</span><span class="book-lang-badge">EN</span></div>
         <div class="book-title">The Pricing Compass</div>
         <p class="book-desc">A pragmatic guide to professionalising pricing. It covers the essential steps: identifying unique selling propositions, gauging willingness to pay, managing distribution, and building pricing governance.</p>
         <span class="book-link-label">View on Springer →</span>
       </a>
-      <a href="https://link.springer.com/book/10.1007/978-3-031-52060-0" target="_blank" rel="noopener noreferrer" class="book-card reveal lang-zh">
-        <div class="book-meta"><span class="book-year">2024</span><span class="book-pub">Springer</span><span class="book-lang-badge">EN</span></div>
-        <div class="book-title">定价罗盘</div>
-        <p class="book-desc">从识别独特卖点、洞察支付意愿，到渠道管理与定价治理，为企业提供系统化定价专业升级的完整路径指南。</p>
-        <span class="book-link-label">查看详情 →</span>
-      </a>
 
       <div class="book-card reveal">
         <div class="book-meta"><span class="book-year">2023</span><span class="book-pub">广东人民出版社</span><span class="book-lang-badge">ZH</span></div>
-        <div class="book-title lang-en">定价逻辑 — The Logic of Pricing</div>
-        <div class="book-title lang-zh">定价逻辑</div>
-        <p class="book-desc lang-en">Focused on pricing as a tool for navigating inflation. It examines how sales, finance, procurement, production, R&amp;D, and company culture need to work in concert for businesses to hold their ground in uncertain times.</p>
-        <p class="book-desc lang-zh">聚焦以定价系统对抗通货膨胀，从销售、财务、采购、生产、研发到企业文化，全面梳理企业在高度不确定环境中立于不败之地的关键要素。</p>
-        <span class="book-link-label lang-en">Chinese Edition</span>
-        <span class="book-link-label lang-zh">中文版</span>
+        <div class="book-title">定价逻辑 — The Logic of Pricing</div>
+        <p class="book-desc">Focused on pricing as a tool for navigating inflation. It examines how sales, finance, procurement, production, R&amp;D, and company culture need to work in concert for businesses to hold their ground in uncertain times.</p>
+        <span class="book-link-label">Chinese Edition</span>
       </div>
 
-      <a href="https://link.springer.com/book/10.1007/978-3-031-25145-0" target="_blank" rel="noopener noreferrer" class="book-card reveal lang-en">
+      <a href="https://link.springer.com/book/10.1007/978-3-031-25145-0" target="_blank" rel="noopener noreferrer" class="book-card reveal">
         <div class="book-meta"><span class="book-year">2023</span><span class="book-pub">Springer</span><span class="book-lang-badge">EN</span></div>
         <div class="book-title">Chinese Electric Vehicle Trailblazers</div>
         <p class="book-desc">What sets Chinese EV manufacturers apart from their Western counterparts? This book examines business models, pricing strategies, and competitive dynamics, drawing on real project experience to show what is happening behind the Great Wall.</p>
         <span class="book-link-label">View on Springer →</span>
       </a>
-      <a href="https://link.springer.com/book/10.1007/978-3-031-25145-0" target="_blank" rel="noopener noreferrer" class="book-card reveal lang-zh">
-        <div class="book-meta"><span class="book-year">2023</span><span class="book-pub">Springer</span><span class="book-lang-badge">EN</span></div>
-        <div class="book-title">中国电动车先行者</div>
-        <p class="book-desc">中国新能源车企与西方同行究竟有何不同？从商业模式到定价策略，本书揭示长城背后的真实面貌，是汽车行业从业者的必读之作。</p>
-        <span class="book-link-label">查看详情 →</span>
-      </a>
 
       <div class="book-card reveal">
         <div class="book-meta"><span class="book-year">2022</span><span class="book-pub">机械工业出版社</span><span class="book-lang-badge">ZH</span></div>
-        <div class="book-title lang-en">定价制胜 — Win with Pricing</div>
-        <div class="book-title lang-zh">定价制胜——科学定价助力净利润倍增</div>
-        <p class="book-desc lang-en">Drawing on over two decades as one of China's earliest professional pricing consultants, this book argues that pricing is fundamentally value management. It shows what that means in practice.</p>
-        <p class="book-desc lang-zh">作为最早在中国开展业务的专业定价顾问之一，作者用二十余年实战经验证明：科学定价的本质是价值管理。不懂客户价值，就无法正确定价。</p>
-        <span class="book-link-label lang-en">Chinese Edition</span>
-        <span class="book-link-label lang-zh">中文版</span>
+        <div class="book-title">定价制胜 — Win with Pricing</div>
+        <p class="book-desc">Drawing on over two decades as one of China's earliest professional pricing consultants, this book argues that pricing is fundamentally value management. It shows what that means in practice.</p>
+        <span class="book-link-label">Chinese Edition</span>
       </div>
 
-      <a href="https://www.springer.com/gp/book/9783030507763" target="_blank" rel="noopener noreferrer" class="book-card reveal lang-en">
+      <a href="https://www.springer.com/gp/book/9783030507763" target="_blank" rel="noopener noreferrer" class="book-card reveal">
         <div class="book-meta"><span class="book-year">2020</span><span class="book-pub">Springer</span><span class="book-lang-badge">EN</span></div>
         <div class="book-title">The Pricing Puzzle</div>
         <p class="book-desc">A collection of vivid pricing stories from around the world: a chilled Coke in Tehran, the fall of MUJI, negative prices among Chinese tech unicorns. Each story reveals the rationale behind a pricing decision and what it tells us about markets and human behaviour.</p>
         <span class="book-link-label">View on Springer →</span>
       </a>
-      <a href="https://www.springer.com/gp/book/9783030507763" target="_blank" rel="noopener noreferrer" class="book-card reveal lang-zh">
-        <div class="book-meta"><span class="book-year">2020</span><span class="book-pub">Springer</span><span class="book-lang-badge">EN</span></div>
-        <div class="book-title">定价拼图</div>
-        <p class="book-desc">从德黑兰的一瓶冰可乐，到无印良品的衰落——一本由真实定价故事编织而成的奇妙之书，揭示价格背后的商业逻辑与人性密码。</p>
-        <span class="book-link-label">查看详情 →</span>
-      </a>
 
-      <a href="https://www.springer.com/de/book/9783319994048" target="_blank" rel="noopener noreferrer" class="book-card reveal lang-en">
+      <a href="https://www.springer.com/de/book/9783319994048" target="_blank" rel="noopener noreferrer" class="book-card reveal">
         <div class="book-meta"><span class="book-year">2018</span><span class="book-pub">Springer</span><span class="book-lang-badge">EN</span></div>
         <div class="book-title">Chinese M&amp;As in Germany</div>
         <p class="book-desc">An analytical examination of Chinese acquisitions in Germany. It reveals how Chinese investors tend to take a long-term, co-evolution approach, supported by case studies of three real M&amp;A deals and their post-acquisition growth trajectories.</p>
         <span class="book-link-label">View on Springer →</span>
       </a>
-      <a href="https://www.springer.com/de/book/9783319994048" target="_blank" rel="noopener noreferrer" class="book-card reveal lang-zh">
-        <div class="book-meta"><span class="book-year">2018</span><span class="book-pub">Springer</span><span class="book-lang-badge">EN</span></div>
-        <div class="book-title">中国企业在德并购</div>
-        <p class="book-desc">深度解析中国企业赴德并购的底层逻辑——长期导向、共同成长，而非单向输血。三个真实并购案例，还原整合与增长的幕后故事。</p>
-        <span class="book-link-label">查看详情 →</span>
-      </a>
 
       <div class="book-card reveal">
         <div class="book-meta"><span class="book-year">2017</span><span class="book-pub">广东南方日报出版社</span><span class="book-lang-badge">ZH</span></div>
-        <div class="book-title lang-en">企业价值提升 — China Outbound M&amp;A Report</div>
-        <div class="book-title lang-zh">企业价值提升：中国企业在德投资并购系列报告</div>
-        <p class="book-desc lang-en">A report series on Chinese outbound investment in Germany, covering target selection, acquisition models, value creation paths, governance structures, and post-merger integration.</p>
-        <p class="book-desc lang-zh">聚焦中国企业赴德投资并购的系列深度报告：如何选择目标企业、采用何种并购模式、规划价值创造路径、推进并购后整合与战略发展。</p>
-        <span class="book-link-label lang-en">Chinese Edition</span>
-        <span class="book-link-label lang-zh">中文版</span>
+        <div class="book-title">企业价值提升 — China Outbound M&amp;A Report</div>
+        <p class="book-desc">A report series on Chinese outbound investment in Germany, covering target selection, acquisition models, value creation paths, governance structures, and post-merger integration.</p>
+        <span class="book-link-label">Chinese Edition</span>
       </div>
 
     </div>
@@ -816,28 +680,21 @@
 
   <!-- ARTICLES -->
   <section id="articles" aria-label="Articles">
-    <div class="section-label reveal"><span class="lang-en">Articles</span><span class="lang-zh">文章</span></div>
-    <h2 class="section-title reveal lang-en">Notes on <em>pricing</em></h2>
-    <h2 class="section-title reveal lang-zh">定价<em>随笔</em></h2>
+    <div class="section-label reveal">Articles</div>
+    <h2 class="section-title reveal">Notes on <em>pricing</em></h2>
     <div class="books-grid">
 
-      <a href="pricinggoat-articles/first-principles-pricing.html" class="book-card reveal">
-        <div class="book-meta"><span class="book-year">2026</span><span class="book-pub"><span class="lang-en">Article</span><span class="lang-zh">文章</span></span><span class="book-lang-badge">EN</span></div>
-        <div class="book-title lang-en">The First Principles of Pricing</div>
-        <div class="book-title lang-zh">定价的第一性原理</div>
-        <p class="book-desc lang-en">Most companies don't reason about pricing. They copy it. What first principles thinking reveals about the way we set prices.</p>
-        <p class="book-desc lang-zh">大多数企业并不推理定价，而是照搬定价。第一性原理思维揭示了我们设定价格的方式，以及其中被忽视的代价。</p>
-        <span class="book-link-label lang-en">Read article →</span>
-        <span class="book-link-label lang-zh">阅读文章 →</span>
+      <a href="/articles/first-principles-pricing.html" class="book-card reveal">
+        <div class="book-meta"><span class="book-year">2026</span><span class="book-pub">Article</span><span class="book-lang-badge">EN</span></div>
+        <div class="book-title">The First Principles of Pricing</div>
+        <p class="book-desc">Most companies don't reason about pricing. They copy it. What first principles thinking reveals about the way we set prices.</p>
+        <span class="book-link-label">Read article →</span>
       </a>
 
-      <a href="pricinggoat-articles/" class="book-card reveal">
-        <div class="book-title lang-en">All articles</div>
-        <div class="book-title lang-zh">全部文章</div>
-        <p class="book-desc lang-en">Essays on pricing strategy, willingness to pay, and pricing as an organisational capability.</p>
-        <p class="book-desc lang-zh">关于定价战略、支付意愿与组织定价能力的文章。</p>
-        <span class="book-link-label lang-en">View all →</span>
-        <span class="book-link-label lang-zh">查看全部 →</span>
+      <a href="/articles/" class="book-card reveal">
+        <div class="book-title">All articles</div>
+        <p class="book-desc">Essays on pricing strategy, willingness to pay, and pricing as an organisational capability.</p>
+        <span class="book-link-label">View all →</span>
       </a>
 
     </div>
@@ -845,31 +702,26 @@
 
   <!-- WRITING -->
   <section id="writing" aria-label="Writing and Publications">
-    <div class="section-label reveal"><span class="lang-en">Writing</span><span class="lang-zh">持续输出</span></div>
-    <h2 class="section-title reveal lang-en">Where I <em>write</em></h2>
-    <h2 class="section-title reveal lang-zh">我在哪里<em>写作</em></h2>
+    <div class="section-label reveal">Writing</div>
+    <h2 class="section-title reveal">Where I <em>write</em></h2>
     <div class="platforms-grid">
       <div class="platform-card reveal">
         <div class="platform-icon">in</div>
         <div class="platform-name">LinkedIn</div>
         <div class="platform-handle">Jan Y. Yang</div>
-        <p class="platform-desc lang-en">I post regularly on LinkedIn in English, sharing pricing insights, strategy frameworks, and honest commentary on what businesses get wrong about pricing.</p>
-        <p class="platform-desc lang-zh">我在领英用英文定期发文，分享定价洞见、战略框架，以及企业在定价上常见的误区与亮点。</p>
+        <p class="platform-desc">I post regularly on LinkedIn in English, sharing pricing insights, strategy frameworks, and honest commentary on what businesses get wrong about pricing.</p>
         <a href="https://www.linkedin.com/in/jan-y-yang/" target="_blank" rel="noopener noreferrer" class="platform-action">
-          <span class="lang-en">Follow on LinkedIn →</span>
-          <span class="lang-zh">关注领英 →</span>
+          Follow on LinkedIn →
         </a>
       </div>
       <div class="platform-card reveal">
         <div class="platform-icon">微</div>
-        <div class="platform-name"><span class="lang-en">WeChat Official Account</span><span class="lang-zh">微信公众号</span></div>
+        <div class="platform-name">WeChat Official Account</div>
         <div class="platform-handle">定价制胜 — Dr. Pricing</div>
-        <p class="platform-desc lang-en">My Chinese-language WeChat publication, 定价制胜 (Win with Pricing), covers pricing strategy for Chinese business leaders and practitioners.</p>
-        <p class="platform-desc lang-zh">我的微信公众号「定价制胜-Dr. Pricing」，专为中国企业经营者与定价从业者提供深度定价内容，定期更新。</p>
+        <p class="platform-desc">My Chinese-language WeChat publication, 定价制胜 (Win with Pricing), covers pricing strategy for Chinese business leaders and practitioners.</p>
         <div class="wechat-qr-wrap">
-          <img src="wechat-qr.jpg" alt="WeChat QR code — 定价制胜 Dr. Pricing" />
-          <span class="wechat-qr-label lang-en">Scan to follow on WeChat</span>
-          <span class="wechat-qr-label lang-zh">微信扫码关注</span>
+          <img src="/wechat-qr.jpg" alt="WeChat QR code — 定价制胜 Dr. Pricing" />
+          <span class="wechat-qr-label">Scan to follow on WeChat</span>
         </div>
       </div>
     </div>
@@ -878,20 +730,17 @@
   <!-- CONTACT -->
   <section id="contact" aria-label="Contact Dr. Jan Y. Yang">
     <div class="contact-left reveal">
-      <div class="section-label"><span class="lang-en">Contact</span><span class="lang-zh">联系方式</span></div>
-      <h2 class="section-title lang-en">Let's talk.</h2>
-      <h2 class="section-title lang-zh">让我们<em>谈谈</em>。</h2>
-      <p class="contact-sub lang-en">Whether you have a specific pricing challenge, want to explore the Pricing Capability Building programme, or are simply curious what better pricing could look like for your business, get in touch.</p>
-      <p class="contact-sub lang-zh">无论您有具体的定价难题、希望探讨定价能力建设项目，还是只是想了解更好的定价对您的业务意味着什么，欢迎随时联系我。</p>
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Let's talk.</h2>
+      <p class="contact-sub">Whether you have a specific pricing challenge, want to explore the Pricing Capability Building programme, or are simply curious what better pricing could look like for your business, get in touch.</p>
       <div class="contact-details">
         <div class="contact-item">
           <span class="contact-item-label">LinkedIn</span>
           <a href="https://www.linkedin.com/in/jan-y-yang/" target="_blank" rel="noopener noreferrer" class="contact-item-val">Dr. Jan Y. Yang</a>
         </div>
         <div class="contact-item">
-          <span class="contact-item-label"><span class="lang-en">Based in</span><span class="lang-zh">所在地</span></span>
-          <span class="contact-item-val lang-en" style="border-bottom:none;">Shanghai / China &amp; Ingelheim am Rhein / Germany</span>
-          <span class="contact-item-val lang-zh" style="border-bottom:none;">上海 / 中国 &amp; 英格尔海姆 / 德国</span>
+          <span class="contact-item-label">Based in</span>
+          <span class="contact-item-val" style="border-bottom:none;">Shanghai / China &amp; Ingelheim am Rhein / Germany</span>
         </div>
       </div>
       <a href="mailto:jan.yang@pricinggoat.com" class="contact-email-cta">jan.yang@pricinggoat.com &rarr;</a>
@@ -902,39 +751,19 @@
   <footer>
     <a href="#hero" class="footer-logo">Pricing<span>Goat</span></a>
     <ul class="footer-links">
-      <li><a href="#about"><span class="lang-en">About</span><span class="lang-zh">关于</span></a></li>
-      <li><a href="#services"><span class="lang-en">Services</span><span class="lang-zh">服务</span></a></li>
-      <li><a href="#capability"><span class="lang-en">Capability</span><span class="lang-zh">能力建设</span></a></li>
-      <li><a href="#books"><span class="lang-en">Books</span><span class="lang-zh">著作</span></a></li>
-      <li><a href="#writing"><span class="lang-en">Writing</span><span class="lang-zh">文章</span></a></li>
-      <li><a href="#contact"><span class="lang-en">Contact</span><span class="lang-zh">联系</span></a></li>
-      <li><a href="imprint.html"><span class="lang-en">Imprint</span><span class="lang-zh">版权声明</span></a></li>
-      <li><a href="privacy.html"><span class="lang-en">Privacy</span><span class="lang-zh">隐私政策</span></a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#capability">Capability</a></li>
+      <li><a href="#books">Books</a></li>
+      <li><a href="#writing">Writing</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="imprint.html">Imprint</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
     </ul>
     <span class="footer-copy">© 2026 PricingGoat.com</span>
   </footer>
 
   <script>
-    // Auto-detect Chinese browser language
-    const toggle = document.getElementById('langToggle');
-    let isZh = navigator.language.startsWith('zh');
-    if (isZh) {
-      document.body.classList.add('zh');
-      toggle.textContent = 'EN';
-      document.documentElement.lang = 'zh-Hans';
-    }
-    toggle.addEventListener('click', () => {
-      isZh = !isZh;
-      document.body.classList.toggle('zh', isZh);
-      toggle.textContent = isZh ? 'EN' : '\u4e2d\u6587';
-      document.documentElement.lang = isZh ? 'zh-Hans' : 'en';
-      setTimeout(() => {
-        document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
-          const rect = el.getBoundingClientRect();
-          if (rect.top < window.innerHeight * 0.92) el.classList.add('visible');
-        });
-      }, 60);
-    });
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {

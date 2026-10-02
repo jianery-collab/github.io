@@ -15,10 +15,10 @@ Audit of www.pricinggoat.com as of 2026-10-02 (branch `claude/foundations-articl
 
 ### High
 
-1. **Both languages share one URL, toggled by JavaScript.** Google indexes the page as English and treats the hidden Chinese as secondary or ignores it. The `hreflang="en"` and `hreflang="zh-Hans"` tags (in the page and in `sitemap.xml`) both point to the same URL, so they cancel out. Chinese queries (杨一安, 定价架构师, 定价制胜) have no page of their own to rank.
+1. **Fixed in the EN/ZH split PR.** **Both languages share one URL, toggled by JavaScript.** Google indexes the page as English and treats the hidden Chinese as secondary or ignores it. The `hreflang="en"` and `hreflang="zh-Hans"` tags (in the page and in `sitemap.xml`) both point to the same URL, so they cancel out. Chinese queries (杨一安, 定价架构师, 定价制胜) have no page of their own to rank.
    *Fix:* split into `/` and `/zh/` with reciprocal hreflang (see the plan below).
 
-2. **Hidden text block.** `#site-summary` in `index.html` sets `font-size:0.01px; color:transparent`. This is textbook hidden text under Google's spam policies and risks a manual action that would demote the whole domain.
+2. **Fixed in the EN/ZH split PR.** **Hidden text block.** `#site-summary` in `index.html` sets `font-size:0.01px; color:transparent`. This is textbook hidden text under Google's spam policies and risks a manual action that would demote the whole domain.
    *Fix:* delete the block. Its content already lives in the meta description, JSON-LD and `llms.txt`.
 
 3. **Google Fonts block rendering and are unreliable in mainland China.** Every page loads `fonts.googleapis.com` as a render-blocking stylesheet, and the homepage also loads the large Noto Serif SC family. From China the request often stalls, which delays first paint for Chinese visitors and slows Baidu crawling.
@@ -29,7 +29,7 @@ Audit of www.pricinggoat.com as of 2026-10-02 (branch `claude/foundations-articl
 
 ### Medium
 
-5. **The article's metadata is broken.** There's no `<link rel="canonical">`. It has two conflicting sets of `og:title`, `og:description`, `og:type` and `og:url` (one `og:url` points to the homepage on the non-www host). `og:image` points to `/favicon.png`, which doesn't exist.
+5. **Fixed in the EN/ZH split PR.** **The article's metadata is broken.** There's no `<link rel="canonical">`. It has two conflicting sets of `og:title`, `og:description`, `og:type` and `og:url` (one `og:url` points to the homepage on the non-www host). `og:image` points to `/favicon.png`, which doesn't exist.
    *Fix:* keep one OG set, add a self-canonical, and point `og:image` to `/og-image.png`.
 
 6. **No structured data on the article.** There's no `Article` or `BlogPosting` JSON-LD, no `article:published_time`, and no visible date.
@@ -44,7 +44,7 @@ Audit of www.pricinggoat.com as of 2026-10-02 (branch `claude/foundations-articl
 9. **The homepage meta description is too long.** At 301 characters it's cut off at about 155 in results, and the important part (who and what) gets lost after the em dash.
    *Fix:* rewrite it to 140 to 155 characters, leading with "Pricing Architect".
 
-10. **Two `<h1>` elements on the homepage** (EN and hidden ZH). This is minor on its own, but it compounds issue 1.
+10. **Fixed in the EN/ZH split PR.** **Two `<h1>` elements on the homepage** (EN and hidden ZH). This is minor on its own, but it compounds issue 1.
     *Fix:* resolved by the URL split, where each page gets one `<h1>`.
 
 11. **The article exists only in English,** which breaks the bilingual rule and leaves Chinese search with no article content.
@@ -61,19 +61,19 @@ Audit of www.pricinggoat.com as of 2026-10-02 (branch `claude/foundations-articl
 14. **`robots.txt` uses outdated AI crawler names.** `Claude-Web` and `anthropic-ai` are retired; `ClaudeBot`, `Claude-SearchBot`, `Claude-User` and `OAI-SearchBot` are missing. Everything is already allowed through `User-agent: *`, so this has no practical effect.
     *Fix:* simplify to `User-agent: *` / `Allow: /` plus the sitemap line.
 
-15. **Non-standard meta tags.** `meta keywords`, `description:zh`, `keywords:zh` and `<link rel="sitemap">` are ignored by Google and Bing.
+15. **Partly fixed in the EN/ZH split PR** (`description:zh` and `keywords:zh` are gone). **Non-standard meta tags.** `meta keywords`, `description:zh`, `keywords:zh` and `<link rel="sitemap">` are ignored by Google and Bing.
     *Fix:* delete them (less is more); use a real `/zh/` description instead.
 
 16. **JSON-LD inconsistencies.** The Person `name` is "Jan Yang" while the page uses "Jan Y. Yang". `award` holds a sentence about being an author, which isn't an award.
     *Fix:* use "Jan Y. Yang" everywhere and remove `award`.
 
-17. **The `/pricinggoat-articles/` path is redundant** (brand name repeated in the path).
+17. **Fixed in the EN/ZH split PR.** Moved to `/articles/`, with redirect stubs left at the old URLs. **The `/pricinggoat-articles/` path was redundant** (brand name repeated in the path).
     *Fix:* decide during the split whether to move to `/articles/`; if so, add redirect stubs (see below).
 
 18. **No custom 404 page.** Broken links land on GitHub's generic 404 with no way back.
     *Fix:* add a minimal bilingual `404.html` linking home.
 
-19. **Dead files.** `_headers` (not read by GitHub Pages) and `pricinggoat-articles/_config.yml` (Jekyll ignores subfolder configs) do nothing.
+19. **Partly fixed in the EN/ZH split PR** (`_config.yml` deleted; `_headers` remains). **Dead files.** `_headers` (not read by GitHub Pages) and `pricinggoat-articles/_config.yml` (Jekyll ignores subfolder configs) do nothing.
     *Fix:* delete both.
 
 20. **`README.md` is stale.** It still recommends Netlify, says the site deploys to `yourusername.github.io` and lists completed launch tasks.
@@ -84,71 +84,22 @@ Audit of www.pricinggoat.com as of 2026-10-02 (branch `claude/foundations-articl
 - **Superlatives.** "中国定价第一人" and "unparalleled" appear in the homepage copy, JSON-LD and `llms.txt`. Article 9(3) of China's Advertising Law prohibits superlatives such as 国家级, 最高级 and 最佳 in commercial promotion; regulators routinely apply it to 第一, and Baidu and WeChat moderate such claims. Consider whether ZH pages should carry the phrase.
 - **Chinese titles for English-only books.** Titles such as 定价即人 and 定价罗盘 read like published Chinese editions. Consider marking them as translations (for example 英文版) so readers don't search for editions that don't exist.
 
-## Plan: splitting EN and ZH into separate URLs (next session)
+## EN/ZH split: done
 
-### Target URL map
+Done in the EN/ZH split PR, following the plan that was here. Owner decisions applied: articles live at `/articles/`; the ZH homepage title leads with 杨一安博士; the article's ZH translation comes later.
 
 | EN | ZH |
 |---|---|
 | `/` | `/zh/` |
-| `/pricinggoat-articles/` | `/zh/pricinggoat-articles/` |
-| `/pricinggoat-articles/first-principles-pricing.html` | `/zh/pricinggoat-articles/first-principles-pricing.html` |
+| `/articles/` | `/zh/articles/` |
+| `/articles/first-principles-pricing.html` | not yet (no hreflang until it exists) |
 | `/imprint.html` | `/zh/imprint.html` |
 | `/privacy.html` | `/zh/privacy.html` |
 
-`/` stays English and becomes the `x-default`. If the owner wants to rename `pricinggoat-articles` to `articles`, do it in the same session so the URLs change only once.
+### Still open after the split
 
-### What each page gets
-
-- `<html lang="en">` or `<html lang="zh-Hans">`, fixed in the markup (not set by JS).
-- Its own `<title>`, meta description, `og:locale` and `og:url` in that language only.
-- A self-referencing canonical. Never canonicalise `/zh/` to `/`.
-- Reciprocal hreflang on **both** pages of every pair:
-  ```html
-  <link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/" />
-  <link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/" />
-  <link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/" />
-  ```
-- JSON-LD in that language (`inLanguage`, ZH `description` for the Person). Keep the `@id` identical across the pair so both describe one entity.
-- Exactly one `<h1>`.
-
-### What gets removed
-
-- All `.lang-en` / `.lang-zh` pairs: each file keeps only its language.
-- The JS toggle and `navigator.language` auto-switch. The toggle becomes a plain link to the counterpart URL (`中文` → `/zh/`, `EN` → `/`).
-- The `<noscript>` show-ZH hack, `#site-summary`, `description:zh` and `keywords:zh`.
-- On EN pages, Noto Serif SC (load it only on `/zh/` pages).
-
-### Language detection
-
-Don't auto-redirect by `Accept-Language` or IP. Googlebot crawls mostly from US IPs with English headers and would never reach `/zh/`. GitHub Pages can't do server-side redirects anyway. If a nudge is wanted, show a small dismissible "中文版" link on `/` when `navigator.language` starts with `zh`. Let the reader click; never redirect automatically.
-
-### Sitemap
-
-List every URL, each with `xhtml:link` alternates for the full pair (`en`, `zh-Hans`, `x-default`), and the same block repeated under both URLs of the pair.
-
-### Moving URLs on GitHub Pages
-
-GitHub Pages has no server redirects. For any URL that moves (only relevant if the articles folder is renamed), leave a stub at the old path with `<meta http-equiv="refresh" content="0; url=NEW">` plus `<link rel="canonical" href="NEW">`. Alternatively, use `jekyll-redirect-from`, which GitHub Pages supports. Keep stubs for at least a year.
-
-### Baidu and China
-
-- Baidu largely ignores hreflang. A separate `/zh/` URL with a `zh-Hans` `<html lang>` and Chinese title and description is what it needs.
-- Submit `/zh/` and the sitemap in Baidu 搜索资源平台 (the site is already verified via `baidu_verify_codeva-ZlAiEPc9Cs.html`).
-- Speed from mainland China matters more for Baidu than for Google. Self-hosted fonts (issue 3) are the biggest win; consider a China-friendly CDN mirror for `/zh/` later.
-
-### Suggested order for the session
-
-1. Create `/zh/index.html` from the ZH halves of `index.html`; strip the ZH halves from `index.html`.
-2. Add canonical, hreflang and per-language JSON-LD to both.
-3. Replace the toggle with counterpart links.
-4. Repeat for the articles index, imprint and privacy (fixing the truncation first).
-5. Translate the article, or leave its ZH counterpart for a later session and omit its hreflang until it exists. Never hreflang to a missing page.
-6. Rebuild `sitemap.xml` with alternates; update `llms.txt` with the `/zh/` URL.
-7. After merge: request indexing for `/zh/` in Google Search Console and Baidu.
-
-### Open questions for the owner
-
-- Keep `/pricinggoat-articles/` or rename it to `/articles/`?
-- Should the ZH homepage `<title>` lead with 杨一安 or with 定价架构师?
-- Is a ZH translation of the first article in scope for that session?
+- **Baidu and Google:** submit `/zh/` and the new sitemap in Baidu 搜索资源平台 and Google Search Console, and request indexing for `/zh/` and `/articles/`.
+- **Chinese-language visitors now land on English.** The old page switched to Chinese automatically; now they must click 中文. If that's a problem, add a small dismissible "中文版" link on `/` for browsers set to Chinese (never an automatic redirect).
+- **ZH imprint has no "Professional title" block.** The English imprint has one; the Chinese one never did. The owner should supply the Chinese wording.
+- **Article ZH translation** at `/zh/articles/first-principles-pricing.html`, then reciprocal hreflang.
+- **ZH JSON-LD** carries the Person, WebSite, Books and ProfilePage blocks. The FAQ and services blocks are English-only and were left off `/zh/`; add Chinese versions if wanted.
