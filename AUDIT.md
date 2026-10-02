@@ -100,6 +100,6 @@ Done in the EN/ZH split PR, following the plan that was here. Owner decisions ap
 
 - **Baidu and Google:** submit `/zh/` and the new sitemap in Baidu 搜索资源平台 and Google Search Console, and request indexing for `/zh/` and `/articles/`.
 - **Chinese-language visitors now land on English.** The old page switched to Chinese automatically; now they must click 中文. If that's a problem, add a small dismissible "中文版" link on `/` for browsers set to Chinese (never an automatic redirect).
-- **ZH imprint has no "Professional title" block.** The English imprint has one; the Chinese one never did. The owner should supply the Chinese wording.
+- ~~**ZH imprint has no "Professional title" block.**~~ Owner decision: not needed. The ZH imprint names 杨一安博士, 自由顾问.
 - **Article ZH translation** at `/zh/articles/first-principles-pricing.html`, then reciprocal hreflang.
 - **ZH JSON-LD** carries the Person, WebSite, Books and ProfilePage blocks. The FAQ and services blocks are English-only and were left off `/zh/`; add Chinese versions if wanted.
