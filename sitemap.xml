@@ -86,6 +86,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Article: AI vs. Humans at Scale (EN only) -->
+  <url>
+    <loc>https://www.pricinggoat.com/articles/block-layoff-ai-org-redesign.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Article: Wake Up: Price Does Not Equal Value (EN only) -->
   <url>
     <loc>https://www.pricinggoat.com/articles/price-does-not-equal-value.html</loc>
