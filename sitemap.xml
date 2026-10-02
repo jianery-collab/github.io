@@ -2,28 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Main page — bilingual, highest priority -->
+  <!-- Homepage: EN -->
   <url>
     <loc>https://www.pricinggoat.com/</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/"/>
-    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/"/>
   </url>
 
-  <!-- Articles index -->
+  <!-- Homepage: ZH -->
   <url>
-    <loc>https://www.pricinggoat.com/pricinggoat-articles/</loc>
+    <loc>https://www.pricinggoat.com/zh/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/"/>
+  </url>
+
+  <!-- Articles index: EN -->
+  <url>
+    <loc>https://www.pricinggoat.com/articles/</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/"/>
   </url>
 
-  <!-- Article: The First Principles of Pricing -->
+  <!-- Articles index: ZH -->
   <url>
-    <loc>https://www.pricinggoat.com/pricinggoat-articles/first-principles-pricing.html</loc>
-    <lastmod>2026-04-23</lastmod>
+    <loc>https://www.pricinggoat.com/zh/articles/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/"/>
+  </url>
+
+  <!-- Article: The First Principles of Pricing (EN only until a ZH version exists) -->
+  <url>
+    <loc>https://www.pricinggoat.com/articles/first-principles-pricing.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>

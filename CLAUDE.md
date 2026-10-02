@@ -24,21 +24,25 @@ python3 -m http.server 8000
 
 ### Pages
 
-| Path | Purpose |
-|------|---------|
-| `index.html` | Homepage: hero, about, services, capability programme, books, articles, writing, contact |
-| `pricinggoat-articles/index.html` | Articles listing page |
-| `pricinggoat-articles/*.html` | Individual articles |
-| `imprint.html`, `privacy.html` | Legal pages (`noindex`) |
+Every public page exists twice: English at the root, Chinese under `/zh/`.
+
+| EN | ZH | Purpose |
+|----|----|---------|
+| `index.html` | `zh/index.html` | Homepage: hero, about, services, capability programme, books, articles, writing, contact |
+| `articles/index.html` | `zh/articles/index.html` | Articles listing page |
+| `articles/*.html` | (none yet) | Individual articles, English only for now |
+| `imprint.html`, `privacy.html` | `zh/imprint.html`, `zh/privacy.html` | Legal pages (`noindex`) |
+
+`pricinggoat-articles/` holds only redirect stubs for the old article URLs. Keep them; don't add content there.
 
 ### Two separate design systems
 
-**Main site** (`index.html`, `imprint.html`, `privacy.html`, `pricinggoat-articles/index.html`)
-- Cormorant Garamond (serif), DM Mono (labels, nav, buttons) and Noto Serif SC (Chinese) via Google Fonts
+**Main site** (homepages, legal pages and articles listing, EN and ZH)
+- Cormorant Garamond (serif) and DM Mono (labels, nav, buttons) via Google Fonts; `/zh/` pages also load Noto Serif SC
 - CSS variables: `--ink`, `--paper`, `--accent` (#b5956a warm gold), `--accent-light`, `--muted`, `--line`, `--serif`, `--serif-zh`, `--mono`
 - All CSS is inline within each file's `<style>` block; there is no shared stylesheet. Keep it that way.
 
-**Articles** (`pricinggoat-articles/*.html`, except the listing page)
+**Articles** (`articles/*.html`, except the listing page)
 - Editorial style: Lora serif (headings) + DM Sans (body) via Google Fonts
 - CSS variables: `--ink`, `--paper`, `--gold` (#b8882a), `--gold-lt`, `--muted`, `--rule`, `--accent`
 - Component classes: `.hero`, `.pullquote`, `.callout`, `.axioms` / `.axiom`, `.diagnostic`, `.closing`, `.brand-footer`
@@ -46,7 +50,17 @@ python3 -m http.server 8000
 
 ### Bilingual content
 
-Main-site pages carry both languages in the same HTML. Elements are paired with `.lang-en` / `.lang-zh` classes, and a small inline script toggles `body.zh` (auto-enabled when the browser language starts with `zh`). A `<noscript>` style block shows Chinese content to crawlers without JS. Splitting EN and ZH into separate URLs is planned; see `AUDIT.md`.
+Each page holds one language only. A change to visible copy must be made in both the EN file and its `/zh/` counterpart.
+
+Every EN/ZH pair carries, on both pages:
+- `<html lang="en">` or `<html lang="zh-Hans">`
+- a self-referencing canonical (never point `/zh/` at the EN page)
+- reciprocal `hreflang` links for `en`, `zh-Hans` and `x-default` (the EN URL)
+- a language switch that is a plain link to the counterpart page (`中文` / `EN`), with no auto-redirect
+
+Only add `hreflang` to a page whose counterpart exists. The articles have no ZH version yet, so they carry none.
+
+Use root-absolute paths (`/favicon.ico`, `/articles/`) for anything shared between the two folders. Links between pages of the same language can stay relative.
 
 ### Security headers
 
@@ -66,8 +80,9 @@ Main-site pages carry both languages in the same HTML. Elements are paired with 
 
 ## Adding a new article
 
-1. Copy `pricinggoat-articles/first-principles-pricing.html` as a template
+1. Copy `articles/first-principles-pricing.html` as a template
 2. Update `<title>`, description, canonical and all Open Graph tags
-3. Add an entry to `pricinggoat-articles/index.html` (EN and ZH)
-4. Update the articles section in `index.html` if the new article should be featured
+3. Add an entry to both `articles/index.html` and `zh/articles/index.html`
+4. Update the articles section in `index.html` and `zh/index.html` if the new article should be featured
 5. Add a `<url>` entry to `sitemap.xml` and bump the `lastmod` of every page you touched
+6. A ZH translation goes at `zh/articles/<same-name>.html`; then add reciprocal `hreflang` to both versions and `xhtml:link` alternates in the sitemap
