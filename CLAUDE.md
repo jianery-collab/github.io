@@ -84,11 +84,15 @@ Use root-absolute paths (`/favicon.ico`, `/articles/`) for anything shared betwe
 - **Polish, don't rewrite.** Keep the owner's voice, argument and structure. Fix typos and grammar, tighten wording, add headings where they help, and apply the editorial rules above (no em dashes, no stale counts). Anything beyond that, such as cutting or adding a paragraph or changing a claim, is proposed to the owner, not done silently.
 - **One language is fine ("relaxed" rule, owner decision 2026-10-02).** An article may exist only in the language it was written in. List it on both `articles/index.html` and `zh/articles/index.html`, with the title and summary in each page's language and a badge (`EN` / `ZH`) for the article's language. Add a translation only when the owner asks; then add reciprocal `hreflang`.
 - **Credit the original.** End every article with one muted line naming where and when it first appeared: `First published on LinkedIn, March 2026.` or `首发于微信公众号「定价制胜-Dr. Pricing」，2026年3月。` Ask the owner for the date if it isn't given.
-- **Language folders:** EN articles go in `articles/`, ZH articles in `zh/articles/`. A ZH-only article page uses `<html lang="zh-Hans">` and Chinese UI labels.
+- **Language folders:** EN articles go in `articles/`, ZH articles in `zh/articles/`. LinkedIn posts are always English and WeChat posts always Chinese.
+- **Templates:** copy `articles/samsung-china-quiet-leap.html` for English and `zh/articles/vertical-ai-paradox.html` for Chinese. The Chinese template adds Noto Serif SC and CJK system fonts, Chinese nav labels (← 全部文章 / 首页) and turns italics off.
+- **Pairs:** when both an EN and a ZH version exist, they share the same file name, carry reciprocal `hreflang`, and each credit line links the other version. Each articles index links to its own language's version.
+- **Order:** both index pages list articles newest first, by original publication date.
+- **Homepage:** each homepage features its own language's newest article.
 
 ## Adding a new article
 
-1. Copy `articles/first-principles-pricing.html` as a template
+1. Copy the EN or ZH template named above
 2. Update `<title>`, description, canonical and all Open Graph tags
 3. Add an entry to both `articles/index.html` and `zh/articles/index.html`
 4. Update the articles section in `index.html` and `zh/index.html` if the new article should be featured
