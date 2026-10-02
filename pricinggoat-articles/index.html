@@ -1,476 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The First Principles of Pricing · Jan Y. Yang</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Articles on Pricing · Jan Y. Yang</title>
+  <meta name="description" content="Articles on pricing strategy by Dr. Jan Y. Yang, Pricing Architect: first principles, willingness to pay, and pricing as an organisational capability. 杨一安的定价文章。" />
+  <meta name="author" content="Jan Y. Yang" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.pricinggoat.com/pricinggoat-articles/" />
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png" />
 
-<!-- Open Graph / LinkedIn preview -->
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="The First Principles of Pricing" />
-<meta property="og:description" content="Most companies don't reason about pricing. They copy it. What Elon Musk's first principles method reveals about the way we set prices — and why it's costing us more than we think." />
-<meta property="og:site_name"   content="PricingGoat" />
-<meta property="og:url"         content="https://pricinggoat.com" />
-<meta name="author"             content="Jan Y. Yang" />
-<meta name="description"        content="Most companies don't reason about pricing. They copy it. What Elon Musk's first principles method reveals about the way we set prices — and why it's costing us more than we think." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --ink:      #16120a;
-    --paper:    #f7f3ec;
-    --gold:     #b8882a;
-    --gold-lt:  #d4a84b;
-    --muted:    #7a6e5a;
-    --rule:     #ddd5c0;
-    --accent:   #f0e8d4;
-  }
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.pricinggoat.com/pricinggoat-articles/" />
+  <meta property="og:title" content="Articles on Pricing · Jan Y. Yang" />
+  <meta property="og:description" content="Articles on pricing strategy by Dr. Jan Y. Yang, Pricing Architect." />
+  <meta property="og:image" content="https://www.pricinggoat.com/og-image.png" />
+  <meta property="og:site_name" content="PricingGoat" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="zh_CN" />
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'none'; object-src 'none'; media-src 'none'; base-uri 'self';" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-  body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 18px;
-    line-height: 1.85;
-    padding: 0;
-  }
+  <!-- Show all language content when JS is unavailable (helps crawlers index Chinese) -->
+  <noscript>
+    <style>
+      .lang-zh { display: block !important; }
+      span.lang-zh { display: inline !important; }
+    </style>
+  </noscript>
 
-  /* ── HERO ── */
-  .hero {
-    background: var(--ink);
-    padding: 80px 48px 72px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    width: 600px; height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(184,136,42,.18) 0%, transparent 70%);
-    top: -100px; right: -100px;
-    pointer-events: none;
-  }
-  .hero-eyebrow {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 28px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    position: relative;
-  }
-  .hero-eyebrow::after {
-    content: '';
-    width: 40px; height: 1px;
-    background: var(--gold);
-    opacity: .6;
-  }
-  .hero h1 {
-    font-family: 'Lora', serif;
-    font-size: clamp(36px, 5vw, 58px);
-    font-weight: 700;
-    line-height: 1.2;
-    color: #ffffff;
-    max-width: 720px;
-    margin-bottom: 28px;
-    position: relative;
-  }
-  .hero h1 em {
-    font-style: normal;
-    color: var(--gold-lt);
-  }
-  .hero-sub {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    color: rgba(240,232,212,.6);
-    max-width: 580px;
-    line-height: 1.7;
-    position: relative;
-  }
-  .hero-meta {
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    position: relative;
-  }
-  .hero-rule { width: 32px; height: 1px; background: var(--gold); opacity: .5; }
-  .hero-author {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    color: rgba(240,232,212,.4);
-    letter-spacing: 1px;
-  }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&family=Noto+Serif+SC:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink: #0f0e0d; --paper: #f6f4f0; --accent: #b5956a;
+      --accent-light: #ece5d8; --muted: #8a8580; --line: rgba(15,14,13,0.1);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --serif-zh: 'Noto Serif SC', 'SimSun', serif;
+      --mono: 'DM Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 18px; line-height: 1.7; overflow-x: hidden; }
+    body.zh { font-family: var(--serif-zh); }
+    .lang-en { display: block; } .lang-zh { display: none; }
+    body.zh .lang-en { display: none; } body.zh .lang-zh { display: block; }
+    span.lang-en { display: inline; } span.lang-zh { display: none; }
+    body.zh span.lang-en { display: none; } body.zh span.lang-zh { display: inline; }
 
-  /* ── ARTICLE ── */
-  .article {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 64px 32px 80px;
-  }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.5rem 4rem; background: var(--paper); border-bottom: 1px solid var(--line);
+    }
+    .nav-logo { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); text-decoration: none; }
+    .nav-logo span { color: var(--accent); }
+    .nav-back { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-back:hover { color: var(--ink); }
+    .lang-toggle { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; color: var(--muted); background: none; border: 1px solid var(--line); padding: 0.4rem 0.85rem; border-radius: 2px; cursor: pointer; transition: color 0.2s, border-color 0.2s; white-space: nowrap; }
+    .lang-toggle:hover { color: var(--ink); border-color: var(--muted); }
 
-  p { margin-bottom: 24px; color: #3a3020; }
+    .page-wrap { max-width: 720px; margin: 0 auto; padding: 10rem 4rem 7rem; }
 
-  /* ── DROP CAP ── */
-  .drop-cap::first-letter {
-    font-family: 'Lora', serif;
-    font-size: 72px;
-    font-weight: 700;
-    line-height: .8;
-    float: left;
-    margin-right: 10px;
-    margin-top: 8px;
-    color: var(--gold);
-  }
+    .page-eyebrow { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
+    .page-eyebrow::after { content: ''; display: block; height: 1px; width: 3rem; background: var(--accent); opacity: 0.5; }
+    .page-title { font-size: clamp(2.2rem, 3.5vw, 3.5rem); font-weight: 300; line-height: 1.15; margin-bottom: 4rem; }
+    .page-title em { font-style: italic; color: var(--accent); }
 
-  /* ── SECTION HEADS ── */
-  h2 {
-    font-family: 'Lora', serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--ink);
-    margin: 48px 0 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--rule);
-  }
+    .article-list { list-style: none; border-top: 1px solid var(--line); }
+    .article-item { border-bottom: 1px solid var(--line); }
+    .article-link { display: block; padding: 2.5rem 0; text-decoration: none; color: inherit; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .article-date { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; color: var(--accent); }
+    .article-lang-badge { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; background: var(--accent-light); color: var(--muted); padding: 0.2rem 0.55rem; border-radius: 2px; margin-left: auto; }
+    .article-title { font-size: 1.6rem; font-weight: 400; line-height: 1.3; margin-bottom: 1rem; color: var(--ink); transition: color 0.2s; }
+    .article-link:hover .article-title { color: var(--accent); }
+    .article-desc { font-size: 1rem; font-weight: 300; color: var(--muted); line-height: 1.8; }
+    .article-read { display: inline-block; margin-top: 1.5rem; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid rgba(181,149,106,0.3); padding-bottom: 2px; transition: border-color 0.2s; }
+    .article-link:hover .article-read { border-color: var(--accent); }
 
-  /* ── PULLQUOTE ── */
-  .pullquote {
-    border-left: 3px solid var(--gold);
-    padding: 20px 28px;
-    margin: 36px 0;
-    background: var(--accent);
-  }
-  .pullquote p {
-    font-family: 'Lora', serif;
-    font-size: 21px;
-    font-style: italic;
-    line-height: 1.7;
-    color: var(--ink);
-    margin: 0;
-  }
+    footer { border-top: 1px solid var(--line); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; }
+    .footer-logo { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); text-decoration: none; }
+    .footer-logo span { color: var(--accent); }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--ink); }
+    .footer-copy { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; color: var(--muted); }
 
-  /* ── CALLOUT BOX ── */
-  .callout {
-    background: var(--ink);
-    color: #f0e8d4;
-    padding: 32px 36px;
-    margin: 36px 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .callout::before {
-    content: '"';
-    font-family: 'Lora', serif;
-    font-size: 100px;
-    color: rgba(184,136,42,.15);
-    position: absolute;
-    top: -10px; left: 16px;
-    line-height: 1;
-  }
-  .callout p {
-    font-family: 'Lora', serif;
-    font-size: 19px;
-    line-height: 1.75;
-    color: #e8dcc8;
-    margin: 0;
-    position: relative;
-  }
-  .callout p strong { color: #ffffff; }
-  .callout-source {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
-    color: var(--gold);
-    letter-spacing: 2px;
-    margin-top: 14px;
-    display: block;
-    position: relative;
-  }
-
-  /* ── THREE AXIOMS ── */
-  .axioms {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    border: 1px solid var(--rule);
-    margin: 36px 0;
-  }
-  .axiom {
-    display: grid;
-    grid-template-columns: 52px 1fr;
-    border-bottom: 1px solid var(--rule);
-  }
-  .axiom:last-child { border-bottom: none; }
-  .axiom-num {
-    background: var(--ink);
-    color: var(--gold);
-    font-family: 'Lora', serif;
-    font-size: 20px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .axiom-body { padding: 20px 24px; }
-  .axiom-title {
-    font-family: 'Lora', serif;
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--ink);
-    margin-bottom: 5px;
-  }
-  .axiom-desc {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    color: var(--muted);
-    line-height: 1.65;
-    margin: 0;
-  }
-
-  /* ── DIAGNOSTIC ── */
-  .diagnostic {
-    background: var(--accent);
-    border: 1px solid var(--rule);
-    padding: 32px 36px;
-    margin: 36px 0;
-  }
-  .diagnostic-title {
-    font-family: 'Lora', serif;
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--ink);
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .diagnostic-title::before {
-    content: '';
-    display: block;
-    width: 4px; height: 18px;
-    background: var(--gold);
-    flex-shrink: 0;
-  }
-  .diag-item {
-    display: flex;
-    gap: 14px;
-    margin-bottom: 12px;
-    align-items: flex-start;
-  }
-  .diag-item:last-child { margin-bottom: 0; }
-  .diag-num {
-    font-family: 'Lora', serif;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--gold);
-    min-width: 20px;
-    padding-top: 1px;
-  }
-  .diag-text {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    color: #3a3020;
-    line-height: 1.65;
-  }
-  .diag-text strong { color: var(--ink); }
-
-  /* ── CLOSING ── */
-  .closing {
-    border-top: 2px solid var(--ink);
-    padding-top: 40px;
-    margin-top: 56px;
-  }
-  .closing-statement {
-    font-family: 'Lora', serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--ink);
-    line-height: 1.45;
-    margin-bottom: 20px;
-  }
-  .closing-statement em {
-    font-style: normal;
-    color: var(--gold);
-  }
-  .closing p { font-size: 17px; }
-
-  /* ── BRAND FOOTER ── */
-  .brand-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 32px 32px;
-    background: var(--ink);
-    margin-top: 0;
-  }
-  .brand-logo {
-    font-family: 'Lora', serif;
-    font-size: 28px;
-    font-weight: 400;
-  }
-  .brand-logo .pricing { color: #f0e8d4; }
-  .brand-logo .goat { color: var(--gold); }
-  .brand-right {
-    text-align: right;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    align-items: flex-end;
-  }
-  .brand-tagline {
-    font-family: 'Lora', serif;
-    font-style: italic;
-    font-size: 14px;
-    color: rgba(240,232,212,.45);
-  }
-  .brand-url {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
-    letter-spacing: 3px;
-    color: var(--gold);
-    text-transform: uppercase;
-  }
-
-  strong { color: var(--ink); font-weight: 600; }
-
-  @media (max-width: 600px) {
-    .hero { padding: 56px 24px 56px; }
-    .article { padding: 48px 20px 64px; }
-    .callout { padding: 24px 22px; }
-    .brand-footer { flex-direction: column; gap: 16px; text-align: center; }
-    .brand-right { align-items: center; }
-  }
-</style>
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 2rem; }
+      .page-wrap { padding: 8rem 2rem 5rem; }
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-eyebrow">Pricing Strategy</div>
-  <h1>Most companies don't <em>reason</em> about pricing.<br>They just copy it.</h1>
-  <p class="hero-sub">What Elon Musk's first principles method reveals about the way we set prices — and why it's costing us more than we think.</p>
-  <div class="hero-meta">
-    <div class="hero-rule"></div>
-    <span class="hero-author">Jan Y. Yang · pricinggoat.com</span>
-  </div>
-</div>
-
-<!-- ARTICLE -->
-<article class="article">
-
-  <p class="drop-cap">There's a famous story about Elon Musk and rocket costs. When SpaceX was starting out, he got a quote for buying a refurbished ICBM from Russia. The number was absurd. So instead of negotiating, he did something different: he looked up the raw material costs for every component of a rocket — aluminium, titanium, copper, carbon fibre — and added them up.</p>
-
-  <p>The total came to about <strong>2% of the asking price</strong>. The rest was markup, habit, and the assumption that rockets just cost what rockets cost.</p>
-
-  <p>That's first principles thinking. Strip away every assumption. Get back to what is actually, physically, undeniably true. Then reason forward from there.</p>
-
-  <p>Now here's what I want to ask you: <strong>when did you last apply that kind of thinking to your pricing?</strong></p>
-
-  <h2>The pricing equivalent of "rockets just cost that much"</h2>
-
-  <p>Most pricing decisions I've seen — across industries, across company sizes — aren't really decisions at all. They're habits dressed up as strategy.</p>
-
-  <p>"We benchmarked competitors." <br>
-  "We added a standard margin to cost." <br>
-  "We've always priced this way."</p>
-
-  <p>This is what Musk calls analogical thinking. You look at how others have solved the problem and copy the answer. It's fast, it's safe, and it's almost certainly leaving money on the table — or worse, pricing you out of markets you deserve to be in.</p>
-
-  <div class="pullquote">
-    <p>"The problem with analogical pricing isn't that it's wrong. It's that it borrows someone else's mistakes — and you have no idea what those mistakes are."</p>
-  </div>
-
-  <p>First principles pricing asks a harder question: <em>why would a customer pay for this at all?</em> Not what the market charges. Not what your spreadsheet says. Why, from first principles, does this product create value — and how much of that value is it reasonable to capture?</p>
-
-  <h2>Three axioms that don't change</h2>
-
-  <p>When you strip pricing down to its foundations, three things hold true regardless of industry, product, or market:</p>
-
-  <div class="axioms">
-    <div class="axiom">
-      <div class="axiom-num">I</div>
-      <div class="axiom-body">
-        <div class="axiom-title">Price is a currency translation of value — not an arithmetic result of cost</div>
-        <p class="axiom-desc">Customers pay for outcomes, not your inputs. Cost sets your floor. Value sets your ceiling. Everything between is a strategic choice.</p>
-      </div>
+  <nav>
+    <a href="../index.html" class="nav-logo">Pricing<span>Goat</span></a>
+    <div style="display:flex;align-items:center;gap:2rem;">
+      <a href="../index.html" class="nav-back"><span class="lang-en">← Home</span><span class="lang-zh">← 首页</span></a>
+      <button class="lang-toggle" id="langToggle">中文</button>
     </div>
-    <div class="axiom">
-      <div class="axiom-num">II</div>
-      <div class="axiom-body">
-        <div class="axiom-title">Willingness to pay (WTP) is real, measurable, and moveable</div>
-        <p class="axiom-desc">Every customer has a mental price range for every product. It's not fixed. Reference points, value framing, and context all shift it — legally and legitimately.</p>
-      </div>
-    </div>
-    <div class="axiom">
-      <div class="axiom-num">III</div>
-      <div class="axiom-body">
-        <div class="axiom-title">Price is a signal — it actively shapes how customers judge your value</div>
-        <p class="axiom-desc">In markets where quality is hard to observe — professional services, enterprise software, high-stakes decisions — a low price doesn't attract buyers. It makes them nervous.</p>
-      </div>
-    </div>
-  </div>
+  </nav>
 
-  <p>These aren't pricing tactics. They're the physics of pricing. Violate them, and no amount of sales skill or marketing budget will fully compensate.</p>
+  <main class="page-wrap">
 
-  <h2>The three diagnoses behind "it's too expensive"</h2>
+    <div class="page-eyebrow"><span class="lang-en">Articles</span><span class="lang-zh">文章</span></div>
 
-  <p>Here's where first principles thinking gets practically useful. When a customer says your price is too high, that sentence could mean three completely different things:</p>
+    <h1 class="page-title lang-en">Notes on <em>pricing</em></h1>
+    <h1 class="page-title lang-zh">定价<em>随笔</em></h1>
 
-  <p><strong>1. Their WTP is genuinely below your price.</strong> This is a real pricing problem. Rare, but it happens.<br>
-  <strong>2. They don't fully perceive the value.</strong> This is a communication problem. Far more common.<br>
-  <strong>3. They're testing you.</strong> This is a negotiation tactic. Also very common.</p>
+    <ul class="article-list">
+      <li class="article-item">
+        <a href="first-principles-pricing.html" class="article-link">
+          <div class="article-meta">
+            <time class="article-date" datetime="2026-04-23">2026-04-23</time>
+            <span class="article-lang-badge">EN</span>
+          </div>
+          <h2 class="article-title lang-en">The First Principles of Pricing</h2>
+          <h2 class="article-title lang-zh">定价的第一性原理</h2>
+          <p class="article-desc lang-en">Most companies don't reason about pricing. They copy it. What first principles thinking reveals about the way we set prices.</p>
+          <p class="article-desc lang-zh">大多数企业并不推理定价，而是照搬定价。第一性原理思维揭示了我们设定价格的方式，以及其中被忽视的代价。</p>
+          <span class="article-read"><span class="lang-en">Read article →</span><span class="lang-zh">阅读文章（英文） →</span></span>
+        </a>
+      </li>
+    </ul>
 
-  <p>The default response — discounting — only solves case one. In cases two and three, it actively damages you. You've just told the customer that your price had no logic behind it, and that pressure works.</p>
+  </main>
 
-  <div class="callout">
-    <p>McKinsey doesn't discount. Part of the reason is exactly this: <strong>a lower price would cause clients to question why they're so cheap</strong> — and once that question is in the room, it's very hard to remove.</p>
-    <span class="callout-source">On pricing as a quality signal</span>
-  </div>
+  <footer>
+    <a href="../index.html" class="footer-logo">Pricing<span>Goat</span></a>
+    <ul class="footer-links">
+      <li><a href="../index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a></li>
+      <li><a href="../imprint.html"><span class="lang-en">Imprint</span><span class="lang-zh">版权声明</span></a></li>
+      <li><a href="../privacy.html"><span class="lang-en">Privacy</span><span class="lang-zh">隐私政策</span></a></li>
+    </ul>
+    <span class="footer-copy">© 2026 PricingGoat.com</span>
+  </footer>
 
-  <h2>A quick diagnostic</h2>
-
-  <p>If you want to know whether your pricing is built on first principles or habit, answer these honestly:</p>
-
-  <div class="diagnostic">
-    <div class="diagnostic-title">First Principles Pricing Audit</div>
-    <div class="diag-item"><div class="diag-num">1.</div><div class="diag-text">Can you name the <strong>specific customer outcome</strong> your price is anchored to — not your cost, not a competitor's price?</div></div>
-    <div class="diag-item"><div class="diag-num">2.</div><div class="diag-text">Have you ever <strong>actually measured</strong> your customers' WTP — with a Van Westendorp test, conjoint analysis, or even structured interviews?</div></div>
-    <div class="diag-item"><div class="diag-num">3.</div><div class="diag-text">Do you know what your customer's <strong>best alternative</strong> costs — including their switching costs?</div></div>
-    <div class="diag-item"><div class="diag-num">4.</div><div class="diag-text">When a customer pushes back on price, can you <strong>diagnose which of the three cases</strong> it is before you respond?</div></div>
-    <div class="diag-item"><div class="diag-num">5.</div><div class="diag-text">If your top competitor raised prices by 30% tomorrow, would your pricing logic <strong>stand on its own</strong> — or would you just follow?</div></div>
-  </div>
-
-  <p>If you answered "no" or "not sure" to three or more of these, your pricing is most likely analogical — borrowed from the market, inherited from history, or arrived at by gut feel. That's not necessarily a crisis. But it is an opportunity.</p>
-
-  <h2>One reframe to take away</h2>
-
-  <p>Tesla didn't succeed because it priced cheaply. It succeeded because it redefined what value meant in the car category — and then priced accordingly. The price followed the value logic, not the other way around.</p>
-
-  <div class="closing">
-    <div class="closing-statement">Pricing is <em>strategy</em>,<br>not arithmetic.</div>
-    <p>The market's price is just the average of everyone else's assumptions. It has no authority over what your product is worth.</p>
-    <p>Go back to first principles. Figure out what value you actually create, for whom, and under what conditions. Then build your price from there — not from what everyone else charges.</p>
-    <p style="color:var(--muted); font-size:16px; margin-top:32px;">— Jan Y. Yang writes about pricing strategy, willingness-to-pay measurement, and pricing institutionalization at <strong style="color:var(--gold);">pricinggoat.com</strong></p>
-  </div>
-
-</article>
-
-<!-- BRAND FOOTER -->
-<div class="brand-footer">
-  <div class="brand-logo"><span class="pricing">pricing</span><span class="goat">goat</span></div>
-  <div class="brand-right">
-    <div class="brand-tagline">Pricing by Design</div>
-    <div class="brand-url">PRICINGGOAT.COM</div>
-  </div>
-</div>
-
+  <script>
+    const toggle = document.getElementById('langToggle');
+    let isZh = navigator.language.startsWith('zh');
+    const apply = () => {
+      document.body.classList.toggle('zh', isZh);
+      toggle.textContent = isZh ? 'EN' : '中文';
+      document.documentElement.lang = isZh ? 'zh-Hans' : 'en';
+    };
+    apply();
+    toggle.addEventListener('click', () => { isZh = !isZh; apply(); });
+  </script>
 </body>
 </html>
