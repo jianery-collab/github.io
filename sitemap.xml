@@ -54,6 +54,46 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Article: 这泼天富贵该怎么接？ (ZH only) -->
+  <url>
+    <loc>https://www.pricinggoat.com/zh/articles/price-realization.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article: 为什么我不再给新客户看PPT了 (ZH only) -->
+  <url>
+    <loc>https://www.pricinggoat.com/zh/articles/no-slides-for-new-clients.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article: 2B销售的价格悖论 (ZH only) -->
+  <url>
+    <loc>https://www.pricinggoat.com/zh/articles/b2b-sales-price-paradox.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article: 从定价视角看FDE的底层逻辑 (ZH only) -->
+  <url>
+    <loc>https://www.pricinggoat.com/zh/articles/fde-pricing-logic.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article: 写给新上任的定价负责人 (ZH only) -->
+  <url>
+    <loc>https://www.pricinggoat.com/zh/articles/to-new-pricing-leaders.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Article: The Quiet Leap (EN only) -->
   <url>
     <loc>https://www.pricinggoat.com/articles/samsung-china-quiet-leap.html</loc>
@@ -65,6 +105,38 @@
   <!-- Article: The First Principles of Pricing (EN only until a ZH version exists) -->
   <url>
     <loc>https://www.pricinggoat.com/articles/first-principles-pricing.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article: AI vs. Humans at Scale (EN only) -->
+  <url>
+    <loc>https://www.pricinggoat.com/articles/block-layoff-ai-org-redesign.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article: Wake Up: Price Does Not Equal Value (EN only) -->
+  <url>
+    <loc>https://www.pricinggoat.com/articles/price-does-not-equal-value.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article: Is Your Pricing Process Slowing You Down? (EN only) -->
+  <url>
+    <loc>https://www.pricinggoat.com/articles/pricing-process-speed.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article: Chinese EV Trailblazers (EN only) -->
+  <url>
+    <loc>https://www.pricinggoat.com/articles/chinese-ev-trailblazers.html</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
