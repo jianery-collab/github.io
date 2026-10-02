@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vertical AI 的悖论：数据越值钱，你越不值钱？ · 杨一安博士</title>
+
+<!-- Open Graph -->
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Vertical AI 的悖论：数据越值钱，你越不值钱？" />
+<meta property="og:description" content="数据越有价值，客户越不愿意让你拿去训练。Vertical AI 的护城河究竟在模型、行业知识、业务流程，还是客户自己的数据？" />
+<meta property="og:site_name"   content="PricingGoat" />
+<meta property="og:url"         content="https://www.pricinggoat.com/zh/articles/vertical-ai-paradox.html" />
+<meta property="og:image"       content="https://www.pricinggoat.com/og-image.png" />
+<meta property="og:locale"      content="zh_CN" />
+<link rel="canonical" href="https://www.pricinggoat.com/zh/articles/vertical-ai-paradox.html" />
+<meta name="author"             content="杨一安" />
+<meta name="description"        content="数据越有价值，客户越不愿意让你拿去训练。Vertical AI 的护城河究竟在模型、行业知识、业务流程，还是客户自己的数据？" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Vertical AI 的悖论：数据越值钱，你越不值钱？",
+  "description": "数据越有价值，客户越不愿意让你拿去训练。Vertical AI 的护城河究竟在模型、行业知识、业务流程，还是客户自己的数据？",
+  "url": "https://www.pricinggoat.com/zh/articles/vertical-ai-paradox.html",
+  "datePublished": "2026-10-01",
+  "dateModified": "2026-10-02",
+  "inLanguage": "zh-Hans",
+  "image": "https://www.pricinggoat.com/og-image.png",
+  "author": { "@type": "Person", "@id": "https://www.pricinggoat.com/#person", "name": "杨一安", "url": "https://www.pricinggoat.com/zh/" },
+  "publisher": { "@type": "Organization", "name": "PricingGoat", "url": "https://www.pricinggoat.com/" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #16120a;
+    --paper:    #f7f3ec;
+    --gold:     #b8882a;
+    --gold-lt:  #d4a84b;
+    --muted:    #7a6e5a;
+    --rule:     #ddd5c0;
+    --accent:   #f0e8d4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    line-height: 1.85;
+    padding: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    padding: 80px 48px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,136,42,.18) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 56px;
+    position: relative;
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .hero-nav a {
+    color: rgba(240,232,212,.5);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .hero-nav a:hover { color: var(--gold-lt); }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+  }
+  .hero-eyebrow::after {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+    opacity: .6;
+  }
+  .hero h1 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    max-width: 720px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold-lt);
+  }
+  .hero-sub {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(240,232,212,.6);
+    max-width: 580px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  .hero-rule { width: 32px; height: 1px; background: var(--gold); opacity: .5; }
+  .hero-author {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 13px;
+    color: rgba(240,232,212,.4);
+    letter-spacing: 1px;
+  }
+
+  /* ── ARTICLE ── */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+  }
+
+  p { margin-bottom: 24px; color: #3a3020; }
+
+  /* ── DROP CAP ── */
+  .drop-cap::first-letter {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: .8;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+    color: var(--gold);
+  }
+
+  /* ── SECTION HEADS ── */
+  h2 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 48px 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    margin: 36px 0;
+    background: var(--accent);
+  }
+  .pullquote p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: var(--ink);
+    color: #f0e8d4;
+    padding: 32px 36px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .callout::before {
+    content: '"';
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 100px;
+    color: rgba(184,136,42,.15);
+    position: absolute;
+    top: -10px; left: 16px;
+    line-height: 1;
+  }
+  .callout p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #e8dcc8;
+    margin: 0;
+    position: relative;
+  }
+  .callout p strong { color: #ffffff; }
+  .callout-source {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-top: 14px;
+    display: block;
+    position: relative;
+  }
+
+  /* ── THREE AXIOMS ── */
+  .axioms {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin: 36px 0;
+  }
+  .axiom {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .axiom:last-child { border-bottom: none; }
+  .axiom-num {
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .axiom-body { padding: 20px 24px; }
+  .axiom-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .axiom-desc {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── DIAGNOSTIC ── */
+  .diagnostic {
+    background: var(--accent);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    margin: 36px 0;
+  }
+  .diagnostic-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .diagnostic-title::before {
+    content: '';
+    display: block;
+    width: 4px; height: 18px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .diag-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .diag-item:last-child { margin-bottom: 0; }
+  .diag-num {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 20px;
+    padding-top: 1px;
+  }
+  .diag-text {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: #3a3020;
+    line-height: 1.65;
+  }
+  .diag-text strong { color: var(--ink); }
+
+  /* ── CLOSING ── */
+  .closing {
+    border-top: 2px solid var(--ink);
+    padding-top: 40px;
+    margin-top: 56px;
+  }
+  .closing-statement {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+  .closing-statement em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .closing p { font-size: 17px; }
+
+  /* ── BRAND FOOTER ── */
+  .brand-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 32px;
+    background: var(--ink);
+    margin-top: 0;
+  }
+  a.brand-logo { text-decoration: none; }
+  .brand-logo {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 28px;
+    font-weight: 400;
+  }
+  .brand-logo .pricing { color: #f0e8d4; }
+  .brand-logo .goat { color: var(--gold); }
+  .brand-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .brand-tagline {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(240,232,212,.45);
+  }
+  .brand-url {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* Chinese text: no extra tracking on labels, line breaks inside flow lists */
+  .hero-eyebrow, .hero-nav { letter-spacing: 2px; }
+  .flow p { margin-bottom: 0; }
+  em, .pullquote p { font-style: normal; }
+
+  .credit { color: var(--muted); font-size: 16px; margin-top: 32px; }
+  .article a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,136,42,.35); transition: border-color .2s; }
+  .article a:hover { border-color: var(--gold); }
+
+  @media (max-width: 600px) {
+    .hero { padding: 56px 24px 56px; }
+    .article { padding: 48px 20px 64px; }
+    .callout { padding: 24px 22px; }
+    .brand-footer { flex-direction: column; gap: 16px; text-align: center; }
+    .brand-right { align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <nav class="hero-nav" aria-label="网站导航">
+    <a href="/zh/articles/">← 全部文章</a>
+    <a href="/zh/">首页</a>
+  </nav>
+  <div class="hero-eyebrow">AI 商业模式</div>
+  <h1>Vertical AI 的<em>悖论</em>：<br>数据越值钱，你越不值钱？</h1>
+  <p class="hero-sub">数据越有价值，客户越不愿意让你拿去训练。</p>
+  <div class="hero-meta">
+    <div class="hero-rule"></div>
+    <span class="hero-author">杨一安 · pricinggoat.com</span>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<article class="article">
+
+  <p class="drop-cap">大家都说 AI 时代数据最宝贵。可对于 Vertical AI 来说，事情可能恰恰相反：数据越有价值，客户越不愿意让你拿去训练。</p>
+
+  <p>于是，一个很有意思的悖论出现了：你拥有的数据越珍贵，你能跨客户使用的数据反而越少。</p>
+
+  <p>这可能是 Vertical AI 商业模式里最值得琢磨的问题。</p>
+
+  <h2>Vertical AI 到底在卖什么？</h2>
+
+  <p>先从一个最基本的问题开始。一家 Vertical AI 公司，如果自己不训练基础模型，而是调用 OpenAI、Anthropic、DeepSeek、Qwen 等模型，它到底在卖什么？</p>
+
+  <p>客户自己不能用 ChatGPT、Claude 或其他模型吗？如果客户可以直接问“帮我分析一下这个产品应该怎么定价”，为什么还要付钱给一家 Pricing AI 公司？</p>
+
+  <p>如果 AI 公司只是把大模型套上行业术语，再加一个漂亮的界面，那它很容易变成“大模型增值分销”：</p>
+
+  <div class="pullquote flow">
+    <p>用户 → AI 应用 → 大模型 → AI 应用 → 用户</p>
+  </div>
+
+  <p>当然可以做成生意，但很难形成深的护城河。</p>
+
+  <p>所以，Vertical AI 真正要回答的问题不是“我能不能调用一个更聪明的模型？”，而是：<strong>“为什么客户必须通过我完成这件事？”</strong></p>
+
+  <h2>Token 是成本，不是价值</h2>
+
+  <p>很多 AI 应用会按照 Token 收费，或者把模型费用单独列出来。对于模型 API 提供商来说，这很合理：Token 就是资源消耗。</p>
+
+  <p>但对于 Vertical AI 应用来说，Token 更像什么？COGS。</p>
+
+  <p>客户真正买的不是你消耗了多少 Token，而是你帮他做成了什么：少做多少人工工作，多处理多少订单，少犯多少错误，提高多少转化率，改善多少毛利，做出多少更好的定价决策。</p>
+
+  <p>所以，一个成熟的 Vertical AI 应用，最终应该尽可能做到：</p>
+
+  <div class="pullquote">
+    <p>把模型成本藏在产品背后，把客户价值放在收费前台。</p>
+  </div>
+
+  <p>按 Token 收费，卖的是模型消耗。按结果、决策或业务价值收费，卖的是客户价值。</p>
+
+  <p>问题是：你到底是在卖 AI 基础设施，还是在卖一个业务结果？</p>
+
+  <h2>Domain Knowledge 是护城河吗？</h2>
+
+  <p>很多 Vertical AI 公司会说：“我们的护城河是行业知识。”</p>
+
+  <p>这当然有价值。一家 Pricing AI 公司，应该比通用聊天机器人更懂价格体系、价格瀑布、WTP、价格弹性、折扣政策和报价流程。</p>
+
+  <p>但问题也很明显：大模型本身正在越来越懂这些东西，而且大模型公司完全可能继续往应用层走。所以，“我们比 ChatGPT 更懂这个行业”并不是特别坚固的护城河。</p>
+
+  <p><strong>Domain Knowledge 能让你进入赛道，但不一定能让你守住赛道。</strong></p>
+
+  <h2>Workflow 看起来更有希望</h2>
+
+  <p>真正有价值的 Vertical AI，可能不是告诉你“这个产品建议涨价 7%”，而是直接进入业务流程：</p>
+
+  <div class="diagnostic">
+    <div class="diag-item"><div class="diag-num">1.</div><div class="diag-text">产品经理提出新品</div></div>
+    <div class="diag-item"><div class="diag-num">2.</div><div class="diag-text">AI 分析客户价值</div></div>
+    <div class="diag-item"><div class="diag-num">3.</div><div class="diag-text">建立价格区间</div></div>
+    <div class="diag-item"><div class="diag-num">4.</div><div class="diag-text">推荐目标价格</div></div>
+    <div class="diag-item"><div class="diag-num">5.</div><div class="diag-text">检查竞争环境</div></div>
+    <div class="diag-item"><div class="diag-num">6.</div><div class="diag-text">进入审批</div></div>
+    <div class="diag-item"><div class="diag-num">7.</div><div class="diag-text">输出报价</div></div>
+    <div class="diag-item"><div class="diag-num">8.</div><div class="diag-text">记录成交价格</div></div>
+    <div class="diag-item"><div class="diag-num">9.</div><div class="diag-text">反馈给下一次决策</div></div>
+  </div>
+
+  <p>这时候，AI 就不再只是一个聊天机器人。它开始成为业务流程的一部分。</p>
+
+  <p>但新的问题马上出现了：每个客户的 Workflow 都不一样。A 公司三级审批，B 公司没有审批；C 公司把 Pricing 放在 Sales，D 公司放在 Product Management；E 公司甚至没有正式的 Pricing 组织。</p>
+
+  <p>于是 Vertical AI 很容易变成 AI + Implementation + Consulting。产品看起来是 SaaS，实际交付越来越像咨询项目。</p>
+
+  <p>这并不是坏事，但它会影响规模化。</p>
+
+  <h2>真正棘手的问题：数据</h2>
+
+  <p>很多 AI 商业模式都有一个非常漂亮的故事，一个完美的数据飞轮：</p>
+
+  <div class="pullquote flow">
+    <p>更多客户 → 更多数据 → 更好的 AI → 更好的产品 → 更多客户</p>
+  </div>
+
+  <p>但 B2B Vertical AI 可能恰恰是这个故事最难成立的地方。</p>
+
+  <p>还是以 Pricing AI 为例。假设客户 A 把大量数据交给你：成交价格、折扣、客户画像、赢单和输单、竞争对手报价、WTP、价格弹性、销售谈判记录……这些数据当然非常有价值，你可以用它们让 AI 变得更聪明。</p>
+
+  <p>但问题来了：客户 A 为什么要允许你拿这些数据去训练一个可以服务客户 B 的系统？</p>
+
+  <p>如果 A 是一家汽车零部件公司，它可能愿意让你利用自己的历史数据帮助自己提高报价能力。但它未必愿意接受：</p>
+
+  <div class="callout">
+    <p>“谢谢你提供的数据。我们现在用这些数据训练 AI，然后把它变得更聪明，再卖给你的竞争对手。”</p>
+  </div>
+
+  <p>这就是 Vertical AI 最有意思的地方。<strong>越有价值的数据，越具有竞争属性；而越具有竞争属性的数据，越难共享。</strong></p>
+
+  <h2>数据飞轮可能根本转不起来</h2>
+
+  <p>传统 SaaS 的逻辑是：</p>
+
+  <div class="pullquote flow">
+    <p>A + B + C 的数据 → 更好的产品 → 所有客户受益</p>
+  </div>
+
+  <p>但 Vertical AI 很可能变成：</p>
+
+  <div class="pullquote flow">
+    <p>A 的数据 → A 的 AI</p>
+    <p>B 的数据 → B 的 AI</p>
+    <p>C 的数据 → C 的 AI</p>
+  </div>
+
+  <p>大家可以使用同一个基础模型，但最有价值的那部分数据，被严格隔离。</p>
+
+  <p>于是你得到的可能不是一个越来越聪明的“行业大脑”，而是 100 个越来越聪明的客户自己的大脑。这两种商业模式，差别很大。</p>
+
+  <h2>那么 Vertical AI 的护城河到底是什么？</h2>
+
+  <p>我越来越倾向于把它看成四层。</p>
+
+  <div class="axioms">
+    <div class="axiom">
+      <div class="axiom-num">I</div>
+      <div class="axiom-body">
+        <div class="axiom-title">Domain Knowledge</div>
+        <p class="axiom-desc">你懂这个行业。这是入场券。</p>
+      </div>
+    </div>
+    <div class="axiom">
+      <div class="axiom-num">II</div>
+      <div class="axiom-body">
+        <div class="axiom-title">Domain Workflow</div>
+        <p class="axiom-desc">你知道业务到底怎么发生，并且能进入真实流程。</p>
+      </div>
+    </div>
+    <div class="axiom">
+      <div class="axiom-num">III</div>
+      <div class="axiom-body">
+        <div class="axiom-title">Private Customer Intelligence</div>
+        <p class="axiom-desc">你持续积累一个客户自己的数据、决策历史和反馈。这些数据不需要拿去训练所有客户，它们可以成为客户自己的长期资产。</p>
+      </div>
+    </div>
+    <div class="axiom">
+      <div class="axiom-num">IV</div>
+      <div class="axiom-body">
+        <div class="axiom-title">System of Action</div>
+        <p class="axiom-desc">AI 不只是给建议。它开始真正执行分析、判断、推荐、审批、报价、跟踪和反馈。</p>
+      </div>
+    </div>
+  </div>
+
+  <p>到了这里，客户买的就不再是一个 AI 功能，而是一个业务系统。</p>
+
+  <h2>这也改变了我们理解 AI 数据护城河的方式</h2>
+
+  <p>过去我们很容易认为：数据越多，AI 越强。</p>
+
+  <p>但在 B2B Vertical AI 里，更准确的说法可能是：能被共享的数据越多，AI 越容易形成规模效应。而真正有商业价值的数据，恰恰往往最难共享。</p>
+
+  <p>所以 Vertical AI 真正应该问的不是“我们有多少客户数据？”，而是：哪些数据可以共享？哪些数据必须隔离？哪些能力可以泛化？哪些知识必须留在客户自己的系统里？</p>
+
+  <p>一个比较现实的结构可能是：</p>
+
+  <div class="diagnostic">
+    <div class="diag-item"><div class="diag-num">1.</div><div class="diag-text">共享基础模型</div></div>
+    <div class="diag-item"><div class="diag-num">2.</div><div class="diag-text">共享行业方法论</div></div>
+    <div class="diag-item"><div class="diag-num">3.</div><div class="diag-text">私有客户数据</div></div>
+    <div class="diag-item"><div class="diag-num">4.</div><div class="diag-text">客户专属 Workflow</div></div>
+    <div class="diag-item"><div class="diag-num">5.</div><div class="diag-text">客户自己的决策历史</div></div>
+  </div>
+
+  <p>模型负责“会思考”。Vertical AI 负责“知道怎么把思考应用到这个行业”。客户自己的数据则负责“知道怎么服务这个客户”。</p>
+
+  <h2>所以，Vertical AI 的长期机会在哪里？</h2>
+
+  <p>我并不认为 Vertical AI 没有长期机会，但我会换一种方式判断它。</p>
+
+  <p>不是“这家公司有没有很多数据？”，而是“这些数据能不能形成持续的规模效应？”</p>
+
+  <p>不是“它懂不懂这个行业？”，而是“它有没有进入一个足够重要的业务流程？”</p>
+
+  <p>不是“它用了哪个模型？”，而是“如果明天基础模型便宜 90%，客户为什么还愿意继续付钱？”</p>
+
+  <p>也不是“客户越多，AI 会不会自动越来越聪明？”，而是“即使每个客户的数据都不能拿出来训练，它还能不能持续创造价值？”</p>
+
+  <p>这些问题，比“用了 GPT 还是 DeepSeek”重要得多。</p>
+
+  <div class="closing">
+    <p>Vertical AI 真正的竞争，可能不是谁的 AI 更聪明，也不只是谁的数据更多，而是：谁能在不侵犯客户竞争优势的前提下，持续进入客户重要的业务流程，并让客户自己的数据越来越有价值。</p>
+    <p>这其实是一个很奇怪的商业模式：客户越重要，数据越敏感；数据越敏感，越不能共享；越不能共享，传统意义上的数据网络效应就越难形成。</p>
+    <div class="closing-statement">数据越值钱，你越<em>不值钱</em>？</div>
+    <p>也许，这正是 Vertical AI 最值得研究的悖论。</p>
+    <p class="credit">首发于微信公众号「定价制胜-Dr. Pricing」，2026年10月。</p>
+  </div>
+
+</article>
+
+<!-- BRAND FOOTER -->
+<div class="brand-footer">
+  <a href="/zh/" class="brand-logo"><span class="pricing">pricing</span><span class="goat">goat</span></a>
+  <div class="brand-right">
+    <div class="brand-tagline">Pricing by Design</div>
+    <div class="brand-url">PRICINGGOAT.COM</div>
+  </div>
+</div>
+
+</body>
+</html>

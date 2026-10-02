@@ -46,6 +46,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/"/>
   </url>
 
+  <!-- Article: Vertical AI 的悖论 (ZH only) -->
+  <url>
+    <loc>https://www.pricinggoat.com/zh/articles/vertical-ai-paradox.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Article: The Quiet Leap (EN only) -->
   <url>
     <loc>https://www.pricinggoat.com/articles/samsung-china-quiet-leap.html</loc>
