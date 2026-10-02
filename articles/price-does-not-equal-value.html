@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wake Up: Price Does Not Equal Value · Jan Y. Yang</title>
+
+<!-- Open Graph / LinkedIn preview -->
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Wake Up: Price Does Not Equal Value" />
+<meta property="og:description" content="Customers may genuinely appreciate your value and still not be willing or able to pay the full price. Where price and value part ways, and what to do about it." />
+<meta property="og:site_name"   content="PricingGoat" />
+<meta property="og:url"         content="https://www.pricinggoat.com/articles/price-does-not-equal-value.html" />
+<meta property="og:image"       content="https://www.pricinggoat.com/og-image.png" />
+<link rel="canonical" href="https://www.pricinggoat.com/articles/price-does-not-equal-value.html" />
+<meta name="author"             content="Jan Y. Yang" />
+<meta name="description"        content="Customers may genuinely appreciate your value and still not be willing or able to pay the full price. Where price and value part ways, and what to do about it." />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Wake Up: Price Does Not Equal Value",
+  "description": "Customers may genuinely appreciate your value and still not be willing or able to pay the full price. Where price and value part ways, and what to do about it.",
+  "url": "https://www.pricinggoat.com/articles/price-does-not-equal-value.html",
+  "datePublished": "2024-11-25",
+  "dateModified": "2026-10-02",
+  "inLanguage": "en",
+  "image": "https://www.pricinggoat.com/og-image.png",
+  "author": {
+    "@type": "Person",
+    "@id": "https://www.pricinggoat.com/#person",
+    "name": "Jan Y. Yang",
+    "url": "https://www.pricinggoat.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PricingGoat",
+    "url": "https://www.pricinggoat.com/"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #16120a;
+    --paper:    #f7f3ec;
+    --gold:     #b8882a;
+    --gold-lt:  #d4a84b;
+    --muted:    #7a6e5a;
+    --rule:     #ddd5c0;
+    --accent:   #f0e8d4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.85;
+    padding: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    padding: 80px 48px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,136,42,.18) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 56px;
+    position: relative;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .hero-nav a {
+    color: rgba(240,232,212,.5);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .hero-nav a:hover { color: var(--gold-lt); }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+  }
+  .hero-eyebrow::after {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+    opacity: .6;
+  }
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    max-width: 720px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold-lt);
+  }
+  .hero-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(240,232,212,.6);
+    max-width: 580px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  .hero-rule { width: 32px; height: 1px; background: var(--gold); opacity: .5; }
+  .hero-author {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: rgba(240,232,212,.4);
+    letter-spacing: 1px;
+  }
+
+  /* ── ARTICLE ── */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+  }
+
+  p { margin-bottom: 24px; color: #3a3020; }
+
+  /* ── DROP CAP ── */
+  .drop-cap::first-letter {
+    font-family: 'Lora', serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: .8;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+    color: var(--gold);
+  }
+
+  /* ── SECTION HEADS ── */
+  h2 {
+    font-family: 'Lora', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 48px 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    margin: 36px 0;
+    background: var(--accent);
+  }
+  .pullquote p {
+    font-family: 'Lora', serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: var(--ink);
+    color: #f0e8d4;
+    padding: 32px 36px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .callout::before {
+    content: '"';
+    font-family: 'Lora', serif;
+    font-size: 100px;
+    color: rgba(184,136,42,.15);
+    position: absolute;
+    top: -10px; left: 16px;
+    line-height: 1;
+  }
+  .callout p {
+    font-family: 'Lora', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #e8dcc8;
+    margin: 0;
+    position: relative;
+  }
+  .callout p strong { color: #ffffff; }
+  .callout-source {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-top: 14px;
+    display: block;
+    position: relative;
+  }
+
+  /* ── THREE AXIOMS ── */
+  .axioms {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin: 36px 0;
+  }
+  .axiom {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .axiom:last-child { border-bottom: none; }
+  .axiom-num {
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .axiom-body { padding: 20px 24px; }
+  .axiom-title {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .axiom-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── DIAGNOSTIC ── */
+  .diagnostic {
+    background: var(--accent);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    margin: 36px 0;
+  }
+  .diagnostic-title {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .diagnostic-title::before {
+    content: '';
+    display: block;
+    width: 4px; height: 18px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .diag-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .diag-item:last-child { margin-bottom: 0; }
+  .diag-num {
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 20px;
+    padding-top: 1px;
+  }
+  .diag-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: #3a3020;
+    line-height: 1.65;
+  }
+  .diag-text strong { color: var(--ink); }
+
+  /* ── CLOSING ── */
+  .closing {
+    border-top: 2px solid var(--ink);
+    padding-top: 40px;
+    margin-top: 56px;
+  }
+  .closing-statement {
+    font-family: 'Lora', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+  .closing-statement em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .closing p { font-size: 17px; }
+
+  /* ── BRAND FOOTER ── */
+  .brand-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 32px;
+    background: var(--ink);
+    margin-top: 0;
+  }
+  a.brand-logo { text-decoration: none; }
+  .brand-logo {
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    font-weight: 400;
+  }
+  .brand-logo .pricing { color: #f0e8d4; }
+  .brand-logo .goat { color: var(--gold); }
+  .brand-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .brand-tagline {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(240,232,212,.45);
+  }
+  .brand-url {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  .credit { color: var(--muted); font-size: 16px; margin-top: 32px; }
+  .article a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,136,42,.35); transition: border-color .2s; }
+  .article a:hover { border-color: var(--gold); }
+
+  @media (max-width: 600px) {
+    .hero { padding: 56px 24px 56px; }
+    .article { padding: 48px 20px 64px; }
+    .callout { padding: 24px 22px; }
+    .brand-footer { flex-direction: column; gap: 16px; text-align: center; }
+    .brand-right { align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <nav class="hero-nav" aria-label="Site">
+    <a href="/articles/">← All articles</a>
+    <a href="/">Home</a>
+  </nav>
+  <div class="hero-eyebrow">Value-Based Pricing</div>
+  <h1>Wake up: price does not <em>equal</em> value</h1>
+  <p class="hero-sub">Where willingness to pay and perceived value part ways, and what to do when they do.</p>
+  <div class="hero-meta">
+    <div class="hero-rule"></div>
+    <span class="hero-author">Jan Y. Yang · pricinggoat.com</span>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<article class="article">
+
+  <p class="drop-cap">In the early days of my career as a pricing consultant, I was taught that price should equal value. I truly believed in that.</p>
+
+  <p>As I grew older (and hopefully wiser?), I started questioning the price-value equation.</p>
+
+  <h2>Where price and value part ways</h2>
+
+  <p>The reality is, there are at least a handful of scenarios in which the price a customer is willing to pay differs from the value they perceive in a product or service. For example:</p>
+
+  <div class="axioms">
+    <div class="axiom">
+      <div class="axiom-num">I</div>
+      <div class="axiom-body">
+        <div class="axiom-title">Luxury aspirations vs. budget realities</div>
+        <p class="axiom-desc">A customer might dream of owning a high-end car, fully understanding its premium value, but they can only afford a base model or a competitor's lower-priced offering.</p>
+      </div>
+    </div>
+    <div class="axiom">
+      <div class="axiom-num">II</div>
+      <div class="axiom-body">
+        <div class="axiom-title">Perceived necessity</div>
+        <p class="axiom-desc">Essential products, like certain medications, might be highly valued for their impact on health, yet customers may resist paying the price due to financial constraints or lack of insurance coverage.</p>
+      </div>
+    </div>
+    <div class="axiom">
+      <div class="axiom-num">III</div>
+      <div class="axiom-body">
+        <div class="axiom-title">Experience gaps</div>
+        <p class="axiom-desc">A first-time buyer may not fully appreciate the value of a premium software solution and thus finds its price too high, while a seasoned user might find the price fair.</p>
+      </div>
+    </div>
+    <div class="axiom">
+      <div class="axiom-num">IV</div>
+      <div class="axiom-body">
+        <div class="axiom-title">Market dynamics</div>
+        <p class="axiom-desc">Competitive pressures can force companies to offer steep discounts even when the product's value clearly exceeds its price tag.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pullquote">
+    <p>Customers may genuinely appreciate the value of what you're offering, but they may not be willing or able to pay the full price.</p>
+  </div>
+
+  <h2>When the price falls below the value</h2>
+
+  <p>So, what can we do about it?</p>
+
+  <p>One of my guiding principles is that the list price should still align with the value you believe your product or service delivers. This reinforces your positioning in the market and avoids diluting your brand. But to bridge the gap between price and perceived affordability, smart discounting can be a powerful tool. For example:</p>
+
+  <div class="diagnostic">
+    <div class="diag-item"><div class="diag-num">1.</div><div class="diag-text"><strong>Targeted discounts:</strong> offer promotions based on customer segmentation, such as first-time buyers, students, or loyal customers.</div></div>
+    <div class="diag-item"><div class="diag-num">2.</div><div class="diag-text"><strong>Bundling:</strong> add complementary products or services to create perceived value that justifies the price.</div></div>
+    <div class="diag-item"><div class="diag-num">3.</div><div class="diag-text"><strong>Time-limited offers:</strong> create urgency to drive purchase decisions without permanently lowering the price.</div></div>
+    <div class="diag-item"><div class="diag-num">4.</div><div class="diag-text"><strong>Financing options:</strong> allow customers to spread payments over time, making high-value products more accessible.</div></div>
+  </div>
+
+  <p>Another approach is to educate customers on value. Clear communication about how your product solves their problems, improves their lives, or outperforms competitors can close the gap between perception and willingness to pay.</p>
+
+  <p>And finally, don't underestimate the power of innovation in pricing models. Subscription-based pricing, pay-per-use, or performance-based models can align perceived value with affordability over time.</p>
+
+  <div class="closing">
+    <p>So, what's the lesson here? Price and value might be like two friends on a road trip: they often travel together, but sometimes one takes a detour. The key is to keep them heading toward the same destination: a place where your customers feel good about their purchase and you feel good about your margins.</p>
+    <div class="closing-statement">I still believe in the price-value equation, but it's less of a formula and more of a <em>dance</em>.</div>
+    <p>And sometimes, you just need to change the tune.</p>
+    <p class="credit">First published on LinkedIn, November 2024.</p>
+  </div>
+
+</article>
+
+<!-- BRAND FOOTER -->
+<div class="brand-footer">
+  <a href="/" class="brand-logo"><span class="pricing">pricing</span><span class="goat">goat</span></a>
+  <div class="brand-right">
+    <div class="brand-tagline">Pricing by Design</div>
+    <div class="brand-url">PRICINGGOAT.COM</div>
+  </div>
+</div>
+
+</body>
+</html>
