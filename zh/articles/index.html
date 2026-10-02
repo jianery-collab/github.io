@@ -54,6 +54,15 @@
     .nav-logo span { color: var(--accent); }
     .nav-back { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .nav-back:hover { color: var(--ink); }
+    .nav-right { display: flex; align-items: center; gap: 2rem; }
+    /* MOBILE MENU */
+    .nav-menu-btn { display: none; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); background: none; border: 1px solid var(--line); padding: 0.4rem 0.85rem; border-radius: 2px; cursor: pointer; white-space: nowrap; }
+    .site-menu { position: absolute; top: 100%; left: 0; right: 0; height: 100vh; overflow-y: auto; background: var(--paper); padding: 1.5rem 2rem 8rem; }
+    .site-menu[hidden] { display: none; }
+    .site-menu ul { list-style: none; margin: 0; padding: 0; }
+    .site-menu a { display: block; font-family: inherit; font-size: 1.9rem; font-weight: 300; line-height: 1.3; padding: 0.7rem 0; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+    .site-menu a:hover, .site-menu a[aria-current="page"] { color: var(--accent); }
+    body.menu-open { overflow: hidden; }
     .lang-toggle { display: inline-block; text-decoration: none; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; color: var(--muted); background: none; border: 1px solid var(--line); padding: 0.4rem 0.85rem; border-radius: 2px; cursor: pointer; transition: color 0.2s, border-color 0.2s; white-space: nowrap; }
     .lang-toggle:hover { color: var(--ink); border-color: var(--muted); }
 
@@ -84,8 +93,12 @@
     .footer-links a:hover { color: var(--ink); }
     .footer-copy { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; color: var(--muted); }
 
+    @media (min-width: 901px) { .site-menu { display: none; } }
     @media (max-width: 900px) {
       nav { padding: 1.2rem 2rem; }
+      .nav-right { gap: 0.9rem; }
+      .nav-back { display: none; }
+      .nav-menu-btn { display: inline-block; }
       .page-wrap { padding: 8rem 2rem 5rem; }
       footer { flex-direction: column; gap: 1.5rem; text-align: center; }
     }
@@ -95,9 +108,22 @@
 
   <nav>
     <a href="/zh/" class="nav-logo">Pricing<span>Goat</span></a>
-    <div style="display:flex;align-items:center;gap:2rem;">
+    <div class="nav-right">
       <a href="/zh/" class="nav-back">← 首页</a>
       <a href="/articles/" class="lang-toggle" lang="en" hreflang="en">EN</a>
+      <button type="button" class="nav-menu-btn" aria-expanded="false" aria-controls="site-menu" data-open="菜单" data-close="关闭">菜单</button>
+    </div>
+    <div id="site-menu" class="site-menu" hidden>
+      <ul>
+        <li><a href="/zh/">首页</a></li>
+        <li><a href="/zh/#about">关于</a></li>
+        <li><a href="/zh/#services">服务</a></li>
+        <li><a href="/zh/#capability">能力建设</a></li>
+        <li><a href="/zh/#books">著作</a></li>
+        <li><a href="/zh/articles/" aria-current="page">文章</a></li>
+        <li><a href="/zh/assessment/">定价自测</a></li>
+        <li><a href="/zh/#contact">联系</a></li>
+      </ul>
     </div>
   </nav>
 
@@ -276,5 +302,21 @@
     <span class="footer-copy">© 2026 PricingGoat.com</span>
   </footer>
 
+  <script>
+  (function () {
+    var btn = document.querySelector('.nav-menu-btn'), menu = document.getElementById('site-menu');
+    if (!btn || !menu) return;
+    function set(open) {
+      menu.hidden = !open;
+      btn.setAttribute('aria-expanded', open);
+      btn.textContent = open ? btn.dataset.close : btn.dataset.open;
+      document.body.classList.toggle('menu-open', open);
+    }
+    btn.addEventListener('click', function () { set(menu.hidden); });
+    menu.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menu.hidden) { set(false); btn.focus(); } });
+    window.matchMedia('(min-width: 901px)').addEventListener('change', function (e) { if (e.matches) set(false); });
+  })();
+  </script>
 </body>
 </html>

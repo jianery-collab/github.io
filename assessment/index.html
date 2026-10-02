@@ -157,6 +157,15 @@ svg .lbl.top{fill:var(--gold-ink)}
 .nav-back:hover{color:var(--s-ink)}
 .lang-toggle{display:inline-block;text-decoration:none;font-family:var(--s-mono);font-size:0.72rem;letter-spacing:0.14em;color:var(--s-muted);border:1px solid var(--s-line);padding:0.4rem 0.85rem;border-radius:2px;transition:color 0.2s,border-color 0.2s;white-space:nowrap}
 .lang-toggle:hover{color:var(--s-ink);border-color:var(--s-muted)}
+.nav-menu-btn{display:none;font-family:var(--s-mono);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--s-ink);background:none;border:1px solid var(--s-line);padding:0.4rem 0.85rem;border-radius:2px;cursor:pointer;white-space:nowrap}
+.site-nav{position:relative;z-index:100}
+.site-menu{position:absolute;top:100%;left:0;right:0;height:100vh;overflow-y:auto;background:var(--s-paper);padding:1.5rem 2rem 8rem}
+.site-menu[hidden]{display:none}
+.site-menu ul{list-style:none;margin:0;padding:0}
+.site-menu a{display:block;font-family:var(--serif);font-size:1.9rem;font-weight:500;line-height:1.3;padding:0.7rem 0;color:var(--s-ink);text-decoration:none;border-bottom:1px solid var(--s-line)}
+.site-menu a:hover,.site-menu a[aria-current="page"]{color:var(--s-accent)}
+body.menu-open{overflow:hidden}
+@media (min-width:901px){.site-menu{display:none}}
 .site-footer{margin-top:60px;border-top:1px solid var(--s-line);padding:2.5rem 4rem;display:flex;justify-content:space-between;align-items:center;line-height:1.7}
 .footer-logo{font-family:var(--s-mono);font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--s-ink);text-decoration:none}
 .footer-logo span{color:var(--s-accent)}
@@ -166,6 +175,9 @@ svg .lbl.top{fill:var(--gold-ink)}
 .footer-copy{font-family:var(--s-mono);font-size:0.65rem;letter-spacing:0.1em;color:var(--s-muted)}
 @media (max-width:900px){
   .site-nav{padding:1.2rem 2rem}
+  .nav-right{gap:0.9rem}
+  .nav-back{display:none}
+  .nav-menu-btn{display:inline-block}
   .site-footer{flex-direction:column;gap:1.5rem;text-align:center}
 }
 </style>
@@ -176,6 +188,19 @@ svg .lbl.top{fill:var(--gold-ink)}
   <div class="nav-right">
     <a href="/" class="nav-back">← Home</a>
     <a href="/zh/assessment/" class="lang-toggle" lang="zh-Hans" hreflang="zh-Hans">中文</a>
+    <button type="button" class="nav-menu-btn" aria-expanded="false" aria-controls="site-menu" data-open="Menu" data-close="Close">Menu</button>
+  </div>
+  <div id="site-menu" class="site-menu" hidden>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#capability">Capability</a></li>
+      <li><a href="/#books">Books</a></li>
+      <li><a href="/articles/">Articles</a></li>
+      <li><a href="/assessment/" aria-current="page">Assessment</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
   </div>
 </nav>
 <main class="wrap">
@@ -227,6 +252,22 @@ svg .lbl.top{fill:var(--gold-ink)}
   <span class="footer-copy">© 2026 PricingGoat.com</span>
 </footer>
 
+<script>
+(function () {
+  var btn = document.querySelector('.nav-menu-btn'), menu = document.getElementById('site-menu');
+  if (!btn || !menu) return;
+  function set(open) {
+    menu.hidden = !open;
+    btn.setAttribute('aria-expanded', open);
+    btn.textContent = open ? btn.dataset.close : btn.dataset.open;
+    document.body.classList.toggle('menu-open', open);
+  }
+  btn.addEventListener('click', function () { set(menu.hidden); });
+  menu.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menu.hidden) { set(false); btn.focus(); } });
+  window.matchMedia('(min-width: 901px)').addEventListener('change', function (e) { if (e.matches) set(false); });
+})();
+</script>
 <script>
 const T={
  en:{
