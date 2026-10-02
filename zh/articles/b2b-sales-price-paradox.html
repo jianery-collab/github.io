@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2B 销售的价格悖论：研究说价格没那么重要，销售为什么总觉得输在价格上？ · 杨一安博士</title>
+
+<!-- Open Graph -->
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="2B 销售的价格悖论" />
+<meta property="og:description" content="研究说价格很少决定 B2B 赢单，销售却总觉得输在价格上。价格不太决定赢单，却很大程度上决定利润。从“盯价格”转向“管价值”。" />
+<meta property="og:site_name"   content="PricingGoat" />
+<meta property="og:url"         content="https://www.pricinggoat.com/zh/articles/b2b-sales-price-paradox.html" />
+<meta property="og:image"       content="https://www.pricinggoat.com/og-image.png" />
+<meta property="og:locale"      content="zh_CN" />
+<link rel="canonical" href="https://www.pricinggoat.com/zh/articles/b2b-sales-price-paradox.html" />
+<meta name="author"             content="杨一安" />
+<meta name="description"        content="研究说价格很少决定 B2B 赢单，销售却总觉得输在价格上。价格不太决定赢单，却很大程度上决定利润。从“盯价格”转向“管价值”。" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "2B 销售的价格悖论",
+  "description": "研究说价格很少决定 B2B 赢单，销售却总觉得输在价格上。价格不太决定赢单，却很大程度上决定利润。从“盯价格”转向“管价值”。",
+  "url": "https://www.pricinggoat.com/zh/articles/b2b-sales-price-paradox.html",
+  "datePublished": "2026-09-20",
+  "dateModified": "2026-10-02",
+  "inLanguage": "zh-Hans",
+  "image": "https://www.pricinggoat.com/og-image.png",
+  "author": {
+    "@type": "Person",
+    "@id": "https://www.pricinggoat.com/#person",
+    "name": "杨一安",
+    "url": "https://www.pricinggoat.com/zh/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PricingGoat",
+    "url": "https://www.pricinggoat.com/"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #16120a;
+    --paper:    #f7f3ec;
+    --gold:     #b8882a;
+    --gold-lt:  #d4a84b;
+    --muted:    #7a6e5a;
+    --rule:     #ddd5c0;
+    --accent:   #f0e8d4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    line-height: 1.85;
+    padding: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    padding: 80px 48px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,136,42,.18) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 56px;
+    position: relative;
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .hero-nav a {
+    color: rgba(240,232,212,.5);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .hero-nav a:hover { color: var(--gold-lt); }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+  }
+  .hero-eyebrow::after {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+    opacity: .6;
+  }
+  .hero h1 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    max-width: 720px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold-lt);
+  }
+  .hero-sub {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(240,232,212,.6);
+    max-width: 580px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  .hero-rule { width: 32px; height: 1px; background: var(--gold); opacity: .5; }
+  .hero-author {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 13px;
+    color: rgba(240,232,212,.4);
+    letter-spacing: 1px;
+  }
+
+  /* ── ARTICLE ── */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+  }
+
+  p { margin-bottom: 24px; color: #3a3020; }
+
+  /* ── DROP CAP ── */
+  .drop-cap::first-letter {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: .8;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+    color: var(--gold);
+  }
+
+  /* ── SECTION HEADS ── */
+  h2 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 48px 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    margin: 36px 0;
+    background: var(--accent);
+  }
+  .pullquote p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: var(--ink);
+    color: #f0e8d4;
+    padding: 32px 36px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .callout::before {
+    content: '"';
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 100px;
+    color: rgba(184,136,42,.15);
+    position: absolute;
+    top: -10px; left: 16px;
+    line-height: 1;
+  }
+  .callout p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #e8dcc8;
+    margin: 0;
+    position: relative;
+  }
+  .callout p strong { color: #ffffff; }
+  .callout-source {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-top: 14px;
+    display: block;
+    position: relative;
+  }
+
+  /* ── THREE AXIOMS ── */
+  .axioms {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin: 36px 0;
+  }
+  .axiom {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .axiom:last-child { border-bottom: none; }
+  .axiom-num {
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .axiom-body { padding: 20px 24px; }
+  .axiom-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .axiom-desc {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── DIAGNOSTIC ── */
+  .diagnostic {
+    background: var(--accent);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    margin: 36px 0;
+  }
+  .diagnostic-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .diagnostic-title::before {
+    content: '';
+    display: block;
+    width: 4px; height: 18px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .diag-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .diag-item:last-child { margin-bottom: 0; }
+  .diag-num {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 20px;
+    padding-top: 1px;
+  }
+  .diag-text {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: #3a3020;
+    line-height: 1.65;
+  }
+  .diag-text strong { color: var(--ink); }
+
+  /* ── CLOSING ── */
+  .closing {
+    border-top: 2px solid var(--ink);
+    padding-top: 40px;
+    margin-top: 56px;
+  }
+  .closing-statement {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+  .closing-statement em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .closing p { font-size: 17px; }
+
+  /* ── BRAND FOOTER ── */
+  .brand-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 32px;
+    background: var(--ink);
+    margin-top: 0;
+  }
+  a.brand-logo { text-decoration: none; }
+  .brand-logo {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 28px;
+    font-weight: 400;
+  }
+  .brand-logo .pricing { color: #f0e8d4; }
+  .brand-logo .goat { color: var(--gold); }
+  .brand-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .brand-tagline {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(240,232,212,.45);
+  }
+  .brand-url {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* Chinese text: no extra tracking on labels, line breaks inside flow lists */
+  .hero-eyebrow, .hero-nav { letter-spacing: 2px; }
+  .flow p { margin-bottom: 0; }
+  em, .pullquote p { font-style: normal; }
+  .list { margin: 0 0 24px 1.2em; color: #3a3020; }
+  .list li { margin-bottom: 8px; padding-left: 4px; }
+  .list li::marker { color: var(--gold); }
+  .refs { margin: 48px 0 0 1.4em; font-size: 14px; line-height: 1.7; color: var(--muted); }
+  .refs li { margin-bottom: 6px; }
+  .refs-title { margin-top: 48px; font-size: 14px; font-weight: 600; color: var(--muted); }
+  h3 { font-family: 'Lora', 'Noto Serif SC', serif; font-size: 20px; font-weight: 700; color: var(--ink); margin: 40px 0 12px; }
+
+  .credit { color: var(--muted); font-size: 16px; margin-top: 32px; }
+  .article a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,136,42,.35); transition: border-color .2s; }
+  .article a:hover { border-color: var(--gold); }
+
+  @media (max-width: 600px) {
+    .hero { padding: 56px 24px 56px; }
+    .article { padding: 48px 20px 64px; }
+    .callout { padding: 24px 22px; }
+    .brand-footer { flex-direction: column; gap: 16px; text-align: center; }
+    .brand-right { align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <nav class="hero-nav" aria-label="网站导航">
+    <a href="/zh/articles/">← 全部文章</a>
+    <a href="/zh/">首页</a>
+  </nav>
+  <div class="hero-eyebrow">B2B 定价</div>
+  <h1>2B 销售的<em>价格悖论</em></h1>
+  <p class="hero-sub">研究说价格没那么重要，销售为什么总觉得输在价格上？</p>
+  <div class="hero-meta">
+    <div class="hero-rule"></div>
+    <span class="hero-author">杨一安 · pricinggoat.com</span>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<article class="article">
+
+  <p>“客户说了，竞品便宜 15%，我们不降就丢了。”做 B2B 的企业，几乎都从销售那里听过这句话。</p>
+
+  <p>而讲 B2B 营销和定价的研究，给出的结论往往相反：价格很少是客户选择供应商的决定性原因。</p>
+
+  <p>一线和研究，谁说得对？答案是都对，只是说的不是同一件事。把这件事想清楚，企业才能从“盯价格”转向“管价值”。</p>
+
+  <h2>一、研究怎么说：价格对赢单的解释力被高估了</h2>
+
+  <h3>赢输单分析：销售和客户说的不是一回事</h3>
+
+  <p>Corporate Visions 分析了 500 多家公司的 10 万多笔 B2B 交易，发现销售和客户对丢单原因的解释，有 50% 到 70% 对不上。销售多归因于价格或功能，客户提到的却常常是沟通不对路、需求没挖透、差异没讲清。</p>
+
+  <p>另一家机构 User Intuition 在 2024 至 2025年做了 1 万多次客户决策后访谈：CRM 里，销售把 62.3% 的丢单归因于价格；直接问客户，把价格列为首要原因的只有 18.1%。</p>
+
+  <p>这些数据多出自提供赢输单分析服务的公司，具体比例不必当真，但方向一致：CRM 里填的“价格原因”，很多只是最省事的选项。</p>
+
+  <h3>客户忠诚度研究：差异来自销售过程，不是价格</h3>
+
+  <p>CEB（后并入 Gartner）调研了约 5000 名参与 B2B 采购的人，考察品牌、产品和服务质量、性价比、销售体验等因素对客户忠诚的影响。结果，销售体验一项占 53%，超过品牌、产品、服务和价格的总和。</p>
+
+  <p>原因在于，客户觉得主流供应商的产品、品牌、服务差不多，能拉开差距的，是销售过程能不能帮他们把问题想清楚。这项研究后来成为《挑战者销售》一书的基础。</p>
+
+  <h3>价值结构研究：价格只是门槛</h3>
+
+  <p>贝恩公司 2018年在《哈佛商业评论》发表的“B2B 价值要素”研究，把客户价值归纳为 40 项，分成五层金字塔。“可接受的价格”在最底层的门槛要素里：做不到会出局，做到了也不会因此胜出。决定胜负的，是更上层的功能价值、合作便利性，以及对采购者个人的价值，比如降低他本人的决策风险。</p>
+
+  <h3>定价权下放：让价越自由，业绩越差</h3>
+
+  <p>1979年，Stephenson、Cron 和 Frazier 在《Journal of Marketing》发表研究：给销售最大定价自主权的企业，销售额和利润表现反而最差。</p>
+
+  <p>四组证据指向同一个结论：价格对赢单的解释力被高估了。</p>
+
+  <p>但这不等于价格不重要。</p>
+
+  <h2>二、价格不太决定赢单，却很大程度上决定利润</h2>
+
+  <p>Marn 和 Rosiello 1992年在《哈佛商业评论》发表的研究测算过：对一家典型企业，销量不变时，平均价格提高 1%，营业利润可提升约 11%，效果远超同等幅度的销量增长或成本下降。赫尔曼·西蒙也长期强调，价格是最有效的利润驱动因素。</p>
+
+  <p>所以要把两件事分开：</p>
+
+  <div class="pullquote">
+    <p>价格对赢不赢单的影响，被销售高估了；<br>价格对赚不赚钱的影响，被管理层低估了。</p>
+  </div>
+
+  <p>很多 2B 企业的利润就是这样流失的：每一次“为了保单”的让价，单独看都说得过去，累计下来就是几个百分点的利润率。</p>
+
+  <h2>三、销售为什么觉得价格最重要</h2>
+
+  <p>销售的感受并非凭空而来，但其中有几处系统性偏差。</p>
+
+  <h3>1. 价格最容易看见</h3>
+
+  <p>价值分散在各个环节，要很久才兑现，还需要解释；价格只是一个数字，写在比价表上，高低一眼可见。人天然会高估看得清的东西。</p>
+
+  <h3>2. 价格是最体面的拒绝理由</h3>
+
+  <p>对落选供应商说“你们的方案没打动我们”，或者“你们销售第二次会议没来”，都很尴尬。说“你们贵了”，不伤人，不用解释，还能给下次谈判留筹码。上面提到的访谈研究也发现，客户面对落选供应商时会有意强调价格。</p>
+
+  <h3>3. 采购的任务就是压价</h3>
+
+  <p>很多客户的采购部门按降本考核。技术部门再认可你，到了采购环节，谈的一定是价格。而这往往是销售最后一轮、印象最深的接触。</p>
+
+  <h3>4. 归因偏差</h3>
+
+  <p>输了，归因于价格、预算、竞品恶意低价；赢了，归因于关系和能力。结果是 CRM 里的价格原因被系统性放大。</p>
+
+  <h3>5. 记忆偏差</h3>
+
+  <p>丢单的痛感远大于溢价赢单的满足感。销售记得“贵了 5% 丢掉的那个大客户”，却不太记得“比竞品贵 10% 照样签下的那三个”。</p>
+
+  <h3>6. 激励机制</h3>
+
+  <p>多数销售按收入或回款提成。打折对他个人几乎没有成本，丢单的损失却是全部。这种激励下，对价格高度敏感是理性反应。</p>
+
+  <h2>四、短期因价格丢单是真的，怎么和研究结论统一</h2>
+
+  <p>三个区分可以把两者统一起来。</p>
+
+  <h3>单笔交易与整体组合</h3>
+
+  <p>研究讲统计规律：放在大量交易里看，价格不是主要决定因素。销售经历的是具体事件：这一单确实差在价格上。两者并不矛盾。问题出在管理者用个别事件改整体政策，丢了两单，就下调整条产品线的价格。</p>
+
+  <h3>短期与长期</h3>
+
+  <p>短期内，客户对你的价值认知已经定型。价值没讲到、信任没建立，到了决策那一刻，能比的只剩价格。所以短期因价格丢单是真实的。</p>
+
+  <p>长期看，价值认知可以塑造。赢单率、客户留存、钱包份额，更多取决于价值差。价格是短期的结算变量，价值是长期的决定变量。</p>
+
+  <h3>客户比较的是价值减价格</h3>
+
+  <p>客户选供应商，比较的是“得到的”减去“付出的”，也就是净价值。只要价值差大于价格差，比竞品贵并不吃亏。</p>
+
+  <p>由此得出一个判断：</p>
+
+  <div class="pullquote">
+    <p>价格的重要性不是固定的，客户感知到的价值差越小，价格越重要。</p>
+  </div>
+
+  <p>客户看不出你和竞品有什么不同，价值差就等于零，价格自然成为唯一的比较项；客户看到并相信你的价值差，价格的分量就会下降。CEB 的发现背后也是这个逻辑：客户觉得各家产品、品牌差不多，胜负才落到其他因素上。</p>
+
+  <h3>同样是“因为价格丢单”，成因分四种</h3>
+
+  <div class="diagnostic">
+    <div class="diag-item"><div class="diag-num">1.</div><div class="diag-text">价值差存在，客户没有感知到：<strong>价值沟通问题</strong></div></div>
+    <div class="diag-item"><div class="diag-num">2.</div><div class="diag-text">客户感知到了价值差，但对他不重要：<strong>客户选择问题</strong></div></div>
+    <div class="diag-item"><div class="diag-num">3.</div><div class="diag-text">价值差不足以支撑价格差：<strong>定价问题</strong></div></div>
+    <div class="diag-item"><div class="diag-num">4.</div><div class="diag-text">客户采用最低价中标、集采等价格导向的采购规则：<strong>市场规则问题</strong></div></div>
+  </div>
+
+  <p>只有第三种应该直接调价格。现实中，企业常常拿第三种的药，去治前两种的病。</p>
+
+  <p>反过来说，如果从来没有因为价格丢过单，价格很可能定低了。一定比例的价格丢单是正常的，说明价格在试探市场的边界，而不是停在安全区里把利润让给客户。</p>
+
+  <h2>五、看竞品价格，更要看竞品价值</h2>
+
+  <p>很多企业的竞争情报只有竞品报价。销售带回一张截图、一句“他们报了 8 折”，就成了定价会的全部依据。这样做有三个问题。</p>
+
+  <h3>价格口径往往不可比</h3>
+
+  <p>含不含税、运费、安装调试？配置是否一致？账期、质保、备件价格怎样？报价和最终成交价差多少？很多“竞品便宜 15%”，换算成同一口径后只剩 5%，甚至倒挂。</p>
+
+  <h3>只看数字，看不到背后的原因</h3>
+
+  <p>竞品为什么报这个价？可能是成本确实更低，可能是战略性抢份额，可能是低价入门、靠后续服务和耗材赚钱，也可能只在个别客户或项目上这样报。原因不同，应对完全不同。</p>
+
+  <h3>几乎没人系统观察竞品的价值</h3>
+
+  <p>建议把竞品观察从一张价格表，扩展为一张“价值-价格地图”，至少覆盖五个维度：</p>
+
+  <ul class="list">
+    <li><strong>价格：</strong>标价、实际成交价区间、折扣结构、付款条件、全生命周期成本，统一口径；</li>
+    <li><strong>价值：</strong>在客户最看重的几项购买因素上，客户给我们和竞品各打几分，由客户打分而非自评；</li>
+    <li><strong>交付与风险：</strong>交期、质量稳定性、本地服务响应、技术支持、供应安全；</li>
+    <li><strong>个人价值：</strong>客户的采购和技术负责人选某家供应商，个人要承担多大风险，能得到什么认可；</li>
+    <li><strong>竞品的优势阵地：</strong>竞品在哪些细分、场景、客户类型中持续胜出，原因是什么。</li>
+  </ul>
+
+  <p>把这些信息放进一张图，横轴是客户感知价值，纵轴是价格，就是 Bradley Gale 在 1990年代提出的客户价值地图。位于“公平价值线”上方的供应商在溢价，下方的在让利。它回答的问题是价格表回答不了的：我们贵，是贵得有道理，还是没道理？</p>
+
+  <p>Anderson、Narus 和 van Rossum 2006年在《哈佛商业评论》发表的文章指出，有效的价值主张不是罗列所有优点，而是聚焦少数几项对客户最重要、与次优选择差异最大的点，并尽量量化。不了解竞品的价值，这一步无从做起。</p>
+
+  <h2>六、把竞品信息用进定价决策和销售指引</h2>
+
+  <h3>1. 用规范取代传闻</h3>
+
+  <p>给竞品信息定统一的采集格式：来源（客户口述、招标文件、公开报价、第三方）、可信度、价格口径、配套条件、日期。“听说竞品报了 8 折”和一份中标公示，在定价会上的分量不该一样。</p>
+
+  <h3>2. 用价值差定价格走廊，而不是跟着竞品定价格点</h3>
+
+  <p>以主要竞品的同口径成交价为参照，按可量化的价值差确定我方的价格区间。价值差越大、越被客户认可，可以溢价越多；同时要把一部分价值差让给客户，否则客户没有换供应商的动力。销售在走廊内自主决策，超出走廊需上级审批并写明理由。竞品价格因此成为参照，而不是锚点。</p>
+
+  <h3>3. 按客户细分和采购场景分别应对</h3>
+
+  <p>价值敏感型客户，坚持价值销售，守住价格。价格导向的采购场景（最低价中标、集采），用精简配置的版本或专门产品线参与，不拿主力产品降价，否则低价会扩散到所有客户。不在目标细分里的客户，可以主动放弃。</p>
+
+  <h3>4. 让价必须有交换</h3>
+
+  <p>给销售一份明确的交换清单：更大采购量、更长合同期、更好的付款条件、更高预付比例、同意作为标杆案例、配合技术验证等。没有交换的让价，只会让客户学到一件事：多压几次，价格还能再低。</p>
+
+  <h3>5. 细分“价格”丢单原因，引入第三方复盘</h3>
+
+  <p>把 CRM 里的“价格”原因拆成五类：价值未被感知、价值对客户不重要、价值差不足以支撑价差、客户采购规则以价格为导向、竞品战略性低价。重要的丢单，由销售以外的人（市场、定价团队或第三方）访谈客户。</p>
+
+  <p>每季度把“成交价相对竞品的溢价幅度”和“赢单率”放在同一张图上。不少企业会发现，在一定区间内，溢价高低和赢单率几乎无关。这比任何培训都更能说服销售。</p>
+
+  <h3>6. 把价格纪律写进考核和销售工具</h3>
+
+  <p>考核中加入价格实现率或毛利指标，不只看收入。竞品应对卡以价值对比为主体：面对竞品 A，我们在哪三点上更强，怎么证明，客户会怎么反驳，如何回应；价格只占其中一栏。销售、产品、市场、财务定期一起更新价值-价格地图。</p>
+
+  <div class="closing">
+    <p>研究说价格没那么重要，指的是长期、整体、价值差被客户看见的情况；销售说价格决定成败，指的是短期、单笔、价值差没被看见的时刻。连接两者的，是价值。</p>
+    <p>所以，管理 2B 销售时，该问的不是“竞品比我们便宜多少”，而是：客户看到了我们多少价值？竞品提供了多少价值？两者的差距，撑得起多大的价差？</p>
+    <p>竞品价格要认真对待，但它是参照，不是指挥棒。</p>
+    <div class="closing-statement">定价，是<em>设计</em>出来的，<br>不是将就出来的。</div>
+    <p class="credit">首发于微信公众号「定价制胜-Dr. Pricing」，2026年9月。</p>
+  </div>
+
+  <p class="refs-title">参考资料</p>
+  <ol class="refs">
+    <li>Corporate Visions, Win-Loss Analysis for Product Marketers, 2026.</li>
+    <li>User Intuition, Win-Loss Analysis: The Complete Guide, 2026.</li>
+    <li>Challenger Inc.（原 CEB）, How B2B Buyers Make Purchase Decisions, 2024.</li>
+    <li>Almquist, E., Cleghorn, J., Sherer, L., The B2B Elements of Value, Harvard Business Review, 2018.</li>
+    <li>Stephenson, P. R., Cron, W. L., Frazier, G. L., Delegating Pricing Authority to the Sales Force, Journal of Marketing, 1979.</li>
+    <li>Marn, M. V., Rosiello, R. L., Managing Price, Gaining Profit, Harvard Business Review, 1992.</li>
+    <li>Gale, B. T., Managing Customer Value, Free Press, 1994.</li>
+    <li>Anderson, J. C., Narus, J. A., van Rossum, W., Customer Value Propositions in Business Markets, Harvard Business Review, 2006.</li>
+  </ol>
+
+</article>
+
+<!-- BRAND FOOTER -->
+<div class="brand-footer">
+  <a href="/zh/" class="brand-logo"><span class="pricing">pricing</span><span class="goat">goat</span></a>
+  <div class="brand-right">
+    <div class="brand-tagline">Pricing by Design</div>
+    <div class="brand-url">PRICINGGOAT.COM</div>
+  </div>
+</div>
+
+</body>
+</html>
