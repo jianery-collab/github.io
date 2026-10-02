@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pricing Ambition Radar · PricingGoat</title>
+<meta name="description" content="Rate six pricing goals for the next 12 months, from profit uplift to pricing capability, and see where to start. A free self-assessment by Dr. Jan Y. Yang, Pricing Architect.">
+<meta name="author" content="Jan Y. Yang">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.pricinggoat.com/assessment/">
+<link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/assessment/">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/assessment/">
+<link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/assessment/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.pricinggoat.com/assessment/">
+<meta property="og:title" content="Pricing Ambition Radar: what should pricing achieve for you?">
+<meta property="og:description" content="Rate six pricing goals for the next 12 months. The shape of your profile shows where to start.">
+<meta property="og:image" content="https://www.pricinggoat.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pricing Ambition Radar · PricingGoat">
+<meta property="og:site_name" content="PricingGoat">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pricing Ambition Radar: what should pricing achieve for you?">
+<meta name="twitter:description" content="Rate six pricing goals for the next 12 months. The shape of your profile shows where to start.">
+<meta name="twitter:image" content="https://www.pricinggoat.com/og-image.png">
+<meta name="twitter:image:alt" content="Pricing Ambition Radar · PricingGoat">
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'none'; object-src 'none'; media-src 'none'; base-uri 'self';">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Mono:wght@300;400&family=Noto+Serif+SC:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3EDDF; --paper:#FAF6EC; --ink:#1E1B16; --muted:#6A6253; --line:#DDD2BB;
+  --gold:#A9832F; --gold-soft:rgba(169,131,47,.22); --gold-ink:#7E6122;
+  --serif:"Cormorant Garamond","Noto Serif SC","Songti SC",Georgia,serif;
+  --sans:"Source Sans 3","PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#191714; --paper:#221F1A; --ink:#F1EADA; --muted:#A99F8B; --line:#3A352C;
+    --gold:#CFAA5B; --gold-soft:rgba(207,170,91,.24); --gold-ink:#E0C07A;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#191714; --paper:#221F1A; --ink:#F1EADA; --muted:#A99F8B; --line:#3A352C;
+  --gold:#CFAA5B; --gold-soft:rgba(207,170,91,.24); --gold-ink:#E0C07A;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55}
+button{font:inherit;color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+
+
+.intro{padding:28px 0 18px;max-width:640px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,6vw,54px);line-height:1.05;margin:0 0 14px;letter-spacing:-.01em}
+html[lang="zh-Hans"] h1{font-size:clamp(28px,5vw,44px);line-height:1.25;letter-spacing:0}
+.intro p{color:var(--muted);margin:0;font-size:18px}
+
+.grid{display:grid;grid-template-columns:1fr;gap:8px;align-items:start}
+.radar-wrap{position:sticky;top:env(safe-area-inset-top,0px);z-index:2;background:var(--bg);padding:6px 0 4px;border-bottom:1px solid var(--line)}
+.radar-wrap svg{display:block;width:100%;height:34vh;max-height:300px;min-height:210px}
+@media (min-width:860px){
+  .grid{grid-template-columns:1.05fr 1fr;gap:56px}
+  .radar-wrap{order:2;top:calc(env(safe-area-inset-top,0px) + 24px);border-bottom:0;padding:0}
+  .radar-wrap svg{height:auto;max-height:none}
+}
+
+.goals{list-style:none;margin:0;padding:0}
+.goal{padding:18px 0 16px;border-bottom:1px solid var(--line)}
+.goal-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.goal h2{font-family:var(--serif);font-weight:600;font-size:24px;margin:0;line-height:1.2}
+html[lang="zh-Hans"] .goal h2{font-size:20px}
+.level{font-size:14px;color:var(--gold-ink);font-weight:600;white-space:nowrap}
+.goal p{margin:2px 0 10px;color:var(--muted);font-size:15.5px}
+
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:28px;background:transparent;cursor:pointer;margin:0}
+input[type=range]::-webkit-slider-runnable-track{height:3px;background:linear-gradient(to right,var(--gold) var(--p,0%),var(--line) var(--p,0%));border-radius:2px}
+input[type=range]::-moz-range-track{height:3px;background:var(--line);border-radius:2px}
+input[type=range]::-moz-range-progress{height:3px;background:var(--gold);border-radius:2px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--paper);border:2px solid var(--gold);margin-top:-9.5px}
+input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--paper);border:2px solid var(--gold)}
+input[type=range]:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:4px}
+.ticks{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);padding:0 6px}
+
+.gate{padding:24px 0 8px}
+.gate h2{font-family:var(--serif);font-weight:600;font-size:22px;margin:0 0 12px;line-height:1.3}
+html[lang="zh-Hans"] .gate h2{font-size:19px}
+.choices{display:flex;gap:10px;flex-wrap:wrap}
+.choice{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:9px 22px;cursor:pointer}
+.choice[aria-pressed="true"]{border-color:var(--gold);background:var(--gold);color:var(--paper)}
+.choice:focus-visible,.primary:focus-visible,.secondary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.err{color:#B4452F;font-size:14.5px;margin:10px 0 0;min-height:1.2em}
+
+.primary{margin:18px 0 8px;background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:13px 30px;font-weight:600;cursor:pointer;font-size:17px}
+.primary:hover{background:var(--gold-ink)}
+
+.result{margin:40px 0 0;padding:34px 0 10px;border-top:2px solid var(--gold);display:none;max-width:680px}
+.result.show{display:block}
+.result .model{font-size:15px;color:var(--gold-ink);font-weight:600;margin:0 0 6px}
+.result h2{font-family:var(--serif);font-weight:600;font-size:clamp(30px,5vw,42px);line-height:1.1;margin:0 0 16px}
+html[lang="zh-Hans"] .result h2{font-size:clamp(25px,4.4vw,34px);line-height:1.3}
+.result p{margin:0 0 14px;font-size:18px}
+.share{margin-top:26px;padding:20px 22px;background:var(--paper);border:1px solid var(--line);border-radius:6px}
+.share p{font-size:16px;color:var(--muted);margin:0 0 14px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.share .primary{margin:0;text-decoration:none;display:inline-block}
+.secondary{background:none;border:1px solid var(--line);border-radius:999px;padding:12px 22px;cursor:pointer;font-size:16px}
+.secondary:hover{border-color:var(--gold)}
+.mail{font-size:14.5px;color:var(--muted);margin-top:12px!important}
+.mail a{color:var(--gold-ink)}
+
+
+svg .ring{fill:none;stroke:var(--line);stroke-width:1}
+svg .spoke{stroke:var(--line);stroke-width:1}
+svg .shape{fill:var(--gold-soft);stroke:var(--gold);stroke-width:2;stroke-linejoin:round}
+svg .dot{fill:var(--paper);stroke:var(--gold);stroke-width:2}
+svg .lbl{fill:var(--ink);font-family:var(--sans);font-size:13px;font-weight:600}
+svg .lbl.top{fill:var(--gold-ink)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+/* Site chrome (nav + footer), matching the main site. Own tokens so the tool's are untouched. */
+:root{
+  --s-ink:#0f0e0d; --s-paper:#f6f4f0; --s-accent:#b5956a; --s-muted:#8a8580; --s-line:rgba(15,14,13,0.1);
+  --s-mono:'DM Mono',monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --s-ink:#F1EADA; --s-paper:#191714; --s-muted:#A99F8B; --s-line:rgba(241,234,218,0.12);
+  }
+}
+:root[data-theme="dark"]{
+  --s-ink:#F1EADA; --s-paper:#191714; --s-muted:#A99F8B; --s-line:rgba(241,234,218,0.12);
+}
+.site-nav{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 4rem;background:var(--s-paper);border-bottom:1px solid var(--s-line)}
+.nav-logo{font-family:var(--s-mono);font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--s-ink);text-decoration:none}
+.nav-logo span{color:var(--s-accent)}
+.nav-right{display:flex;align-items:center;gap:2rem}
+.nav-back{font-family:var(--s-mono);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--s-muted);text-decoration:none;transition:color 0.2s}
+.nav-back:hover{color:var(--s-ink)}
+.lang-toggle{display:inline-block;text-decoration:none;font-family:var(--s-mono);font-size:0.72rem;letter-spacing:0.14em;color:var(--s-muted);border:1px solid var(--s-line);padding:0.4rem 0.85rem;border-radius:2px;transition:color 0.2s,border-color 0.2s;white-space:nowrap}
+.lang-toggle:hover{color:var(--s-ink);border-color:var(--s-muted)}
+.site-footer{margin-top:60px;border-top:1px solid var(--s-line);padding:2.5rem 4rem;display:flex;justify-content:space-between;align-items:center;line-height:1.7}
+.footer-logo{font-family:var(--s-mono);font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--s-ink);text-decoration:none}
+.footer-logo span{color:var(--s-accent)}
+.footer-links{display:flex;gap:2rem;list-style:none;margin:0;padding:0}
+.footer-links a{font-family:var(--s-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--s-muted);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:var(--s-ink)}
+.footer-copy{font-family:var(--s-mono);font-size:0.65rem;letter-spacing:0.1em;color:var(--s-muted)}
+@media (max-width:900px){
+  .site-nav{padding:1.2rem 2rem}
+  .site-footer{flex-direction:column;gap:1.5rem;text-align:center}
+}
+</style>
+</head>
+<body>
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo">Pricing<span>Goat</span></a>
+  <div class="nav-right">
+    <a href="/" class="nav-back">← Home</a>
+    <a href="/zh/assessment/" class="lang-toggle" lang="zh-Hans" hreflang="zh-Hans">中文</a>
+  </div>
+</nav>
+<main class="wrap">
+  <section class="intro">
+    <h1 id="title"></h1>
+    <p id="sub"></p>
+  </section>
+
+  <div class="grid">
+    <div class="radar-wrap" aria-hidden="true">
+      <svg id="radar" viewBox="0 0 420 360"></svg>
+    </div>
+    <div>
+      <ul class="goals" id="goals"></ul>
+      <div class="gate">
+        <h2 id="gateQ"></h2>
+        <div class="choices">
+          <button type="button" class="choice" data-owner="yes" aria-pressed="false"></button>
+          <button type="button" class="choice" data-owner="no" aria-pressed="false"></button>
+        </div>
+        <p class="err" id="err" role="alert"></p>
+      </div>
+      <button type="button" class="primary" id="showBtn"></button>
+    </div>
+  </div>
+
+  <section class="result" id="result" aria-live="polite">
+    <p class="model" id="rModel"></p>
+    <h2 id="rHead"></h2>
+    <p id="rBody"></p>
+    <div class="share">
+      <p id="shareTxt"></p>
+      <div class="actions">
+        <a class="primary" id="mailBtn" href="#"></a>
+        <button type="button" class="secondary" id="copyBtn"></button>
+      </div>
+      <p class="mail"><a href="mailto:jan.yang@pricinggoat.com">jan.yang@pricinggoat.com</a></p>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <a href="/" class="footer-logo">Pricing<span>Goat</span></a>
+  <ul class="footer-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/articles/">Articles</a></li>
+    <li><a href="/imprint.html">Imprint</a></li>
+    <li><a href="/privacy.html">Privacy</a></li>
+  </ul>
+  <span class="footer-copy">© 2026 PricingGoat.com</span>
+</footer>
+
+<script>
+const T={
+ en:{
+  title:"What should pricing achieve for you?",
+  sub:"Rate six goals for the next 12 months. The shape of your profile shows where to start.",
+  levels:["Not a priority","Nice to have","Important","High priority","Top priority"],
+  ticks:["1","2","3","4","5"],
+  goals:[
+   ["Profit uplift","Lift margins through pricing, not cost-cutting.",["Profit","uplift"]],
+   ["Price increases","Raise prices in a way customers accept and your team and channels hold.",["Price","increases"]],
+   ["Discounts & promotions","Stop discounts and promotions from eroding the price you actually earn.",["Discounts &","promotions"]],
+   ["Value monetization","Price new products and services by the value they create.",["Value","monetization"]],
+   ["Price structure","Bring order across products, channels and markets.",["Price","structure"]],
+   ["Pricing capability","Build the team, rules and governance to run pricing yourselves.",["Pricing","capability"]]
+  ],
+  gateQ:"Can you assign a dedicated person internally to own pricing work?",
+  yes:"Yes", no:"Not yet",
+  err:"Answer this question to see your result.",
+  show:"Show my result",
+  expert:"Expert advisory", project:"Enablement project", talk:"First conversation",
+  and:" and ", comma:", ",
+  focusedH:"Start with Expert advisory",
+  focusedB:t=>`Your ambition is concentrated on ${t}. That calls for focused work on specific questions rather than a company-wide programme. In Expert advisory you bring concrete pricing issues and we work through them together, online or on site, billed by the time spent.`,
+  broadH:"An Enablement project fits your ambition",
+  broadB:t=>`Your ambition is broad, with ${t} leading. Goals like these depend on each other, so they are best tackled as one system. In an Enablement project we agree scope, deliverables and timeline up front, and your team builds the capability alongside us.`,
+  gatedB:t=>`Your ambition is broad, with ${t} leading, which usually calls for an Enablement project. A project needs someone on your side to own it, though. Expert advisory lets you start now, sharpen priorities and prepare that ownership, then move into a project when you're ready.`,
+  lowH:"Start with a conversation",
+  lowB:()=>"None of the six goals stands out as a priority yet. A short conversation is the best first step: we'll check whether pricing is the lever you need right now.",
+  shareTxt:"Send your profile to Dr. Jan Y. Yang and he will reply with a suggested next step.",
+  mail:"Email my profile to Jan", copy:"Copy my profile", copied:"Copied",
+  subject:"My pricing ambition profile",
+  mailIntro:"Hi Jan,\n\nhere is my pricing ambition profile:\n\n",
+  ownerLine:o=>`Dedicated pricing owner: ${o}`,
+  sugg:"Suggested starting point",
+  mailEnd:"\n\nCompany:\nRole:\n\nBest regards",
+  tagline:"Pricing by design, not by default",
+  sig:"Dr. Jan Y. Yang, PricingGoat"
+ },
+ zh:{
+  title:"你希望定价为你实现什么？",
+  sub:"为未来12个月的六个目标打分，雷达图的形状会告诉你从哪里开始。",
+  levels:["不是重点","有则更好","重要","高度优先","首要目标"],
+  ticks:["1","2","3","4","5"],
+  goals:[
+   ["提升利润","通过定价而非降本来提升利润率。",["提升利润"]],
+   ["涨价落地","让涨价被客户接受，并被团队和渠道执行到位。",["涨价落地"]],
+   ["管控折扣促销","避免折扣和促销侵蚀实际到手的价格。",["管控","折扣促销"]],
+   ["价值变现","按创造的客户价值为新产品和服务定价。",["价值变现"]],
+   ["理顺价格体系","理顺产品、渠道和市场之间的价格关系。",["理顺","价格体系"]],
+   ["建立定价机制","建立团队、规则与治理，让企业自己管好定价。",["建立","定价机制"]]
+  ],
+  gateQ:"你能否在内部指派专人负责定价工作？",
+  yes:"能", no:"暂时不能",
+  err:"请先回答这个问题，再查看结果。",
+  show:"查看结果",
+  expert:"专家答疑", project:"赋能项目", talk:"初步沟通",
+  and:"和", comma:"、",
+  focusedH:"建议从专家答疑开始",
+  focusedB:t=>`你的目标集中在${t}。这更适合针对具体问题深入研讨，而不是启动全面项目。在专家答疑模式下，你带着具体的定价问题来，我们一起逐一解决，线上线下均可，按实际时长计费。`,
+  broadH:"你的目标适合赋能项目",
+  broadB:t=>`你的目标覆盖面广，其中以${t}为重。这些目标相互关联，最好作为一个体系来推进。在赋能项目中，我们事先约定范围、交付内容与周期，你的团队在项目中同步建立能力。`,
+  gatedB:t=>`你的目标覆盖面广，其中以${t}为重，通常适合赋能项目。但项目需要你方有专人负责。先从专家答疑开始，可以立即推进、厘清优先级，并为项目做好准备，时机成熟后再转入赋能项目。`,
+  lowH:"建议先做一次沟通",
+  lowB:()=>"目前六个目标中还没有突出的重点。最好的第一步是一次简短的沟通，看看定价是否是你现在最需要的抓手。",
+  shareTxt:"把你的结果发给杨一安博士，他会回复建议的下一步。",
+  mail:"发送给杨一安博士", copy:"复制我的结果", copied:"已复制",
+  subject:"我的定价目标雷达",
+  mailIntro:"杨博士您好，\n\n以下是我的定价目标雷达结果：\n\n",
+  ownerLine:o=>`内部定价负责人：${o}`,
+  sugg:"建议起点",
+  mailEnd:"\n\n公司：\n职位：\n\n谢谢！",
+  tagline:"定价，是设计出来的，不是将就出来的",
+  sig:"杨一安博士，PricingGoat"
+ }
+};
+
+let lang=document.documentElement.lang.startsWith("zh")?"zh":"en";
+const scores=[1,1,1,1,1,1];
+const shown=[1,1,1,1,1,1];
+let owner=null, resultOpen=false;
+const $=id=>document.getElementById(id);
+const reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- radar ---------- */
+const CX=210,CY=180,R=118,N=6;
+const ang=i=>-Math.PI/2+i*2*Math.PI/N;
+const pt=(i,v)=>[CX+Math.cos(ang(i))*R*v/5,CY+Math.sin(ang(i))*R*v/5];
+const svgNS="http://www.w3.org/2000/svg";
+const radar=$("radar");
+function el(tag,attrs){const e=document.createElementNS(svgNS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);return e}
+for(let r=1;r<=5;r++){
+  radar.appendChild(el("polygon",{class:"ring",points:[...Array(N)].map((_,i)=>pt(i,r).join(",")).join(" ")}));
+}
+for(let i=0;i<N;i++){const [x,y]=pt(i,5);radar.appendChild(el("line",{class:"spoke",x1:CX,y1:CY,x2:x,y2:y}))}
+const shape=el("polygon",{class:"shape"});radar.appendChild(shape);
+const dots=[...Array(N)].map(()=>{const d=el("circle",{class:"dot",r:4});radar.appendChild(d);return d});
+const labels=[...Array(N)].map(()=>{const t=el("text",{class:"lbl"});radar.appendChild(t);return t});
+
+function drawShape(){
+  shape.setAttribute("points",shown.map((v,i)=>pt(i,v).join(",")).join(" "));
+  dots.forEach((d,i)=>{const [x,y]=pt(i,shown[i]);d.setAttribute("cx",x);d.setAttribute("cy",y)});
+}
+function drawLabels(){
+  const max=Math.max(...scores);
+  labels.forEach((t,i)=>{
+    const lines=T[lang].goals[i][2];
+    const a=ang(i), x=CX+Math.cos(a)*(R+16), y=CY+Math.sin(a)*(R+16);
+    const c=Math.cos(a), s=Math.sin(a);
+    t.setAttribute("text-anchor",Math.abs(c)<.2?"middle":(c>0?"start":"end"));
+    const lh=15, h=(lines.length-1)*lh;
+    let y0 = s<-.8 ? y-h-4 : s>.8 ? y+12 : y-h/2+4;
+    t.textContent="";
+    lines.forEach((ln,k)=>{const ts=el("tspan",{x:x,y:y0+k*lh});ts.textContent=ln;t.appendChild(ts)});
+    t.classList.toggle("top",max>=4&&scores[i]===max);
+  });
+}
+let raf=null;
+function animate(){
+  let moving=false;
+  for(let i=0;i<N;i++){
+    const d=scores[i]-shown[i];
+    if(Math.abs(d)>.005){shown[i]+=d*.22;moving=true}else shown[i]=scores[i];
+  }
+  drawShape();
+  raf=moving?requestAnimationFrame(animate):null;
+}
+function kick(){if(reduce){shown.splice(0,N,...scores);drawShape()}else if(!raf)raf=requestAnimationFrame(animate)}
+
+/* ---------- sliders ---------- */
+const list=$("goals");
+for(let i=0;i<N;i++){
+  const li=document.createElement("li");li.className="goal";
+  li.innerHTML=`<div class="goal-head"><h2 id="g${i}"></h2><span class="level" id="lv${i}"></span></div>
+  <p id="d${i}"></p>
+  <input type="range" min="1" max="5" step="1" value="1" id="s${i}" aria-labelledby="g${i}">
+  <div class="ticks" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>`;
+  list.appendChild(li);
+  const s=li.querySelector("input");
+  s.addEventListener("input",()=>{scores[i]=+s.value;paintSlider(i);drawLabels();kick();if(resultOpen)renderResult()});
+}
+function paintSlider(i){
+  const s=$("s"+i);s.style.setProperty("--p",((scores[i]-1)/4*100)+"%");
+  $("lv"+i).textContent=T[lang].levels[scores[i]-1];
+  s.setAttribute("aria-valuetext",T[lang].levels[scores[i]-1]);
+}
+
+/* ---------- gate ---------- */
+document.querySelectorAll(".choice").forEach(b=>b.addEventListener("click",()=>{
+  owner=b.dataset.owner;
+  document.querySelectorAll(".choice").forEach(c=>c.setAttribute("aria-pressed",c===b?"true":"false"));
+  $("err").textContent="";
+  if(resultOpen)renderResult();
+}));
+
+/* ---------- result logic ---------- */
+function topGoals(){
+  const max=Math.max(...scores);
+  const idx=scores.map((v,i)=>v===max?i:-1).filter(i=>i>=0).slice(0,3);
+  const names=idx.map(i=>T[lang].goals[i][0]);
+  const L=T[lang];
+  const q=lang==="zh"?n=>`“${n}”`:n=>n.toLowerCase();
+  const qs=names.map(q);
+  return qs.length===1?qs[0]:qs.slice(0,-1).join(L.comma)+L.and+qs[qs.length-1];
+}
+function classify(){
+  const high=scores.filter(v=>v>=4).length;
+  if(Math.max(...scores)<=2) return "low";
+  if(high>=4 || (scores[5]>=4 && high>=2)) return owner==="no"?"gated":"broad";
+  return "focused";
+}
+function renderResult(){
+  const L=T[lang], k=classify(), t=topGoals();
+  const map={
+    low:[L.talk,L.lowH,L.lowB()],
+    focused:[L.expert,L.focusedH,L.focusedB(t)],
+    broad:[L.project,L.broadH,L.broadB(t)],
+    gated:[L.expert,L.focusedH,L.gatedB(t)]
+  }[k];
+  $("rModel").textContent=map[0];$("rHead").textContent=map[1];$("rBody").textContent=map[2];
+  $("mailBtn").href="mailto:jan.yang@pricinggoat.com?subject="+encodeURIComponent(L.subject)+"&body="+encodeURIComponent(profileText(map[0])+L.mailEnd);
+}
+function profileText(model){
+  const L=T[lang];
+  const lines=scores.map((v,i)=>`${L.goals[i][0]}: ${v}/5`);
+  lines.push("",L.ownerLine(owner==="yes"?L.yes:L.no),`${L.sugg}: ${model}`);
+  return L.mailIntro+lines.join("\n");
+}
+$("showBtn").addEventListener("click",()=>{
+  if(!owner){$("err").textContent=T[lang].err;return}
+  resultOpen=true;renderResult();
+  const r=$("result");r.classList.add("show");
+  r.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});
+});
+$("copyBtn").addEventListener("click",async()=>{
+  try{await navigator.clipboard.writeText(profileText($("rModel").textContent));
+    $("copyBtn").textContent=T[lang].copied;setTimeout(()=>$("copyBtn").textContent=T[lang].copy,1800)}catch(e){}
+});
+
+/* ---------- language ---------- */
+function applyLang(){
+  const L=T[lang];
+  $("title").textContent=L.title;$("sub").textContent=L.sub;
+  for(let i=0;i<N;i++){$("g"+i).textContent=L.goals[i][0];$("d"+i).textContent=L.goals[i][1];paintSlider(i)}
+  $("gateQ").textContent=L.gateQ;
+  document.querySelector('[data-owner="yes"]').textContent=L.yes;
+  document.querySelector('[data-owner="no"]').textContent=L.no;
+  if($("err").textContent)$("err").textContent=L.err;
+  $("showBtn").textContent=L.show;
+  $("shareTxt").textContent=L.shareTxt;$("mailBtn").textContent=L.mail;$("copyBtn").textContent=L.copy;
+  drawLabels();if(resultOpen)renderResult();
+}
+
+applyLang();drawShape();
+</script>
+</body>
+</html>
