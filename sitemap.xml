@@ -46,6 +46,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/"/>
   </url>
 
+  <!-- Article: The Quiet Leap (EN only) -->
+  <url>
+    <loc>https://www.pricinggoat.com/articles/samsung-china-quiet-leap.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Article: The First Principles of Pricing (EN only until a ZH version exists) -->
   <url>
     <loc>https://www.pricinggoat.com/articles/first-principles-pricing.html</loc>
