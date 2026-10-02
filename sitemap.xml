@@ -102,6 +102,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Article: Chinese EV Trailblazers (EN only) -->
+  <url>
+    <loc>https://www.pricinggoat.com/articles/chinese-ev-trailblazers.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Article: Why Is Pricing Not Management's Top Priority? / 定价为什么没这么重要？ (EN + ZH pair) -->
   <url>
     <loc>https://www.pricinggoat.com/articles/why-pricing-is-not-a-management-priority.html</loc>
