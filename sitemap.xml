@@ -62,6 +62,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Article: 为什么我不再给新客户看PPT了 (ZH only) -->
+  <url>
+    <loc>https://www.pricinggoat.com/zh/articles/no-slides-for-new-clients.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Article: 写给新上任的定价负责人 (ZH only) -->
   <url>
     <loc>https://www.pricinggoat.com/zh/articles/to-new-pricing-leaders.html</loc>
