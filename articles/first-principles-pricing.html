@@ -55,6 +55,25 @@
     top: -100px; right: -100px;
     pointer-events: none;
   }
+  .hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 56px;
+    position: relative;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .hero-nav a {
+    color: rgba(240,232,212,.5);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .hero-nav a:hover { color: var(--gold-lt); }
+
   .hero-eyebrow {
     font-family: 'DM Sans', sans-serif;
     font-size: 11px;
@@ -313,6 +332,7 @@
     background: var(--ink);
     margin-top: 0;
   }
+  a.brand-logo { text-decoration: none; }
   .brand-logo {
     font-family: 'Lora', serif;
     font-size: 28px;
@@ -356,6 +376,10 @@
 
 <!-- HERO -->
 <div class="hero">
+  <nav class="hero-nav" aria-label="Site">
+    <a href="/articles/">← All articles</a>
+    <a href="/">Home</a>
+  </nav>
   <div class="hero-eyebrow">Pricing Strategy</div>
   <h1>Most companies don't <em>reason</em> about pricing.<br>They just copy it.</h1>
   <p class="hero-sub">What Elon Musk's first principles method reveals about the way we set prices — and why it's costing us more than we think.</p>
@@ -467,7 +491,7 @@
 
 <!-- BRAND FOOTER -->
 <div class="brand-footer">
-  <div class="brand-logo"><span class="pricing">pricing</span><span class="goat">goat</span></div>
+  <a href="/" class="brand-logo"><span class="pricing">pricing</span><span class="goat">goat</span></a>
   <div class="brand-right">
     <div class="brand-tagline">Pricing by Design</div>
     <div class="brand-url">PRICINGGOAT.COM</div>
