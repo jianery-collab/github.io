@@ -54,6 +54,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Article: 这泼天富贵该怎么接？ (ZH only) -->
+  <url>
+    <loc>https://www.pricinggoat.com/zh/articles/price-realization.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Article: 写给新上任的定价负责人 (ZH only) -->
   <url>
     <loc>https://www.pricinggoat.com/zh/articles/to-new-pricing-leaders.html</loc>
