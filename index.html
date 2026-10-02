@@ -423,13 +423,25 @@
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
 
+    /* MOBILE MENU */
+    .nav-menu-btn { display: none; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); background: none; border: 1px solid var(--line); padding: 0.4rem 0.85rem; border-radius: 2px; cursor: pointer; white-space: nowrap; }
+    .site-menu { position: absolute; top: 100%; left: 0; right: 0; height: 100vh; overflow-y: auto; background: var(--paper); padding: 1.5rem 2rem 8rem; }
+    .site-menu[hidden] { display: none; }
+    .site-menu ul { list-style: none; margin: 0; padding: 0; }
+    .site-menu a { display: block; font-family: inherit; font-size: 1.9rem; font-weight: 300; line-height: 1.3; padding: 0.7rem 0; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+    .site-menu a:hover, .site-menu a[aria-current="page"] { color: var(--accent); }
+    body.menu-open { overflow: hidden; }
+
     /* RESPONSIVE */
+    @media (min-width: 901px) { .site-menu { display: none; } }
     @media (max-width: 1100px) {
       .nav-links { gap: 1.5rem; }
     }
     @media (max-width: 900px) {
       nav { padding: 1.2rem 2rem; }
       .nav-links li.hide-mobile { display: none; }
+      .nav-links { gap: 0.9rem; }
+      .nav-menu-btn { display: inline-block; }
       .nav-cta { font-size: 0.62rem !important; letter-spacing: 0.05em !important; padding: 0.45rem 0.7rem !important; }
       section { padding: 5rem 2rem; }
       #about { grid-template-columns: 1fr; gap: 3rem; }
@@ -439,7 +451,13 @@
       .books-grid { grid-template-columns: 1fr; }
       .platforms-grid { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; gap: 0.8rem 1.5rem; }
       .hero-left { padding: 4rem 2rem; }
+    }
+    @media (max-width: 480px) {
+      nav { padding: 1.2rem 1.25rem; }
+      .site-menu { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .nav-links li.hide-small { display: none; }
     }
   </style>
 </head>
@@ -454,11 +472,22 @@
       <li class="hide-mobile"><a href="#capability">Capability</a></li>
       <li class="hide-mobile"><a href="#books">Books</a></li>
       <li class="hide-mobile"><a href="#articles">Articles</a></li>
-      <li class="hide-mobile"><a href="#writing">Writing</a></li>
       <li class="hide-mobile"><a href="/assessment/">Assessment</a></li>
-      <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+      <li class="hide-small"><a href="#contact" class="nav-cta">Get in Touch</a></li>
       <li><a href="/zh/" class="lang-toggle" lang="zh-Hans" hreflang="zh-Hans">中文</a></li>
+      <li><button type="button" class="nav-menu-btn" aria-expanded="false" aria-controls="site-menu" data-open="Menu" data-close="Close">Menu</button></li>
     </ul>
+    <div id="site-menu" class="site-menu" hidden>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#capability">Capability</a></li>
+        <li><a href="#books">Books</a></li>
+        <li><a href="#articles">Articles</a></li>
+        <li><a href="/assessment/">Assessment</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -780,6 +809,21 @@
       });
     }, { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    (function () {
+      var btn = document.querySelector('.nav-menu-btn'), menu = document.getElementById('site-menu');
+      if (!btn || !menu) return;
+      function set(open) {
+        menu.hidden = !open;
+        btn.setAttribute('aria-expanded', open);
+        btn.textContent = open ? btn.dataset.close : btn.dataset.open;
+        document.body.classList.toggle('menu-open', open);
+      }
+      btn.addEventListener('click', function () { set(menu.hidden); });
+      menu.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menu.hidden) { set(false); btn.focus(); } });
+      window.matchMedia('(min-width: 901px)').addEventListener('change', function (e) { if (e.matches) set(false); });
+    })();
   </script>
 </body>
 </html>
