@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>定价职能，自己先散了 · 杨一安博士</title>
+
+<!-- Open Graph -->
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="定价职能，自己先散了" />
+<meta property="og:description" content="定价本应是贯穿组织的一根红线。可在很多大公司里，这根线先在定价团队内部断了。" />
+<meta property="og:site_name"   content="PricingGoat" />
+<meta property="og:url"         content="https://www.pricinggoat.com/zh/articles/divided-pricing-function.html" />
+<meta property="og:image"       content="https://www.pricinggoat.com/og-image.png" />
+<meta property="og:locale"      content="zh_CN" />
+<link rel="canonical" href="https://www.pricinggoat.com/zh/articles/divided-pricing-function.html" />
+<link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/divided-pricing-function.html" />
+<link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/divided-pricing-function.html" />
+<link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/divided-pricing-function.html" />
+<meta name="author"             content="杨一安" />
+<meta name="description"        content="定价本应是贯穿组织的一根红线。可在很多大公司里，这根线先在定价团队内部断了。" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "定价职能，自己先散了",
+  "description": "定价本应是贯穿组织的一根红线。可在很多大公司里，这根线先在定价团队内部断了。",
+  "url": "https://www.pricinggoat.com/zh/articles/divided-pricing-function.html",
+  "datePublished": "2026-10-02",
+  "dateModified": "2026-10-02",
+  "inLanguage": "zh-Hans",
+  "image": "https://www.pricinggoat.com/og-image.png",
+  "author": { "@type": "Person", "@id": "https://www.pricinggoat.com/#person", "name": "杨一安", "url": "https://www.pricinggoat.com/zh/" },
+  "publisher": { "@type": "Organization", "name": "PricingGoat", "url": "https://www.pricinggoat.com/" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #16120a;
+    --paper:    #f7f3ec;
+    --gold:     #b8882a;
+    --gold-lt:  #d4a84b;
+    --muted:    #7a6e5a;
+    --rule:     #ddd5c0;
+    --accent:   #f0e8d4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    line-height: 1.85;
+    padding: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    padding: 80px 48px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,136,42,.18) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 56px;
+    position: relative;
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .hero-nav a {
+    color: rgba(240,232,212,.5);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .hero-nav a:hover { color: var(--gold-lt); }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+  }
+  .hero-eyebrow::after {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+    opacity: .6;
+  }
+  .hero h1 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    max-width: 720px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold-lt);
+  }
+  .hero-sub {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(240,232,212,.6);
+    max-width: 580px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  .hero-rule { width: 32px; height: 1px; background: var(--gold); opacity: .5; }
+  .hero-author {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 13px;
+    color: rgba(240,232,212,.4);
+    letter-spacing: 1px;
+  }
+
+  /* ── ARTICLE ── */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+  }
+
+  p { margin-bottom: 24px; color: #3a3020; }
+
+  /* ── DROP CAP ── */
+  .drop-cap::first-letter {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: .8;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+    color: var(--gold);
+  }
+
+  /* ── SECTION HEADS ── */
+  h2 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 48px 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    margin: 36px 0;
+    background: var(--accent);
+  }
+  .pullquote p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: var(--ink);
+    color: #f0e8d4;
+    padding: 32px 36px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .callout::before {
+    content: '"';
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 100px;
+    color: rgba(184,136,42,.15);
+    position: absolute;
+    top: -10px; left: 16px;
+    line-height: 1;
+  }
+  .callout p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #e8dcc8;
+    margin: 0;
+    position: relative;
+  }
+  .callout p strong { color: #ffffff; }
+  .callout-source {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-top: 14px;
+    display: block;
+    position: relative;
+  }
+
+  /* ── THREE AXIOMS ── */
+  .axioms {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin: 36px 0;
+  }
+  .axiom {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .axiom:last-child { border-bottom: none; }
+  .axiom-num {
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .axiom-body { padding: 20px 24px; }
+  .axiom-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .axiom-desc {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── DIAGNOSTIC ── */
+  .diagnostic {
+    background: var(--accent);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    margin: 36px 0;
+  }
+  .diagnostic-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .diagnostic-title::before {
+    content: '';
+    display: block;
+    width: 4px; height: 18px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .diag-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .diag-item:last-child { margin-bottom: 0; }
+  .diag-num {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 20px;
+    padding-top: 1px;
+  }
+  .diag-text {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: #3a3020;
+    line-height: 1.65;
+  }
+  .diag-text strong { color: var(--ink); }
+
+  /* ── CLOSING ── */
+  .closing {
+    border-top: 2px solid var(--ink);
+    padding-top: 40px;
+    margin-top: 56px;
+  }
+  .closing-statement {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+  .closing-statement em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .closing p { font-size: 17px; }
+
+  /* ── BRAND FOOTER ── */
+  .brand-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 32px;
+    background: var(--ink);
+    margin-top: 0;
+  }
+  a.brand-logo { text-decoration: none; }
+  .brand-logo {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 28px;
+    font-weight: 400;
+  }
+  .brand-logo .pricing { color: #f0e8d4; }
+  .brand-logo .goat { color: var(--gold); }
+  .brand-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .brand-tagline {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(240,232,212,.45);
+  }
+  .brand-url {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* Chinese text: no extra tracking on labels, line breaks inside flow lists */
+  .hero-eyebrow, .hero-nav { letter-spacing: 2px; }
+  .flow p { margin-bottom: 0; }
+  em, .pullquote p { font-style: normal; }
+
+  .credit { color: var(--muted); font-size: 16px; margin-top: 32px; }
+  .article a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,136,42,.35); transition: border-color .2s; }
+  .article a:hover { border-color: var(--gold); }
+
+  @media (max-width: 600px) {
+    .hero { padding: 56px 24px 56px; }
+    .article { padding: 48px 20px 64px; }
+    .callout { padding: 24px 22px; }
+    .brand-footer { flex-direction: column; gap: 16px; text-align: center; }
+    .brand-right { align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <nav class="hero-nav" aria-label="网站导航">
+    <a href="/zh/articles/">← 全部文章</a>
+    <a href="/zh/">首页</a>
+  </nav>
+  <div class="hero-eyebrow">定价组织</div>
+  <h1>定价职能，自己先<em>散了</em></h1>
+  <p class="hero-sub">定价本应是贯穿组织的一根红线。可在很多大公司里，这根线先在定价团队内部断了。</p>
+  <div class="hero-meta">
+    <div class="hero-rule"></div>
+    <span class="hero-author">杨一安 · pricinggoat.com</span>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<article class="article">
+
+  <p>定价，本应是贯穿整个公司的一根红线。</p>
+
+  <p>它连接战略和货架，连接产品和销售，连接董事会的决策和一线的每一笔订单。客户最终付的每一个价格，背后都叠加着好几个部门的决定。</p>
+
+  <p>但有一件事，我反复遇到，越想越觉得讽刺：在大公司里，定价职能本身，并不是一个整体。</p>
+
+  <p>看看大公司的定价实际是怎么组织的。总部有中央定价团队，负责目录价、定价政策和工具。各事业部有自己的定价经理，管自己的产品线，守自己的利润表。各地市场有商务卓越或定价人员，离客户和销售更近。有的公司还有交易支持团队、收益管理团队。同一家公司里，这个事业部的定价归财务，那个事业部的定价归市场。</p>
+
+  <p>每个团队都很专业，每个团队都在尽职。问题出在团队和团队之间。</p>
+
+  <h2>一、漏洞在哪里</h2>
+
+  <p>定价的漏洞，很少出在某个团队内部，往往出在交接处。</p>
+
+  <p><strong>总部定价格，市场定折扣。</strong>中央团队根据价值和定位制定目录价。地方团队按销量考核，给出能拿下单子的折扣。两个决定单独看都合理，合在一起，最终的成交价落在一个没人设计、也没人负责的位置。</p>
+
+  <p><strong>不同事业部，对同一个客户各报各的价。</strong>一个大客户同时从三个事业部采购。每个事业部各自谈判，折扣逻辑各不相同。客户看得到全貌，公司自己看不到。这场谈判谁占上风，不言而喻。</p>
+
+  <p><strong>上市定价和生命周期定价，从不碰面。</strong>一个团队精心为新产品定价。产品上市后交给另一个团队，当初的定价逻辑留在一份再也没人打开的PPT里。两年后，没有人说得清这个价格为什么是现在这样。</p>
+
+  <p><strong>政策和执行，越走越远。</strong>定价政策写的是一套，系统里允许的是一套，地方实际操作的又是一套。每个团队都觉得，这个缺口是别人的事。</p>
+
+  <p>这些都不是能力问题，是交接和协同的问题。</p>
+
+  <div class="pullquote">
+    <p>定价的漏洞，很少在团队里面，往往在团队之间。</p>
+  </div>
+
+  <h2>二、为什么公司越大，问题越突出</h2>
+
+  <p>小公司里，定价的人和谈价的人往往就坐在隔壁。哪里没对齐，一眼就看得见，一顿午饭就解决了。</p>
+
+  <p>大公司里，每多一个层级、一个区域、一个事业部，就多一个接口。每个接口，都是意图可能流失的地方。信息传得更慢，责任变得模糊，各地的激励朝着不同方向拉扯。组织越大，接口越多，漏得越多。</p>
+
+  <p>还有一个不那么显眼的原因：大公司按各自的结果考核团队。事业部定价经理看事业部利润，地方团队看市场销量，中央团队看工具和政策有没有落地。没有人的考核指标是：整个定价体系有没有拧成一股绳。所以，也就没有人去修。</p>
+
+  <h2>三、统一，不等于集中</h2>
+
+  <p>第一反应往往是集中：一个团队、一套流程、一个工具，全部收上来。以我的经验，这种做法很难持久。地方市场确实知道总部不知道的事，事业部服务的确实是不同的客户。把地方的判断拿走，只会带来一批新的问题。</p>
+
+  <p>统一的定价职能，不是所有人都向同一个人汇报，而是：</p>
+
+  <div class="axioms">
+    <div class="axiom">
+      <div class="axiom-num">1</div>
+      <div class="axiom-body">
+        <div class="axiom-title">决策权清清楚楚</div>
+        <p class="axiom-desc">谁定目录价，谁管折扣，谁批例外，写下来，而不是默认。</p>
+      </div>
+    </div>
+    <div class="axiom">
+      <div class="axiom-num">2</div>
+      <div class="axiom-body">
+        <div class="axiom-title">交接是设计出来的</div>
+        <p class="axiom-desc">价格从一个团队交到另一个团队时，背后的逻辑一起交过去。</p>
+      </div>
+    </div>
+    <div class="axiom">
+      <div class="axiom-num">3</div>
+      <div class="axiom-body">
+        <div class="axiom-title">只有一个版本的事实</div>
+        <p class="axiom-desc">跨事业部、跨市场，用同一套数据、同一套口径、同一个成交价视图。</p>
+      </div>
+    </div>
+    <div class="axiom">
+      <div class="axiom-num">4</div>
+      <div class="axiom-body">
+        <div class="axiom-title">共同原则高于本地做法</div>
+        <p class="axiom-desc">各团队可以因地制宜，但要在一套大家都理解的逻辑之内。</p>
+      </div>
+    </div>
+    <div class="axiom">
+      <div class="axiom-num">5</div>
+      <div class="axiom-body">
+        <div class="axiom-title">有人对整体负责</div>
+        <p class="axiom-desc">不是管每一个价格，而是管整个体系是否自洽。</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>四、一个简单的自测</h2>
+
+  <p>如果你在大公司负责定价，不妨问自己三个问题：</p>
+
+  <div class="diagnostic">
+    <div class="diagnostic-title">定价负责人的三个问题</div>
+    <div class="diag-item"><div class="diag-num">1.</div><div class="diag-text">能不能拿出一个客户，从目录价一路追到发票价，并说出每一步是谁做的决定？</div></div>
+    <div class="diag-item"><div class="diag-num">2.</div><div class="diag-text">两个事业部卖给同一个客户时，在任何一方开谈之前，有没有人看到合起来的全貌？</div></div>
+    <div class="diag-item"><div class="diag-num">3.</div><div class="diag-text">价格从一个团队交到另一个团队时，除了一个数字，还交过去了什么？</div></div>
+  </div>
+
+  <p>如果答案让你不太舒服，问题可能不在你的价格，而在你的定价组织。</p>
+
+  <div class="closing">
+    <div class="closing-statement">定价要成为公司的那根红线，<br>它自己得先是<em>一根线</em>。</div>
+    <p class="credit">英文版：<a href="/articles/divided-pricing-function.html" lang="en" hreflang="en">The Divided Pricing Function</a></p>
+  </div>
+
+</article>
+
+<!-- BRAND FOOTER -->
+<div class="brand-footer">
+  <a href="/zh/" class="brand-logo"><span class="pricing">pricing</span><span class="goat">goat</span></a>
+  <div class="brand-right">
+    <div class="brand-tagline">Pricing by Design</div>
+    <div class="brand-url">PRICINGGOAT.COM</div>
+  </div>
+</div>
+
+</body>
+</html>

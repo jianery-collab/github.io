@@ -162,4 +162,24 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/why-pricing-is-not-a-management-priority.html"/>
   </url>
 
+  <!-- Article: The Divided Pricing Function / 定价职能，自己先散了 (EN + ZH pair) -->
+  <url>
+    <loc>https://www.pricinggoat.com/articles/divided-pricing-function.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/divided-pricing-function.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/divided-pricing-function.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/divided-pricing-function.html"/>
+  </url>
+  <url>
+    <loc>https://www.pricinggoat.com/zh/articles/divided-pricing-function.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/divided-pricing-function.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/divided-pricing-function.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/divided-pricing-function.html"/>
+  </url>
+
 </urlset>
