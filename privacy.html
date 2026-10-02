@@ -71,8 +71,7 @@
   </nav>
 
   <div class="page-wrap">
-    <div class="page-eyebrow lang-en">Legal</div>
-    <div class="page-eyebrow lang-zh">法律声明</div>
+    <div class="page-eyebrow"><span class="lang-en">Legal</span><span class="lang-zh">法律声明</span></div>
     <h1 class="page-title lang-en">Privacy <em>Policy</em></h1>
     <h1 class="page-title lang-zh">隐私<em>政策</em></h1>
 
@@ -143,4 +142,28 @@
         <p>最新版本始终可在 <a href="https://www.pricinggoat.com/privacy.html">pricinggoat.com/privacy.html</a> 查阅。</p>
       </div>
     </div>
-  </d
+  </div>
+
+  <footer>
+    <a href="index.html" class="footer-logo">Pricing<span>Goat</span></a>
+    <ul class="footer-links">
+      <li><a href="index.html"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a></li>
+      <li><a href="imprint.html"><span class="lang-en">Imprint</span><span class="lang-zh">版权声明</span></a></li>
+      <li><a href="privacy.html"><span class="lang-en">Privacy</span><span class="lang-zh">隐私政策</span></a></li>
+    </ul>
+    <span class="footer-copy">© 2026 PricingGoat.com</span>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('langToggle');
+    let isZh = navigator.language.startsWith('zh');
+    const apply = () => {
+      document.body.classList.toggle('zh', isZh);
+      toggle.textContent = isZh ? 'EN' : '\u4e2d\u6587';
+      document.documentElement.lang = isZh ? 'zh-Hans' : 'en';
+    };
+    apply();
+    toggle.addEventListener('click', () => { isZh = !isZh; apply(); });
+  </script>
+</body>
+</html>

@@ -87,8 +87,7 @@
 
   <div class="page-wrap">
 
-    <div class="page-eyebrow lang-en">Legal</div>
-    <div class="page-eyebrow lang-zh">法律声明</div>
+    <div class="page-eyebrow"><span class="lang-en">Legal</span><span class="lang-zh">法律声明</span></div>
 
     <h1 class="page-title lang-en">Imprint</h1>
     <h1 class="page-title lang-zh">版权与法律<em>声明</em></h1>
@@ -191,4 +190,16 @@
     <span class="footer-copy">© 2026 PricingGoat.com</span>
   </footer>
 
-  <script
+  <script>
+    const toggle = document.getElementById('langToggle');
+    let isZh = navigator.language.startsWith('zh');
+    const apply = () => {
+      document.body.classList.toggle('zh', isZh);
+      toggle.textContent = isZh ? 'EN' : '\u4e2d\u6587';
+      document.documentElement.lang = isZh ? 'zh-Hans' : 'en';
+    };
+    apply();
+    toggle.addEventListener('click', () => { isZh = !isZh; apply(); });
+  </script>
+</body>
+</html>

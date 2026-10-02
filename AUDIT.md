@@ -4,7 +4,7 @@ Audit of www.pricinggoat.com as of 2026-10-02 (branch `claude/foundations-articl
 
 ## Urgent, but not a search issue
 
-These matter more than anything in the ranked list, even though both pages are `noindex`.
+**Fixed in PR `claude/fix-legal-pages`:** both endings were rebuilt (no complete copy existed in git history). The page content itself was intact.
 
 | Issue | Fix |
 |---|---|
