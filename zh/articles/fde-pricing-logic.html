@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>从定价视角看 FDE 的底层逻辑 · 杨一安博士</title>
+
+<!-- Open Graph -->
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="从定价视角看 FDE 的底层逻辑" />
+<meta property="og:description" content="Palantir 的 FDE 不是新范式，是软件行业的起点。决定交付模式的，是你卖的东西在交付时点能不能被写进验收标准；责任闭合，才卖得上价。" />
+<meta property="og:site_name"   content="PricingGoat" />
+<meta property="og:url"         content="https://www.pricinggoat.com/zh/articles/fde-pricing-logic.html" />
+<meta property="og:image"       content="https://www.pricinggoat.com/og-image.png" />
+<meta property="og:locale"      content="zh_CN" />
+<link rel="canonical" href="https://www.pricinggoat.com/zh/articles/fde-pricing-logic.html" />
+<meta name="author"             content="杨一安" />
+<meta name="description"        content="Palantir 的 FDE 不是新范式，是软件行业的起点。决定交付模式的，是你卖的东西在交付时点能不能被写进验收标准；责任闭合，才卖得上价。" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "从定价视角看 FDE 的底层逻辑",
+  "description": "Palantir 的 FDE 不是新范式，是软件行业的起点。决定交付模式的，是你卖的东西在交付时点能不能被写进验收标准；责任闭合，才卖得上价。",
+  "url": "https://www.pricinggoat.com/zh/articles/fde-pricing-logic.html",
+  "datePublished": "2026-09-14",
+  "dateModified": "2026-10-02",
+  "inLanguage": "zh-Hans",
+  "image": "https://www.pricinggoat.com/og-image.png",
+  "author": {
+    "@type": "Person",
+    "@id": "https://www.pricinggoat.com/#person",
+    "name": "杨一安",
+    "url": "https://www.pricinggoat.com/zh/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "PricingGoat",
+    "url": "https://www.pricinggoat.com/"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #16120a;
+    --paper:    #f7f3ec;
+    --gold:     #b8882a;
+    --gold-lt:  #d4a84b;
+    --muted:    #7a6e5a;
+    --rule:     #ddd5c0;
+    --accent:   #f0e8d4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    line-height: 1.85;
+    padding: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    padding: 80px 48px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,136,42,.18) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 56px;
+    position: relative;
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .hero-nav a {
+    color: rgba(240,232,212,.5);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .hero-nav a:hover { color: var(--gold-lt); }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+  }
+  .hero-eyebrow::after {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+    opacity: .6;
+  }
+  .hero h1 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    max-width: 720px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold-lt);
+  }
+  .hero-sub {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(240,232,212,.6);
+    max-width: 580px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  .hero-rule { width: 32px; height: 1px; background: var(--gold); opacity: .5; }
+  .hero-author {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 13px;
+    color: rgba(240,232,212,.4);
+    letter-spacing: 1px;
+  }
+
+  /* ── ARTICLE ── */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+  }
+
+  p { margin-bottom: 24px; color: #3a3020; }
+
+  /* ── DROP CAP ── */
+  .drop-cap::first-letter {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: .8;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+    color: var(--gold);
+  }
+
+  /* ── SECTION HEADS ── */
+  h2 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 48px 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    margin: 36px 0;
+    background: var(--accent);
+  }
+  .pullquote p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: var(--ink);
+    color: #f0e8d4;
+    padding: 32px 36px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .callout::before {
+    content: '"';
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 100px;
+    color: rgba(184,136,42,.15);
+    position: absolute;
+    top: -10px; left: 16px;
+    line-height: 1;
+  }
+  .callout p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #e8dcc8;
+    margin: 0;
+    position: relative;
+  }
+  .callout p strong { color: #ffffff; }
+  .callout-source {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-top: 14px;
+    display: block;
+    position: relative;
+  }
+
+  /* ── THREE AXIOMS ── */
+  .axioms {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin: 36px 0;
+  }
+  .axiom {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .axiom:last-child { border-bottom: none; }
+  .axiom-num {
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .axiom-body { padding: 20px 24px; }
+  .axiom-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .axiom-desc {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── DIAGNOSTIC ── */
+  .diagnostic {
+    background: var(--accent);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    margin: 36px 0;
+  }
+  .diagnostic-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .diagnostic-title::before {
+    content: '';
+    display: block;
+    width: 4px; height: 18px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .diag-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .diag-item:last-child { margin-bottom: 0; }
+  .diag-num {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 20px;
+    padding-top: 1px;
+  }
+  .diag-text {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: #3a3020;
+    line-height: 1.65;
+  }
+  .diag-text strong { color: var(--ink); }
+
+  /* ── CLOSING ── */
+  .closing {
+    border-top: 2px solid var(--ink);
+    padding-top: 40px;
+    margin-top: 56px;
+  }
+  .closing-statement {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+  .closing-statement em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .closing p { font-size: 17px; }
+
+  /* ── BRAND FOOTER ── */
+  .brand-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 32px;
+    background: var(--ink);
+    margin-top: 0;
+  }
+  a.brand-logo { text-decoration: none; }
+  .brand-logo {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 28px;
+    font-weight: 400;
+  }
+  .brand-logo .pricing { color: #f0e8d4; }
+  .brand-logo .goat { color: var(--gold); }
+  .brand-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .brand-tagline {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(240,232,212,.45);
+  }
+  .brand-url {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* Chinese text: no extra tracking on labels, line breaks inside flow lists */
+  .hero-eyebrow, .hero-nav { letter-spacing: 2px; }
+  .flow p { margin-bottom: 0; }
+  em, .pullquote p { font-style: normal; }
+  .list { margin: 0 0 24px 1.2em; color: #3a3020; }
+  .list li { margin-bottom: 8px; padding-left: 4px; }
+  .list li::marker { color: var(--gold); }
+  .refs { margin: 48px 0 0 1.4em; font-size: 14px; line-height: 1.7; color: var(--muted); }
+  .refs li { margin-bottom: 6px; }
+  .refs-title { margin-top: 48px; font-size: 14px; font-weight: 600; color: var(--muted); }
+  h3 { font-family: 'Lora', 'Noto Serif SC', serif; font-size: 20px; font-weight: 700; color: var(--ink); margin: 40px 0 12px; }
+
+  .credit { color: var(--muted); font-size: 16px; margin-top: 32px; }
+  .article a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,136,42,.35); transition: border-color .2s; }
+  .article a:hover { border-color: var(--gold); }
+
+  @media (max-width: 600px) {
+    .hero { padding: 56px 24px 56px; }
+    .article { padding: 48px 20px 64px; }
+    .callout { padding: 24px 22px; }
+    .brand-footer { flex-direction: column; gap: 16px; text-align: center; }
+    .brand-right { align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <nav class="hero-nav" aria-label="网站导航">
+    <a href="/zh/articles/">← 全部文章</a>
+    <a href="/zh/">首页</a>
+  </nav>
+  <div class="hero-eyebrow">AI 商业模式</div>
+  <h1>从定价视角看<br><em>FDE</em> 的底层逻辑</h1>
+  <p class="hero-sub">决定交付模式的，是一个变量：你卖的东西，在交付时点能不能被写进验收标准。</p>
+  <div class="hero-meta">
+    <div class="hero-rule"></div>
+    <span class="hero-author">杨一安 · pricinggoat.com</span>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<article class="article">
+
+  <div class="callout">
+    <p>故西施病心而矉其里，其里之丑人见而美之，归亦捧心而矉其里。其里之富人见之，坚闭门而不出；贫人见之，挈妻子而去之走。彼知矉美，而不知矉之所以美。</p>
+    <span class="callout-source">《庄子·天运》</span>
+  </div>
+
+  <p class="drop-cap">突然之间所有人都在谈 Palantir。谈它的股价，谈它的本体论，谈那个叫 FDE 的岗位。前向部署工程师，听上去像是从军事术语里借来的，事实上也确实是。</p>
+
+  <p>大概是我年纪大了。别人看见的是一个新物种，我想起的却是当年的 SAP。</p>
+
+  <p>1972年，五个人从 IBM 出来开了家公司，没有产品，第一单生意是搬到客户那里去写代码。软件那时候还不是商品，是服务。你要解决一家企业的问题，就得先住进这家企业。</p>
+
+  <p>今天被当成新范式的东西，是这个行业的起点。五十年过去，它又回来了。中间发生了什么，比它回来这件事本身更值得看。</p>
+
+  <h2>先说结论</h2>
+
+  <div class="pullquote">
+    <p>决定一家公司用什么交付模式的，是一个变量：你卖的东西，在交付的那个时点上，能不能被写进验收标准。</p>
+  </div>
+
+  <p>注意是交付时点。半年后能不能看出效果不算数。验收标准要在签字那一刻就能判真伪，否则它在商业上不存在。</p>
+
+  <p>这里要分开两样东西。系统上线了没有，接口通了没有，报表跑出来了没有，这些是<strong>过程</strong>。库存周转快了多少，报价赢率提了几个点，这些是<strong>成果</strong>。过程当场可判，成果当场判不了。</p>
+
+  <p>写得进验收标准的，责任就切得动。软件方交软件，实施方交上线，各自对自己那一段签字，出了事查合同就知道该找谁。切得动，交付就可以外包，因为接手的人清楚自己的边界在哪里。</p>
+
+  <p>写不进的，责任切不动。没有人愿意为一个自己无法证明的结果签字。切不动，就没有第三方敢接，你只能自己派人进去。</p>
+
+  <p>FDE 就是这么来的。</p>
+
+  <h2>责任闭合，才卖得上价</h2>
+
+  <p>到这里都还不算反直觉。反直觉的是下一步。</p>
+
+  <p>责任一旦被切成两段，就没有任何一方还能对成果定价。每一方只能对自己控制的那一段定价。软件方退到席位、模块、用量，实施方退到人天。这些全是代理指标，它们和客户真正拿到的价值之间永远隔着一道缝。所有关于“你们的软件到底贵不贵”的争论，都发生在这道缝里。</p>
+
+  <p>把人派进去、责任重新闭合之后，事情反了过来。一个主体，一个签字的人，一个背锅的人。到这一步，你才有资格说：我按你拿到的结果收费。</p>
+
+  <p>所以<strong>价值定价首先不是一种谈判技巧，也不是一套定价方法论。它是组织结构的结果。</strong>责任没有闭合，你在谈判桌上讲得再动听也没用，客户心里清楚，真出了事你会指向另外一个人。</p>
+
+  <p>这也解释了 FDE 为什么那么贵。贵不在工程师的工资。贵在你把原本分散在三方身上的风险，全部收进了自己账上。这笔风险溢价必须由更高的客单价来补偿，补不上，模式就塌。</p>
+
+  <p>顺序是这样的：闭合责任，才卖得上价；卖得上价，才养得起驻场。倒过来推，怎么算都不够。</p>
+
+  <h2>会移动的验收线</h2>
+
+  <p>还有最后一层，也是最容易被忽略的一层。那条验收线不是固定的。它会移动。</p>
+
+  <p>推动它往前移的是外力。会计准则、税法、审计要求、行业标准、监管。一件原本各说各话的事情，一旦有了公认的判定方式，就从成果变成了过程，从判不了变成了判得了。</p>
+
+  <p>线一往前移，整条链就翻转。责任重新切得动，交付可以外包，定价退回代理指标，毛利上去，规模上去，生态长出来。</p>
+
+  <p>SAP 走的就是这条路。财务、税务、供应链这些领域，外部准则替它把线往前推了几十年。它做的事情，是在线的后面把最佳实践固化进产品，然后把交付交出去，让一个庞大的实施顾问群体替它把销售覆盖铺到自己永远养不起的范围。</p>
+
+  <p>Palantir 待的位置没有这股外力。它在决策层。一段管道该不该现在停下来检修，一个信号要不要上报，没有 GAAP，没有审计师，没有人能替你定义什么叫做对。线推不动，它就只能留在现场。</p>
+
+  <p>同一条逻辑，两个位置。</p>
+
+  <h2>往后走容易，往回走难</h2>
+
+  <p>但这里有个不对称：往线的后面走容易，往回走难。</p>
+
+  <p>SAP 其实想往回走。License年代实施砸了是实施方的事，客户的钱已经付过了，维护费照收。订阅制把后果搬了家：客户拿不到价值就不续约，损失直接落在 SAP 头上。它开始承担交付失败的代价，却依然不控制交付。这是所有软件公司往交付端挪的真正驱动力，跟 AI 没关系，跟 Palantir 也没关系。</p>
+
+  <p>走不动的原因有三个。自建交付的那一天，就是它和最大销售渠道开战的那一天。人力成本进了损益表会压毛利，而它被资本市场按软件公司定价了几十年，这道锁在松，订阅制的估值越来越看留存。最硬的是第三道，驻场的单位经济只在客单价足够高的时候才成立，而 SAP 的客户数量以十万计，其中绝大多数根本承担不起有人住进自己公司。</p>
+
+  <p>RISE with SAP 是往回挪了半步，不是掉头。</p>
+
+  <div class="pullquote">
+    <p>交付模式一旦选定，就会长出自己的骨骼。</p>
+  </div>
+
+  <h2>说回 AI</h2>
+
+  <p>现在不少公司在建 FDE 团队，理由往往是“Palantir 就是这么干的”。</p>
+
+  <p>这个理由根本不成立。</p>
+
+  <p>Palantir 做 FDE，是因为它没有别的选择。它的成果写不进验收标准，责任切不出去，驻场是剩下的唯一一条路。一个被约束逼出来的解，在另一家公司那里未必是解。你照着做，多半不是因为你也被同样的约束逼到了墙角，而是因为你羡慕它的股价。</p>
+
+  <p>派人出去之前，有三个问题得先回答，顺序不能乱。</p>
+
+  <h3>第一个：我卖的东西，在交付时点能不能被写进验收标准</h3>
+
+  <p>这决定你有没有得选。能写进去，你其实可以走 SAP 那条路，把现场沉淀进产品，再把交付推出去，这条路的规模上限高得多。明明有得选却选了驻场，是自己给自己上枷锁。反过来，写不进去却还想把交付外包，那是把最难的一段交给一个没办法为它负责的人。</p>
+
+  <h3>第二个：责任闭合了，定价跟上了没有</h3>
+
+  <p>一支驻场团队一年的人力成本，除以你从这个客户一年收到的钱。Palantir 敢这么配人，是因为分母足够大。很多公司分母只有六位数，却照着分子在招人。而分母涨不上去的原因，往往就是责任闭合了、计价方式却还停在人天。扛着这个模式的全部成本，放弃了它唯一的好处。</p>
+
+  <h3>第三个：现场做的东西，回不回得到产品里</h3>
+
+  <p>这是 FDE 里最容易断的一条回路。每一次定制都该带着同一个问题回来：这能不能变成产品里的一个功能。能，它是投资。不能，它是成本。回路断掉之后，你手上就是一个毛利率很低的自营实施部门，而你还在按软件公司的估值讲故事。投资人迟早会把这两件事对上。</p>
+
+  <div class="pullquote">
+    <p>三个问题分别管三件事：有没有得选，闭不闭得上账，长不长得大。</p>
+  </div>
+
+  <h2>FDE 是一个过渡态</h2>
+
+  <p>AI 这一轮还多了一股 SAP 当年没有的推力：模型能力自己在涨，它也在推那条验收线。今天判不了的东西，明年可能就判得了。线一往前移，驻场的必要性就跟着消失。</p>
+
+  <p>所以对大多数 AI 公司来说，FDE 是一个过渡态。它的任务是在线还没移过来的那段窗口期里，尽量把现场的知识搬回来，直到搬不动为止，或者直到线自己走过来为止。把过渡态当成终局来经营的公司，会在某一天突然发现自己养了一支没有位置的队伍。</p>
+
+  <p>顺序上还有一件事，SAP 的五十年已经替所有人试过了：现场能力可以往外交，交出去很难收回来。所以只能先自己做，做到某个场景真的固化了，再把这个场景的长尾交出去。反过来走的公司，若干年后会发现，最懂客户的那个人不在自己公司里。</p>
+
+  <div class="closing">
+    <p>五十年里这个行业绕了一个圈。先是住进客户那里，然后把客户搬进产品里，现在又住了回去。每一次都被当成新东西。</p>
+    <div class="closing-statement">东施把眉头皱得和西施一模一样。<br>她没有的是那场<em>病</em>。</div>
+    <p>P.S. 这么说来，Dr. Pricing 不也是 FDE 模式吗？discover → decide → build → test → adapt</p>
+    <p class="credit">首发于微信公众号「定价制胜-Dr. Pricing」，2026年9月。</p>
+  </div>
+
+</article>
+
+<!-- BRAND FOOTER -->
+<div class="brand-footer">
+  <a href="/zh/" class="brand-logo"><span class="pricing">pricing</span><span class="goat">goat</span></a>
+  <div class="brand-right">
+    <div class="brand-tagline">Pricing by Design</div>
+    <div class="brand-url">PRICINGGOAT.COM</div>
+  </div>
+</div>
+
+</body>
+</html>
