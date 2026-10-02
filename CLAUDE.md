@@ -76,7 +76,15 @@ Use root-absolute paths (`/favicon.ico`, `/articles/`) for anything shared betwe
 - **No em dashes in body copy.** Use a full stop, comma, colon or parentheses instead.
 - **No goat imagery anywhere.** The name is a wordmark only.
 - **Evergreen credentials.** No counts that go stale ("12 books", "100+ companies"). Prefer phrasing like "Springer-published author" or "two decades in pricing".
-- **All public pages are bilingual EN/ZH.** Every new visible string needs both an EN and a ZH version.
+- **All public pages are bilingual EN/ZH.** Every new visible string needs both an EN and a ZH version. One exception: an individual article may exist in one language only (see below).
+
+## Articles: source and policy
+
+- **Source:** the owner picks pieces already published on LinkedIn (EN) or WeChat 定价制胜-Dr. Pricing (ZH). Claude polishes them and publishes them here. There is no other source.
+- **Polish, don't rewrite.** Keep the owner's voice, argument and structure. Fix typos and grammar, tighten wording, add headings where they help, and apply the editorial rules above (no em dashes, no stale counts). Anything beyond that, such as cutting or adding a paragraph or changing a claim, is proposed to the owner, not done silently.
+- **One language is fine ("relaxed" rule, owner decision 2026-10-02).** An article may exist only in the language it was written in. List it on both `articles/index.html` and `zh/articles/index.html`, with the title and summary in each page's language and a badge (`EN` / `ZH`) for the article's language. Add a translation only when the owner asks; then add reciprocal `hreflang`.
+- **Credit the original.** End every article with one muted line naming where and when it first appeared: `First published on LinkedIn, March 2026.` or `首发于微信公众号「定价制胜-Dr. Pricing」，2026年3月。` Ask the owner for the date if it isn't given.
+- **Language folders:** EN articles go in `articles/`, ZH articles in `zh/articles/`. A ZH-only article page uses `<html lang="zh-Hans">` and Chinese UI labels.
 
 ## Adding a new article
 
