@@ -400,6 +400,9 @@
     .book-link-label { display: inline-block; margin-top: 1.5rem; font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid rgba(181,149,106,0.3); padding-bottom: 2px; transition: border-color 0.2s; }
     .book-card:hover .book-link-label { border-color: var(--accent); }
 
+    /* ARTICLES */
+    #articles { border-top: 1px solid var(--line); }
+
     /* WRITING */
     #writing { border-top: 1px solid var(--line); }
     .platforms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 4rem; }
@@ -441,6 +444,9 @@
     .reveal.visible { opacity: 1; transform: none; }
 
     /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .nav-links { gap: 1.5rem; }
+    }
     @media (max-width: 900px) {
       nav { padding: 1.2rem 2rem; }
       .nav-links li.hide-mobile { display: none; }
@@ -473,7 +479,8 @@
       <li class="hide-mobile"><a href="#services"><span class="lang-en">Services</span><span class="lang-zh">服务</span></a></li>
       <li class="hide-mobile"><a href="#capability"><span class="lang-en">Capability</span><span class="lang-zh">能力建设</span></a></li>
       <li class="hide-mobile"><a href="#books"><span class="lang-en">Books</span><span class="lang-zh">著作</span></a></li>
-      <li class="hide-mobile"><a href="#writing"><span class="lang-en">Writing</span><span class="lang-zh">文章</span></a></li>
+      <li class="hide-mobile"><a href="#articles"><span class="lang-en">Articles</span><span class="lang-zh">文章</span></a></li>
+      <li class="hide-mobile"><a href="#writing"><span class="lang-en">Writing</span><span class="lang-zh">持续输出</span></a></li>
       <li><a href="#contact" class="nav-cta"><span class="lang-en">Get in Touch</span><span class="lang-zh">联系我</span></a></li>
       <li><button class="lang-toggle" id="langToggle">中文</button></li>
     </ul>
@@ -803,6 +810,35 @@
         <span class="book-link-label lang-en">Chinese Edition</span>
         <span class="book-link-label lang-zh">中文版</span>
       </div>
+
+    </div>
+  </section>
+
+  <!-- ARTICLES -->
+  <section id="articles" aria-label="Articles">
+    <div class="section-label reveal"><span class="lang-en">Articles</span><span class="lang-zh">文章</span></div>
+    <h2 class="section-title reveal lang-en">Notes on <em>pricing</em></h2>
+    <h2 class="section-title reveal lang-zh">定价<em>随笔</em></h2>
+    <div class="books-grid">
+
+      <a href="pricinggoat-articles/first-principles-pricing.html" class="book-card reveal">
+        <div class="book-meta"><span class="book-year">2026</span><span class="book-pub"><span class="lang-en">Article</span><span class="lang-zh">文章</span></span><span class="book-lang-badge">EN</span></div>
+        <div class="book-title lang-en">The First Principles of Pricing</div>
+        <div class="book-title lang-zh">定价的第一性原理</div>
+        <p class="book-desc lang-en">Most companies don't reason about pricing. They copy it. What first principles thinking reveals about the way we set prices.</p>
+        <p class="book-desc lang-zh">大多数企业并不推理定价，而是照搬定价。第一性原理思维揭示了我们设定价格的方式，以及其中被忽视的代价。</p>
+        <span class="book-link-label lang-en">Read article →</span>
+        <span class="book-link-label lang-zh">阅读文章 →</span>
+      </a>
+
+      <a href="pricinggoat-articles/" class="book-card reveal">
+        <div class="book-title lang-en">All articles</div>
+        <div class="book-title lang-zh">全部文章</div>
+        <p class="book-desc lang-en">Essays on pricing strategy, willingness to pay, and pricing as an organisational capability.</p>
+        <p class="book-desc lang-zh">关于定价战略、支付意愿与组织定价能力的文章。</p>
+        <span class="book-link-label lang-en">View all →</span>
+        <span class="book-link-label lang-zh">查看全部 →</span>
+      </a>
 
     </div>
   </section>
