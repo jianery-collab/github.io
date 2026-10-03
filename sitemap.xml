@@ -5,7 +5,7 @@
   <!-- Homepage: EN -->
   <url>
     <loc>https://www.pricinggoat.com/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/"/>
@@ -16,7 +16,7 @@
   <!-- Homepage: ZH -->
   <url>
     <loc>https://www.pricinggoat.com/zh/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/"/>
@@ -49,7 +49,7 @@
   <!-- Articles index: EN -->
   <url>
     <loc>https://www.pricinggoat.com/articles/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/"/>
@@ -60,7 +60,7 @@
   <!-- Articles index: ZH -->
   <url>
     <loc>https://www.pricinggoat.com/zh/articles/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/"/>
@@ -202,6 +202,26 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/divided-pricing-function.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/divided-pricing-function.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/divided-pricing-function.html"/>
+  </url>
+
+  <!-- Article: Product-Market-Price Fit Is Earned / 客户都说好，就是没人买 (EN + ZH pair) -->
+  <url>
+    <loc>https://www.pricinggoat.com/articles/product-market-price-fit.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/product-market-price-fit.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/product-market-price-fit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/product-market-price-fit.html"/>
+  </url>
+  <url>
+    <loc>https://www.pricinggoat.com/zh/articles/product-market-price-fit.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/product-market-price-fit.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/product-market-price-fit.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/product-market-price-fit.html"/>
   </url>
 
 </urlset>
