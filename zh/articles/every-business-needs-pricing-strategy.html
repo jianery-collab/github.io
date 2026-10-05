@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>为什么每一家企业，其实都需要定价策略 · 杨一安博士</title>
+
+<!-- Open Graph -->
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="为什么每一家企业，其实都需要定价策略" />
+<meta property="og:description" content="只要一家企业开始卖东西，定价就已经存在了。区别只在于：有些企业在主动设计价格，有些企业在被市场推着走。" />
+<meta property="og:site_name"   content="PricingGoat" />
+<meta property="og:url"         content="https://www.pricinggoat.com/zh/articles/every-business-needs-pricing-strategy.html" />
+<meta property="og:image"       content="https://www.pricinggoat.com/og-image.png" />
+<meta property="og:locale"      content="zh_CN" />
+<link rel="canonical" href="https://www.pricinggoat.com/zh/articles/every-business-needs-pricing-strategy.html" />
+<meta name="author"             content="杨一安" />
+<meta name="description"        content="只要一家企业开始卖东西，定价就已经存在了。区别只在于：有些企业在主动设计价格，有些企业在被市场推着走。" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "为什么每一家企业，其实都需要定价策略",
+  "description": "只要一家企业开始卖东西，定价就已经存在了。区别只在于：有些企业在主动设计价格，有些企业在被市场推着走。",
+  "url": "https://www.pricinggoat.com/zh/articles/every-business-needs-pricing-strategy.html",
+  "datePublished": "2026-05",
+  "dateModified": "2026-10-05",
+  "inLanguage": "zh-Hans",
+  "image": "https://www.pricinggoat.com/og-image.png",
+  "author": { "@type": "Person", "@id": "https://www.pricinggoat.com/#person", "name": "杨一安", "url": "https://www.pricinggoat.com/zh/" },
+  "publisher": { "@type": "Organization", "name": "PricingGoat", "url": "https://www.pricinggoat.com/" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #16120a;
+    --paper:    #f7f3ec;
+    --gold:     #b8882a;
+    --gold-lt:  #d4a84b;
+    --muted:    #7a6e5a;
+    --rule:     #ddd5c0;
+    --accent:   #f0e8d4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    line-height: 1.85;
+    padding: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    padding: 80px 48px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,136,42,.18) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 56px;
+    position: relative;
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .hero-nav a {
+    color: rgba(240,232,212,.5);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .hero-nav a:hover { color: var(--gold-lt); }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+  }
+  .hero-eyebrow::after {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+    opacity: .6;
+  }
+  .hero h1 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    max-width: 720px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold-lt);
+  }
+  .hero-sub {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(240,232,212,.6);
+    max-width: 580px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  .hero-rule { width: 32px; height: 1px; background: var(--gold); opacity: .5; }
+  .hero-author {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 13px;
+    color: rgba(240,232,212,.4);
+    letter-spacing: 1px;
+  }
+
+  /* ── ARTICLE ── */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+  }
+
+  p { margin-bottom: 24px; color: #3a3020; }
+
+  /* ── DROP CAP ── */
+  .drop-cap::first-letter {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: .8;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+    color: var(--gold);
+  }
+
+  /* ── SECTION HEADS ── */
+  h2 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 48px 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    margin: 36px 0;
+    background: var(--accent);
+  }
+  .pullquote p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: var(--ink);
+    color: #f0e8d4;
+    padding: 32px 36px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .callout::before {
+    content: '"';
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 100px;
+    color: rgba(184,136,42,.15);
+    position: absolute;
+    top: -10px; left: 16px;
+    line-height: 1;
+  }
+  .callout p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #e8dcc8;
+    margin: 0;
+    position: relative;
+  }
+  .callout p strong { color: #ffffff; }
+  .callout-source {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-top: 14px;
+    display: block;
+    position: relative;
+  }
+
+  /* ── THREE AXIOMS ── */
+  .axioms {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin: 36px 0;
+  }
+  .axiom {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .axiom:last-child { border-bottom: none; }
+  .axiom-num {
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .axiom-body { padding: 20px 24px; }
+  .axiom-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .axiom-desc {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── DIAGNOSTIC ── */
+  .diagnostic {
+    background: var(--accent);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    margin: 36px 0;
+  }
+  .diagnostic-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .diagnostic-title::before {
+    content: '';
+    display: block;
+    width: 4px; height: 18px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .diag-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .diag-item:last-child { margin-bottom: 0; }
+  .diag-num {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 20px;
+    padding-top: 1px;
+  }
+  .diag-text {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: #3a3020;
+    line-height: 1.65;
+  }
+  .diag-text strong { color: var(--ink); }
+
+  /* ── CLOSING ── */
+  .closing {
+    border-top: 2px solid var(--ink);
+    padding-top: 40px;
+    margin-top: 56px;
+  }
+  .closing-statement {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+  .closing-statement em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .closing p { font-size: 17px; }
+
+  /* ── BRAND FOOTER ── */
+  .brand-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 32px;
+    background: var(--ink);
+    margin-top: 0;
+  }
+  a.brand-logo { text-decoration: none; }
+  .brand-logo {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 28px;
+    font-weight: 400;
+  }
+  .brand-logo .pricing { color: #f0e8d4; }
+  .brand-logo .goat { color: var(--gold); }
+  .brand-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .brand-tagline {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(240,232,212,.45);
+  }
+  .brand-url {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* Chinese text: no extra tracking on labels, line breaks inside flow lists */
+  .hero-eyebrow, .hero-nav { letter-spacing: 2px; }
+  .flow p { margin-bottom: 0; }
+  em, .pullquote p { font-style: normal; }
+
+  .credit { color: var(--muted); font-size: 16px; margin-top: 32px; }
+  .article a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,136,42,.35); transition: border-color .2s; }
+  .article a:hover { border-color: var(--gold); }
+
+  @media (max-width: 600px) {
+    .hero { padding: 56px 24px 56px; }
+    .article { padding: 48px 20px 64px; }
+    .callout { padding: 24px 22px; }
+    .brand-footer { flex-direction: column; gap: 16px; text-align: center; }
+    .brand-right { align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <nav class="hero-nav" aria-label="网站导航">
+    <a href="/zh/articles/">← 全部文章</a>
+    <a href="/zh/">首页</a>
+  </nav>
+  <div class="hero-eyebrow">定价策略</div>
+  <h1>为什么每一家企业，<br>其实都需要<em>定价策略</em></h1>
+  <p class="hero-sub">只要一家企业开始卖东西，定价就已经存在了。</p>
+  <div class="hero-meta">
+    <div class="hero-rule"></div>
+    <span class="hero-author">杨一安 · pricinggoat.com</span>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<article class="article">
+
+  <p class="drop-cap">很多人一提到“定价策略”，第一反应是：这是大公司、咨询公司、或者奢侈品牌才研究的东西。</p>
+
+  <p>其实不是。</p>
+
+  <p>只要一家企业开始卖东西，定价就已经存在了。你卖多少钱、怎么报价、给谁优惠、哪些客户赚得到钱、哪些订单越做越累，这些本质上都是定价问题。</p>
+
+  <p>区别只在于：</p>
+
+  <div class="pullquote flow">
+    <p>有些企业是在主动设计价格。</p>
+    <p>有些企业是在被市场推着走。</p>
+  </div>
+
+  <p>而后者，往往自己还没意识到。</p>
+
+  <h2>定价，从来不只是“报个价”</h2>
+
+  <p>很多企业会觉得：</p>
+
+  <div class="pullquote flow">
+    <p>“我们有报价单。”</p>
+    <p>“销售会谈价格。”</p>
+    <p>“财务会核利润。”</p>
+    <p>“老板会拍板。”</p>
+  </div>
+
+  <p>于是认为自己已经有“定价”了。</p>
+
+  <p>但真正的问题是：你的价格，是不是系统性的？是不是能长期支撑利润？是不是能真正体现价值？</p>
+
+  <p><strong>很多企业的问题，不是不会报价，而是不知道自己到底在卖什么价值。</strong></p>
+
+  <h2>制造业：明明有价值，却只能拼价格</h2>
+
+  <p>这是最常见的情况。尤其在制造业、零部件、贸易公司里，企业很容易进入一种状态：客户一压价，企业就只能让价。</p>
+
+  <p>久而久之，大家会觉得：</p>
+
+  <div class="pullquote flow">
+    <p>“行业就这样。”</p>
+    <p>“竞争太激烈。”</p>
+    <p>“客户只看价格。”</p>
+  </div>
+
+  <p>但很多时候，并不是客户只看价格，而是企业没有把自己的价值定进去。比如：</p>
+
+  <div class="diagnostic">
+    <div class="diag-item"><div class="diag-num">1.</div><div class="diag-text">更稳定的交付</div></div>
+    <div class="diag-item"><div class="diag-num">2.</div><div class="diag-text">更低的故障率</div></div>
+    <div class="diag-item"><div class="diag-num">3.</div><div class="diag-text">更高的良品率</div></div>
+    <div class="diag-item"><div class="diag-num">4.</div><div class="diag-text">更强的配合能力</div></div>
+    <div class="diag-item"><div class="diag-num">5.</div><div class="diag-text">更快的响应速度</div></div>
+    <div class="diag-item"><div class="diag-num">6.</div><div class="diag-text">更低的客户风险</div></div>
+  </div>
+
+  <p>这些其实都是真实价值。问题是，大量企业从来没有把这些价值翻译成价格。</p>
+
+  <p>最后的结果就是：企业越来越忙，利润越来越薄；销售越来越累，客户却越来越习惯压价。</p>
+
+  <p>这并不一定是产品的问题，而往往是定价的问题。</p>
+
+  <h2>SKU一多，价格体系就会开始失控</h2>
+
+  <p>还有一类企业，表面上看利润还可以，但内部已经越来越混乱。典型特征是：</p>
+
+  <div class="diagnostic">
+    <div class="diag-item"><div class="diag-num">1.</div><div class="diag-text">SKU越来越多</div></div>
+    <div class="diag-item"><div class="diag-num">2.</div><div class="diag-text">不同客户价格差异越来越大</div></div>
+    <div class="diag-item"><div class="diag-num">3.</div><div class="diag-text">销售各自报价</div></div>
+    <div class="diag-item"><div class="diag-num">4.</div><div class="diag-text">历史价格没人说得清</div></div>
+    <div class="diag-item"><div class="diag-num">5.</div><div class="diag-text">新产品出来后只能“参考以前”</div></div>
+  </div>
+
+  <p>一开始大家觉得只是“有点乱”。但时间长了，会发现：价格体系已经慢慢失去逻辑。</p>
+
+  <p>有些产品定低了没人发现；有些客户长期在吃“历史红利”；有些销售为了拿订单，把未来利润提前透支掉。</p>
+
+  <p>最危险的是：企业自己已经不知道，什么才算“合理价格”。</p>
+
+  <div class="pullquote">
+    <p>很多公司做到后面，真正的问题已经不是“价格高不高”，而是价格体系失去了可管理性。</p>
+  </div>
+
+  <h2>科技公司：产品越来越强，利润却不一定越来越强</h2>
+
+  <p>科技公司尤其容易掉进一个误区：过度关注产品，忽略商业化。</p>
+
+  <p>团队天天讨论功能、性能、AI能力、用户体验、技术路线，但很少认真讨论：<strong>“这些价值，到底应该怎么收费？”</strong></p>
+
+  <p>于是就会出现一种很常见的情况：产品越来越强，利润却越来越弱。因为很多科技企业默认认为：“先把产品做好，商业化以后再说。”</p>
+
+  <p>但现实是：商业化不是产品完成后的最后一步，而应该从一开始就一起设计。</p>
+
+  <p>尤其是今天的软件、AI、SaaS行业，真正拉开差距的，很多时候不是技术本身，而是：谁更懂价值如何变现。</p>
+
+  <p>同样的能力，有人只能卖订阅费；有人却能卖结果、卖效率、卖风险降低、卖增长。背后差的，其实就是定价思维。</p>
+
+  <h2>服务行业最容易低估自己的价值</h2>
+
+  <p>服务行业还有一个特别普遍的问题：总觉得自己卖的是“工时”。</p>
+
+  <p>于是客户一问“你为什么这么贵？”，企业就开始解释：</p>
+
+  <div class="pullquote flow">
+    <p>“因为我们很专业。”</p>
+    <p>“因为我们做得认真。”</p>
+    <p>“因为团队经验丰富。”</p>
+  </div>
+
+  <p>但客户真正愿意付钱的，很多时候不是工时，而是：</p>
+
+  <div class="diagnostic">
+    <div class="diag-item"><div class="diag-num">1.</div><div class="diag-text">结果确定性</div></div>
+    <div class="diag-item"><div class="diag-num">2.</div><div class="diag-text">节省时间</div></div>
+    <div class="diag-item"><div class="diag-num">3.</div><div class="diag-text">降低风险</div></div>
+    <div class="diag-item"><div class="diag-num">4.</div><div class="diag-text">减少麻烦</div></div>
+    <div class="diag-item"><div class="diag-num">5.</div><div class="diag-text">帮他做决定</div></div>
+  </div>
+
+  <p>很多咨询、设计、法律、培训、软件实施类企业，真正被低估的，不是能力，而是定价方式。</p>
+
+  <div class="callout">
+    <p>你按“投入”收费，客户就会盯着成本。<br>你按“结果”收费，客户才会开始关注价值。</p>
+  </div>
+
+  <p>这两者差别非常大。</p>
+
+  <h2>定价，本质上是在回答一个问题</h2>
+
+  <p>一个企业最终都绕不开一个问题：<strong>“我们的价值，怎样才能真正变成利润？”</strong></p>
+
+  <p>这其实就是定价的核心。</p>
+
+  <p>很多企业并不缺产品，也不缺客户，甚至也不缺市场。真正缺的是：一套能持续把价值转化为利润的机制。</p>
+
+  <p>而这件事，靠的不是一次提价，也不是一句“以后价格不能乱”。它需要：</p>
+
+  <div class="diagnostic">
+    <div class="diag-item"><div class="diag-num">1.</div><div class="diag-text">清晰的价格逻辑</div></div>
+    <div class="diag-item"><div class="diag-num">2.</div><div class="diag-text">可管理的价格体系</div></div>
+    <div class="diag-item"><div class="diag-num">3.</div><div class="diag-text">对客户价值的理解</div></div>
+    <div class="diag-item"><div class="diag-num">4.</div><div class="diag-text">对不同客户的差异化策略</div></div>
+    <div class="diag-item"><div class="diag-num">5.</div><div class="diag-text">对利润的长期经营能力</div></div>
+  </div>
+
+  <div class="closing">
+    <p>所以我一直认为：</p>
+    <div class="closing-statement">定价不是销售动作，<br>而是一种<em>经营能力</em>。</div>
+    <p>真正厉害的企业，并不是“价格最高”的企业，而是最清楚：自己为什么值这个价格，客户为什么愿意付这个价格，以及怎样长期守住这个价格。</p>
+    <p>而这，也是很多企业未来最容易被低估、却最关键的能力之一。</p>
+    <p>P.S. 所有的定价难题都有答案。</p>
+    <p class="credit">首发于微信公众号「定价制胜-Dr. Pricing」，2026年5月。</p>
+  </div>
+
+</article>
+
+<!-- BRAND FOOTER -->
+
+<div class="brand-footer">
+  <a href="/zh/" class="brand-logo"><span class="pricing">pricing</span><span class="goat">goat</span></a>
+  <div class="brand-right">
+    <div class="brand-tagline">Pricing by Design</div>
+    <div class="brand-url">PRICINGGOAT.COM</div>
+  </div>
+</div>
+
+</body>
+</html>
