@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Small-Sample Trap · Jan Y. Yang</title>
+
+<!-- Open Graph / LinkedIn preview -->
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="The Small-Sample Trap: Why Executives Trust Ten Conversations Over a Thousand Customers" />
+<meta property="og:description" content="Ten customer conversations feel like evidence. Statistically, they are a starting hypothesis. What decision research says about pricing from small samples, in B2C and B2B." />
+<meta property="og:site_name"   content="PricingGoat" />
+<meta property="og:url"         content="https://www.pricinggoat.com/articles/small-sample-trap.html" />
+<link rel="canonical" href="https://www.pricinggoat.com/articles/small-sample-trap.html" />
+<link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/small-sample-trap.html" />
+<link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/small-sample-trap.html" />
+<link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/small-sample-trap.html" />
+<meta name="author"             content="Jan Y. Yang" />
+<meta name="description"        content="Ten customer conversations feel like evidence. Statistically, they are a starting hypothesis. What decision research says about pricing from small samples, in B2C and B2B." />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Small-Sample Trap: Why Executives Trust Ten Conversations Over a Thousand Customers",
+  "description": "Ten customer conversations feel like evidence. Statistically, they are a starting hypothesis. What decision research says about pricing from small samples, in B2C and B2B.",
+  "url": "https://www.pricinggoat.com/articles/small-sample-trap.html",
+  "datePublished": "2026-10-07",
+  "dateModified": "2026-10-07",
+  "inLanguage": "en",
+  "author": { "@type": "Person", "@id": "https://www.pricinggoat.com/#person", "name": "Jan Y. Yang", "url": "https://www.pricinggoat.com/" },
+  "publisher": { "@type": "Organization", "name": "PricingGoat", "url": "https://www.pricinggoat.com/" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #16120a;
+    --paper:    #f7f3ec;
+    --gold:     #b8882a;
+    --gold-lt:  #d4a84b;
+    --muted:    #7a6e5a;
+    --rule:     #ddd5c0;
+    --accent:   #f0e8d4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.85;
+    padding: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    padding: 80px 48px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,136,42,.18) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 56px;
+    position: relative;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .hero-nav a {
+    color: rgba(240,232,212,.5);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .hero-nav a:hover { color: var(--gold-lt); }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+  }
+  .hero-eyebrow::after {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+    opacity: .6;
+  }
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    max-width: 720px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold-lt);
+  }
+  .hero-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(240,232,212,.6);
+    max-width: 580px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  .hero-rule { width: 32px; height: 1px; background: var(--gold); opacity: .5; }
+  .hero-author {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: rgba(240,232,212,.4);
+    letter-spacing: 1px;
+  }
+
+  /* ── ARTICLE ── */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+  }
+
+  p { margin-bottom: 24px; color: #3a3020; }
+
+  /* ── DROP CAP ── */
+  .drop-cap::first-letter {
+    font-family: 'Lora', serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: .8;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+    color: var(--gold);
+  }
+
+  /* ── SECTION HEADS ── */
+  h2 {
+    font-family: 'Lora', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 48px 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    margin: 36px 0;
+    background: var(--accent);
+  }
+  .pullquote p {
+    font-family: 'Lora', serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: var(--ink);
+    color: #f0e8d4;
+    padding: 32px 36px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .callout::before {
+    content: '"';
+    font-family: 'Lora', serif;
+    font-size: 100px;
+    color: rgba(184,136,42,.15);
+    position: absolute;
+    top: -10px; left: 16px;
+    line-height: 1;
+  }
+  .callout p {
+    font-family: 'Lora', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #e8dcc8;
+    margin: 0;
+    position: relative;
+  }
+  .callout p strong { color: #ffffff; }
+  .callout-source {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-top: 14px;
+    display: block;
+    position: relative;
+  }
+
+  /* ── THREE AXIOMS ── */
+  .axioms {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin: 36px 0;
+  }
+  .axiom {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .axiom:last-child { border-bottom: none; }
+  .axiom-num {
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .axiom-body { padding: 20px 24px; }
+  .axiom-title {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .axiom-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── DIAGNOSTIC ── */
+  .diagnostic {
+    background: var(--accent);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    margin: 36px 0;
+  }
+  .diagnostic-title {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .diagnostic-title::before {
+    content: '';
+    display: block;
+    width: 4px; height: 18px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .diag-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .diag-item:last-child { margin-bottom: 0; }
+  .diag-num {
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 20px;
+    padding-top: 1px;
+  }
+  .diag-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: #3a3020;
+    line-height: 1.65;
+  }
+  .diag-text strong { color: var(--ink); }
+
+  /* ── CLOSING ── */
+  .closing {
+    border-top: 2px solid var(--ink);
+    padding-top: 40px;
+    margin-top: 56px;
+  }
+  .closing-statement {
+    font-family: 'Lora', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+  .closing-statement em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .closing p { font-size: 17px; }
+
+  /* ── BRAND FOOTER ── */
+  .brand-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 32px;
+    background: var(--ink);
+    margin-top: 0;
+  }
+  a.brand-logo { text-decoration: none; }
+  .brand-logo {
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    font-weight: 400;
+  }
+  .brand-logo .pricing { color: #f0e8d4; }
+  .brand-logo .goat { color: var(--gold); }
+  .brand-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .brand-tagline {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(240,232,212,.45);
+  }
+  .brand-url {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  .credit { color: var(--muted); font-size: 16px; margin-top: 32px; }
+  .article a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,136,42,.35); transition: border-color .2s; }
+  .article a:hover { border-color: var(--gold); }
+
+  .ladder-wrap { margin: 36px 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .ladder { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 15px; line-height: 1.55; }
+  .ladder th { background: var(--ink); color: #f0e8d4; font-weight: 500; font-size: 13px; letter-spacing: .5px; text-align: left; padding: 12px 14px; vertical-align: bottom; }
+  .ladder td { padding: 12px 14px; border-bottom: 1px solid var(--rule); color: #3a3020; vertical-align: top; }
+  .ladder td:first-child { font-weight: 500; color: var(--ink); }
+  .ladder tbody tr:nth-child(even) td { background: var(--accent); }
+
+  .refs-title { margin-top: 48px; font-size: 14px; font-weight: 600; color: var(--muted); }
+  .refs { margin: 12px 0 0 1.4em; font-size: 14px; line-height: 1.7; color: var(--muted); }
+  .refs li { margin-bottom: 6px; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 56px 24px 56px; }
+    .article { padding: 48px 20px 64px; }
+    .callout { padding: 24px 22px; }
+    .brand-footer { flex-direction: column; gap: 16px; text-align: center; }
+    .brand-right { align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <nav class="hero-nav" aria-label="Site">
+    <a href="/articles/">← All articles</a>
+    <a href="/">Home</a>
+  </nav>
+  <div class="hero-eyebrow">Pricing Strategy</div>
+  <h1>The small-sample <em>trap</em></h1>
+  <p class="hero-sub">Why executives trust ten conversations over a thousand customers.</p>
+  <div class="hero-meta">
+    <div class="hero-rule"></div>
+    <span class="hero-author">Jan Y. Yang · pricinggoat.com</span>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<article class="article">
+
+  <p class="drop-cap">Ten customer conversations feel like evidence. Statistically, they are a starting hypothesis.</p>
+
+  <p>I hear the same sentence in boardrooms in Frankfurt and Shanghai: "We don't need a big survey. I talked to our top customers, and they told me what they will pay." Sometimes it is five interviews. Sometimes it is a sales pilot with three friendly accounts. The decision that follows, a new price list or a new packaging structure, then applies to thousands of customers.</p>
+
+  <p>My view is simple. Small samples are not useless, but treating them as proof is a bias, not a judgment call. Fifty years of decision research supports that view. The same research also shows where CEOs have a point: large surveys carry their own distortions. This article lays out both sides, then shows how the answer differs for B2C and B2B companies.</p>
+
+  <h2>Why small samples mislead smart people</h2>
+
+  <p>Four well-documented effects push leaders to over-trust a handful of conversations.</p>
+
+  <p><strong>1. The law of small numbers.</strong> In 1971, Amos Tversky and Daniel Kahneman showed that people expect a small random sample to look just like the population it came from. Their subjects were not laypeople. They were trained research psychologists, and most of them badly overestimated how often a small-sample result would replicate. The authors warned of undue confidence in early trends and in the stability of observed patterns. That is a fair description of a pricing decision built on five interviews.</p>
+
+  <p><strong>2. Stories beat statistics when stakes feel personal.</strong> A 2020 meta-analysis of 61 studies by Freling and colleagues found a clear pattern. When emotional engagement is high, anecdotes persuade more than statistics. When engagement is low, statistics win. A CEO deciding the company's price level is about as emotionally engaged as decision makers get. The vivid quote from a key customer will outweigh the dull distribution chart.</p>
+
+  <p><strong>3. Managers project their own preferences onto customers.</strong> A 2021 <em>Journal of Marketing Research</em> study by Herzog and colleagues found that more than 70% of marketers project personal preferences onto consumers. Correcting this bias cut prediction errors by more than half. Interviews selected and run by the executive team rarely escape this effect. Leaders tend to hear what they already believe. Expertise does not rescue them either: when Armstrong (1991) asked academics, marketing practitioners and high-school students to predict the outcomes of 105 published consumer-research hypotheses, no group did better than chance.</p>
+
+  <p><strong>4. Experienced intuition is a weak predictor.</strong> Ronny Kohavi, who led experimentation at Microsoft, reported that only about a third of tested ideas improved the metric they targeted. Another third had no effect, and the last third made things worse. These ideas came from experienced teams who were confident before the test. Without hard data, the highest-paid person's opinion usually decides.</p>
+
+  <p>Put together, the picture is consistent. A small, hand-picked sample combined with a confident leader produces conclusions that feel solid and often are not.</p>
+
+  <h2>Where the skeptics have a point</h2>
+
+  <p>A fair argument has to take the other side seriously. CEOs who distrust surveys are not simply being stubborn. There are three good reasons behind their instinct.</p>
+
+  <p><strong>Surveys overstate willingness to pay.</strong> People answering a hypothetical question do not part with real money. Schmidt and Bijmolt (2019) pooled 77 studies and found that hypothetical willingness to pay exceeds real willingness to pay by 21% on average. The gap grows for higher-value and specialty products. An earlier meta-analysis of 28 valuation studies by Murphy and colleagues (2005) found a median ratio of hypothetical to actual value of 1.35. A badly designed price survey can produce a precise number that is precisely wrong.</p>
+
+  <p><strong>Small samples are the right tool for discovery.</strong> Griffin and Hauser (1993) showed that 20 to 30 one-on-one interviews uncover roughly 90% of customer needs. If the question is "what do customers value and how do they talk about it?", interviews are efficient and a large survey adds little.</p>
+
+  <p><strong>Pilots measure real behavior.</strong> A sales pilot asks for a signature, not an opinion. That removes hypothetical bias entirely, which is a real advantage over any survey.</p>
+
+  <p>So the error is not "interviews instead of surveys." The error is using a small sample to answer a question that needs a large one. Interviews tell you <em>what</em> matters. Only scale tells you <em>how much</em> it matters, <em>to how many customers</em>, and <em>at what price</em>. A pilot shows real behavior, but only for the few accounts in it, and those are rarely chosen at random.</p>
+
+  <h2>B2C: scale is cheap, so small samples are hard to justify</h2>
+
+  <p>In consumer markets, the case against small samples is strongest. A company with 200,000 customers that prices from ten conversations is ignoring data it could easily get.</p>
+
+  <p><strong>Who you talk to is not who buys.</strong> The consumers a CEO meets are rarely typical. They are loyal heavy users, people in the founder's network, or customers who agreed to an interview. Price sensitivity usually differs most at the edges of the base: occasional buyers, switchers and new customers. Those are exactly the people a small, convenient sample misses.</p>
+
+  <p><strong>Large samples are affordable.</strong> Online panels make a few hundred qualified respondents a matter of days, not months. For choice-based conjoint, the most widely used software vendor suggests starting at about 300 respondents. That is a modest cost compared with a price change affecting the whole revenue line.</p>
+
+  <p><strong>Revealed behavior is available.</strong> Many B2C businesses already own the best data: transactions, basket data and conversion rates. Digital channels allow controlled price and packaging tests. Kohavi's results are a warning that confident teams are often wrong, but also a reminder that consumer businesses can test instead of guess.</p>
+
+  <p><strong>Mind the survey traps.</strong> The 21% hypothetical bias is an average. It is larger for premium and specialty products, which is where many B2C pricing decisions sit. Choice-based designs, realistic shelf or checkout contexts, and calibration against real sales reduce the gap.</p>
+
+  <div class="pullquote">
+    <p>For B2C, my rule is short: use interviews to find the questions, and use scale to answer them.</p>
+  </div>
+
+  <h2>B2B: the sample is small, but the bias is bigger than it looks</h2>
+
+  <p>B2B leaders have a stronger excuse. Many industrial companies have a few hundred customers, and the top 20 may carry half the revenue. A classic consumer survey with 1,000 respondents is often impossible. But small populations do not make small-sample conclusions safe. They create different traps.</p>
+
+  <p><strong>One interview is a sample of one person, not one company.</strong> Gartner estimates that a complex B2B purchase involves 6 to 10 decision makers, each bringing their own research. A conversation with the friendly plant manager tells you little about what procurement, finance or the CFO will accept. Ten accounts with one contact each is not ten customers' view. It is ten individuals' view.</p>
+
+  <p><strong>Key accounts are the least representative customers.</strong> The accounts a CEO knows personally are usually the largest and most strategic. They have the most negotiating power and the most custom terms. Their price response says little about the mid-sized and long-tail customers, where much of the margin potential sits.</p>
+
+  <p><strong>Pilots are negotiations, not measurements.</strong> In B2B, the sales team usually picks the pilot accounts and negotiates the terms. The final price reflects relationships, discounts and the rep's skill as much as customer value. Three pilot wins with hand-picked friendly accounts mostly measure the sales team.</p>
+
+  <p><strong>Rigorous methods still work at B2B scale.</strong> When respondents are scarce, conjoint designs can trade sample size for more choice tasks per respondent. Most B2B firms also hold a large dataset they rarely use: years of quotes, win-loss records and transaction prices in the CRM and ERP. Hundreds or thousands of real deals are a far larger sample than any interview program.</p>
+
+  <div class="pullquote">
+    <p>For B2B, my rule: interview the whole buying center, not just your champion, and test what you hear against your own deal history before you change the price list.</p>
+  </div>
+
+  <h2>Matching the evidence to the question</h2>
+
+  <p>The right method depends on the question, not on a preference for qualitative or quantitative work. This is the ladder I use with clients.</p>
+
+  <div class="ladder-wrap">
+    <table class="ladder">
+      <thead>
+        <tr><th scope="col">Question</th><th scope="col">Small sample is enough?</th><th scope="col">B2C method</th><th scope="col">B2B method</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>What do customers value, and in what words?</td><td>Yes</td><td>20 to 30 interviews</td><td>20 to 30 interviews across buying-center roles</td></tr>
+        <tr><td>How important is each value driver, and for whom?</td><td>No</td><td>Survey or conjoint, 300+ respondents</td><td>Conjoint with more tasks per respondent, plus segment checks</td></tr>
+        <tr><td>What will they actually pay?</td><td>No</td><td>Controlled price tests, transaction data</td><td>Win-loss and quote history, value-based pricing tests</td></tr>
+        <tr><td>Will the new price structure work in the market?</td><td>Only as a first signal</td><td>A/B or regional rollout with a control group</td><td>Pilot across random or matched accounts, with a control group</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="diagnostic">
+    <div class="diagnostic-title">Three habits make any of these more reliable</div>
+    <div class="diag-item"><span class="diag-num">1</span><span class="diag-text"><strong>Write down the hypothesis before the interviews.</strong> It makes confirmation bias visible.</span></div>
+    <div class="diag-item"><span class="diag-num">2</span><span class="diag-text"><strong>Let someone other than the CEO pick the sample.</strong> Selection is where most small-sample bias enters.</span></div>
+    <div class="diag-item"><span class="diag-num">3</span><span class="diag-text"><strong>Calibrate stated answers against real behavior.</strong> Treat survey willingness to pay as an upper bound until sales data confirms it.</span></div>
+  </div>
+
+  <div class="closing">
+    <p>Trusting ten conversations over a thousand data points is not a sign of strong leadership. It is one of the best-documented biases in decision research. At the same time, a large survey is not automatically the answer, because stated willingness to pay runs well above real behavior.</p>
+    <p>The rational position sits between the two. Use small samples to discover what matters. Use scale and real behavior to decide what to charge. In B2C, scale is cheap, so there is little excuse. In B2B, scale is hidden in your own deal history and in the buying center you have not yet talked to.</p>
+    <div class="closing-statement">Pricing by design,<br><em>not by default.</em></div>
+
+    <p class="credit">First published on LinkedIn, October 2026. Also available in Chinese: <a href="/zh/articles/small-sample-trap.html" lang="zh-Hans" hreflang="zh-Hans">小样本陷阱</a></p>
+  </div>
+
+  <p class="refs-title">References</p>
+  <ol class="refs">
+    <li>Armstrong, J. S. (1991). <a href="https://ideas.repec.org/a/oup/jconrs/v18y1991i2p251-56.html">Prediction of consumer behavior by experts and novices</a>. <em>Journal of Consumer Research</em>, 18(2), 251–256.</li>
+    <li>Freling, T. H., Yang, Z., Saini, R., Itani, O. S., &amp; Abualsamh, R. R. (2020). <a href="https://ideas.repec.org/a/eee/jobhdp/v160y2020icp51-67.html">When poignant stories outweigh cold hard facts: A meta-analysis of the anecdotal bias</a>. <em>Organizational Behavior and Human Decision Processes</em>, 160, 51–67.</li>
+    <li>Gartner. Typical buying group for a complex B2B solution: 6 to 10 decision makers. Summarized in <a href="https://www.data-axle.com/resources/blog/the-importance-of-addressing-the-buying-group-in-b2b-sales">Data Axle, The importance of addressing the buying group in B2B sales</a>.</li>
+    <li>Griffin, A., &amp; Hauser, J. R. (1993). <a href="https://ideas.repec.org/a/inm/ormksc/v12y1993i1p1-27.html">The voice of the customer</a>. <em>Marketing Science</em>, 12(1), 1–27.</li>
+    <li>Herzog, W., Hattula, J. D., &amp; Dahl, D. W. (2021). Marketers project their personal preferences onto consumers: Overcoming the threat of egocentric decision making. <em>Journal of Marketing Research</em>, 58(3), 456–475. <a href="https://www.ama.org/research-insights/research-insight-how-marketers-can-make-better-decisions-by-avoiding-the-false-consensus-effect/">AMA research summary</a>.</li>
+    <li>Kohavi, R., Deng, A., Frasca, B., Longbotham, R., Walker, T., &amp; Xu, Y. (2012). <a href="https://draft.epsy5221.education.uconn.edu/wp-content/uploads/sites/2358/2019/04/Kohavi-et-al-2012-Trustworthyness-of-research.pdf">Trustworthy online controlled experiments: Five puzzling outcomes explained</a>. <em>Proceedings of the 18th ACM SIGKDD Conference</em>.</li>
+    <li>Kohavi, R. (2009). <a href="https://ai.stanford.edu/%7Eronnyk/2009-06-28KDDTutorialT4part1.pdf">Online controlled experiments: Introduction, learnings, and humbling statistics</a>. KDD tutorial.</li>
+    <li>Murphy, J. J., Allen, P. G., Stevens, T. H., &amp; Weatherhead, D. (2005). <a href="https://ageconsearch.umn.edu/record/14518">A meta-analysis of hypothetical bias in stated preference valuation</a>. <em>Environmental and Resource Economics</em>, 30(3), 313–325.</li>
+    <li>Orme, B. (2019). <a href="https://content.sawtoothsoftware.com/assets/dd3f6a38-285f-441f-a88c-678d7c8aaffb">Sample size issues for conjoint analysis</a>. In <em>Getting Started with Conjoint Analysis</em>. Sawtooth Software. See also <a href="https://www.sawtoothsoftware.com/resources/blog/posts/sample-size-rules-of-thumb">Sawtooth's sample size rules of thumb</a> and <a href="https://www.quirks.com/articles/how-to-determine-sample-size-in-conjoint-studies">Quirk's on conjoint sample size</a>.</li>
+    <li>Schmidt, J., &amp; Bijmolt, T. H. A. (2020, online 2019). <a href="https://cris-portal.uni-muenster.de/portal/en/publication/60727941">Accurately measuring willingness to pay for consumer goods: A meta-analysis of the hypothetical bias</a>. <em>Journal of the Academy of Marketing Science</em>, 48, 499–518.</li>
+    <li>Tversky, A., &amp; Kahneman, D. (1971). <a href="https://literature.wolkersdorfer.info/literature/Belief%20in%20the%20law%20of%20small%20numbers.pdf">Belief in the law of small numbers</a>. <em>Psychological Bulletin</em>, 76(2), 105–110.</li>
+  </ol>
+
+</article>
+
+<!-- BRAND FOOTER -->
+<div class="brand-footer">
+  <a href="/" class="brand-logo"><span class="pricing">pricing</span><span class="goat">goat</span></a>
+  <div class="brand-right">
+    <div class="brand-tagline">Pricing by Design</div>
+    <div class="brand-url">PRICINGGOAT.COM</div>
+  </div>
+</div>
+
+</body>
+</html>
