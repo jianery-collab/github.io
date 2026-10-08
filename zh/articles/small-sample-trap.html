@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小样本陷阱：我们的偏执是在害怕什么？ · 杨一安博士</title>
+
+<!-- Open Graph -->
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="小样本陷阱：我们的偏执是在害怕什么？" />
+<meta property="og:description" content="十次客户访谈，感觉像是证据；从统计学上看，它们只是一个起点假设。决策研究怎么看凭小样本定价，B2C和B2B的答案又有何不同。" />
+<meta property="og:site_name"   content="PricingGoat" />
+<meta property="og:url"         content="https://www.pricinggoat.com/zh/articles/small-sample-trap.html" />
+<meta property="og:locale"      content="zh_CN" />
+<link rel="canonical" href="https://www.pricinggoat.com/zh/articles/small-sample-trap.html" />
+<link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/small-sample-trap.html" />
+<link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/small-sample-trap.html" />
+<link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/small-sample-trap.html" />
+<meta name="author"             content="杨一安" />
+<meta name="description"        content="十次客户访谈，感觉像是证据；从统计学上看，它们只是一个起点假设。决策研究怎么看凭小样本定价，B2C和B2B的答案又有何不同。" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "小样本陷阱：我们的偏执是在害怕什么？",
+  "description": "十次客户访谈，感觉像是证据；从统计学上看，它们只是一个起点假设。决策研究怎么看凭小样本定价，B2C和B2B的答案又有何不同。",
+  "url": "https://www.pricinggoat.com/zh/articles/small-sample-trap.html",
+  "datePublished": "2026-10-08",
+  "dateModified": "2026-10-08",
+  "inLanguage": "zh-Hans",
+  "author": { "@type": "Person", "@id": "https://www.pricinggoat.com/#person", "name": "杨一安", "url": "https://www.pricinggoat.com/zh/" },
+  "publisher": { "@type": "Organization", "name": "PricingGoat", "url": "https://www.pricinggoat.com/" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #16120a;
+    --paper:    #f7f3ec;
+    --gold:     #b8882a;
+    --gold-lt:  #d4a84b;
+    --muted:    #7a6e5a;
+    --rule:     #ddd5c0;
+    --accent:   #f0e8d4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    line-height: 1.85;
+    padding: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    padding: 80px 48px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,136,42,.18) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 56px;
+    position: relative;
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .hero-nav a {
+    color: rgba(240,232,212,.5);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .hero-nav a:hover { color: var(--gold-lt); }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+  }
+  .hero-eyebrow::after {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+    opacity: .6;
+  }
+  .hero h1 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    max-width: 720px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold-lt);
+  }
+  .hero-sub {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(240,232,212,.6);
+    max-width: 580px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  .hero-rule { width: 32px; height: 1px; background: var(--gold); opacity: .5; }
+  .hero-author {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 13px;
+    color: rgba(240,232,212,.4);
+    letter-spacing: 1px;
+  }
+
+  /* ── ARTICLE ── */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+  }
+
+  p { margin-bottom: 24px; color: #3a3020; }
+
+  /* ── DROP CAP ── */
+  .drop-cap::first-letter {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: .8;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+    color: var(--gold);
+  }
+
+  /* ── SECTION HEADS ── */
+  h2 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 48px 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    margin: 36px 0;
+    background: var(--accent);
+  }
+  .pullquote p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: var(--ink);
+    color: #f0e8d4;
+    padding: 32px 36px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .callout::before {
+    content: '"';
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 100px;
+    color: rgba(184,136,42,.15);
+    position: absolute;
+    top: -10px; left: 16px;
+    line-height: 1;
+  }
+  .callout p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #e8dcc8;
+    margin: 0;
+    position: relative;
+  }
+  .callout p strong { color: #ffffff; }
+  .callout-source {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-top: 14px;
+    display: block;
+    position: relative;
+  }
+
+  /* ── THREE AXIOMS ── */
+  .axioms {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin: 36px 0;
+  }
+  .axiom {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .axiom:last-child { border-bottom: none; }
+  .axiom-num {
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .axiom-body { padding: 20px 24px; }
+  .axiom-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .axiom-desc {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── DIAGNOSTIC ── */
+  .diagnostic {
+    background: var(--accent);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    margin: 36px 0;
+  }
+  .diagnostic-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .diagnostic-title::before {
+    content: '';
+    display: block;
+    width: 4px; height: 18px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .diag-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .diag-item:last-child { margin-bottom: 0; }
+  .diag-num {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 20px;
+    padding-top: 1px;
+  }
+  .diag-text {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: #3a3020;
+    line-height: 1.65;
+  }
+  .diag-text strong { color: var(--ink); }
+
+  /* ── CLOSING ── */
+  .closing {
+    border-top: 2px solid var(--ink);
+    padding-top: 40px;
+    margin-top: 56px;
+  }
+  .closing-statement {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+  .closing-statement em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .closing p { font-size: 17px; }
+
+  /* ── BRAND FOOTER ── */
+  .brand-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 32px;
+    background: var(--ink);
+    margin-top: 0;
+  }
+  a.brand-logo { text-decoration: none; }
+  .brand-logo {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 28px;
+    font-weight: 400;
+  }
+  .brand-logo .pricing { color: #f0e8d4; }
+  .brand-logo .goat { color: var(--gold); }
+  .brand-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .brand-tagline {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(240,232,212,.45);
+  }
+  .brand-url {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* Chinese text: no extra tracking on labels, line breaks inside flow lists */
+  .hero-eyebrow, .hero-nav { letter-spacing: 2px; }
+  .flow p { margin-bottom: 0; }
+  em, .pullquote p { font-style: normal; }
+
+  .credit { color: var(--muted); font-size: 16px; margin-top: 32px; }
+  .article a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,136,42,.35); transition: border-color .2s; }
+  .article a:hover { border-color: var(--gold); }
+
+  .ladder-wrap { margin: 36px 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .ladder { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 15px; line-height: 1.55; }
+  .ladder th { background: var(--ink); color: #f0e8d4; font-weight: 500; font-size: 13px; letter-spacing: .5px; text-align: left; padding: 12px 14px; vertical-align: bottom; }
+  .ladder td { padding: 12px 14px; border-bottom: 1px solid var(--rule); color: #3a3020; vertical-align: top; }
+  .ladder td:first-child { font-weight: 500; color: var(--ink); }
+  .ladder tbody tr:nth-child(even) td { background: var(--accent); }
+
+  .refs-title { margin-top: 48px; font-size: 14px; font-weight: 600; color: var(--muted); }
+  .refs { margin: 12px 0 0 1.4em; font-size: 14px; line-height: 1.7; color: var(--muted); }
+  .refs li { margin-bottom: 6px; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 56px 24px 56px; }
+    .article { padding: 48px 20px 64px; }
+    .callout { padding: 24px 22px; }
+    .brand-footer { flex-direction: column; gap: 16px; text-align: center; }
+    .brand-right { align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <nav class="hero-nav" aria-label="网站导航">
+    <a href="/zh/articles/">← 全部文章</a>
+    <a href="/zh/">首页</a>
+  </nav>
+  <div class="hero-eyebrow">定价战略</div>
+  <h1>小样本陷阱：<br>我们的<em>偏执</em>是在害怕什么？</h1>
+  <p class="hero-sub">为什么高管宁可相信十次谈话，也不相信一千个客户。</p>
+  <div class="hero-meta">
+    <div class="hero-rule"></div>
+    <span class="hero-author">杨一安 · pricinggoat.com</span>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<article class="article">
+
+  <p class="drop-cap">十次客户访谈，感觉像是证据。从统计学上看，它们只是一个起点假设。</p>
+
+  <p>无论是在欧美还是东南亚乃至东北亚，我都听过CEO说过同一句话：“我们不需要做大规模调研。我和几家大客户聊过，他们已经告诉我愿意付多少钱。”有时是五次访谈，有时是和三家关系不错的客户做的销售试点。随后的决策，无论是一份新价目表还是一套新的产品包结构，都会落到成千上万的客户身上。</p>
+
+  <p>窃以为小样本并非没用，但把它当作证据，属于认识偏差，算不得理性判断。历时五十年之久的决策研究支持我这个观点。同样的研究也表明，CEO们的顾虑有其道理：大规模调研也有自己的失真之处。本文摆事实讲道理，并分析B2C和B2B企业的答案有何不同。</p>
+
+  <h2>一、小样本为什么会误导聪明人</h2>
+
+  <p>有四种研究充分的效应，让管理者过度相信少数几次谈话。</p>
+
+  <p><strong>1. 小数定律。</strong>1971年，阿莫斯·特沃斯基（Amos Tversky）和丹尼尔·卡尼曼（Daniel Kahneman）发现，人们期望一个小的随机样本和它所来自的总体长得一模一样。他们的研究对象不是普通人，而是受过专业训练的心理学研究者，其中多数人严重高估了小样本结果能够重复出现的概率。两位作者提醒，人们对早期趋势、对观察到的规律是否稳定，都抱有过度的信心。凭五次访谈做出的定价决策，正是如此。</p>
+
+  <p><strong>2. 利害攸关时，故事胜过数据。</strong>Freling等人2020年对61项研究做的元分析发现了一个清晰的规律：情感投入高时，个案比统计数据更有说服力；情感投入低时，统计数据胜出。CEO决定公司价格水平的时候，情感投入之高，在所有决策者中数一数二。大客户口中一句生动的话，会压过一张枯燥的分布图。</p>
+
+  <p><strong>3. 管理者把自己的偏好投射到客户身上。</strong>Herzog等人2021年发表在<em>Journal of Marketing Research</em>上的研究发现，超过70%的营销人员会把个人偏好投射到消费者身上；纠正这种偏差，预测误差能减少一半以上。由高管团队挑选、亲自主持的访谈，很难逃过这种效应。管理者往往听到的，是自己本来就相信的东西。专业经验也救不了他们：Armstrong（1991）请学者、营销从业者和高中生预测105个已发表的消费者研究假设的结果，没有一组的表现好于随机猜测。</p>
+
+  <p><strong>4. 经验直觉的预测力很弱。</strong>曾负责微软实验平台的Ronny Kohavi报告：经过测试的想法里，只有大约三分之一改善了目标指标，另外三分之一没有效果，剩下三分之一反而让结果变差。这些想法都来自经验丰富、测试前信心十足的团队。没有硬数据的时候，拍板的通常是职位最高的那个人的意见。</p>
+
+  <p>以上情形合在一起，画面感是一致的：一个人为挑选的小样本，加上一位自信的领导者，得出的结论感觉很扎实，实际上却常常站不住。</p>
+
+  <h2>二、怀疑者也有道理</h2>
+
+  <p>公平的讨论，必须认真对待另一方。不信任调研的CEO并不只是固执，他们的直觉背后有三个站得住的理由。</p>
+
+  <p><strong>调查会高估支付意愿。</strong>回答假设性问题的人，不需要真的掏钱。Schmidt和Bijmolt（2019）汇总了77项研究，发现假设性支付意愿平均比真实支付意愿高出21%；产品价值越高、越专业，差距越大。Murphy等人更早（2005）对28项估值研究做的元分析发现，假设价值与实际价值之比的中位数是1.35。一份设计糟糕的价格调查，可能给出一个很精确的数字，只不过它精确地错了。</p>
+
+  <p><strong>小样本是探索的正确工具。</strong>Griffin和Hauser（1993）表明，20到30次一对一访谈，就能发现大约90%的客户需求。如果问题是“客户看重什么，他们用什么话来描述”，访谈效率很高，大规模调查增加不了多少信息。</p>
+
+  <p><strong>试点衡量的是真实行为。</strong>销售试点客户用真金白银投票，而不只是口头说说。这彻底消除了假设性偏差，是相对任何调研的真正优势。</p>
+
+  <p>所以，错误不在于“用访谈代替调研”，而在于用小样本去回答需要大样本才能回答的问题。访谈告诉你<strong>什么</strong>重要；只有规模才能告诉你它<strong>有多重要</strong>、<strong>对多少客户</strong>重要、<strong>在什么价格上</strong>重要。试点能展示真实行为，但只限于参与试点的那几家客户，而它们很少是随机选出来的。</p>
+
+  <h2>三、B2C：规模很便宜，小样本难有借口</h2>
+
+  <p>在消费市场，反对小样本的理由最充分。一家拥有20万客户的公司，如果凭十次谈话定价，就是对唾手可得的数据视而不见。</p>
+
+  <p><strong>你访谈的人，不是买单的人。</strong>CEO见到的消费者很少有代表性：他们是忠实的重度用户、创始人圈子里的人，或者愿意接受访谈的客户。价格敏感度差别最大的地方，通常在客户群的边缘：偶尔购买的人、在品牌之间切换的人，以及新客户。这些人，恰恰是一个随手抽取的小样本会漏掉的。</p>
+
+  <p><strong>大样本负担得起。</strong>借助在线样本库，几百名合格受访者几天就能找到，用不着几个月。对于基于选择的联合分析（choice-based conjoint），使用最广泛的软件供应商建议从大约300名受访者起步。和一次影响整条收入线的价格调整相比，这点成本不算什么。</p>
+
+  <p><strong>真实行为数据就在手边。</strong>许多B2C企业已经握有最好的数据：交易记录、购物篮数据和转化率。数字渠道可以做受控的价格和产品包测试。Kohavi的结果是一个警示，自信的团队常常是错的；但它也提醒我们，消费类企业可以测试，而不必去猜。</p>
+
+  <p><strong>当心调查的陷阱。</strong>21%的假设性偏差只是平均值。对于高端和专业产品，偏差更大，而许多B2C定价决策恰恰落在这里。采用基于选择的设计、模拟真实的货架或结账场景、用实际销售数据做校准，都能缩小差距。</p>
+
+  <div class="pullquote">
+    <p>对于B2C业务来说规则很简单：用访谈找到问题，用规模回答问题。</p>
+  </div>
+
+  <h2>四、B2B：样本确实小，但偏差比看上去大</h2>
+
+  <p>B2B的管理者理由更充分一些。许多工业企业只有几百个客户，前20家客户可能贡献一半收入。一份有1000名受访者的典型消费者调查，往往根本做不到。但总体小，并不意味着小样本得出的结论就安全。它带来的是另一类陷阱。</p>
+
+  <p><strong>一次访谈的样本是一个人，不是一家公司。</strong>Gartner估计，一项复杂的B2B采购涉及6到10位决策者，每个人都带着自己做的功课。和那位关系不错的工厂经理聊一次，你很难知道采购、财务或CFO能接受什么。十家客户、每家一个联系人，不是十家客户的看法，而是十个人的看法。</p>
+
+  <p><strong>大客户恰恰是最没有代表性的客户。</strong>CEO亲自认识的客户，通常是规模最大、最具战略意义的那些。他们议价能力最强，条款也最为定制。他们对价格的反应，几乎说明不了中型客户和长尾客户的情况，而大量利润潜力恰恰在那里。</p>
+
+  <p><strong>试点是谈判，不是测量。</strong>在B2B里，试点客户通常由销售团队挑选，条款也由销售团队谈定。最终价格反映的，除了客户价值，还有关系、折扣和销售代表的个人技巧。在三家精心挑选的友好客户那里拿下试点，测量的主要是销售团队。</p>
+
+  <p><strong>严谨的方法在B2B规模下依然适用。</strong>受访者稀缺时，联合分析可以让每位受访者多做几道选择题，以弥补样本量的不足。大多数B2B企业还握有一个很少用到的大数据集：CRM和ERP里多年的报价、赢单丢单记录和成交价格。成百上千笔真实交易，是比任何访谈项目都大得多的样本。</p>
+
+  <div class="pullquote">
+    <p>对B2B业务而言规则是：访谈整个采购决策团队，而不只是你的支持者；在改价目表之前，先用自己的交易历史检验你听到的东西。</p>
+  </div>
+
+  <h2>五、让证据匹配问题</h2>
+
+  <p>用什么方法，取决于要回答的问题，而不是偏爱定性还是定量。以下是经验之谈：</p>
+
+  <div class="ladder-wrap">
+    <table class="ladder">
+      <thead>
+        <tr><th scope="col">问题</th><th scope="col">小样本够用吗？</th><th scope="col">B2C方法</th><th scope="col">B2B方法</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>客户看重什么？用什么话来描述？</td><td>够</td><td>20到30次访谈</td><td>10到20次访谈，覆盖采购决策团队的不同角色</td></tr>
+        <tr><td>每个价值驱动因素有多重要？对谁重要？</td><td>不够</td><td>调查或联合分析，300名以上受访者</td><td>联合分析，每位受访者多做几道选择题，并按细分市场检验</td></tr>
+        <tr><td>客户实际会付多少钱？</td><td>不够</td><td>受控价格测试、交易数据</td><td>赢单丢单记录和报价历史、基于价值的定价测试</td></tr>
+        <tr><td>新的价格结构在市场上行得通吗？</td><td>只能作为初步信号</td><td>A/B测试或分区域推出，设对照组</td><td>按客户细分进行测试，识别购买障碍</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="diagnostic">
+    <div class="diagnostic-title">三个习惯，让上面任何一种方法更可靠</div>
+    <div class="diag-item"><span class="diag-num">1</span><span class="diag-text"><strong>访谈之前，先写下假设。</strong>这样，确认偏差就看得见。</span></div>
+    <div class="diag-item"><span class="diag-num">2</span><span class="diag-text"><strong>让CEO以外的人挑选样本。</strong>小样本偏差，大多是在挑选环节进来的。</span></div>
+    <div class="diag-item"><span class="diag-num">3</span><span class="diag-text"><strong>用真实行为校准口头回答。</strong>在销售数据证实之前，把调研得出的支付意愿当作上限。</span></div>
+  </div>
+
+  <div class="closing">
+    <p>相信十次谈话胜过一千个数据点，不是强势领导力的标志，而是决策研究中证据最充分的偏差之一。与此同时，大规模调查也不会自动给出答案，因为口头说出的支付意愿明显高于真实行为。</p>
+    <p>理性的立场在两者之间：用小样本发现什么重要，用规模和真实行为决定收多少钱。在B2C，规模很便宜，几乎没有借口。在B2B，规模藏在你自己的交易历史里，也藏在你还没有谈过的那些采购决策者身上。</p>
+    <div class="closing-statement">定价，是<em>设计</em>出来的，<br>不是将就出来的。</div>
+
+    <p class="credit">首发于微信公众号「定价制胜-Dr. Pricing」，2026年10月。英文版：<a href="/articles/small-sample-trap.html" lang="en" hreflang="en">The Small-Sample Trap</a></p>
+  </div>
+
+  <p class="refs-title">参考资料</p>
+  <ol class="refs">
+    <li>Armstrong, J. S. (1991). <a href="https://ideas.repec.org/a/oup/jconrs/v18y1991i2p251-56.html">Prediction of consumer behavior by experts and novices</a>. Journal of Consumer Research, 18(2), 251–256.</li>
+    <li>Freling, T. H., Yang, Z., Saini, R., Itani, O. S., &amp; Abualsamh, R. R. (2020). <a href="https://ideas.repec.org/a/eee/jobhdp/v160y2020icp51-67.html">When poignant stories outweigh cold hard facts: A meta-analysis of the anecdotal bias</a>. Organizational Behavior and Human Decision Processes, 160, 51–67.</li>
+    <li>Gartner：复杂B2B采购的典型决策团队为6到10人。引自<a href="https://www.data-axle.com/resources/blog/the-importance-of-addressing-the-buying-group-in-b2b-sales">Data Axle, The importance of addressing the buying group in B2B sales</a>。</li>
+    <li>Griffin, A., &amp; Hauser, J. R. (1993). <a href="https://ideas.repec.org/a/inm/ormksc/v12y1993i1p1-27.html">The voice of the customer</a>. Marketing Science, 12(1), 1–27.</li>
+    <li>Herzog, W., Hattula, J. D., &amp; Dahl, D. W. (2021). Marketers project their personal preferences onto consumers: Overcoming the threat of egocentric decision making. Journal of Marketing Research, 58(3), 456–475. <a href="https://www.ama.org/research-insights/research-insight-how-marketers-can-make-better-decisions-by-avoiding-the-false-consensus-effect/">AMA研究摘要</a>。</li>
+    <li>Kohavi, R., Deng, A., Frasca, B., Longbotham, R., Walker, T., &amp; Xu, Y. (2012). <a href="https://draft.epsy5221.education.uconn.edu/wp-content/uploads/sites/2358/2019/04/Kohavi-et-al-2012-Trustworthyness-of-research.pdf">Trustworthy online controlled experiments: Five puzzling outcomes explained</a>. Proceedings of the 18th ACM SIGKDD Conference.</li>
+    <li>Kohavi, R. (2009). <a href="https://ai.stanford.edu/%7Eronnyk/2009-06-28KDDTutorialT4part1.pdf">Online controlled experiments: Introduction, learnings, and humbling statistics</a>. KDD tutorial.</li>
+    <li>Murphy, J. J., Allen, P. G., Stevens, T. H., &amp; Weatherhead, D. (2005). <a href="https://ageconsearch.umn.edu/record/14518">A meta-analysis of hypothetical bias in stated preference valuation</a>. Environmental and Resource Economics, 30(3), 313–325.</li>
+    <li>Orme, B. (2019). <a href="https://content.sawtoothsoftware.com/assets/dd3f6a38-285f-441f-a88c-678d7c8aaffb">Sample size issues for conjoint analysis</a>. In Getting Started with Conjoint Analysis. Sawtooth Software. 另见<a href="https://www.sawtoothsoftware.com/resources/blog/posts/sample-size-rules-of-thumb">Sawtooth's sample size rules of thumb</a>和<a href="https://www.quirks.com/articles/how-to-determine-sample-size-in-conjoint-studies">Quirk's on conjoint sample size</a>。</li>
+    <li>Schmidt, J., &amp; Bijmolt, T. H. A. (2020, online 2019). <a href="https://cris-portal.uni-muenster.de/portal/en/publication/60727941">Accurately measuring willingness to pay for consumer goods: A meta-analysis of the hypothetical bias</a>. Journal of the Academy of Marketing Science, 48, 499–518.</li>
+    <li>Tversky, A., &amp; Kahneman, D. (1971). <a href="https://literature.wolkersdorfer.info/literature/Belief%20in%20the%20law%20of%20small%20numbers.pdf">Belief in the law of small numbers</a>. Psychological Bulletin, 76(2), 105–110.</li>
+  </ol>
+
+</article>
+
+<!-- BRAND FOOTER -->
+<div class="brand-footer">
+  <a href="/zh/" class="brand-logo"><span class="pricing">pricing</span><span class="goat">goat</span></a>
+  <div class="brand-right">
+    <div class="brand-tagline">Pricing by Design</div>
+    <div class="brand-url">PRICINGGOAT.COM</div>
+  </div>
+</div>
+
+</body>
+</html>
