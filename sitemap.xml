@@ -5,7 +5,7 @@
   <!-- Homepage: EN -->
   <url>
     <loc>https://www.pricinggoat.com/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/"/>
@@ -16,7 +16,7 @@
   <!-- Homepage: ZH -->
   <url>
     <loc>https://www.pricinggoat.com/zh/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/"/>
@@ -49,7 +49,7 @@
   <!-- Articles index: EN -->
   <url>
     <loc>https://www.pricinggoat.com/articles/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/"/>
@@ -60,7 +60,7 @@
   <!-- Articles index: ZH -->
   <url>
     <loc>https://www.pricinggoat.com/zh/articles/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/"/>
@@ -235,7 +235,7 @@
   <!-- Article: The Small-Sample Trap / 小样本陷阱：我们的偏执是在害怕什么？ (EN + ZH pair) -->
   <url>
     <loc>https://www.pricinggoat.com/articles/small-sample-trap.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/small-sample-trap.html"/>
@@ -244,7 +244,7 @@
   </url>
   <url>
     <loc>https://www.pricinggoat.com/zh/articles/small-sample-trap.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/small-sample-trap.html"/>
