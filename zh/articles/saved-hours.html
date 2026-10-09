@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>省下的工时，都去哪儿了？ · 杨一安博士</title>
+
+<!-- Open Graph -->
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="省下的工时，都去哪儿了？" />
+<meta property="og:description" content="几乎所有效率工具都在讲帮客户省了多少工时。但省下来的时间如果没有被重新配置，就只是名义价值，而不是真实价值。" />
+<meta property="og:site_name"   content="PricingGoat" />
+<meta property="og:url"         content="https://www.pricinggoat.com/zh/articles/saved-hours.html" />
+<meta property="og:image"       content="https://www.pricinggoat.com/og-image.png" />
+<meta property="og:locale"      content="zh_CN" />
+<link rel="canonical" href="https://www.pricinggoat.com/zh/articles/saved-hours.html" />
+<meta name="author"             content="杨一安" />
+<meta name="description"        content="几乎所有效率工具都在讲帮客户省了多少工时。但省下来的时间如果没有被重新配置，就只是名义价值，而不是真实价值。" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "省下的工时，都去哪儿了？",
+  "description": "几乎所有效率工具都在讲帮客户省了多少工时。但省下来的时间如果没有被重新配置，就只是名义价值，而不是真实价值。",
+  "url": "https://www.pricinggoat.com/zh/articles/saved-hours.html",
+  "datePublished": "2026-10-09",
+  "dateModified": "2026-10-09",
+  "inLanguage": "zh-Hans",
+  "image": "https://www.pricinggoat.com/og-image.png",
+  "author": { "@type": "Person", "@id": "https://www.pricinggoat.com/#person", "name": "杨一安", "url": "https://www.pricinggoat.com/zh/" },
+  "publisher": { "@type": "Organization", "name": "PricingGoat", "url": "https://www.pricinggoat.com/" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #16120a;
+    --paper:    #f7f3ec;
+    --gold:     #b8882a;
+    --gold-lt:  #d4a84b;
+    --muted:    #7a6e5a;
+    --rule:     #ddd5c0;
+    --accent:   #f0e8d4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    line-height: 1.85;
+    padding: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    padding: 80px 48px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,136,42,.18) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 56px;
+    position: relative;
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .hero-nav a {
+    color: rgba(240,232,212,.5);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .hero-nav a:hover { color: var(--gold-lt); }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+  }
+  .hero-eyebrow::after {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+    opacity: .6;
+  }
+  .hero h1 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    max-width: 720px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold-lt);
+  }
+  .hero-sub {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(240,232,212,.6);
+    max-width: 580px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  .hero-rule { width: 32px; height: 1px; background: var(--gold); opacity: .5; }
+  .hero-author {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 13px;
+    color: rgba(240,232,212,.4);
+    letter-spacing: 1px;
+  }
+
+  /* ── ARTICLE ── */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+  }
+
+  p { margin-bottom: 24px; color: #3a3020; }
+
+  /* ── DROP CAP ── */
+  .drop-cap::first-letter {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: .8;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+    color: var(--gold);
+  }
+
+  /* ── SECTION HEADS ── */
+  h2 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 48px 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    margin: 36px 0;
+    background: var(--accent);
+  }
+  .pullquote p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: var(--ink);
+    color: #f0e8d4;
+    padding: 32px 36px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .callout::before {
+    content: '"';
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 100px;
+    color: rgba(184,136,42,.15);
+    position: absolute;
+    top: -10px; left: 16px;
+    line-height: 1;
+  }
+  .callout p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #e8dcc8;
+    margin: 0;
+    position: relative;
+  }
+  .callout p strong { color: #ffffff; }
+  .callout-source {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-top: 14px;
+    display: block;
+    position: relative;
+  }
+
+  /* ── THREE AXIOMS ── */
+  .axioms {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin: 36px 0;
+  }
+  .axiom {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .axiom:last-child { border-bottom: none; }
+  .axiom-num {
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .axiom-body { padding: 20px 24px; }
+  .axiom-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .axiom-desc {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── DIAGNOSTIC ── */
+  .diagnostic {
+    background: var(--accent);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    margin: 36px 0;
+  }
+  .diagnostic-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .diagnostic-title::before {
+    content: '';
+    display: block;
+    width: 4px; height: 18px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .diag-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .diag-item:last-child { margin-bottom: 0; }
+  .diag-num {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 20px;
+    padding-top: 1px;
+  }
+  .diag-text {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: #3a3020;
+    line-height: 1.65;
+  }
+  .diag-text strong { color: var(--ink); }
+
+  /* ── CLOSING ── */
+  .closing {
+    border-top: 2px solid var(--ink);
+    padding-top: 40px;
+    margin-top: 56px;
+  }
+  .closing-statement {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+  .closing-statement em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .closing p { font-size: 17px; }
+
+  /* ── BRAND FOOTER ── */
+  .brand-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 32px;
+    background: var(--ink);
+    margin-top: 0;
+  }
+  a.brand-logo { text-decoration: none; }
+  .brand-logo {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 28px;
+    font-weight: 400;
+  }
+  .brand-logo .pricing { color: #f0e8d4; }
+  .brand-logo .goat { color: var(--gold); }
+  .brand-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .brand-tagline {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(240,232,212,.45);
+  }
+  .brand-url {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* Chinese text: no extra tracking on labels, line breaks inside flow lists */
+  .hero-eyebrow, .hero-nav { letter-spacing: 2px; }
+  .flow p { margin-bottom: 0; }
+  em, .pullquote p { font-style: normal; }
+
+  .credit { color: var(--muted); font-size: 16px; margin-top: 32px; }
+  .article a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,136,42,.35); transition: border-color .2s; }
+  .article a:hover { border-color: var(--gold); }
+
+  @media (max-width: 600px) {
+    .hero { padding: 56px 24px 56px; }
+    .article { padding: 48px 20px 64px; }
+    .callout { padding: 24px 22px; }
+    .brand-footer { flex-direction: column; gap: 16px; text-align: center; }
+    .brand-right { align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <nav class="hero-nav" aria-label="网站导航">
+    <a href="/zh/articles/">← 全部文章</a>
+    <a href="/zh/">首页</a>
+  </nav>
+  <div class="hero-eyebrow">价值与定价</div>
+  <h1>省下的<em>工时</em>，<br>都去哪儿了？</h1>
+  <p class="hero-sub">几乎所有效率工具都在讲同一个故事：帮你省了多少工时。但真正的问题是，省下来的时间，客户能不能把它用在创造价值的地方。如果不能，你创造的只是名义价值，而不是真实价值。</p>
+  <div class="hero-meta">
+    <div class="hero-rule"></div>
+    <span class="hero-author">杨一安 · pricinggoat.com</span>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<article class="article">
+
+  <p class="drop-cap">最近两年，我看过不少效率工具的销售材料。从协同办公、RPA，到各种AI助手，它们的价值主张惊人地一致：帮客户节省多少员工工时。</p>
+
+  <p>算法也大同小异。</p>
+
+  <p>每位员工每天节省10分钟。500名员工，每天就是5000分钟，约83小时。一年按220个工作日计算，约1.8万小时。按每小时人力成本300元算，一年为客户创造约550万元的价值。</p>
+
+  <p>幻灯片上的数字很漂亮，逻辑看起来也无懈可击。</p>
+
+  <p>但如果你拿这页幻灯片去问客户的财务总监一个简单的问题：今年的人力成本降了550万吗？或者收入多了550万吗？</p>
+
+  <p>大多数时候，答案是：<strong>都没有。</strong></p>
+
+  <p>这就是“省下工时”的谜与苦。</p>
+
+  <h2>一、谜：省下来的时间，消失在了哪里？</h2>
+
+  <p>工时节省是真实的。员工确实少花了时间在整理表格、写会议纪要、找文件上。问题是，这些时间并没有变成钱。原因至少有三个。</p>
+
+  <div class="axioms">
+    <div class="axiom">
+      <div class="axiom-num">1</div>
+      <div class="axiom-body">
+        <div class="axiom-title">节省的时间是碎片化的</div>
+        <p class="axiom-desc">它不是整块地出现，而是这里7分钟，那里12分钟。碎片化的时间很难重新调配。你没办法把一个员工每天零散省下的十几分钟，拼成一个新项目，或者一次客户拜访。</p>
+      </div>
+    </div>
+    <div class="axiom">
+      <div class="axiom-num">2</div>
+      <div class="axiom-body">
+        <div class="axiom-title">时间会被自动填满</div>
+        <p class="axiom-desc">帕金森定律说，工作会自动膨胀，直到占满所有可用的时间。省下来的时间，很快会被更长的会议、更多的消息、更从容的下午所吸收。没有人刻意浪费，但也没有人刻意把它用起来。</p>
+      </div>
+    </div>
+    <div class="axiom">
+      <div class="axiom-num">3</div>
+      <div class="axiom-body">
+        <div class="axiom-title">人力成本是固定的</div>
+        <p class="axiom-desc">员工的工资按月发，不按分钟发。工具帮每个人省了10分钟，但只要编制不变、薪资不变，财务报表上的成本一分都不会少。省下的工时要变成省下的钱，必须有人做出决定：少招一个人，不补一个空缺，减少外包或加班。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pullquote">
+    <p>省下来的是产能，不是产出。产能如果没有被重新配置，就只是闲置。</p>
+  </div>
+
+  <h2>二、苦：续约那一刻</h2>
+
+  <p>真正的痛苦，往往在一年之后才出现。</p>
+
+  <p>续约谈判时，客户的采购或财务会拿出当初那页ROI测算，问供应商：说好的550万在哪里？</p>
+
+  <p>供应商拿出使用数据：日活很高，功能使用率很好，员工满意度也不错。但这些都回答不了那个问题。</p>
+
+  <p>于是，ROI故事崩塌，价值对话变成了价格对话。客户要求折扣，或者干脆缩减席位。供应商一开始卖的是价值，最后却只能在价格上让步。</p>
+
+  <p>问题不在于工具不好用，而在于它承诺的价值，客户无法兑现。</p>
+
+  <h2>三、名义价值与真实价值</h2>
+
+  <p>这两个概念需要区分清楚：</p>
+
+  <p><strong>名义价值</strong>：工具释放出来的工时。</p>
+
+  <p><strong>真实价值</strong>：被释放出来的工时，被重新投入到创造价值的活动中，最终在利润表上留下痕迹。</p>
+
+  <p>只有后者，客户才会真正愿意为之付费，并且持续付费。</p>
+
+  <p>从名义价值到真实价值，通常只有三条兑现路径：</p>
+
+  <div class="axioms">
+    <div class="axiom">
+      <div class="axiom-num">I</div>
+      <div class="axiom-body">
+        <div class="axiom-title">降本</div>
+        <p class="axiom-desc">减少人员编制、放缓招聘、减少外包或加班费用。</p>
+      </div>
+    </div>
+    <div class="axiom">
+      <div class="axiom-num">II</div>
+      <div class="axiom-body">
+        <div class="axiom-title">增收</div>
+        <p class="axiom-desc">把时间投入到能带来收入的活动中，比如更多的客户拜访、更快的报价响应、更高的销售转化。</p>
+      </div>
+    </div>
+    <div class="axiom">
+      <div class="axiom-num">III</div>
+      <div class="axiom-body">
+        <div class="axiom-title">提质</div>
+        <p class="axiom-desc">减少差错和返工，降低风险损失，提升客户满意度和留存。</p>
+      </div>
+    </div>
+  </div>
+
+  <p>如果一个效率工具说不清楚自己走的是哪条路径，它的价值主张就还停留在名义层面。</p>
+
+  <p>在“降本增效”的大背景下，这一点尤其重要。很多企业买工具时，喊的是“增效”，但老板心里算的是“降本”。如果“效”增了，“本”却没降，“收”也没增，那这笔投入迟早会被重新审视。</p>
+
+  <h2>四、对卖方：别拿工时给自己定价</h2>
+
+  <p>如果你是效率工具或AI产品的供应商，我有三个建议。</p>
+
+  <p><strong>第一，把价值锚点从“工时”移到“结果”。</strong></p>
+
+  <p>不要说“我们帮你省了1.8万小时”，而要说“销售团队每人每月可以多跑4家客户”“报价周期从3天缩短到半天”“单据差错率下降一半”。结果离业务越近，客户越愿意为之付费。</p>
+
+  <p><strong>第二，在上线之前，就和客户一起规划时间的去向。</strong></p>
+
+  <p>省下的时间用在哪里？由谁负责？这些问题不应该等到续约时才问。把“价值实现计划”作为交付的一部分，而不是销售的附赠品。</p>
+
+  <p><strong>第三，和客户约定一个必须改变的业务指标，并持续追踪。</strong></p>
+
+  <p>不是日活，不是使用时长，而是客户自己的经营指标。这个指标动了，续约就是顺理成章的事；这个指标没动，再漂亮的使用数据也撑不住价格。</p>
+
+  <p>说得再直白一点：</p>
+
+  <div class="callout">
+    <p><strong>如果你按“节省的工时”给产品定价，你就是在用一种客户无法入账的价值来定价。</strong>客户迟早会发现这一点。</p>
+  </div>
+
+  <h2>五、对买方：签约之前问三个问题</h2>
+
+  <p>如果你是采购方，同样有三个问题值得在签约前问清楚：</p>
+
+  <div class="diagnostic">
+    <div class="diagnostic-title">签约之前的三个问题</div>
+    <div class="diag-item"><div class="diag-num">1.</div><div class="diag-text">省下来的时间，具体要用在哪里？</div></div>
+    <div class="diag-item"><div class="diag-num">2.</div><div class="diag-text">谁来负责把这些时间重新配置起来？</div></div>
+    <div class="diag-item"><div class="diag-num">3.</div><div class="diag-text">一年之后，我们用哪个经营指标来判断这笔钱花得值不值？</div></div>
+  </div>
+
+  <p>如果这三个问题回答不了，那么无论供应商的ROI测算多么漂亮，你买到的都只是名义价值。</p>
+
+  <div class="closing">
+    <p>工时节省本身没有错，它是价值的起点，但不是终点。</p>
+    <p>时间只有被重新使用，才会变成价值。工具负责把时间省出来，而把时间变成钱，需要管理上的设计。</p>
+    <p>这也是我一直说的：</p>
+    <div class="closing-statement">定价，是设计出来的，不是将就出来的。<em>价值也是。</em></div>
+    <p class="credit">首发于微信公众号「定价制胜-Dr. Pricing」，2026年10月。</p>
+  </div>
+
+</article>
+
+<!-- BRAND FOOTER -->
+<div class="brand-footer">
+  <a href="/zh/" class="brand-logo"><span class="pricing">pricing</span><span class="goat">goat</span></a>
+  <div class="brand-right">
+    <div class="brand-tagline">Pricing by Design</div>
+    <div class="brand-url">PRICINGGOAT.COM</div>
+  </div>
+</div>
+
+</body>
+</html>
