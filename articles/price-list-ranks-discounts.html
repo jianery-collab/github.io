@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Your Price List Ranks Discounts, Not Value · Jan Y. Yang</title>
+
+<!-- Open Graph / LinkedIn preview -->
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Why Your Price List Ranks Discounts, Not Value" />
+<meta property="og:description" content="In B2B, list price is rarely what customers pay. Why converting a net target into a list price with each line's usual discount ranks products by discount history, and how one common reference keeps list prices in line with value." />
+<meta property="og:site_name"   content="PricingGoat" />
+<meta property="og:url"         content="https://www.pricinggoat.com/articles/price-list-ranks-discounts.html" />
+<meta property="og:image"       content="https://www.pricinggoat.com/images/articles/price-list-ranks-discounts-en-cover.jpg" />
+<link rel="canonical" href="https://www.pricinggoat.com/articles/price-list-ranks-discounts.html" />
+<meta name="author"             content="Jan Y. Yang" />
+<meta name="description"        content="In B2B, list price is rarely what customers pay. Why converting a net target into a list price with each line's usual discount ranks products by discount history, and how one common reference keeps list prices in line with value." />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Why Your Price List Ranks Discounts, Not Value",
+  "description": "In B2B, list price is rarely what customers pay. Why converting a net target into a list price with each line's usual discount ranks products by discount history, and how one common reference keeps list prices in line with value.",
+  "url": "https://www.pricinggoat.com/articles/price-list-ranks-discounts.html",
+  "image": "https://www.pricinggoat.com/images/articles/price-list-ranks-discounts-en-cover.jpg",
+  "datePublished": "2026-10-11",
+  "dateModified": "2026-10-11",
+  "inLanguage": "en",
+  "author": { "@type": "Person", "@id": "https://www.pricinggoat.com/#person", "name": "Jan Y. Yang", "url": "https://www.pricinggoat.com/" },
+  "publisher": { "@type": "Organization", "name": "PricingGoat", "url": "https://www.pricinggoat.com/" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #16120a;
+    --paper:    #f7f3ec;
+    --gold:     #b8882a;
+    --gold-lt:  #d4a84b;
+    --muted:    #7a6e5a;
+    --rule:     #ddd5c0;
+    --accent:   #f0e8d4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.85;
+    padding: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    padding: 80px 48px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,136,42,.18) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 56px;
+    position: relative;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .hero-nav a {
+    color: rgba(240,232,212,.5);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .hero-nav a:hover { color: var(--gold-lt); }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+  }
+  .hero-eyebrow::after {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+    opacity: .6;
+  }
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    max-width: 720px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold-lt);
+  }
+  .hero-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(240,232,212,.6);
+    max-width: 580px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  .hero-rule { width: 32px; height: 1px; background: var(--gold); opacity: .5; }
+  .hero-author {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: rgba(240,232,212,.4);
+    letter-spacing: 1px;
+  }
+
+  /* ── ARTICLE ── */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+  }
+
+  p { margin-bottom: 24px; color: #3a3020; }
+
+  /* ── DROP CAP ── */
+  .drop-cap::first-letter {
+    font-family: 'Lora', serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: .8;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+    color: var(--gold);
+  }
+
+  /* ── SECTION HEADS ── */
+  h2 {
+    font-family: 'Lora', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 48px 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    margin: 36px 0;
+    background: var(--accent);
+  }
+  .pullquote p {
+    font-family: 'Lora', serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: var(--ink);
+    color: #f0e8d4;
+    padding: 32px 36px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .callout::before {
+    content: '"';
+    font-family: 'Lora', serif;
+    font-size: 100px;
+    color: rgba(184,136,42,.15);
+    position: absolute;
+    top: -10px; left: 16px;
+    line-height: 1;
+  }
+  .callout p {
+    font-family: 'Lora', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #e8dcc8;
+    margin: 0;
+    position: relative;
+  }
+  .callout p strong { color: #ffffff; }
+  .callout-source {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-top: 14px;
+    display: block;
+    position: relative;
+  }
+
+  /* ── THREE AXIOMS ── */
+  .axioms {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin: 36px 0;
+  }
+  .axiom {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .axiom:last-child { border-bottom: none; }
+  .axiom-num {
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .axiom-body { padding: 20px 24px; }
+  .axiom-title {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .axiom-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── DIAGNOSTIC ── */
+  .diagnostic {
+    background: var(--accent);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    margin: 36px 0;
+  }
+  .diagnostic-title {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .diagnostic-title::before {
+    content: '';
+    display: block;
+    width: 4px; height: 18px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .diag-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .diag-item:last-child { margin-bottom: 0; }
+  .diag-num {
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 20px;
+    padding-top: 1px;
+  }
+  .diag-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: #3a3020;
+    line-height: 1.65;
+  }
+  .diag-text strong { color: var(--ink); }
+
+  /* ── CLOSING ── */
+  .closing {
+    border-top: 2px solid var(--ink);
+    padding-top: 40px;
+    margin-top: 56px;
+  }
+  .closing-statement {
+    font-family: 'Lora', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+  .closing-statement em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .closing p { font-size: 17px; }
+
+  /* ── BRAND FOOTER ── */
+  .brand-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 32px;
+    background: var(--ink);
+    margin-top: 0;
+  }
+  a.brand-logo { text-decoration: none; }
+  .brand-logo {
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    font-weight: 400;
+  }
+  .brand-logo .pricing { color: #f0e8d4; }
+  .brand-logo .goat { color: var(--gold); }
+  .brand-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .brand-tagline {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(240,232,212,.45);
+  }
+  .brand-url {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  .credit { color: var(--muted); font-size: 16px; margin-top: 32px; }
+  .article a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,136,42,.35); transition: border-color .2s; }
+  .article a:hover { border-color: var(--gold); }
+
+  .figure { margin: 40px 0 8px; }
+  .figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
+  .article .figure a { border-bottom: none; }
+  .figure figcaption { font-size: 14px; color: var(--muted); margin-top: 10px; text-align: center; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 56px 24px 56px; }
+    .article { padding: 48px 20px 64px; }
+    .callout { padding: 24px 22px; }
+    .brand-footer { flex-direction: column; gap: 16px; text-align: center; }
+    .brand-right { align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <nav class="hero-nav" aria-label="Site">
+    <a href="/articles/">← All articles</a>
+    <a href="/">Home</a>
+  </nav>
+  <div class="hero-eyebrow">Pricing Strategy</div>
+  <h1>Why your price list ranks <em>discounts</em>, not value</h1>
+  <p class="hero-sub">List price and net price do different jobs. One formula cannot make both follow value.</p>
+  <div class="hero-meta">
+    <div class="hero-rule"></div>
+    <span class="hero-author">Jan Y. Yang · pricinggoat.com</span>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<article class="article">
+
+  <p class="drop-cap">In B2B, list price is rarely what customers pay. So why do companies spend so much effort setting it? And why does the step from net price to list price, which looks like simple arithmetic, go wrong so often?</p>
+
+  <h2>Two numbers, two jobs</h2>
+
+  <p>A list price and a net price do different jobs.</p>
+
+  <p>The list price is the anchor every negotiation starts from. Customers, sales reps and channel partners use it to compare products across a company’s range, and partner margins may be calculated on it. It tells the market what a product is worth relative to its siblings.</p>
+
+  <p>The net price is what the product actually earns in its own market, against the alternatives and the buying power it meets there.</p>
+
+  <p>The arithmetic between them is simple: net price equals list price times one minus the discount. The trouble starts when we treat that formula as the whole answer.</p>
+
+  <h2>Same list, different net</h2>
+
+  <p>Take two product lines, A and B, with similar list prices. Line A usually closes at 30 percent off. Line B closes at 50 percent. A realizes 70 percent of its list price, B only half.</p>
+
+  <p>Now run the logic the other way, as a company does when it launches something new. Start from a net price target and translate it into a list price with the line’s usual discount. Two products with the same net target end up with list prices far apart: about 1.4 times net in line A, twice net in line B.</p>
+
+  <div class="pullquote">
+    <p>The price list now ranks products by discount history, not by value.</p>
+  </div>
+
+  <p>And people notice. A customer comparing the two sees the B product listed 40 percent higher and assumes it is the premium choice. A partner paid a percentage of list earns more for selling B. A sales rep learns that B “always needs 50 percent”, and the habit renews itself with every deal.</p>
+
+  <p>List and net cannot both follow value through one mechanical translation. Something has to give, and it should not be the list price’s job of signaling value.</p>
+
+  <h2>One yardstick for the whole range</h2>
+
+  <p>If list prices are to signal value, every product in the range has to be measured on the same yardstick. I call it the common reference.</p>
+
+  <p>Pick the segment the range is mainly built for. Take what that segment actually pays today for its next-best alternative, after discounts, not the competitor’s list price. Then value every product in the range against that one reference, including products sold mostly to other segments.</p>
+
+  <p>Say your core customers pay 1,000 euros net today for the competing solution. Product X gives them about 20 percent more value than that, product Y about 50 percent more. On the common yardstick, Y sits clearly above X, and their list prices should show it: the same order, with a step between them that matches the gap in value, whatever discount each later needs in its own market. Lined up this way, the range forms a price ladder. The ladder is not a ratio rule. It is a line through the range that keeps products in order and spaced by value.</p>
+
+  <p>Keep the reference fixed. Switching it from product to product compares values measured on different scales. When the reference segment’s alternative changes, re-index the whole range at once, not product by product.</p>
+
+  <p>Measured this way, list prices line up with value, and the ladder customers and sales see makes sense.</p>
+
+  <h2>Structure or habit</h2>
+
+  <p>Why would line B need 50 percent? Part of the gap is structural. B may sell through a different channel, to customers with more buying power, against tougher competitors, in larger and rarer deals. That part is real, and it belongs in the plan.</p>
+
+  <p>Part of it may be habit: a concession once made to win a key account, a year-end push that became the norm, a discount nobody dared to take back. That part is leakage. It belongs to managing prices after launch, to be repaired over time, not copied into the next product.</p>
+
+  <p>Most discount data mixes the two. A simple test helps: compare deals that look alike, with the same channel, similar customer size and similar volume. If their discounts still spread widely, treat that spread as habit until someone can explain it. Strip it out before you use a discount as a planning number.</p>
+
+  <h2>Launching line C</h2>
+
+  <p>Now the company introduces line C. The tempting shortcut is to plan its discount at the average of A and B, or to borrow the discount of whichever line looks closest. Both import a history from other markets.</p>
+
+  <div class="diagnostic">
+    <div class="diagnostic-title">Line C’s discount has to be projected from its own market</div>
+    <div class="diag-item"><span class="diag-num">1</span><span class="diag-text">Which channel will sell it?</span></div>
+    <div class="diag-item"><span class="diag-num">2</span><span class="diag-text">Which customers will buy it, and how do they buy?</span></div>
+    <div class="diag-item"><span class="diag-num">3</span><span class="diag-text">How hard will competitors push on price?</span></div>
+    <div class="diag-item"><span class="diag-num">4</span><span class="diag-text">How large and how frequent will the deals be?</span></div>
+  </div>
+
+  <p>Where C genuinely shares a market with A or B, their structural discount is a fair starting point. Their habits are not.</p>
+
+  <p>The projected discount turns the net target into a first list price. It stays an assumption until real deals test it. A pilot with a few customers or one region is a low-cost way to run that test before the full launch.</p>
+
+  <h2>When list and net don’t meet</h2>
+
+  <p>Each price has its own source, and each can be derived step by step. Take a new product whose customers pay 1,000 euros a year today for their next-best alternative.</p>
+
+  <figure class="figure">
+    <a href="/images/articles/price-list-ranks-discounts-fig1-en.jpg"><img src="/images/articles/price-list-ranks-discounts-fig1-en.jpg" width="1520" height="660" loading="lazy" alt="Two bars in euros per year. Value bar: reference price 1,000, plus 90 captured (30 percent of the 300 differentiated value), plus 210 the customer keeps, for an economic value of 1,300. Price bar: net price 1,090, plus a discount of 470 (30 percent of list), for a list price of 1,560. A dashed line marks the net target where captured value ends and the discount starts."></a>
+    <figcaption>Illustrative numbers from this article.</figcaption>
+  </figure>
+
+  <p>The dashed line marks the net target: it is where captured value ends on the value bar and where the discount starts on the price bar.</p>
+
+  <p><strong>The net target comes from value.</strong> Start from that reference price of 1,000 euros. Add what the product does better than the alternative, subtract what it does worse, both in money. That gives its economic value, say 1,300 euros. The 300 euros in between are the differentiated value, and the customer will not hand all of it over: they need a reason to switch and a reward for the risk of a new supplier. The share you plan to capture sets the net target. At about 30 percent, that is 1,090 euros. Evidence sets the range around it: the floor from what the business case needs, the ceiling from the largest share of value customers accept as fair.</p>
+
+  <p><strong>The discount comes from the product’s own market.</strong> Project it as described above: the structural discount this market will bear, driven by channel, customers and competition, without the habits. Say it comes out at about 30 percent.</p>
+
+  <p><strong>The list price follows from the two, and the ladder checks it.</strong> A net target of 1,090 euros at 30 percent off means a list price of about 1,560 euros. The check is whether that list price fits the rest of your price list. Your existing products show how much list price the range asks for each level of value: more value, higher list price. Suppose they show that a product delivering 1,300 euros of value lists at about 1,560 euros. Then the numbers agree. The new product slots into the price list where its value says it belongs, and the net target holds.</p>
+
+  <figure class="figure">
+    <a href="/images/articles/price-list-ranks-discounts-fig2-en.jpg"><img src="/images/articles/price-list-ranks-discounts-fig2-en.jpg" width="1520" height="1000" loading="lazy" alt="Scatter chart of list price against economic value, in euros. Three existing models sit on a dashed line: value 880 at list 1,150, value 1,020 at 1,300, value 1,150 at 1,410. The new product, value 1,300, lists at 1,560 at 30 percent off, on the line. The 1,680 list price needed at 35 percent off sits above the line."></a>
+    <figcaption>Illustrative numbers from this article.</figcaption>
+  </figure>
+
+  <p>Now suppose the projection comes out at 35 percent. Holding the net target at 1,090 euros then takes a list price of about 1,680 euros. But your price list says a product of this value lists at about 1,560 euros. At 1,680 euros, the new product would carry a list price your range reserves for products delivering roughly 10 percent more value. Do not force the numbers to fit. Listing at 1,680 euros tells customers the product is better than it is, and places it above products that may deliver more. Listing at 1,560 euros and living with 35 percent off leaves the net price at about 1,014 euros, far below the target and barely above what customers pay for the alternative today. Quietly lowering the target only hides the problem.</p>
+
+  <p>The gap points to one of three errors. Either the net target is more ambitious than this market will pay: the value is smaller, or less visible, to these customers than the estimate assumed, and the share you capture has to come down. Or the product sits on the wrong rung: its economic value against the common reference was overstated, or the products it is plotted against are misplaced on the ladder. Or the projected discount is off: the market analysis read the channel, the customers or the competition too pessimistically, or too kindly. Check the value evidence first, then the ladder, then the projection. Settle which, with evidence, before the product is committed, and let real deals in a pilot confirm it.</p>
+
+  <p>If your product lines already carry very different discount habits, do not try to fix that with one launch. Aligning them takes several annual price rounds.</p>
+
+  <p>One caveat. If a line is sold to entirely separate customers, on a separate price list that nobody compares with the rest of the range, the ladder matters less. Before you claim that exception, check it: partners, procurement teams and your own sales force tend to compare across the range.</p>
+
+  <div class="closing">
+    <p>The formula from list to net is one line. Getting the two prices right is a design decision.</p>
+    <div class="closing-statement">Pricing by design,<br><em>not by default.</em></div>
+    <p>How does your company set list prices for a new product line: from value, from the neighbors’ discounts, or from habit?</p>
+
+    <p class="credit">First published on LinkedIn, October 2026.</p>
+  </div>
+
+</article>
+
+<!-- BRAND FOOTER -->
+<div class="brand-footer">
+  <a href="/" class="brand-logo"><span class="pricing">pricing</span><span class="goat">goat</span></a>
+  <div class="brand-right">
+    <div class="brand-tagline">Pricing by Design</div>
+    <div class="brand-url">PRICINGGOAT.COM</div>
+  </div>
+</div>
+
+</body>
+</html>
