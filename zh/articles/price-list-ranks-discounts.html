@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>你的价目表，排的是折扣，不是价值 · 杨一安博士</title>
+
+<!-- Open Graph -->
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="你的价目表，排的是折扣，不是价值" />
+<meta property="og:description" content="在B2B行业，客户很少按目录价付款。按各产品线的惯常折扣把净价目标换算成目录价，价目表排出来的就是折扣历史。用同一个共同参照，目录价才能与价值对齐。" />
+<meta property="og:site_name"   content="PricingGoat" />
+<meta property="og:url"         content="https://www.pricinggoat.com/zh/articles/price-list-ranks-discounts.html" />
+<meta property="og:image"       content="https://www.pricinggoat.com/images/articles/price-list-ranks-discounts-zh-cover.jpg" />
+<meta property="og:locale"      content="zh_CN" />
+<link rel="canonical" href="https://www.pricinggoat.com/zh/articles/price-list-ranks-discounts.html" />
+<link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/price-list-ranks-discounts.html" />
+<link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/price-list-ranks-discounts.html" />
+<link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/price-list-ranks-discounts.html" />
+<meta name="author"             content="杨一安" />
+<meta name="description"        content="在B2B行业，客户很少按目录价付款。按各产品线的惯常折扣把净价目标换算成目录价，价目表排出来的就是折扣历史。用同一个共同参照，目录价才能与价值对齐。" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "你的价目表，排的是折扣，不是价值",
+  "description": "在B2B行业，客户很少按目录价付款。按各产品线的惯常折扣把净价目标换算成目录价，价目表排出来的就是折扣历史。用同一个共同参照，目录价才能与价值对齐。",
+  "url": "https://www.pricinggoat.com/zh/articles/price-list-ranks-discounts.html",
+  "datePublished": "2026-10-11",
+  "dateModified": "2026-10-11",
+  "inLanguage": "zh-Hans",
+  "image": "https://www.pricinggoat.com/images/articles/price-list-ranks-discounts-zh-cover.jpg",
+  "author": { "@type": "Person", "@id": "https://www.pricinggoat.com/#person", "name": "杨一安", "url": "https://www.pricinggoat.com/zh/" },
+  "publisher": { "@type": "Organization", "name": "PricingGoat", "url": "https://www.pricinggoat.com/" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #16120a;
+    --paper:    #f7f3ec;
+    --gold:     #b8882a;
+    --gold-lt:  #d4a84b;
+    --muted:    #7a6e5a;
+    --rule:     #ddd5c0;
+    --accent:   #f0e8d4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    line-height: 1.85;
+    padding: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    padding: 80px 48px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,136,42,.18) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 56px;
+    position: relative;
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .hero-nav a {
+    color: rgba(240,232,212,.5);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .hero-nav a:hover { color: var(--gold-lt); }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+  }
+  .hero-eyebrow::after {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+    opacity: .6;
+  }
+  .hero h1 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    max-width: 720px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold-lt);
+  }
+  .hero-sub {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(240,232,212,.6);
+    max-width: 580px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  .hero-rule { width: 32px; height: 1px; background: var(--gold); opacity: .5; }
+  .hero-author {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 13px;
+    color: rgba(240,232,212,.4);
+    letter-spacing: 1px;
+  }
+
+  /* ── ARTICLE ── */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+  }
+
+  p { margin-bottom: 24px; color: #3a3020; }
+
+  /* ── DROP CAP ── */
+  .drop-cap::first-letter {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: .8;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+    color: var(--gold);
+  }
+
+  /* ── SECTION HEADS ── */
+  h2 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 48px 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    margin: 36px 0;
+    background: var(--accent);
+  }
+  .pullquote p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: var(--ink);
+    color: #f0e8d4;
+    padding: 32px 36px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .callout::before {
+    content: '"';
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 100px;
+    color: rgba(184,136,42,.15);
+    position: absolute;
+    top: -10px; left: 16px;
+    line-height: 1;
+  }
+  .callout p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #e8dcc8;
+    margin: 0;
+    position: relative;
+  }
+  .callout p strong { color: #ffffff; }
+  .callout-source {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-top: 14px;
+    display: block;
+    position: relative;
+  }
+
+  /* ── THREE AXIOMS ── */
+  .axioms {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin: 36px 0;
+  }
+  .axiom {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .axiom:last-child { border-bottom: none; }
+  .axiom-num {
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .axiom-body { padding: 20px 24px; }
+  .axiom-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .axiom-desc {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── DIAGNOSTIC ── */
+  .diagnostic {
+    background: var(--accent);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    margin: 36px 0;
+  }
+  .diagnostic-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .diagnostic-title::before {
+    content: '';
+    display: block;
+    width: 4px; height: 18px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .diag-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .diag-item:last-child { margin-bottom: 0; }
+  .diag-num {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 20px;
+    padding-top: 1px;
+  }
+  .diag-text {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: #3a3020;
+    line-height: 1.65;
+  }
+  .diag-text strong { color: var(--ink); }
+
+  /* ── CLOSING ── */
+  .closing {
+    border-top: 2px solid var(--ink);
+    padding-top: 40px;
+    margin-top: 56px;
+  }
+  .closing-statement {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+  .closing-statement em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .closing p { font-size: 17px; }
+
+  /* ── BRAND FOOTER ── */
+  .brand-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 32px;
+    background: var(--ink);
+    margin-top: 0;
+  }
+  a.brand-logo { text-decoration: none; }
+  .brand-logo {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 28px;
+    font-weight: 400;
+  }
+  .brand-logo .pricing { color: #f0e8d4; }
+  .brand-logo .goat { color: var(--gold); }
+  .brand-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .brand-tagline {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(240,232,212,.45);
+  }
+  .brand-url {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* Chinese text: no extra tracking on labels, line breaks inside flow lists */
+  .hero-eyebrow, .hero-nav { letter-spacing: 2px; }
+  .flow p { margin-bottom: 0; }
+  em, .pullquote p { font-style: normal; }
+
+  .credit { color: var(--muted); font-size: 16px; margin-top: 32px; }
+  .article a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,136,42,.35); transition: border-color .2s; }
+  .article a:hover { border-color: var(--gold); }
+
+  .figure { margin: 40px 0 8px; }
+  .figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
+  .article .figure a { border-bottom: none; }
+  .figure figcaption { font-size: 14px; color: var(--muted); margin-top: 10px; text-align: center; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 56px 24px 56px; }
+    .article { padding: 48px 20px 64px; }
+    .callout { padding: 24px 22px; }
+    .brand-footer { flex-direction: column; gap: 16px; text-align: center; }
+    .brand-right { align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <nav class="hero-nav" aria-label="网站导航">
+    <a href="/zh/articles/">← 全部文章</a>
+    <a href="/zh/">首页</a>
+  </nav>
+  <div class="hero-eyebrow">定价战略</div>
+  <h1>你的价目表，<br>排的是<em>折扣</em>，不是价值</h1>
+  <p class="hero-sub">目录价和净价，承担的职能不同。一个公式，没法让两者同时追随价值。</p>
+  <div class="hero-meta">
+    <div class="hero-rule"></div>
+    <span class="hero-author">杨一安 · pricinggoat.com</span>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<article class="article">
+
+  <p class="drop-cap">在B2B行业，客户很少按目录价付款。那企业为什么还要花这么大力气制定目录价？从净价倒推目录价，看上去只是一道简单的算术题，为什么又常常出错？</p>
+
+  <h2>两个价格，两种职能</h2>
+
+  <p>目录价和净价，承担的职能不同。</p>
+
+  <p>目录价是每一次谈判的起点。客户、销售和渠道伙伴用它来比较公司产品线里的不同产品，渠道伙伴的佣金也可能按它计算。它告诉市场：这个产品相对于同系列的其他产品值多少。</p>
+
+  <p>净价是产品在自己的市场里实际挣到的钱，取决于它在那里面对的替代方案和客户的议价能力。</p>
+
+  <p>两者之间的算术很简单：净价 = 目录价 ×（1 − 折扣率）。麻烦在于，我们常把这个公式当成全部答案。</p>
+
+  <h2>目录价相同，净价不同</h2>
+
+  <p>以A、B两条产品线为例，目录价相近。A线通常以30%的折扣成交（即七折），B线通常是50%（五折）。A实现了目录价的70%，B只有一半。</p>
+
+  <p>现在反过来推，就像企业推出新产品时那样：先定净价目标，再按该产品线的惯常折扣换算成目录价。净价目标相同的两个产品，目录价会相差很远：A线约为净价的1.4倍，B线是净价的2倍。</p>
+
+  <div class="pullquote">
+    <p>于是，价目表排出来的是折扣历史，而不是价值。</p>
+  </div>
+
+  <p>而且大家都看在眼里。客户比较两个产品，看到B的目录价高出40%，便以为B是高端之选。按目录价比例拿佣金的渠道伙伴，卖B赚得更多。销售学会了“B总得打五折”，这个习惯在每一单里自我强化。</p>
+
+  <p>目录价和净价，无法通过一次机械换算同时追随价值。总有一方要让步，而让步的不应该是目录价传递价值的职能。</p>
+
+  <h2>整条产品线，用同一把尺子</h2>
+
+  <p>要让目录价传递价值，产品线里的每个产品都必须用同一把尺子衡量。我称之为“共同参照”。</p>
+
+  <p>选定产品线主要服务的那个客群。看这个客群今天为次优替代方案实际支付的价格：扣除折扣之后的价格，而不是竞争对手的目录价。然后，用这同一个参照来评估产品线中每个产品的价值，包括主要卖给其他客群的产品。</p>
+
+  <p>假设你的核心客户今天为竞争方案支付的净价是1,000欧元。产品X为他们多创造约20%的价值，产品Y多创造约50%。在这把共同的尺子上，Y明显高于X，它们的目录价也应如此体现：顺序相同，间距与价值差距相当，无论之后各自在自己的市场里需要多少折扣。这样排下来，产品线就形成了一条价格阶梯。价格阶梯不是比例规则，而是贯穿整条产品线的一条线，让产品按价值排序、按价值拉开间距。</p>
+
+  <p>参照要固定。逐个产品切换参照，等于用不同的刻度比较价值。当参照客群的替代方案发生变化时，整条产品线一起重新定标，而不是逐个产品调整。</p>
+
+  <p>这样衡量，目录价就与价值对齐，客户和销售看到的价格阶梯也就说得通。</p>
+
+  <h2>是结构，还是习惯</h2>
+
+  <p>B线为什么需要五折？一部分差距是结构性的。B可能通过不同的渠道销售，客户议价能力更强，竞争对手更强硬，订单更大但更少。这部分是真实的，应该写进计划。</p>
+
+  <p>另一部分可能是习惯：为拿下某个关键客户做出的让步，一次年底冲量后成了常态，一个没人敢收回的折扣。这部分是价格泄漏。它属于上市后的价格管理，应该逐步修复，而不是照搬到下一个产品上。</p>
+
+  <p>大多数折扣数据把两者混在一起。有个简单的检验：比较相似的订单，渠道相同、客户规模相近、采购量相近。如果它们的折扣仍然差别很大，在有人能解释清楚之前，就把这种差异当作习惯。把折扣用作规划数字之前，先把它剔除。</p>
+
+  <h2>推出C线</h2>
+
+  <p>现在公司要推出C线。诱人的捷径是把C的折扣定为A和B的平均值，或者借用看起来最接近的那条线的折扣。两种做法，都是把别的市场的历史搬了过来。</p>
+
+  <div class="diagnostic">
+    <div class="diagnostic-title">C线的折扣必须从它自己的市场来预测</div>
+    <div class="diag-item"><div class="diag-num">1.</div><div class="diag-text">由哪个渠道销售？</div></div>
+    <div class="diag-item"><div class="diag-num">2.</div><div class="diag-text">哪些客户会买，他们怎么买？</div></div>
+    <div class="diag-item"><div class="diag-num">3.</div><div class="diag-text">竞争对手在价格上会压得多狠？</div></div>
+    <div class="diag-item"><div class="diag-num">4.</div><div class="diag-text">订单会有多大、多频繁？</div></div>
+  </div>
+
+  <p>如果C确实与A或B共享一个市场，它们的结构性折扣是合理的起点。它们的习惯不是。</p>
+
+  <p>预测出来的折扣，把净价目标换算成第一版目录价。在真实订单检验之前，它始终只是一个假设。全面上市之前，找几家客户或一个区域做试点，是低成本的检验方式。</p>
+
+  <h2>当目录价和净价对不上</h2>
+
+  <p>每个价格都有自己的来源，都可以一步步推导出来。设想一个新产品，它的客户今天为次优替代方案每年支付1,000欧元。</p>
+
+  <figure class="figure">
+    <a href="/images/articles/price-list-ranks-discounts-fig1-zh.jpg"><img src="/images/articles/price-list-ranks-discounts-fig1-zh.jpg" width="1520" height="660" loading="lazy" alt="两条横条，单位欧元/年。价值条：参照价格1,000，加上获取的90（300差异化价值的30%），再加上留给客户的210，经济价值1,300。价格条：净价1,090，加上折扣470（目录价的30%），目录价1,560。虚线标出净价目标：获取价值的终点，也是折扣的起点。"></a>
+    <figcaption>示例数字。</figcaption>
+  </figure>
+
+  <p>虚线标出净价目标：在价值条上，它是所获取价值的终点；在价格条上，它是折扣的起点。</p>
+
+  <p><strong>净价目标来自价值。</strong>从1,000欧元的参照价格出发。加上产品比替代方案强的地方，减去比它弱的地方，都折算成钱，得到它的经济价值，比如1,300欧元。中间的300欧元是差异化价值，客户不会把它全部交出来：他们需要一个转换的理由，也需要为承担新供应商的风险得到补偿。你计划获取的份额决定净价目标。按约30%计算，净价目标是1,090欧元。证据界定它的范围：下限来自商业论证的需要，上限来自客户认为公平的最大价值份额。</p>
+
+  <p><strong>折扣来自产品自己的市场。</strong>按前文所述来预测：这个市场能承受的结构性折扣，由渠道、客户和竞争决定，剔除习惯。假设结果约为30%。</p>
+
+  <p><strong>目录价由两者推出，再用价格阶梯检验。</strong>净价目标1,090欧元、折扣30%，意味着目录价约1,560欧元。检验的是：这个目录价与价目表上的其他产品是否相称。现有产品显示了产品线为每一档价值标出的目录价：价值越高，目录价越高。假设它们显示，一个创造1,300欧元价值的产品，目录价约为1,560欧元。那么数字就对上了。新产品落在价目表上与其价值相称的位置，净价目标也站得住。</p>
+
+  <figure class="figure">
+    <a href="/images/articles/price-list-ranks-discounts-fig2-zh.jpg"><img src="/images/articles/price-list-ranks-discounts-fig2-zh.jpg" width="1520" height="1000" loading="lazy" alt="目录价与经济价值的散点图，单位欧元。三个现有型号落在一条虚线上：价值880对应目录价1,150，价值1,020对应1,300，价值1,150对应1,410。新产品价值1,300，折扣30%时目录价1,560，在线上；折扣35%时所需目录价1,680，高于线。"></a>
+    <figcaption>示例数字。</figcaption>
+  </figure>
+
+  <p>现在假设预测的折扣是35%。要守住1,090欧元的净价目标，目录价需要约1,680欧元。但你的价目表显示，这个价值水平的产品目录价约为1,560欧元。标价1,680欧元，新产品就占了产品线留给价值高出约10%的产品的价位。不要硬凑数字。标价1,680欧元，等于告诉客户产品比实际更好，还把它排到了可能创造更多价值的产品之上。标价1,560欧元并接受35%的折扣，净价约为1,014欧元，远低于目标，只比客户今天为替代方案支付的价格略高一点。悄悄下调目标，只是把问题藏了起来。</p>
+
+  <p>这个缺口指向三种错误之一。要么净价目标超出了这个市场愿意支付的水平：对这些客户来说，价值比估计的小，或者没那么显而易见，获取的份额必须下调。要么产品放错了档位：它相对于共同参照的经济价值被高估了，或者用来比照的产品本身在阶梯上的位置就不对。要么预测的折扣有偏差：市场分析对渠道、客户或竞争的判断过于悲观，或者过于乐观。先查价值证据，再查价格阶梯，最后查折扣预测。在产品定案之前，用证据确定是哪一种，再让试点中的真实订单来确认。</p>
+
+  <p>如果你的各条产品线已经形成了差异很大的折扣习惯，别指望靠一次新品上市来解决。让它们对齐，需要几轮年度调价。</p>
+
+  <p>最后提醒一点。如果某条产品线卖给完全不同的客户，用一份没人会拿来与产品线其他部分比较的独立价目表，价格阶梯就没那么重要。但在主张这个例外之前，先核实一下：渠道伙伴、采购团队和你自己的销售团队，往往都会跨产品线比较。</p>
+
+  <div class="closing">
+    <p>从目录价到净价的公式只有一行。把两个价格都定对，是一个设计决策。</p>
+    <div class="closing-statement">定价，是<em>设计</em>出来的，<br>不是将就出来的。</div>
+    <p>你的公司为新产品线制定目录价时，依据的是什么：价值，相邻产品线的折扣，还是习惯？</p>
+
+    <p class="credit">首发于微信公众号「定价制胜-Dr. Pricing」，2026年10月。英文版：<a href="/articles/price-list-ranks-discounts.html" lang="en" hreflang="en">Why Your Price List Ranks Discounts, Not Value</a></p>
+  </div>
+
+</article>
+
+<!-- BRAND FOOTER -->
+<div class="brand-footer">
+  <a href="/zh/" class="brand-logo"><span class="pricing">pricing</span><span class="goat">goat</span></a>
+  <div class="brand-right">
+    <div class="brand-tagline">Pricing by Design</div>
+    <div class="brand-url">PRICINGGOAT.COM</div>
+  </div>
+</div>
+
+</body>
+</html>
