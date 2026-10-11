@@ -16,7 +16,7 @@
   <!-- Homepage: ZH -->
   <url>
     <loc>https://www.pricinggoat.com/zh/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/"/>
@@ -264,6 +264,18 @@
     <lastmod>2026-10-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/price-list-ranks-discounts.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/price-list-ranks-discounts.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/price-list-ranks-discounts.html"/>
+  </url>
+  <url>
+    <loc>https://www.pricinggoat.com/zh/articles/price-list-ranks-discounts.html</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/price-list-ranks-discounts.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/price-list-ranks-discounts.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/price-list-ranks-discounts.html"/>
   </url>
 
 </urlset>
