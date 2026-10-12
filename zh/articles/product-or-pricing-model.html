@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>先有产品，还是先有定价模式？ · 杨一安博士</title>
+
+<!-- Open Graph -->
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="先有产品，还是先有定价模式？" />
+<meta property="og:description" content="能计量的东西才能收费。产品和定价模式最好当成一件事来设计，AI产品没有软件的成本结构兜底，犯错的余地更小。" />
+<meta property="og:site_name"   content="PricingGoat" />
+<meta property="og:url"         content="https://www.pricinggoat.com/zh/articles/product-or-pricing-model.html" />
+<meta property="og:image"       content="https://www.pricinggoat.com/og-image.png" />
+<meta property="og:locale"      content="zh_CN" />
+<link rel="canonical" href="https://www.pricinggoat.com/zh/articles/product-or-pricing-model.html" />
+<link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/product-or-pricing-model.html" />
+<link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/product-or-pricing-model.html" />
+<link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/product-or-pricing-model.html" />
+<meta name="author"             content="杨一安" />
+<meta name="description"        content="能计量的东西才能收费。产品和定价模式最好当成一件事来设计，AI产品没有软件的成本结构兜底，犯错的余地更小。" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "先有产品，还是先有定价模式？",
+  "description": "能计量的东西才能收费。产品和定价模式最好当成一件事来设计，AI产品没有软件的成本结构兜底，犯错的余地更小。",
+  "url": "https://www.pricinggoat.com/zh/articles/product-or-pricing-model.html",
+  "datePublished": "2026-10-12",
+  "dateModified": "2026-10-12",
+  "inLanguage": "zh-Hans",
+  "image": "https://www.pricinggoat.com/og-image.png",
+  "author": { "@type": "Person", "@id": "https://www.pricinggoat.com/#person", "name": "杨一安", "url": "https://www.pricinggoat.com/zh/" },
+  "publisher": { "@type": "Organization", "name": "PricingGoat", "url": "https://www.pricinggoat.com/" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #16120a;
+    --paper:    #f7f3ec;
+    --gold:     #b8882a;
+    --gold-lt:  #d4a84b;
+    --muted:    #7a6e5a;
+    --rule:     #ddd5c0;
+    --accent:   #f0e8d4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    line-height: 1.85;
+    padding: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    padding: 80px 48px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,136,42,.18) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 56px;
+    position: relative;
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .hero-nav a {
+    color: rgba(240,232,212,.5);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .hero-nav a:hover { color: var(--gold-lt); }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+  }
+  .hero-eyebrow::after {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+    opacity: .6;
+  }
+  .hero h1 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    max-width: 720px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold-lt);
+  }
+  .hero-sub {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(240,232,212,.6);
+    max-width: 580px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  .hero-rule { width: 32px; height: 1px; background: var(--gold); opacity: .5; }
+  .hero-author {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 13px;
+    color: rgba(240,232,212,.4);
+    letter-spacing: 1px;
+  }
+
+  /* ── ARTICLE ── */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+  }
+
+  p { margin-bottom: 24px; color: #3a3020; }
+
+  /* ── DROP CAP ── */
+  .drop-cap::first-letter {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: .8;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+    color: var(--gold);
+  }
+
+  /* ── SECTION HEADS ── */
+  h2 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 48px 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    margin: 36px 0;
+    background: var(--accent);
+  }
+  .pullquote p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: var(--ink);
+    color: #f0e8d4;
+    padding: 32px 36px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .callout::before {
+    content: '"';
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 100px;
+    color: rgba(184,136,42,.15);
+    position: absolute;
+    top: -10px; left: 16px;
+    line-height: 1;
+  }
+  .callout p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #e8dcc8;
+    margin: 0;
+    position: relative;
+  }
+  .callout p strong { color: #ffffff; }
+  .callout-source {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-top: 14px;
+    display: block;
+    position: relative;
+  }
+
+  /* ── THREE AXIOMS ── */
+  .axioms {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin: 36px 0;
+  }
+  .axiom {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .axiom:last-child { border-bottom: none; }
+  .axiom-num {
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .axiom-body { padding: 20px 24px; }
+  .axiom-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .axiom-desc {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── DIAGNOSTIC ── */
+  .diagnostic {
+    background: var(--accent);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    margin: 36px 0;
+  }
+  .diagnostic-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .diagnostic-title::before {
+    content: '';
+    display: block;
+    width: 4px; height: 18px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .diag-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .diag-item:last-child { margin-bottom: 0; }
+  .diag-num {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 20px;
+    padding-top: 1px;
+  }
+  .diag-text {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: #3a3020;
+    line-height: 1.65;
+  }
+  .diag-text strong { color: var(--ink); }
+
+  /* ── CLOSING ── */
+  .closing {
+    border-top: 2px solid var(--ink);
+    padding-top: 40px;
+    margin-top: 56px;
+  }
+  .closing-statement {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+  .closing-statement em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .closing p { font-size: 17px; }
+
+  /* ── BRAND FOOTER ── */
+  .brand-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 32px;
+    background: var(--ink);
+    margin-top: 0;
+  }
+  a.brand-logo { text-decoration: none; }
+  .brand-logo {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 28px;
+    font-weight: 400;
+  }
+  .brand-logo .pricing { color: #f0e8d4; }
+  .brand-logo .goat { color: var(--gold); }
+  .brand-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .brand-tagline {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(240,232,212,.45);
+  }
+  .brand-url {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* Chinese text: no extra tracking on labels, line breaks inside flow lists */
+  .hero-eyebrow, .hero-nav { letter-spacing: 2px; }
+  .flow p { margin-bottom: 0; }
+  em, .pullquote p { font-style: normal; }
+
+  .credit { color: var(--muted); font-size: 16px; margin-top: 32px; }
+  .article a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,136,42,.35); transition: border-color .2s; }
+  .article a:hover { border-color: var(--gold); }
+
+  @media (max-width: 600px) {
+    .hero { padding: 56px 24px 56px; }
+    .article { padding: 48px 20px 64px; }
+    .callout { padding: 24px 22px; }
+    .brand-footer { flex-direction: column; gap: 16px; text-align: center; }
+    .brand-right { align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <nav class="hero-nav" aria-label="网站导航">
+    <a href="/zh/articles/">← 全部文章</a>
+    <a href="/zh/">首页</a>
+  </nav>
+  <div class="hero-eyebrow">AI 定价</div>
+  <h1>先有产品，<br>还是先有<em>定价模式</em>？</h1>
+  <p class="hero-sub">产品和定价模式互相影响，最好当成一件事来设计。AI没有改变这个道理，只是把犯错的余地压小了。</p>
+  <div class="hero-meta">
+    <div class="hero-rule"></div>
+    <span class="hero-author">杨一安 · pricinggoat.com</span>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<article class="article">
+
+  <p class="drop-cap">问一家企业：先有产品，还是先有定价模式？</p>
+
+  <p>多数人会觉得这个问题有点多余。当然是先有产品，东西做出来了，再琢磨怎么收钱。研发在前，市场在后，定价往往到上市前几周才被拿出来讨论，有时只是表格里的最后一列。</p>
+
+  <p>这个顺序看上去理所当然。也正因为理所当然，很多企业的定价模式从来没有被认真选过，是一路沿用下来的。</p>
+
+  <h2>剃刀与刀片</h2>
+
+  <p>说到定价模式塑造商业模式，大家最先想到的大概是吉列：剃须刀便宜卖，靠刀片赚钱。“剃刀与刀片”后来成了一个专有名词，商业教科书几乎都会讲。</p>
+
+  <p>可历史并不是这样。芝加哥大学法学院的兰德尔·皮克（Randal Picker）教授专门考证过，在吉列的专利保护期内，剃须刀并不便宜，吉列也没有靠低价刀架锁定用户。这套后来被归功于吉列先生远见的模式，是专利到期、竞争者进入之后才慢慢形成的。</p>
+
+  <p>最著名的定价模式，同样是先有产品，后有模式，而且是被形势逼出来的。</p>
+
+  <p>大多数企业也是这样。定价模式谈不上选错，因为压根没怎么选：产品长成什么样，就顺着收；行业怎么收，就跟着收。我把这种状态叫作“将就出来的定价”。</p>
+
+  <h2>先定模式，再做产品</h2>
+
+  <p>反过来的例子，读起来更有意思。在这些案例里，定价模式先定下来，产品得按它的要求去做。</p>
+
+  <p>上世纪60年代，劳斯莱斯开始尝试后来被称为“按小时付费”（Power by the Hour）的做法：不再单卖发动机和备件，按发动机实际飞行的小时数向航空公司收费。发票的样子变了，公司赚钱的方式也跟着变了。以前发动机坏了，劳斯莱斯能多卖备件、多收维修费；改成按小时收费后，发动机坏一次，亏的是自己。可靠性、状态监测和预防性维护因此成了业务的核心，工程设计也围着它转。</p>
+
+  <p>米其林向卡车车队按行驶公里数收轮胎费，碰到的是同一个问题：里程数不清楚，钱就收不上来。为了这套收费方式，米其林得补上车载信息系统、数据采集和配套服务，这些都是传统轮胎厂以前用不着的。</p>
+
+  <p>喜利得从卖电动工具改成按月收费、替建筑企业管理整套工具，也得学会资产追踪和更换物流，跟客户的关系也完全不同了。客户买的已经不是一把电锤，是工地上随时有趁手的工具可用。</p>
+
+  <p>国内也有现成的例子。蔚来2020年推出电池租用服务（BaaS），买车不买电池，电池按月租，购车门槛一下子降了不少。可这套方案要跑得通，电池得标准化，能快速更换，还要能在换电站之间流转。没有可换电的整车架构和换电网络，BaaS就只是一张价目表。可以说，蔚来的产品和定价模式是一起设计出来的。</p>
+
+  <p>游戏行业的体会可能更深。免费下载、道具收费一旦定下来，关卡节奏、成长体系、外观系统基本都得围着它设计。对这种模式，褒贬都有，但它塑造了产品，这一点没人否认。</p>
+
+  <h2>能计量，才能收费</h2>
+
+  <p>这些例子背后有一条朴素的道理，我在项目里经常提到：</p>
+
+  <div class="pullquote">
+    <p>能计量的东西才能收费，而要能计量，产品得事先为此做好设计。</p>
+  </div>
+
+  <p>产品不记录使用量，就没法按使用量收费；不跟踪结果，就没法按结果收费；功能都搅在一起拆不开，分版本、分档位也就无从谈起。企业将来能用哪些定价模式，其实早就被今天的产品决策限定了。做这些决策的多半是架构师、产品经理和工程师，他们一般不会觉得自己在做定价决策。等市场和销售部门坐下来讨论怎么收费时，不少选项已经没有了。</p>
+
+  <p>所以，先有鸡还是先有蛋，本来就不该单独回答。产品和定价模式互相影响，最好当成一件事来设计。这样做的企业，手里会多出许多别人已经失去的选项。</p>
+
+  <h2>软件替定价兜了底</h2>
+
+  <p>那么，“将就出来的定价”为什么能撑这么多年？一个重要原因是，代价不高，软件行业尤其如此。</p>
+
+  <p>软件的边际成本接近于零，多一个用户、多一次登录、多跑一份报表，几乎不花钱，而客户用的人越多，得到的价值也越大。这种条件下，只要模式说得过去，大体都能跑通。包年包月的订阅，几个重度用户摊一摊就过去了；按席位收费，客户规模大了，收入自然跟着涨；收费方式不合适，下次续约时调一调也就是了。软件的成本结构，替不少定价上的粗糙兜了底。</p>
+
+  <h2>AI产品没有这层保护</h2>
+
+  <p>AI产品没有这层保护，所以我认为，对AI产品来说，定价模式的分量比传统软件重得多。道理还是劳斯莱斯、米其林、喜利得面对的那条，只是犯错的余地小了很多。</p>
+
+  <p><strong>第一个变化是成本。</strong>每一次提问、每一段生成的回答、每一个智能体完成的任务，都要消耗算力。传统软件里，用得最多的客户通常是最好的客户；AI产品里，用得最多的客户可能也是成本最高的客户。“无限量使用”的套餐放在传统软件里算是诚意，放在AI产品上，就可能变成一笔没有上限的支出。这一两年，已经有好几款AI工具因为重度用户消耗太大，不得不收紧条款。客户对价格调整还算能接受，收费规则在使用过程中被改掉，就很难不心生芥蒂了。</p>
+
+  <p><strong>第二个变化是价值和人数不再挂钩。</strong>按席位收费的前提，是软件的价值随着使用人数增长。可一个智能体如果能干好几个人的活，客户需要的账号就少了，拿到的价值反而更多。按席位收费的供应商会发现，产品越好用，收入越少。所以现在市场上有按任务、按调用量、按解决问题、按业务结果收费的各种尝试。Intercom的AI客服Fin按每成功解决一次问题0.99美元收费，就是常被拿来讨论的例子。这些做法不一定都对，按结果收费也有它的难处，但沿用按席位收费，已经不再是稳妥的选择。而且每种新做法都绕不开前面那条道理：要按“成功解决”收费，产品先得说清楚什么算解决，还要能识别出来，并向客户证明。</p>
+
+  <p><strong>第三个变化是价格变得很快，模式却很难改。</strong>模型的运行成本一直在降，同行也在不断降价，2024年国内大模型的那轮价格战，大家应该都还记得。今天定的价格，明年可能就不合时宜了。定价模式不一样，客户拿它做比较的基准，采购把它写进合同，销售团队靠它跟客户沟通，计费系统也是照着它搭的。调价格，客户抱怨几句也就过去了；换模式，就得跟客户一家一家重新谈，系统也要一套一套地改。价格是可以随时调整的参数，定价模式更像房子的结构，价格变得越频繁，结构就越要扎实。</p>
+
+  <p><strong>第四个变化在客户那一侧：</strong>很多客户还说不清AI到底能给自己带来多少价值。它能处理三分之一的客服请求，还是三分之二？每个员工每天能省一个小时，还是十分钟？试点效果能不能推广到全公司？价值这么不确定，由谁来承担风险，就要靠定价模式来安排。很多时候，客户犹豫来犹豫去，最后签不签，就看这个风险怎么分。</p>
+
+  <h2>中国企业的处境</h2>
+
+  <p>对中国企业来说，事情还要再复杂一些。国内企业软件市场长期习惯项目制和买断式采购，订阅模式推了很多年也不算顺利。这在传统软件时代还能维持，因为软件交付以后，客户用多用少，供应商的成本差不多。AI产品交付以后，客户每用一次，供应商都要付算力的钱，一次买断、随便使用，这笔账算不过来。价格战又让市场形成了“AI就该便宜”的印象。只在价格上跟别人比，很容易越比越低；能拉开差距的，往往是收费方式本身。出海的企业也绕不开这个问题，海外客户更习惯订阅和按量计费，但对收费规则是否稳定透明，也更较真。</p>
+
+  <h2>写第一行代码之前</h2>
+
+  <p>所以我的建议是，在规划AI产品时，就把定价模式一起摆到桌面上，别等产品做完再补。写第一行代码之前，团队最好先想清楚几件事：客户得到的价值跟着什么增长，产品能不能把它记录下来；自己的成本又跟着什么增长，和客户的价值是不是同一个方向；今天选的收费方式，会不会让明天没法调整。这些问题，财务部门答不全，产品部门也答不全，需要定价、产品、技术和销售一起讨论，而且越早越好。</p>
+
+  <div class="closing">
+    <p>回到开头的问题，先有产品，还是先有定价模式？从历史上看，大多是产品在先。在边际成本接近于零的软件时代，这样做代价不大，将就一下也能过去。AI没有改变这个道理，只是把犯错的余地压小了。定价模式如果一直拖到产品做完才考虑，企业很可能会发现，产品已经替它做了决定，而且这个决定未必对。</p>
+    <p>比起谁先谁后，我更想请大家想一想：你们现在的定价模式，是认真选出来的，还是一路沿用下来的？</p>
+    <p>AI真的让这道选择题变难了，还是只是把软件行业过去可以忽略的问题暴露了出来？</p>
+    <div class="closing-statement">定价，是设计出来的，<em>不是将就出来的。</em></div>
+    <p class="credit">首发于微信公众号「定价制胜-Dr. Pricing」，2026年10月。英文版：<a href="/articles/product-or-pricing-model.html" lang="en" hreflang="en">Which Came First: The Product or the Pricing Model?</a></p>
+  </div>
+
+</article>
+
+<!-- BRAND FOOTER -->
+<div class="brand-footer">
+  <a href="/zh/" class="brand-logo"><span class="pricing">pricing</span><span class="goat">goat</span></a>
+  <div class="brand-right">
+    <div class="brand-tagline">Pricing by Design</div>
+    <div class="brand-url">PRICINGGOAT.COM</div>
+  </div>
+</div>
+
+</body>
+</html>
