@@ -445,6 +445,11 @@
       .nav-links a { letter-spacing: 0.08em; }
       .nav-cta { padding: 0.5rem 0.9rem !important; }
     }
+    /* the EN footer row needs about 1100px; stack it below that, as on mobile */
+    @media (max-width: 1100px) {
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; gap: 0.8rem 1.5rem; }
+    }
     @media (max-width: 960px) {
       .nav-links li.hide-mobile { display: none; }
       .nav-menu-btn { display: inline-block; }
