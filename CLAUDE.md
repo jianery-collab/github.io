@@ -31,6 +31,7 @@ Every public page exists twice: English at the root, Chinese under `/zh/`.
 | `index.html` | `zh/index.html` | Homepage: hero, about, services, capability programme, books, articles, writing, contact |
 | `articles/index.html` | `zh/articles/index.html` | Articles listing page |
 | `articles/*.html` | (none yet) | Individual articles, English only for now |
+| `cases/index.html` | `zh/cases/index.html` | Work by industry: industry picker, typical problems, topics, anonymised cases (prototype: `noindex`, not linked or in the sitemap until real cases replace the placeholders) |
 | `imprint.html`, `privacy.html` | `zh/imprint.html`, `zh/privacy.html` | Legal pages (`noindex`) |
 
 `pricinggoat-articles/` holds only redirect stubs for the old article URLs. Keep them; don't add content there.
@@ -75,7 +76,8 @@ Use root-absolute paths (`/favicon.ico`, `/articles/`) for anything shared betwe
 - **Less is more.** When in doubt, remove rather than add.
 - **No em dashes in body copy.** Use a full stop, comma, colon or parentheses instead.
 - **No goat imagery anywhere.** The name is a wordmark only.
-- **Evergreen credentials.** No counts that go stale ("12 books", "100+ companies"). Prefer phrasing like "Springer-published author" or "two decades in pricing".
+- **Evergreen credentials.** No counts that go stale ("12 books", "100+ companies"). Prefer phrasing like "Springer-published author" or "two decades in pricing". Open-ended floors that stay true as they grow ("20+ years", "10+ published books") are approved by the owner and stay as they are.
+- **Never name clients.** Cases on `/cases/` describe clients by type and size ("a listed Chinese industrial group"), not by rank in a concentrated industry, and give outcomes as a direction or a range, never a figure that identifies the client.
 - **All public pages are bilingual EN/ZH.** Every new visible string needs both an EN and a ZH version. One exception: an individual article may exist in one language only (see below).
 
 ## Articles: source and policy
