@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人人有责，谁对利润负责？ · 杨一安</title>
+
+<!-- Open Graph -->
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="人人有责，谁对利润负责？" />
+<meta property="og:description" content="价格、销量、成本，各有各的负责人，把三者连起来的利润公式却没人负责。三条走廊不能各管各的。" />
+<meta property="og:site_name"   content="PricingGoat" />
+<meta property="og:url"         content="https://www.pricinggoat.com/zh/articles/everyone-in-control.html" />
+<meta property="og:image"       content="https://www.pricinggoat.com/images/articles/everyone-in-control-zh-cover.jpg" />
+<meta property="og:locale"      content="zh_CN" />
+<link rel="canonical" href="https://www.pricinggoat.com/zh/articles/everyone-in-control.html" />
+<link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/everyone-in-control.html" />
+<link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/everyone-in-control.html" />
+<link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/everyone-in-control.html" />
+<meta name="author"             content="杨一安" />
+<meta name="description"        content="价格、销量、成本，各有各的负责人，把三者连起来的利润公式却没人负责。三条走廊不能各管各的。" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "人人有责，谁对利润负责？",
+  "description": "价格、销量、成本，各有各的负责人，把三者连起来的利润公式却没人负责。三条走廊不能各管各的。",
+  "url": "https://www.pricinggoat.com/zh/articles/everyone-in-control.html",
+  "datePublished": "2026-10-13",
+  "dateModified": "2026-10-13",
+  "inLanguage": "zh-Hans",
+  "image": "https://www.pricinggoat.com/images/articles/everyone-in-control-zh-cover.jpg",
+  "author": { "@type": "Person", "@id": "https://www.pricinggoat.com/#person", "name": "杨一安", "url": "https://www.pricinggoat.com/zh/" },
+  "publisher": { "@type": "Organization", "name": "PricingGoat", "url": "https://www.pricinggoat.com/" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #16120a;
+    --paper:    #f7f3ec;
+    --gold:     #b8882a;
+    --gold-lt:  #d4a84b;
+    --muted:    #7a6e5a;
+    --rule:     #ddd5c0;
+    --accent:   #f0e8d4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    line-height: 1.85;
+    padding: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    padding: 80px 48px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,136,42,.18) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 56px;
+    position: relative;
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .hero-nav a {
+    color: rgba(240,232,212,.5);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .hero-nav a:hover { color: var(--gold-lt); }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+  }
+  .hero-eyebrow::after {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+    opacity: .6;
+  }
+  .hero h1 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    max-width: 720px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold-lt);
+  }
+  .hero-sub {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(240,232,212,.6);
+    max-width: 580px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  .hero-rule { width: 32px; height: 1px; background: var(--gold); opacity: .5; }
+  .hero-author {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 13px;
+    color: rgba(240,232,212,.4);
+    letter-spacing: 1px;
+  }
+
+  /* ── ARTICLE ── */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+  }
+
+  p { margin-bottom: 24px; color: #3a3020; }
+
+  /* ── DROP CAP ── */
+  .drop-cap::first-letter {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: .8;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+    color: var(--gold);
+  }
+
+  /* ── SECTION HEADS ── */
+  h2 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 48px 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    margin: 36px 0;
+    background: var(--accent);
+  }
+  .pullquote p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: var(--ink);
+    color: #f0e8d4;
+    padding: 32px 36px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .callout::before {
+    content: '"';
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 100px;
+    color: rgba(184,136,42,.15);
+    position: absolute;
+    top: -10px; left: 16px;
+    line-height: 1;
+  }
+  .callout p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #e8dcc8;
+    margin: 0;
+    position: relative;
+  }
+  .callout p strong { color: #ffffff; }
+  .callout-source {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-top: 14px;
+    display: block;
+    position: relative;
+  }
+
+  /* ── THREE AXIOMS ── */
+  .axioms {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin: 36px 0;
+  }
+  .axiom {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .axiom:last-child { border-bottom: none; }
+  .axiom-num {
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .axiom-body { padding: 20px 24px; }
+  .axiom-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .axiom-desc {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── DIAGNOSTIC ── */
+  .diagnostic {
+    background: var(--accent);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    margin: 36px 0;
+  }
+  .diagnostic-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .diagnostic-title::before {
+    content: '';
+    display: block;
+    width: 4px; height: 18px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .diag-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .diag-item:last-child { margin-bottom: 0; }
+  .diag-num {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 20px;
+    padding-top: 1px;
+  }
+  .diag-text {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: #3a3020;
+    line-height: 1.65;
+  }
+  .diag-text strong { color: var(--ink); }
+
+  /* ── FORMULA ── */
+  .formula {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 20px;
+    text-align: center;
+    color: var(--ink);
+    background: var(--accent);
+    border: 1px solid var(--rule);
+    padding: 18px 20px;
+    margin: 8px 0 28px;
+  }
+
+  /* ── CLOSING ── */
+  .closing {
+    border-top: 2px solid var(--ink);
+    padding-top: 40px;
+    margin-top: 56px;
+  }
+  .closing-statement {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+  .closing-statement em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .closing p { font-size: 17px; }
+
+  /* ── BRAND FOOTER ── */
+  .brand-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 32px;
+    background: var(--ink);
+    margin-top: 0;
+  }
+  a.brand-logo { text-decoration: none; }
+  .brand-logo {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 28px;
+    font-weight: 400;
+  }
+  .brand-logo .pricing { color: #f0e8d4; }
+  .brand-logo .goat { color: var(--gold); }
+  .brand-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .brand-tagline {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(240,232,212,.45);
+  }
+  .brand-url {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* Chinese text: no extra tracking on labels, line breaks inside flow lists */
+  .hero-eyebrow, .hero-nav { letter-spacing: 2px; }
+  .flow p { margin-bottom: 0; }
+  em, .pullquote p { font-style: normal; }
+
+  .credit { color: var(--muted); font-size: 16px; margin-top: 32px; }
+  .article a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,136,42,.35); transition: border-color .2s; }
+  .article a:hover { border-color: var(--gold); }
+
+  .figure { margin: 40px 0 8px; }
+  .figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
+  .article .figure a { border-bottom: none; }
+  .figure figcaption { font-size: 14px; color: var(--muted); margin-top: 10px; text-align: center; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 56px 24px 56px; }
+    .article { padding: 48px 20px 64px; }
+    .callout { padding: 24px 22px; }
+    .brand-footer { flex-direction: column; gap: 16px; text-align: center; }
+    .brand-right { align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <nav class="hero-nav" aria-label="网站导航">
+    <a href="/zh/articles/">← 全部文章</a>
+    <a href="/zh/">首页</a>
+  </nav>
+  <div class="hero-eyebrow">定价战略</div>
+  <h1>人人有责，<br>谁对<em>利润</em>负责？</h1>
+  <p class="hero-sub">价格、销量、成本，各有各的负责人。把三者连起来的那个公式，却没人负责。</p>
+  <div class="hero-meta">
+    <div class="hero-rule"></div>
+    <span class="hero-author">杨一安 · pricinggoat.com</span>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<article class="article">
+
+  <p class="drop-cap">利润只有三个来源：价格、销量、成本。赫尔曼·西蒙（Hermann Simon）讲了几十年，到今天仍是管理上最管用的一句话。不管什么战略、举措、转型项目，最后都得落到这三者中的某一个上；落不到，就跟利润无关。</p>
+
+  <p>公式很简单：</p>
+
+  <p class="formula">利润 =（价格 − 单位成本）× 销量 − 固定成本</p>
+
+  <p>麻烦恰恰出在简单上。三个变量看起来各自独立，企业就把它拆成了三份差事，各管一摊。</p>
+
+  <h2>那场会议</h2>
+
+  <p>设想一个新产品的立项评审会。三位职能负责人，三页PPT，三张胸有成竹的脸。</p>
+
+  <p>产品负责人讲成本走廊：单位成本60到70元。可控。</p>
+
+  <p>市场负责人讲销量走廊：8万到10万件。可控。</p>
+
+  <p>定价负责人讲价格走廊：95到110元。可控。</p>
+
+  <p>三个人的功课都做得不错。他们给的都是一个范围，而不是假装精确的单一数字，这本身就是成熟的表现。散会时，每个人都觉得这个项目稳了。</p>
+
+  <p>直到有人问了一句最简单的话：那利润呢？</p>
+
+  <p>一片沉默。</p>
+
+  <h2>三条走廊，谁也离不开谁</h2>
+
+  <p>问题不在没人负责，每条走廊都有人负责。问题在于大家以为三条走廊可以各管各的。其实不行，因为每一条都暗中取决于另外两条。</p>
+
+  <p><strong>价格牵动销量。</strong>市场部的10万件，十有八九是按价格走廊的低端估的。定价110元，市场不会给你同样的销量。可这个前提，通常哪页PPT上都没写。</p>
+
+  <p><strong>销量牵动成本。</strong>产品负责人的60元单位成本，是建立在规模上的：采购议价、产能利用、学习曲线。如果只卖8万件，成本更接近70元。</p>
+
+  <p><strong>成本和价值牵动价格。</strong>撑得起110元的，往往正是那些把单位成本推到上限的功能。为了压到60元把它们砍掉，溢价也就没了依据。</p>
+
+  <div class="pullquote">
+    <p>每条走廊单独看都说得通。放在一起，里面却藏着根本不可能出现的组合。</p>
+  </div>
+
+  <h2>算一算</h2>
+
+  <p>还是这三条走廊，再加上200万元的固定成本。数字是举例，道理不是。</p>
+
+  <p>如果三条走廊各算各的，利润可以从零（价格95元、成本70元、8万件）一直到300万元（价格110元、成本60元、10万件）。三项都取中间值，利润约140万元。</p>
+
+  <p>再回头看那个最好的结果：价格最高、销量最高、成本最低，三样同时出现。这恰恰是市场和工厂最不可能答应的组合。它不是什么乐观情景，而是用三页各自合理的PPT拼出来的空中楼阁。</p>
+
+  <p>放在一起算，前后自洽的方案是另一番景象：</p>
+
+  <div class="diagnostic">
+    <div class="diagnostic-title">两个前后自洽的方案</div>
+    <div class="diag-item"><span class="diag-num">1</span><span class="diag-text"><strong>走量路线：</strong>价格95元，10万件，成本60元 → 利润约150万元</span></div>
+    <div class="diag-item"><span class="diag-num">2</span><span class="diag-text"><strong>溢价路线：</strong>价格110元，约7.5万件，成本70元 → 利润约100万元</span></div>
+  </div>
+
+  <p>注意，7.5万件已经跌出了市场部自己的销量走廊；销量这么低，70元的成本也算乐观。一旦定价110元，这几条走廊就都守不住了。</p>
+
+  <figure class="figure">
+    <a href="/images/articles/everyone-in-control-fig1-zh.jpg"><img src="/images/articles/everyone-in-control-fig1-zh.jpg" width="1520" height="800" loading="lazy" alt="利润走廊图，单位万元。三条走廊各算各的，利润从0到300万元不等，三项都取中间值约为140万；300万的最好组合并不现实。放在一起算，两个自洽方案：溢价路线约100万（110元、约7.5万件、单位成本70元），走量路线约150万（95元、10万件、单位成本60元）。"></a>
+    <figcaption>示例数字。</figcaption>
+  </figure>
+
+  <p>真实的结果，范围更窄，数字更低。更要紧的是，它逼你做选择：走量，还是溢价？这才是桌面上真正要拍板的事。可这件事，不归刚才汇报的三个人中的任何一个管。</p>
+
+  <h2>最讽刺的地方</h2>
+
+  <p>讽刺的是，每个团队都觉得自己那条走廊尽在掌握，某种意义上也没错。但三条走廊之间怎么相互影响，没人管，而决定利润的，恰恰是这些相互影响。</p>
+
+  <p>按职能分工，奖励的是局部的自信。产品按成本考核，市场按销量考核，定价按价格实现率考核。每个人都能完成自己的指标，利润却在一页页PPT之间悄悄流失了。等产品上市后表现不佳，每个部门都拿得出证据：我的走廊守住了。</p>
+
+  <p>所以，“权责要更清晰”往往是开错了药方。权责已经很清晰，只不过分给了各个零件，而不是那个公式。</p>
+
+  <h2>一个公式，一份方案</h2>
+
+  <p>既然三个因素相互牵动，立项方案也就得按牵动的方式来做。有四件事最关键：</p>
+
+  <div class="axioms">
+    <div class="axiom"><div class="axiom-num">1</div><div class="axiom-body"><div class="axiom-title">从公式出发，而不是从组织架构出发。</div><p class="axiom-desc">得有人对利润走廊本身负责：不是把别人的PPT汇总一下，而是在这里做取舍、拍板。</p></div></div>
+    <div class="axiom"><div class="axiom-num">2</div><div class="axiom-body"><div class="axiom-title">把前提写在明面上。</div><p class="axiom-desc">每条走廊都要写清楚，它对另外两条做了什么假设。比如“价格95元时，销量10万件”，“10万件、配置方案B时，单位成本60元”。立项方案往往就栽在没写出来的假设上。</p></div></div>
+    <div class="axiom"><div class="axiom-num">3</div><div class="axiom-body"><div class="axiom-title">算自洽的方案，不拼极端的组合。</div><p class="axiom-desc">别再拿各项的极端值拼出“最好/最坏情况”，而是拿出少数几个前后自洽的战略选项。每一个，都得是市场、客户和工厂都能接受的故事。</p></div></div>
+    <div class="axiom"><div class="axiom-num">4</div><div class="axiom-body"><div class="axiom-title">让价格领跑，而不是跟跑。</div><p class="axiom-desc">先想清楚价值和目标价格，再倒推目标成本，以及在这个价格下有把握拿到的销量。成本加成是把公式倒过来算，把最重要的决定交给了最不擅长做这个决定的部门。</p></div></div>
+  </div>
+
+  <div class="closing">
+    <p>三个因素，一个公式，没有哪个决定能单独做。否则，你就会碰上做计划时最常见的局面：人人有责，唯独利润没人负责。</p>
+    <div class="closing-statement">定价，是<em>设计</em>出来的，<br>不是将就出来的。</div>
+    <p>在你最近的一个立项方案里，价格、销量和成本之间的相互影响，归谁管？还是说，答案又是一片沉默？</p>
+
+    <p class="credit">首发于微信公众号「定价制胜-Dr. Pricing」，2026年10月。英文版：<a href="/articles/everyone-in-control.html" lang="en" hreflang="en">Everyone is in control. Except the profit.</a></p>
+  </div>
+
+</article>
+
+<!-- BRAND FOOTER -->
+<div class="brand-footer">
+  <a href="/zh/" class="brand-logo"><span class="pricing">pricing</span><span class="goat">goat</span></a>
+  <div class="brand-right">
+    <div class="brand-tagline">Pricing by Design</div>
+    <div class="brand-url">PRICINGGOAT.COM</div>
+  </div>
+</div>
+
+</body>
+</html>
