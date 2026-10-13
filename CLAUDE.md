@@ -31,7 +31,7 @@ Every public page exists twice: English at the root, Chinese under `/zh/`.
 | `index.html` | `zh/index.html` | Homepage: hero, about, services, capability programme, books, articles, writing, contact |
 | `articles/index.html` | `zh/articles/index.html` | Articles listing page |
 | `articles/*.html` | (none yet) | Individual articles, English only for now |
-| `cases/index.html` | `zh/cases/index.html` | Work by industry: industry picker, typical problems, topics, anonymised cases (prototype: `noindex`, not linked or in the sitemap until real cases replace the placeholders) |
+| `cases/index.html` | `zh/cases/index.html` | Work by industry: industry picker, typical problems, topics, anonymised cases. Linked from Services on both homepages |
 | `imprint.html`, `privacy.html` | `zh/imprint.html`, `zh/privacy.html` | Legal pages (`noindex`) |
 
 `pricinggoat-articles/` holds only redirect stubs for the old article URLs. Keep them; don't add content there.
