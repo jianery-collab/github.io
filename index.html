@@ -434,9 +434,25 @@
     body.menu-open { overflow: hidden; }
 
     /* RESPONSIVE */
-    @media (min-width: 901px) { .site-menu { display: none; } }
+    @media (min-width: 961px) { .site-menu { display: none; } }
     @media (max-width: 1100px) {
       .nav-links { gap: 1.5rem; }
+    }
+    /* the EN desktop links need about 1220px at full spacing: tighten up to 1280px, use the menu below 960px */
+    @media (max-width: 1280px) {
+      nav { padding-left: 2rem; padding-right: 2rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links a { letter-spacing: 0.08em; }
+      .nav-cta { padding: 0.5rem 0.9rem !important; }
+    }
+    /* the EN footer row needs about 1100px; stack it below that, as on mobile */
+    @media (max-width: 1100px) {
+      footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; gap: 0.8rem 1.5rem; }
+    }
+    @media (max-width: 960px) {
+      .nav-links li.hide-mobile { display: none; }
+      .nav-menu-btn { display: inline-block; }
     }
     @media (max-width: 900px) {
       nav { padding: 1.2rem 2rem; }
@@ -471,6 +487,7 @@
       <li class="hide-mobile"><a href="#about">About</a></li>
       <li class="hide-mobile"><a href="#services">Services</a></li>
       <li class="hide-mobile"><a href="#capability">Capability</a></li>
+      <li class="hide-mobile"><a href="/cases/">Cases</a></li>
       <li class="hide-mobile"><a href="#books">Books</a></li>
       <li class="hide-mobile"><a href="#articles">Articles</a></li>
       <li class="hide-mobile"><a href="/assessment/">Assessment</a></li>
@@ -483,6 +500,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#capability">Capability</a></li>
+        <li><a href="/cases/">Cases</a></li>
         <li><a href="#books">Books</a></li>
         <li><a href="#articles">Articles</a></li>
         <li><a href="/assessment/">Assessment</a></li>
@@ -824,7 +842,7 @@
       btn.addEventListener('click', function () { set(menu.hidden); });
       menu.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menu.hidden) { set(false); btn.focus(); } });
-      window.matchMedia('(min-width: 901px)').addEventListener('change', function (e) { if (e.matches) set(false); });
+      window.matchMedia('(min-width: 961px)').addEventListener('change', function (e) { if (e.matches) set(false); });
     })();
   </script>
 </body>
