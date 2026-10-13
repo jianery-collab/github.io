@@ -434,12 +434,18 @@
     body.menu-open { overflow: hidden; }
 
     /* RESPONSIVE */
-    @media (min-width: 1221px) { .site-menu { display: none; } }
+    @media (min-width: 961px) { .site-menu { display: none; } }
     @media (max-width: 1100px) {
       .nav-links { gap: 1.5rem; }
     }
-    /* the EN desktop links need about 1220px; below that, use the menu */
-    @media (max-width: 1220px) {
+    /* the EN desktop links need about 1220px at full spacing: tighten up to 1280px, use the menu below 960px */
+    @media (max-width: 1280px) {
+      nav { padding-left: 2rem; padding-right: 2rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links a { letter-spacing: 0.08em; }
+      .nav-cta { padding: 0.5rem 0.9rem !important; }
+    }
+    @media (max-width: 960px) {
       .nav-links li.hide-mobile { display: none; }
       .nav-menu-btn { display: inline-block; }
     }
@@ -831,7 +837,7 @@
       btn.addEventListener('click', function () { set(menu.hidden); });
       menu.addEventListener('click', function (e) { if (e.target.closest('a')) set(false); });
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menu.hidden) { set(false); btn.focus(); } });
-      window.matchMedia('(min-width: 1221px)').addEventListener('change', function (e) { if (e.matches) set(false); });
+      window.matchMedia('(min-width: 961px)').addEventListener('change', function (e) { if (e.matches) set(false); });
     })();
   </script>
 </body>
