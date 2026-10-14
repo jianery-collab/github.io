@@ -100,3 +100,9 @@ Use root-absolute paths (`/favicon.ico`, `/articles/`) for anything shared betwe
 4. Update the articles section in `index.html` and `zh/index.html` if the new article should be featured
 5. Add a `<url>` entry to `sitemap.xml` and bump the `lastmod` of every page you touched
 6. A ZH translation goes at `zh/articles/<same-name>.html`; then add reciprocal `hreflang` to both versions and `xhtml:link` alternates in the sitemap
+7. After the PR is merged and deployed, notify Bing and other IndexNow engines of the new and changed URLs (see below)
+
+## Search engines
+
+- **Bing Webmaster Tools:** verified with `BingSiteAuth.xml` at the root. Keep it.
+- **IndexNow:** the key file `f01500a239964e7182fa293b518a88ba.txt` at the root proves ownership. Keep it, and do not change its content. To notify Bing (and Yandex, Seznam and others) about new or changed pages, POST the URLs to `https://api.indexnow.org/indexnow` with `{"host": "www.pricinggoat.com", "key": "f01500a239964e7182fa293b518a88ba", "keyLocation": "https://www.pricinggoat.com/f01500a239964e7182fa293b518a88ba.txt", "urlList": [...]}`. Only submit URLs that are live.
