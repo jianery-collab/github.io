@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一条趋势线，四个市场 · 杨一安</title>
+
+<!-- Open Graph -->
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="一条趋势线，四个市场" />
+<meta property="og:description" content="一条价量趋势线，看起来像是“量的价格”。把同一批交易按客户群拆开，它就散了架：斜率反映的是客户结构，误报一堆，真正的漏损反而藏了起来。" />
+<meta property="og:site_name"   content="PricingGoat" />
+<meta property="og:url"         content="https://www.pricinggoat.com/zh/articles/one-trend-line-four-markets.html" />
+<meta property="og:image"       content="https://www.pricinggoat.com/images/articles/one-trend-line-four-markets-zh-cover.jpg" />
+<meta property="og:locale"      content="zh_CN" />
+<link rel="canonical" href="https://www.pricinggoat.com/zh/articles/one-trend-line-four-markets.html" />
+<link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/one-trend-line-four-markets.html" />
+<link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/one-trend-line-four-markets.html" />
+<link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/one-trend-line-four-markets.html" />
+<meta name="author"             content="杨一安" />
+<meta name="description"        content="一条价量趋势线，看起来像是“量的价格”。把同一批交易按客户群拆开，它就散了架：斜率反映的是客户结构，误报一堆，真正的漏损反而藏了起来。" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "一条趋势线，四个市场",
+  "description": "一条价量趋势线，看起来像是“量的价格”。把同一批交易按客户群拆开，它就散了架：斜率反映的是客户结构，误报一堆，真正的漏损反而藏了起来。",
+  "url": "https://www.pricinggoat.com/zh/articles/one-trend-line-four-markets.html",
+  "datePublished": "2026-10-15",
+  "dateModified": "2026-10-15",
+  "inLanguage": "zh-Hans",
+  "image": "https://www.pricinggoat.com/images/articles/one-trend-line-four-markets-zh-cover.jpg",
+  "author": { "@type": "Person", "@id": "https://www.pricinggoat.com/#person", "name": "杨一安", "url": "https://www.pricinggoat.com/zh/" },
+  "publisher": { "@type": "Organization", "name": "PricingGoat", "url": "https://www.pricinggoat.com/" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #16120a;
+    --paper:    #f7f3ec;
+    --gold:     #b8882a;
+    --gold-lt:  #d4a84b;
+    --muted:    #7a6e5a;
+    --rule:     #ddd5c0;
+    --accent:   #f0e8d4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    line-height: 1.85;
+    padding: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    padding: 80px 48px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,136,42,.18) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 56px;
+    position: relative;
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .hero-nav a {
+    color: rgba(240,232,212,.5);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .hero-nav a:hover { color: var(--gold-lt); }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+  }
+  .hero-eyebrow::after {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+    opacity: .6;
+  }
+  .hero h1 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    max-width: 720px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold-lt);
+  }
+  .hero-sub {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(240,232,212,.6);
+    max-width: 580px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  .hero-rule { width: 32px; height: 1px; background: var(--gold); opacity: .5; }
+  .hero-author {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 13px;
+    color: rgba(240,232,212,.4);
+    letter-spacing: 1px;
+  }
+
+  /* ── ARTICLE ── */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+  }
+
+  p { margin-bottom: 24px; color: #3a3020; }
+
+  /* ── DROP CAP ── */
+  .drop-cap::first-letter {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: .8;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+    color: var(--gold);
+  }
+
+  /* ── SECTION HEADS ── */
+  h2 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 48px 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    margin: 36px 0;
+    background: var(--accent);
+  }
+  .pullquote p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: var(--ink);
+    color: #f0e8d4;
+    padding: 32px 36px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .callout::before {
+    content: '"';
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 100px;
+    color: rgba(184,136,42,.15);
+    position: absolute;
+    top: -10px; left: 16px;
+    line-height: 1;
+  }
+  .callout p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #e8dcc8;
+    margin: 0;
+    position: relative;
+  }
+  .callout p strong { color: #ffffff; }
+  .callout-source {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-top: 14px;
+    display: block;
+    position: relative;
+  }
+
+  /* ── THREE AXIOMS ── */
+  .axioms {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin: 36px 0;
+  }
+  .axiom {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .axiom:last-child { border-bottom: none; }
+  .axiom-num {
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .axiom-body { padding: 20px 24px; }
+  .axiom-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .axiom-desc {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── DIAGNOSTIC ── */
+  .diagnostic {
+    background: var(--accent);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    margin: 36px 0;
+  }
+  .diagnostic-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .diagnostic-title::before {
+    content: '';
+    display: block;
+    width: 4px; height: 18px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .diag-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .diag-item:last-child { margin-bottom: 0; }
+  .diag-num {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 20px;
+    padding-top: 1px;
+  }
+  .diag-text {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: #3a3020;
+    line-height: 1.65;
+  }
+  .diag-text strong { color: var(--ink); }
+
+
+  /* ── CLOSING ── */
+  .closing {
+    border-top: 2px solid var(--ink);
+    padding-top: 40px;
+    margin-top: 56px;
+  }
+  .closing-statement {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+  .closing-statement em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .closing p { font-size: 17px; }
+
+  /* ── BRAND FOOTER ── */
+  .brand-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 32px;
+    background: var(--ink);
+    margin-top: 0;
+  }
+  a.brand-logo { text-decoration: none; }
+  .brand-logo {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 28px;
+    font-weight: 400;
+  }
+  .brand-logo .pricing { color: #f0e8d4; }
+  .brand-logo .goat { color: var(--gold); }
+  .brand-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .brand-tagline {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(240,232,212,.45);
+  }
+  .brand-url {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* Chinese text: no extra tracking on labels, line breaks inside flow lists */
+  .hero-eyebrow, .hero-nav { letter-spacing: 2px; }
+  .flow p { margin-bottom: 0; }
+  em, .pullquote p { font-style: normal; }
+
+  .credit { color: var(--muted); font-size: 16px; margin-top: 32px; }
+  .article a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,136,42,.35); transition: border-color .2s; }
+  .article a:hover { border-color: var(--gold); }
+
+  .figure { margin: 40px 0 8px; }
+  .figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
+  .article .figure a { border-bottom: none; }
+  .figure figcaption { font-size: 14px; color: var(--muted); margin-top: 10px; text-align: center; }
+
+
+  .note { font-size: 16px; color: var(--muted); background: var(--accent); border-left: 3px solid var(--rule); padding: 14px 20px; }
+  .list { margin: 0 0 24px 1.2em; color: #3a3020; }
+  .list li { margin-bottom: 8px; padding-left: 4px; }
+  .list li::marker { color: var(--gold); }
+
+  @media (max-width: 600px) {
+    .hero { padding: 56px 24px 56px; }
+    .article { padding: 48px 20px 64px; }
+    .callout { padding: 24px 22px; }
+    .brand-footer { flex-direction: column; gap: 16px; text-align: center; }
+    .brand-right { align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <nav class="hero-nav" aria-label="网站导航">
+    <a href="/zh/articles/">← 全部文章</a>
+    <a href="/zh/">首页</a>
+  </nav>
+  <div class="hero-eyebrow">定价战略</div>
+  <h1>一条趋势线，<br><em>四个市场</em></h1>
+  <p class="hero-sub">为什么别拿一条价量趋势线去定批量折扣。</p>
+  <div class="hero-meta">
+    <div class="hero-rule"></div>
+    <span class="hero-author">杨一安 · pricinggoat.com</span>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<article class="article">
+
+  <p class="drop-cap">做B2B定价项目，开局几乎都是同一张图：纵轴是净价，横轴是客户采购量，一团散点，中间拉一条趋势线。</p>
+
+  <p>这张图确实好用。几秒钟就能看出哪些单子离线太远，那条线好像还顺便告诉你：量到了这个级别，价格大概该落在哪儿。</p>
+
+  <p>麻烦出在下一步。很多公司把这条线的斜率当成“量的价格”，直接拿来做批量折扣阶梯。在大多数企业里，这一步是错的，因为这条斜率量的根本不是你以为的东西。</p>
+
+  <p class="note">说明：文中数据是示意数据，165笔交易，专门用来把道理讲清楚。不过这个现象，做定价咨询的人在真实客户数据里都见过。</p>
+
+  <figure class="figure">
+    <a href="/images/articles/one-trend-line-four-markets-fig1-zh.jpg"><img src="/images/articles/one-trend-line-four-markets-fig1-zh.jpg" width="1520" height="988" loading="lazy" alt="165笔交易的散点图，纵轴为净价指数，横轴为年采购量（对数刻度，从不到100件到10万件）。一条趋势线从约140降到60，每一格下降23个指数点。偏离趋势线超过2σ的7笔交易用红圈标为异常。"></a>
+    <figcaption>示意数据。</figcaption>
+  </figure>
+
+  <p>从一格到下一格，比如从1,000件到10,000件，这条线下降大约23个指数点。按常用的规则，偏离趋势线超过2σ就算异常，图里有7笔交易被标了出来。</p>
+
+  <p>现在把同样这些点按客户群上色，行业加规模组合着分，每个客户群单独拟合一条线。</p>
+
+  <figure class="figure">
+    <a href="/images/articles/one-trend-line-four-markets-fig2-zh.jpg"><img src="/images/articles/one-trend-line-four-markets-fig2-zh.jpg" width="1520" height="988" loading="lazy" alt="同一张散点图按客户群上色，每个客户群一条趋势线。医疗与实验室客户量小，价格指数在128左右，线几乎是平的；机械设备厂商从约117降到97；工业分销商在84到90之间，坡度很缓；汽车一级供应商量最大，从约87降到61。虚线的总趋势线比四条都陡。"></a>
+    <figcaption>示意数据。</figcaption>
+  </figure>
+
+  <p>一条线，当场裂成四个市场：</p>
+
+  <ul class="list">
+    <li><strong>汽车一级供应商（大客户）：</strong>斜率−18</li>
+    <li><strong>机械设备厂商（中型）：</strong>斜率−14</li>
+    <li><strong>工业分销商：</strong>斜率−5</li>
+    <li><strong>医疗与实验室（小客户）：</strong>斜率−1</li>
+  </ul>
+
+  <p>总趋势线的斜率是−23，<strong>比哪一个客户群都陡。</strong></p>
+
+  <h2>斜率反映的是客户结构，不是采购量</h2>
+
+  <p>整体怎么会比每一部分都陡？因为采购量和客户群是绑在一起的。在这组数据里，量最大的客户正好来自价格水平最低的行业，量最小的客户正好来自价格水平最高的行业。一条线把行业之间的价差，全算到了采购量头上。</p>
+
+  <p>后果很直接：照着−23去设计批量折扣，每上一个量级给出去的折扣，比任何一个客户群实际给过的都多。等于在所有客户群里，都为“量”多付了钱。</p>
+
+  <h2>一笔一笔看，一条线到底错在哪</h2>
+
+  <figure class="figure">
+    <a href="/images/articles/one-trend-line-four-markets-fig3-zh.jpg"><img src="/images/articles/one-trend-line-four-markets-fig3-zh.jpg" width="1520" height="1076" loading="lazy" alt="四个小图，每个客户群一个，各自的趋势线与虚线的总趋势线对比。汽车：两笔交易高于同类，总趋势线没发现。分销商：一笔低价交易被总趋势线抓到；约31,500件的最大客户低于同类，却正好落在总趋势线上，被漏掉。机械：一笔高于同类、一笔低于同类，都被漏掉。医疗与实验室：总趋势线标出的4笔在本客户群内正常，属于误报；两笔低价交易被抓到。"></a>
+    <figcaption>示意数据。</figcaption>
+  </figure>
+
+  <p>还是2σ这条规则，但这次每笔交易只跟自己客户群的线比。</p>
+
+  <p><strong>误报。</strong>有4家实验室客户，每年采购450到750件，价格指数在128到135之间。按总趋势线，价格应该在111到116，看上去贵了大约15%到20%。可放在同类客户里，它们再正常不过。真要去“纠正”，就是把利润白白让给根本没开口要折扣的客户。</p>
+
+  <p><strong>藏起来的漏损。</strong>最大的那家分销商客户，每年采购约31,500件，价格指数73。它正好落在总趋势线上，看着定价完美。可同类客户都在84左右。差11个点，乘以31,500件，假设1个指数点等于每件1欧元，这一个客户一年就漏掉大约35万欧元。总趋势线还把它当成标杆。</p>
+
+  <p><strong>藏起来的溢价。</strong>两笔汽车客户的交易比同类高6到9个点，一笔机械客户的交易比同类高10个点左右。总趋势线一笔也看不出来。</p>
+
+  <p>总趋势线也不是一无是处，最扎眼的几笔它能抓到：一笔约3,000件的分销商交易，比同类低14个点；两笔量很小的医疗客户交易，比同类低15个点左右。但它能抓到的，也就这些了。</p>
+
+  <figure class="figure">
+    <a href="/images/articles/one-trend-line-four-markets-fig4-zh.jpg"><img src="/images/articles/one-trend-line-four-markets-fig4-zh.jpg" width="1520" height="836" loading="lazy" alt="柱状图，165笔交易，同一判定规则（2σ）。总趋势线抓到的真实异常：3笔。误报，在本客户群内正常：4笔。总趋势线漏掉的真实异常：5笔。"></a>
+    <figcaption>示意数据。</figcaption>
+  </figure>
+
+  <p>总趋势线标出来的7笔里，4笔是误报；真正的8个异常里，它漏掉了5个。</p>
+
+  <h2>线下和线上，是两类问题</h2>
+
+  <p>在客户群趋势线下面的，是漏损。该问的是：谁批的？差距怎么补回来？</p>
+
+  <p>在线上面的，要么是认价值的客户，要么是有流失风险的客户。前者要弄清楚他们到底为什么愿意多付，好把这份价值用到别的客户身上；后者要赶在竞争对手找上门之前先守住。一条总线，把这两类都当成了噪音。</p>
+
+  <h2>斜率是假设，不是诊断</h2>
+
+  <p>人很容易把每条斜率读成这个市场的“定价逻辑”。至少一开始，先别急。</p>
+
+  <p>斜率陡，可能是量真的在驱动价值，比如采购方议价能力强，或者大单的服务成本确实低；也可能只是销售团队习惯了按量让价。</p>
+
+  <p>斜率平，可能是客户买的本来就不是数量，而是认证、关键性、切换成本；也可能只是这个客户群从来没人认真试过价格天花板在哪儿。</p>
+
+  <p>散点图告诉你的，是你过去收了多少，不是你应该收多少。每一条斜率，都是一个问题，要拿到这个客户群的价值驱动因素面前去验证。</p>
+
+  <h2>真正的风险：客户群趋势线会把漏损变成政策</h2>
+
+  <p>这个风险，恰恰是分析做对以后才冒出来的。一旦每个客户群有了自己的基准线，这个客户群眼下的价格水平就自动成了“正常”。汽车客户的低价，从此“符合基准”。而且只要客户群开始决定价格指导，销售就会想办法把客户归到便宜的那一组去。</p>
+
+  <p>所以客户分群必须有治理：</p>
+
+  <ul class="list">
+    <li>分群规则由销售以外的部门掌握，比如定价或财务；</li>
+    <li>分群标准写清楚，每年复核一次；</li>
+    <li>客户群趋势线只是基准，不是目标。目标从价值来。</li>
+  </ul>
+
+  <h2>信这些线之前，先查四件事</h2>
+
+  <div class="diagnostic">
+    <div class="diagnostic-title">四项检查</div>
+    <div class="diag-item"><span class="diag-num">1</span><span class="diag-text"><strong>用对价格。</strong>要看口袋价格，也就是扣掉返利、运费、账期、赠品之后真正落袋的价格。很多时候，账外项目让交易跑偏的程度，比分群还大。</span></div>
+    <div class="diag-item"><span class="diag-num">2</span><span class="diag-text"><strong>剔除产品结构的影响。</strong>用相对目录价、或者相对每个SKU目标价的价格指数，别直接用单价。不然所谓“客户群斜率”，很可能只是产品斜率。</span></div>
+    <div class="diag-item"><span class="diag-num">3</span><span class="diag-text"><strong>想想横轴选得对不对。</strong>采购量是客户今天买了多少，钱包份额才说明他还能买多少。大集团下面的一个小客户，不是小客户。</span></div>
+    <div class="diag-item"><span class="diag-num">4</span><span class="diag-text"><strong>让数据来检验分群。</strong>拍脑袋分的群只是起点。做一个带交互项的回归，或者一棵简单的决策树，就能看出你选的分群维度到底管不管用。</span></div>
+  </div>
+
+  <h2>从客户群到同类客户组</h2>
+
+  <p>行业和规模是方便的分群方式，但很少是客户付这个价的真正原因。更适合做定价单元的，是<strong>同类客户组</strong>（peer group）：在驱动价值和成本的属性上相似的一批客户，比如应用场景、关键程度、服务成本、增长潜力。属性相似，价格理应一致。</p>
+
+  <p>同类客户组要立得住，有两条规则：</p>
+
+  <div class="axioms">
+    <div class="axiom"><div class="axiom-num">1</div><div class="axiom-body"><div class="axiom-title">按属性分组，绝不按现在的价格分组。</div><p class="axiom-desc">按现价分组，每一组看起来都很一致，你的漏损也就顺理成章成了标准。</p></div></div>
+    <div class="axiom"><div class="axiom-num">2</div><div class="axiom-body"><div class="axiom-title">用价格一致性来检验。</div><p class="axiom-desc">好的同类客户组，价格带很窄。价格带很宽，要么是组分错了，要么是价定错了。</p></div></div>
+  </div>
+
+  <p>做对了，每一次价格讨论就都有了参照：跟他一样的客户付多少？他凭什么不一样？</p>
+
+  <p>同类客户组具体怎么搭，下一篇细讲。</p>
+
+  <div class="closing">
+    <p>一条总趋势线回答的是：这个采购量下，平均价格是多少？可真正要紧的问题是：这个客户应该付多少？依据是他是谁、看重什么，还有，这个价是谁定的？</p>
+    <p>客户群趋势线告诉你往哪儿看，同类客户组告诉你跟谁比，价值告诉你什么是对的，治理保证它一直对。</p>
+    <div class="closing-statement">定价，是<em>设计</em>出来的，<br>不是将就出来的。</div>
+    <p>你的散点图按客户群拆开之后，还剩几个“异常”？欢迎留言聊聊。</p>
+
+    <p class="credit">首发于微信公众号「定价制胜-Dr. Pricing」，2026年10月。英文版：<a href="/articles/one-trend-line-four-markets.html" lang="en" hreflang="en">One trend line, four markets</a></p>
+  </div>
+
+</article>
+
+<!-- BRAND FOOTER -->
+<div class="brand-footer">
+  <a href="/zh/" class="brand-logo"><span class="pricing">pricing</span><span class="goat">goat</span></a>
+  <div class="brand-right">
+    <div class="brand-tagline">Pricing by Design</div>
+    <div class="brand-url">PRICINGGOAT.COM</div>
+  </div>
+</div>
+
+</body>
+</html>

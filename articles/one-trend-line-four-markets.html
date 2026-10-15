@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Trend Line, Four Markets · Jan Y. Yang</title>
+
+<!-- Open Graph / LinkedIn preview -->
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="One Trend Line, Four Markets" />
+<meta property="og:description" content="A single price-volume trend line looks like the price of volume. Split the same deals by segment and it falls apart: the slope measures customer mix, raises false alarms and hides real leakage." />
+<meta property="og:site_name"   content="PricingGoat" />
+<meta property="og:url"         content="https://www.pricinggoat.com/articles/one-trend-line-four-markets.html" />
+<meta property="og:image"       content="https://www.pricinggoat.com/images/articles/one-trend-line-four-markets-en-cover.jpg" />
+<link rel="canonical" href="https://www.pricinggoat.com/articles/one-trend-line-four-markets.html" />
+<link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/one-trend-line-four-markets.html" />
+<link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/one-trend-line-four-markets.html" />
+<link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/one-trend-line-four-markets.html" />
+<meta name="author"             content="Jan Y. Yang" />
+<meta name="description"        content="A single price-volume trend line looks like the price of volume. Split the same deals by segment and it falls apart: the slope measures customer mix, raises false alarms and hides real leakage." />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "One Trend Line, Four Markets",
+  "description": "A single price-volume trend line looks like the price of volume. Split the same deals by segment and it falls apart: the slope measures customer mix, raises false alarms and hides real leakage.",
+  "url": "https://www.pricinggoat.com/articles/one-trend-line-four-markets.html",
+  "image": "https://www.pricinggoat.com/images/articles/one-trend-line-four-markets-en-cover.jpg",
+  "datePublished": "2026-10-15",
+  "dateModified": "2026-10-15",
+  "inLanguage": "en",
+  "author": { "@type": "Person", "@id": "https://www.pricinggoat.com/#person", "name": "Jan Y. Yang", "url": "https://www.pricinggoat.com/" },
+  "publisher": { "@type": "Organization", "name": "PricingGoat", "url": "https://www.pricinggoat.com/" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #16120a;
+    --paper:    #f7f3ec;
+    --gold:     #b8882a;
+    --gold-lt:  #d4a84b;
+    --muted:    #7a6e5a;
+    --rule:     #ddd5c0;
+    --accent:   #f0e8d4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.85;
+    padding: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    padding: 80px 48px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,136,42,.18) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 56px;
+    position: relative;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .hero-nav a {
+    color: rgba(240,232,212,.5);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .hero-nav a:hover { color: var(--gold-lt); }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+  }
+  .hero-eyebrow::after {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+    opacity: .6;
+  }
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    max-width: 720px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold-lt);
+  }
+  .hero-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(240,232,212,.6);
+    max-width: 580px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  .hero-rule { width: 32px; height: 1px; background: var(--gold); opacity: .5; }
+  .hero-author {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: rgba(240,232,212,.4);
+    letter-spacing: 1px;
+  }
+
+  /* ── ARTICLE ── */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+  }
+
+  p { margin-bottom: 24px; color: #3a3020; }
+
+  /* ── DROP CAP ── */
+  .drop-cap::first-letter {
+    font-family: 'Lora', serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: .8;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+    color: var(--gold);
+  }
+
+  /* ── SECTION HEADS ── */
+  h2 {
+    font-family: 'Lora', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 48px 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    margin: 36px 0;
+    background: var(--accent);
+  }
+  .pullquote p {
+    font-family: 'Lora', serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: var(--ink);
+    color: #f0e8d4;
+    padding: 32px 36px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .callout::before {
+    content: '"';
+    font-family: 'Lora', serif;
+    font-size: 100px;
+    color: rgba(184,136,42,.15);
+    position: absolute;
+    top: -10px; left: 16px;
+    line-height: 1;
+  }
+  .callout p {
+    font-family: 'Lora', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #e8dcc8;
+    margin: 0;
+    position: relative;
+  }
+  .callout p strong { color: #ffffff; }
+  .callout-source {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-top: 14px;
+    display: block;
+    position: relative;
+  }
+
+  /* ── THREE AXIOMS ── */
+  .axioms {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin: 36px 0;
+  }
+  .axiom {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .axiom:last-child { border-bottom: none; }
+  .axiom-num {
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .axiom-body { padding: 20px 24px; }
+  .axiom-title {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .axiom-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── DIAGNOSTIC ── */
+  .diagnostic {
+    background: var(--accent);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    margin: 36px 0;
+  }
+  .diagnostic-title {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .diagnostic-title::before {
+    content: '';
+    display: block;
+    width: 4px; height: 18px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .diag-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .diag-item:last-child { margin-bottom: 0; }
+  .diag-num {
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 20px;
+    padding-top: 1px;
+  }
+  .diag-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: #3a3020;
+    line-height: 1.65;
+  }
+  .diag-text strong { color: var(--ink); }
+
+  /* ── CLOSING ── */
+  .closing {
+    border-top: 2px solid var(--ink);
+    padding-top: 40px;
+    margin-top: 56px;
+  }
+  .closing-statement {
+    font-family: 'Lora', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+  .closing-statement em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .closing p { font-size: 17px; }
+
+  /* ── BRAND FOOTER ── */
+  .brand-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 32px;
+    background: var(--ink);
+    margin-top: 0;
+  }
+  a.brand-logo { text-decoration: none; }
+  .brand-logo {
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    font-weight: 400;
+  }
+  .brand-logo .pricing { color: #f0e8d4; }
+  .brand-logo .goat { color: var(--gold); }
+  .brand-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .brand-tagline {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(240,232,212,.45);
+  }
+  .brand-url {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  .credit { color: var(--muted); font-size: 16px; margin-top: 32px; }
+  .article a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,136,42,.35); transition: border-color .2s; }
+  .article a:hover { border-color: var(--gold); }
+
+  .figure { margin: 40px 0 8px; }
+  .figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
+  .article .figure a { border-bottom: none; }
+  .figure figcaption { font-size: 14px; color: var(--muted); margin-top: 10px; text-align: center; }
+
+  .note { font-size: 16px; font-style: italic; color: var(--muted); }
+  .list { margin: 0 0 24px 1.2em; color: #3a3020; }
+  .list li { margin-bottom: 8px; padding-left: 4px; }
+  .list li::marker { color: var(--gold); }
+
+  @media (max-width: 600px) {
+    .hero { padding: 56px 24px 56px; }
+    .article { padding: 48px 20px 64px; }
+    .callout { padding: 24px 22px; }
+    .brand-footer { flex-direction: column; gap: 16px; text-align: center; }
+    .brand-right { align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <nav class="hero-nav" aria-label="Site">
+    <a href="/articles/">← All articles</a>
+    <a href="/">Home</a>
+  </nav>
+  <div class="hero-eyebrow">Pricing Strategy</div>
+  <h1>One trend line, <em>four markets</em></h1>
+  <p class="hero-sub">Why a single price-volume line should never set your volume discounts.</p>
+  <div class="hero-meta">
+    <div class="hero-rule"></div>
+    <span class="hero-author">Jan Y. Yang · pricinggoat.com</span>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<article class="article">
+
+  <p class="drop-cap">Almost every B2B price analysis starts with the same chart: net price on the y-axis, customer volume on the x-axis, a cloud of dots and a trend line through it.</p>
+
+  <p>It earns its place. In seconds it shows which deals sit far from the line, and the line seems to tell you what a “fair” price looks like at each volume level.</p>
+
+  <p>The trouble starts with what people do next. They read the slope as the price of volume and turn it into a discount ladder. For most companies that is a mistake, because the slope is not measuring what they think it measures.</p>
+
+  <p class="note">A note on the numbers: the data here is illustrative, 165 deals built to make the mechanics visible. The pattern is one every pricing consultant has seen in real client data.</p>
+
+  <figure class="figure">
+    <a href="/images/articles/one-trend-line-four-markets-fig1-en.jpg"><img src="/images/articles/one-trend-line-four-markets-fig1-en.jpg" width="1520" height="988" loading="lazy" alt="Scatter chart of 165 deals, net price index against annual volume on a log scale from under 100 to 100,000 units. One trend line falls from about 140 to 60, a drop of 23 index points per gridline. Seven deals more than 2 sigma off the line are circled in red as anomalies."></a>
+    <figcaption>Illustrative data.</figcaption>
+  </figure>
+
+  <p>From one gridline to the next, for example from 1,000 to 10,000 units, the line falls by about 23 index points. A standard rule, flagging any deal more than 2σ from the line, marks seven deals as anomalies.</p>
+
+  <p>Now colour the same dots by segment, combining industry and company size, and fit a separate line for each.</p>
+
+  <figure class="figure">
+    <a href="/images/articles/one-trend-line-four-markets-fig2-en.jpg"><img src="/images/articles/one-trend-line-four-markets-fig2-en.jpg" width="1520" height="988" loading="lazy" alt="The same scatter chart coloured by segment, each with its own trend line. Medical and lab customers (small volumes) sit around index 128 on an almost flat line. Machinery OEMs fall from about 117 to 97. Industrial distributors sit around 84 to 90 on a gentle slope. Automotive Tier-1 customers (largest volumes) fall from about 87 to 61. The dashed global line is steeper than all four."></a>
+    <figcaption>Illustrative data.</figcaption>
+  </figure>
+
+  <p>The single line breaks into four markets:</p>
+
+  <ul class="list">
+    <li><strong>Automotive Tier-1 (large):</strong> slope −18</li>
+    <li><strong>Machinery OEMs (mid-size):</strong> slope −14</li>
+    <li><strong>Industrial distributors:</strong> slope −5</li>
+    <li><strong>Medical &amp; lab (small):</strong> slope −1</li>
+  </ul>
+
+  <p>The global slope of −23 is <strong>steeper than every one of them.</strong></p>
+
+  <h2>The slope measures your customer mix, not volume</h2>
+
+  <p>How can the whole be steeper than each of its parts? Because volume and segment move together. In this data, the biggest customers sit in the industries with the lowest price levels, and the smallest customers in the industries with the highest. A single line attributes that industry gap to volume.</p>
+
+  <p>The consequence is direct. A discount ladder built on −23 promises more discount per volume step than any segment has ever actually given. You would be overpaying for volume everywhere.</p>
+
+  <h2>What the single line gets wrong, deal by deal</h2>
+
+  <figure class="figure">
+    <a href="/images/articles/one-trend-line-four-markets-fig3-en.jpg"><img src="/images/articles/one-trend-line-four-markets-fig3-en.jpg" width="1520" height="1076" loading="lazy" alt="Four panels, one per segment, each showing its own trend line against the dashed global line. Automotive: two deals above their peers, missed by the global line. Distributors: one low deal caught by the global line, and the largest account at about 31,500 units, below its peers but on the global line, missed. Machinery: one deal above and one below its peers, both missed. Medical and lab: four deals flagged by the global line that are normal in their segment, and two low deals caught."></a>
+    <figcaption>Illustrative data.</figcaption>
+  </figure>
+
+  <p>Apply the same 2σ rule, but judge each deal against its own segment’s line.</p>
+
+  <p><strong>False alarms.</strong> Four lab customers buy 450 to 750 units at an index of about 128 to 135. The global line says the price should be 111 to 116, so they look roughly 15 to 20 percent overpriced. Among their peers, they are perfectly normal. “Correcting” them means giving away margin to customers who never asked for a discount.</p>
+
+  <p><strong>Hidden leakage.</strong> The largest distributor account buys about 31,500 units at an index of 73. It sits exactly on the global line, so it looks perfectly priced. Its peers sit at about 84. That is 11 points on 31,500 units. If one index point equals €1 per unit, this one account leaks about €350,000 a year, and the global line calls it a model deal.</p>
+
+  <p><strong>Hidden premiums.</strong> Two automotive deals sit 6 to 9 points above their peers, and one machinery deal about 10 points above its peers. The global line shows none of them.</p>
+
+  <p>The global line does catch the most blatant cases: a distributor deal at about 3,000 units priced 14 points below its peers, and two very small medical deals priced around 15 points below theirs. But that is all it catches.</p>
+
+  <figure class="figure">
+    <a href="/images/articles/one-trend-line-four-markets-fig4-en.jpg"><img src="/images/articles/one-trend-line-four-markets-fig4-en.jpg" width="1520" height="836" loading="lazy" alt="Bar chart of 165 deals judged by the same 2 sigma rule. Real outliers caught by the global line: 3. False alarms, normal within their segment: 4. Real outliers the global line missed: 5."></a>
+    <figcaption>Illustrative data.</figcaption>
+  </figure>
+
+  <p>Of the seven deals the global line flags, four are false alarms. Of the eight real outliers, it misses five.</p>
+
+  <h2>Below the line and above the line are different problems</h2>
+
+  <p>Deals below their segment line are leakage. The questions are who approved them and how to close the gap.</p>
+
+  <p>Deals above the line are either value champions or churn risks. With value champions, learn what those customers value so you can price for it elsewhere. With churn risks, protect the account before a competitor finds it. A single line treats both as noise.</p>
+
+  <h2>Slopes are hypotheses, not diagnoses</h2>
+
+  <p>It is tempting to read each slope as the logic of a market. Resist that, at least at first.</p>
+
+  <p>A steep slope can mean volume genuinely drives value, through procurement power or lower cost to serve. It can also mean your sales team concedes volume discounts by habit.</p>
+
+  <p>A flat slope can mean customers pay for something other than quantity, such as validation, criticality or switching costs. It can also mean nobody has ever tested what that segment would bear.</p>
+
+  <p>The chart shows what you <em>have</em> charged, not what you <em>should</em> charge. Each slope is a question to put to that segment’s value drivers.</p>
+
+  <h2>The hidden risk: segment lines can turn leakage into policy</h2>
+
+  <p>This is the risk of doing the analysis right. Once each segment has its own benchmark, that segment’s price level becomes normal by definition. Automotive’s low prices are now “in line.” And as soon as segments drive price guidance, sales will lobby to move customers into the cheaper segment.</p>
+
+  <p>So segmentation needs governance:</p>
+
+  <ul class="list">
+    <li>The segment rules are owned outside sales, by pricing or finance.</li>
+    <li>The criteria are documented and reviewed every year.</li>
+    <li>The segment line serves as a benchmark, never as the target. The target comes from value.</li>
+  </ul>
+
+  <h2>Before you trust any of these lines</h2>
+
+  <div class="diagnostic">
+    <div class="diagnostic-title">Four checks</div>
+    <div class="diag-item"><span class="diag-num">1</span><span class="diag-text"><strong>Use the right price.</strong> Plot pocket price, after rebates, freight, payment terms and free goods. Off-invoice items often push more deals out of line than segmentation does.</span></div>
+    <div class="diag-item"><span class="diag-num">2</span><span class="diag-text"><strong>Clean out product mix.</strong> Plot a price index against list or target price per SKU, not raw unit price. Otherwise your “segment slope” may really be a product slope.</span></div>
+    <div class="diag-item"><span class="diag-num">3</span><span class="diag-text"><strong>Question the x-axis.</strong> Volume is what a customer buys today. Share of wallet tells you what they could buy. A small customer of a large group is not a small customer.</span></div>
+    <div class="diag-item"><span class="diag-num">4</span><span class="diag-text"><strong>Let the data test your segments.</strong> Hand-picked clusters are a starting point. A regression with interaction terms, or a simple decision tree, tells you whether the segments you chose are the ones that matter.</span></div>
+  </div>
+
+  <h2>From segments to peer groups</h2>
+
+  <p>Industry and size are convenient segments, but they are rarely the reason a customer pays what it pays. The better unit for pricing is the <strong>peer group</strong>: customers who share the attributes that drive value and cost, such as application, criticality, cost to serve and potential, and who should therefore pay coherent prices.</p>
+
+  <p>Two rules make peer groups work:</p>
+
+  <div class="axioms">
+    <div class="axiom"><div class="axiom-num">1</div><div class="axiom-body"><div class="axiom-title">Build the groups on attributes, never on today’s prices.</div><p class="axiom-desc">If you group customers by what they already pay, every group will look coherent, and your leakage becomes the standard.</p></div></div>
+    <div class="axiom"><div class="axiom-num">2</div><div class="axiom-body"><div class="axiom-title">Use price coherence as the test.</div><p class="axiom-desc">A sound peer group shows a tight price band. A wide band means either the grouping is wrong or the pricing is.</p></div></div>
+  </div>
+
+  <p>Get this right, and every price discussion has a reference point: what do customers like this one pay, and why should this one be different?</p>
+
+  <p>More on how to build peer groups in my next piece.</p>
+
+  <div class="closing">
+    <p>A single trend line answers the question “What is the average price at this volume?” The question that matters is “What should this customer pay, given who they are and what they value, and who decided?”</p>
+    <p>Segment lines tell you where to look. Peer groups tell you what to compare against. Value tells you what is right, and governance keeps it that way.</p>
+    <div class="closing-statement">Pricing by design,<br><em>not by default.</em></div>
+    <p>How many of your “anomalies” survive once you split the plot by segment? I’d be curious to hear.</p>
+
+    <p class="credit">First published on LinkedIn, October 2026. Also available in Chinese: <a href="/zh/articles/one-trend-line-four-markets.html" lang="zh-Hans" hreflang="zh-Hans">一条趋势线，四个市场</a></p>
+  </div>
+
+</article>
+
+<!-- BRAND FOOTER -->
+<div class="brand-footer">
+  <a href="/" class="brand-logo"><span class="pricing">pricing</span><span class="goat">goat</span></a>
+  <div class="brand-right">
+    <div class="brand-tagline">Pricing by Design</div>
+    <div class="brand-url">PRICINGGOAT.COM</div>
+  </div>
+</div>
+
+</body>
+</html>
