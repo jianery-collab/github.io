@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What the Value Map Doesn't Tell You · Jan Y. Yang</title>
+
+<!-- Open Graph / LinkedIn preview -->
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="What the Value Map Doesn't Tell You" />
+<meta property="og:description" content="A product that looks unremarkable on the value map can be one of the best options on the table, if it costs much less to make. Why profit depends on the axis the map does not show." />
+<meta property="og:site_name"   content="PricingGoat" />
+<meta property="og:url"         content="https://www.pricinggoat.com/articles/what-the-value-map-doesnt-tell-you.html" />
+<meta property="og:image"       content="https://www.pricinggoat.com/images/articles/what-the-value-map-doesnt-tell-you-en-cover.jpg" />
+<link rel="canonical" href="https://www.pricinggoat.com/articles/what-the-value-map-doesnt-tell-you.html" />
+<link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/what-the-value-map-doesnt-tell-you.html" />
+<link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/what-the-value-map-doesnt-tell-you.html" />
+<link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/what-the-value-map-doesnt-tell-you.html" />
+<meta name="author"             content="Jan Y. Yang" />
+<meta name="description"        content="A product that looks unremarkable on the value map can be one of the best options on the table, if it costs much less to make. Why profit depends on the axis the map does not show." />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "What the Value Map Doesn't Tell You",
+  "description": "A product that looks unremarkable on the value map can be one of the best options on the table, if it costs much less to make. Why profit depends on the axis the map does not show.",
+  "url": "https://www.pricinggoat.com/articles/what-the-value-map-doesnt-tell-you.html",
+  "image": "https://www.pricinggoat.com/images/articles/what-the-value-map-doesnt-tell-you-en-cover.jpg",
+  "datePublished": "2026-10-18",
+  "dateModified": "2026-10-18",
+  "inLanguage": "en",
+  "author": { "@type": "Person", "@id": "https://www.pricinggoat.com/#person", "name": "Jan Y. Yang", "url": "https://www.pricinggoat.com/" },
+  "publisher": { "@type": "Organization", "name": "PricingGoat", "url": "https://www.pricinggoat.com/" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #16120a;
+    --paper:    #f7f3ec;
+    --gold:     #b8882a;
+    --gold-lt:  #d4a84b;
+    --muted:    #7a6e5a;
+    --rule:     #ddd5c0;
+    --accent:   #f0e8d4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.85;
+    padding: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    padding: 80px 48px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,136,42,.18) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 56px;
+    position: relative;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .hero-nav a {
+    color: rgba(240,232,212,.5);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .hero-nav a:hover { color: var(--gold-lt); }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+  }
+  .hero-eyebrow::after {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+    opacity: .6;
+  }
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    max-width: 720px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold-lt);
+  }
+  .hero-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(240,232,212,.6);
+    max-width: 580px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  .hero-rule { width: 32px; height: 1px; background: var(--gold); opacity: .5; }
+  .hero-author {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: rgba(240,232,212,.4);
+    letter-spacing: 1px;
+  }
+
+  /* ── ARTICLE ── */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+  }
+
+  p { margin-bottom: 24px; color: #3a3020; }
+
+  /* ── DROP CAP ── */
+  .drop-cap::first-letter {
+    font-family: 'Lora', serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: .8;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+    color: var(--gold);
+  }
+
+  /* ── SECTION HEADS ── */
+  h2 {
+    font-family: 'Lora', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 48px 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    margin: 36px 0;
+    background: var(--accent);
+  }
+  .pullquote p {
+    font-family: 'Lora', serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: var(--ink);
+    color: #f0e8d4;
+    padding: 32px 36px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .callout::before {
+    content: '"';
+    font-family: 'Lora', serif;
+    font-size: 100px;
+    color: rgba(184,136,42,.15);
+    position: absolute;
+    top: -10px; left: 16px;
+    line-height: 1;
+  }
+  .callout p {
+    font-family: 'Lora', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #e8dcc8;
+    margin: 0;
+    position: relative;
+  }
+  .callout p strong { color: #ffffff; }
+  .callout-source {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-top: 14px;
+    display: block;
+    position: relative;
+  }
+
+  /* ── THREE AXIOMS ── */
+  .axioms {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin: 36px 0;
+  }
+  .axiom {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .axiom:last-child { border-bottom: none; }
+  .axiom-num {
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .axiom-body { padding: 20px 24px; }
+  .axiom-title {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .axiom-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── DIAGNOSTIC ── */
+  .diagnostic {
+    background: var(--accent);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    margin: 36px 0;
+  }
+  .diagnostic-title {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .diagnostic-title::before {
+    content: '';
+    display: block;
+    width: 4px; height: 18px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .diag-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .diag-item:last-child { margin-bottom: 0; }
+  .diag-num {
+    font-family: 'Lora', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 20px;
+    padding-top: 1px;
+  }
+  .diag-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: #3a3020;
+    line-height: 1.65;
+  }
+  .diag-text strong { color: var(--ink); }
+
+  /* ── CLOSING ── */
+  .closing {
+    border-top: 2px solid var(--ink);
+    padding-top: 40px;
+    margin-top: 56px;
+  }
+  .closing-statement {
+    font-family: 'Lora', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+  .closing-statement em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .closing p { font-size: 17px; }
+
+  /* ── BRAND FOOTER ── */
+  .brand-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 32px;
+    background: var(--ink);
+    margin-top: 0;
+  }
+  a.brand-logo { text-decoration: none; }
+  .brand-logo {
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    font-weight: 400;
+  }
+  .brand-logo .pricing { color: #f0e8d4; }
+  .brand-logo .goat { color: var(--gold); }
+  .brand-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .brand-tagline {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(240,232,212,.45);
+  }
+  .brand-url {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  .credit { color: var(--muted); font-size: 16px; margin-top: 32px; }
+  .article a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,136,42,.35); transition: border-color .2s; }
+  .article a:hover { border-color: var(--gold); }
+
+  .figure { margin: 40px 0 8px; }
+  .figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
+  .article .figure a { border-bottom: none; }
+  .figure figcaption { font-size: 14px; color: var(--muted); margin-top: 10px; text-align: center; }
+
+  .note { font-size: 16px; font-style: italic; color: var(--muted); }
+  .list { margin: 0 0 24px 1.2em; color: #3a3020; }
+  .list li { margin-bottom: 8px; padding-left: 4px; }
+  .list li::marker { color: var(--gold); }
+
+  @media (max-width: 600px) {
+    .hero { padding: 56px 24px 56px; }
+    .article { padding: 48px 20px 64px; }
+    .callout { padding: 24px 22px; }
+    .brand-footer { flex-direction: column; gap: 16px; text-align: center; }
+    .brand-right { align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <nav class="hero-nav" aria-label="Site">
+    <a href="/articles/">← All articles</a>
+    <a href="/">Home</a>
+  </nav>
+  <div class="hero-eyebrow">Pricing Strategy</div>
+  <h1>What the <em>value map</em> doesn’t tell you</h1>
+  <p class="hero-sub">Value. Price. And the axis nobody draws.</p>
+  <div class="hero-meta">
+    <div class="hero-rule"></div>
+    <span class="hero-author">Jan Y. Yang · pricinggoat.com</span>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<article class="article">
+
+  <p class="drop-cap">Few tools in pricing are as widely used as the value map, and few are so often read too literally.</p>
+
+  <p>The idea fits on a napkin. Perceived value goes on one axis and price on the other. You plot your own products and your competitors’, and a line runs through the middle where value and price are in balance. Above the line, customers pay more than they think the product is worth. Below it, they get a bargain they did not have to ask for. One picture shows where everyone stands.</p>
+
+  <p>The map is especially popular in new product development. Before launch, the team gathers around the chart and asks where the new product should sit, how much value it should offer, and what it should cost.</p>
+
+  <p>When companies first use the map this way, I almost always see the same thing. Nobody says it, but everyone assumes the new product belongs further up and to the right. It should be better than what exists, or it has no reason to exist. Superior value is a fine ambition. It is not a requirement.</p>
+
+  <h2>The dull dot</h2>
+
+  <p>Take a product that adds very little to what is already on the market. On the value map, it lands right next to existing offerings, quite possibly next to your own. The room goes quiet, because the chart makes it look pointless.</p>
+
+  <p>But suppose your company can make this product at a substantially lower cost. Maybe the process is new, the design simpler, or the supply base cheaper. Maybe the engineers built it for the factory rather than for the brochure. Then the dull dot on the chart becomes one of the more interesting options on the table.</p>
+
+  <h2>Two ways to use it</h2>
+
+  <p>There are two ways to use it.</p>
+
+  <p><strong>Margin play.</strong> The first is to leave it exactly where the existing products are. Customers see no difference and pay the same price, and the cost advantage goes straight to the margin. Nothing moves on the value map, but the P&amp;L moves a lot.</p>
+
+  <p><strong>Reach play.</strong> The second is to give up a little value in exchange for a much lower price. The product steps slightly down the value axis and much further down the price axis, so it lands just below the value line, in the space where a more price-sensitive segment is waiting. These buyers do not need everything the existing products offer, and they could not justify paying for it anyway. Because the cost base is lower, the reduced price still earns a healthy margin.</p>
+
+  <figure class="figure">
+    <a href="/images/articles/what-the-value-map-doesnt-tell-you-fig1-en.jpg"><img src="/images/articles/what-the-value-map-doesnt-tell-you-fig1-en.jpg" width="1520" height="1064" loading="lazy" alt="Value map with perceived value on the horizontal axis and price on the vertical axis. Existing products sit along a dashed value line. A new, lower-cost product sits at the position of an existing product and shows two routes: 1, margin play, same value, same price, lower cost, keep the gap; 2, reach play, a little less value and a lot less price, just below the value line, aimed at a more price-sensitive segment. Both routes are illustrative."></a>
+    <figcaption>Illustrative.</figcaption>
+  </figure>
+
+  <p>Both routes are illustrative. In practice, every company draws its own playground. It might keep a touch more value on the second route, or price slightly below the existing product on the first. It might mix the two across regions or channels. The exact coordinates are a matter of fine-tuning, and they will shift once real customer data comes in. The strategic intent cannot be fine-tuned in the same way. Before anyone debates where exactly the dot should sit, the team needs to say plainly whether this product exists to widen the margin or to open a segment. Everything else follows from that answer.</p>
+
+  <h2>The axis nobody draws</h2>
+
+  <p>Neither option shows up on the value map, because the map shows only two things and profit depends on a third.</p>
+
+  <p>Cost is not on the chart. Neither is volume, so you cannot see whether a lower price point opens a market ten times larger or no larger at all. The map will not show how many of your own customers a cheaper product would pull down from your existing range. It will not show whether buyers read the lower price as a bargain or as a sign of lower quality. It will not show how competitors will respond either.</p>
+
+  <div class="pullquote">
+    <p>The map shows how customers see you. Whether the product makes sense for your business is a separate question.</p>
+  </div>
+
+  <h2>What changes in practice</h2>
+
+  <p><strong>The simplest step is to bring cost into every value map discussion.</strong> Write each product’s unit cost or contribution margin next to its dot, or show it as the size of the dot. Once the numbers are on the chart, people stop asking only where a product sits and start asking what each position earns.</p>
+
+  <p><strong>The second step goes deeper, into the gate criteria of the development process.</strong> Most of those processes ask one question: is the new product better than what is out there? It is worth adding a second way through the gate, namely whether the product is cheaper to deliver at the same value. A product that wins on economics is as legitimate as one that wins on performance. If the organization only rewards performance, engineers will only ever build for performance, and cost innovation will happen by accident if it happens at all.</p>
+
+  <p><strong>The third step follows from this: articulate the intent before launch.</strong> The margin play and the reach play need different prices, different channels, often different branding, and a different tolerance for cannibalization. The worst outcome is a product nobody quite decided on. It ends up priced somewhere in between, too cheap to protect the margin and too expensive to open a new segment.</p>
+
+  <h2>The competitor you dismiss</h2>
+
+  <p>The last point is the one I care about most, and it concerns competitors.</p>
+
+  <p>Many Western incumbents have dismissed new entrants, often from China, because their products looked unremarkable on the value map. Those products offered nothing new, just the same thing for less. But the entrants were never competing on value. They were competing on cost. They took the second route, built volume among price-sensitive buyers, and climbed the value axis from there. By the time the threat showed up on the map, the business had already been won.</p>
+
+  <p>So when a “me-too” product appears near yours on the chart, the first thing to ask is what it costs to make.</p>
+
+  <div class="closing">
+    <p>The value map remains one of the best tools I know for bringing the customer’s view into a pricing decision. It just answers a narrower question than people expect. Some of the most profitable products in a portfolio look mundane on the chart, and so do some of the most dangerous competitors. Before you dismiss a product because it does not stand out on the map, find out what it costs to make.</p>
+    <div class="closing-statement">Pricing by design,<br><em>not by default.</em></div>
+    <p>Have you seen an “unremarkable” product, your own or a competitor’s, turn out to matter far more than the value map suggested?</p>
+
+    <p class="credit">First published on LinkedIn, October 2026. Also available in Chinese: <a href="/zh/articles/what-the-value-map-doesnt-tell-you.html" lang="zh-Hans" hreflang="zh-Hans">那些价值图没告诉你的事</a></p>
+  </div>
+
+</article>
+
+<!-- BRAND FOOTER -->
+<div class="brand-footer">
+  <a href="/" class="brand-logo"><span class="pricing">pricing</span><span class="goat">goat</span></a>
+  <div class="brand-right">
+    <div class="brand-tagline">Pricing by Design</div>
+    <div class="brand-url">PRICINGGOAT.COM</div>
+  </div>
+</div>
+
+</body>
+</html>

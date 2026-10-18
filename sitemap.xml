@@ -5,7 +5,7 @@
   <!-- Homepage: EN -->
   <url>
     <loc>https://www.pricinggoat.com/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/"/>
@@ -16,7 +16,7 @@
   <!-- Homepage: ZH -->
   <url>
     <loc>https://www.pricinggoat.com/zh/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/"/>
@@ -71,7 +71,7 @@
   <!-- Articles index: EN -->
   <url>
     <loc>https://www.pricinggoat.com/articles/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/"/>
@@ -82,7 +82,7 @@
   <!-- Articles index: ZH -->
   <url>
     <loc>https://www.pricinggoat.com/zh/articles/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/"/>
@@ -358,6 +358,26 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/one-trend-line-four-markets.html"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/one-trend-line-four-markets.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/one-trend-line-four-markets.html"/>
+  </url>
+
+  <!-- Article: What the Value Map Doesn't Tell You / 那些价值图没告诉你的事 (EN + ZH pair) -->
+  <url>
+    <loc>https://www.pricinggoat.com/articles/what-the-value-map-doesnt-tell-you.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/what-the-value-map-doesnt-tell-you.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/what-the-value-map-doesnt-tell-you.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/what-the-value-map-doesnt-tell-you.html"/>
+  </url>
+  <url>
+    <loc>https://www.pricinggoat.com/zh/articles/what-the-value-map-doesnt-tell-you.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/what-the-value-map-doesnt-tell-you.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/what-the-value-map-doesnt-tell-you.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/what-the-value-map-doesnt-tell-you.html"/>
   </url>
 
 </urlset>
