@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>那些价值图没告诉你的事 · 杨一安</title>
+
+<!-- Open Graph -->
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="那些价值图没告诉你的事" />
+<meta property="og:description" content="在价值图上平平无奇的新产品，如果成本低得多，可能是桌面上最值得多看两眼的选项。价值图只有两根轴，利润还取决于暗藏的第三根轴：成本。" />
+<meta property="og:site_name"   content="PricingGoat" />
+<meta property="og:url"         content="https://www.pricinggoat.com/zh/articles/what-the-value-map-doesnt-tell-you.html" />
+<meta property="og:image"       content="https://www.pricinggoat.com/images/articles/what-the-value-map-doesnt-tell-you-zh-cover.jpg" />
+<meta property="og:locale"      content="zh_CN" />
+<link rel="canonical" href="https://www.pricinggoat.com/zh/articles/what-the-value-map-doesnt-tell-you.html" />
+<link rel="alternate" hreflang="en" href="https://www.pricinggoat.com/articles/what-the-value-map-doesnt-tell-you.html" />
+<link rel="alternate" hreflang="zh-Hans" href="https://www.pricinggoat.com/zh/articles/what-the-value-map-doesnt-tell-you.html" />
+<link rel="alternate" hreflang="x-default" href="https://www.pricinggoat.com/articles/what-the-value-map-doesnt-tell-you.html" />
+<meta name="author"             content="杨一安" />
+<meta name="description"        content="在价值图上平平无奇的新产品，如果成本低得多，可能是桌面上最值得多看两眼的选项。价值图只有两根轴，利润还取决于暗藏的第三根轴：成本。" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "那些价值图没告诉你的事",
+  "description": "在价值图上平平无奇的新产品，如果成本低得多，可能是桌面上最值得多看两眼的选项。价值图只有两根轴，利润还取决于暗藏的第三根轴：成本。",
+  "url": "https://www.pricinggoat.com/zh/articles/what-the-value-map-doesnt-tell-you.html",
+  "datePublished": "2026-10-18",
+  "dateModified": "2026-10-18",
+  "inLanguage": "zh-Hans",
+  "image": "https://www.pricinggoat.com/images/articles/what-the-value-map-doesnt-tell-you-zh-cover.jpg",
+  "author": { "@type": "Person", "@id": "https://www.pricinggoat.com/#person", "name": "杨一安", "url": "https://www.pricinggoat.com/zh/" },
+  "publisher": { "@type": "Organization", "name": "PricingGoat", "url": "https://www.pricinggoat.com/" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #16120a;
+    --paper:    #f7f3ec;
+    --gold:     #b8882a;
+    --gold-lt:  #d4a84b;
+    --muted:    #7a6e5a;
+    --rule:     #ddd5c0;
+    --accent:   #f0e8d4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    line-height: 1.85;
+    padding: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    padding: 80px 48px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,136,42,.18) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 56px;
+    position: relative;
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .hero-nav a {
+    color: rgba(240,232,212,.5);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .hero-nav a:hover { color: var(--gold-lt); }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+  }
+  .hero-eyebrow::after {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+    opacity: .6;
+  }
+  .hero h1 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    max-width: 720px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold-lt);
+  }
+  .hero-sub {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(240,232,212,.6);
+    max-width: 580px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-meta {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  .hero-rule { width: 32px; height: 1px; background: var(--gold); opacity: .5; }
+  .hero-author {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 13px;
+    color: rgba(240,232,212,.4);
+    letter-spacing: 1px;
+  }
+
+  /* ── ARTICLE ── */
+  .article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+  }
+
+  p { margin-bottom: 24px; color: #3a3020; }
+
+  /* ── DROP CAP ── */
+  .drop-cap::first-letter {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: .8;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+    color: var(--gold);
+  }
+
+  /* ── SECTION HEADS ── */
+  h2 {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 48px 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    border-left: 3px solid var(--gold);
+    padding: 20px 28px;
+    margin: 36px 0;
+    background: var(--accent);
+  }
+  .pullquote p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 21px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ── CALLOUT BOX ── */
+  .callout {
+    background: var(--ink);
+    color: #f0e8d4;
+    padding: 32px 36px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .callout::before {
+    content: '"';
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 100px;
+    color: rgba(184,136,42,.15);
+    position: absolute;
+    top: -10px; left: 16px;
+    line-height: 1;
+  }
+  .callout p {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #e8dcc8;
+    margin: 0;
+    position: relative;
+  }
+  .callout p strong { color: #ffffff; }
+  .callout-source {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-top: 14px;
+    display: block;
+    position: relative;
+  }
+
+  /* ── THREE AXIOMS ── */
+  .axioms {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--rule);
+    margin: 36px 0;
+  }
+  .axiom {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .axiom:last-child { border-bottom: none; }
+  .axiom-num {
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .axiom-body { padding: 20px 24px; }
+  .axiom-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .axiom-desc {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ── DIAGNOSTIC ── */
+  .diagnostic {
+    background: var(--accent);
+    border: 1px solid var(--rule);
+    padding: 32px 36px;
+    margin: 36px 0;
+  }
+  .diagnostic-title {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .diagnostic-title::before {
+    content: '';
+    display: block;
+    width: 4px; height: 18px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .diag-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .diag-item:last-child { margin-bottom: 0; }
+  .diag-num {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    min-width: 20px;
+    padding-top: 1px;
+  }
+  .diag-text {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 15px;
+    color: #3a3020;
+    line-height: 1.65;
+  }
+  .diag-text strong { color: var(--ink); }
+
+
+  /* ── CLOSING ── */
+  .closing {
+    border-top: 2px solid var(--ink);
+    padding-top: 40px;
+    margin-top: 56px;
+  }
+  .closing-statement {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+  .closing-statement em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .closing p { font-size: 17px; }
+
+  /* ── BRAND FOOTER ── */
+  .brand-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 32px;
+    background: var(--ink);
+    margin-top: 0;
+  }
+  a.brand-logo { text-decoration: none; }
+  .brand-logo {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-size: 28px;
+    font-weight: 400;
+  }
+  .brand-logo .pricing { color: #f0e8d4; }
+  .brand-logo .goat { color: var(--gold); }
+  .brand-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .brand-tagline {
+    font-family: 'Lora', 'Noto Serif SC', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(240,232,212,.45);
+  }
+  .brand-url {
+    font-family: 'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+
+  /* Chinese text: no extra tracking on labels, line breaks inside flow lists */
+  .hero-eyebrow, .hero-nav { letter-spacing: 2px; }
+  .flow p { margin-bottom: 0; }
+  em, .pullquote p { font-style: normal; }
+
+  .credit { color: var(--muted); font-size: 16px; margin-top: 32px; }
+  .article a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(184,136,42,.35); transition: border-color .2s; }
+  .article a:hover { border-color: var(--gold); }
+
+  .figure { margin: 40px 0 8px; }
+  .figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
+  .article .figure a { border-bottom: none; }
+  .figure figcaption { font-size: 14px; color: var(--muted); margin-top: 10px; text-align: center; }
+
+
+  .note { font-size: 16px; color: var(--muted); background: var(--accent); border-left: 3px solid var(--rule); padding: 14px 20px; }
+  .list { margin: 0 0 24px 1.2em; color: #3a3020; }
+  .list li { margin-bottom: 8px; padding-left: 4px; }
+  .list li::marker { color: var(--gold); }
+
+  @media (max-width: 600px) {
+    .hero { padding: 56px 24px 56px; }
+    .article { padding: 48px 20px 64px; }
+    .callout { padding: 24px 22px; }
+    .brand-footer { flex-direction: column; gap: 16px; text-align: center; }
+    .brand-right { align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <nav class="hero-nav" aria-label="网站导航">
+    <a href="/zh/articles/">← 全部文章</a>
+    <a href="/zh/">首页</a>
+  </nav>
+  <div class="hero-eyebrow">定价战略</div>
+  <h1>那些<em>价值图</em>没告诉你的事</h1>
+  <p class="hero-sub">价值，价格，还有一条暗藏的轴。</p>
+  <div class="hero-meta">
+    <div class="hero-rule"></div>
+    <span class="hero-author">杨一安 · pricinggoat.com</span>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<article class="article">
+
+  <p class="drop-cap">在定价工具箱里，价值图（value map）是出镜率最高的一件，也是最容易被看得太死的一件。</p>
+
+  <p>它的原理，一张餐巾纸就能画完。横轴是客户感知到的价值，纵轴是价格。把自己的产品和竞争对手的产品一个个点上去，中间画一条线，线上的点，价值和价格大致相当。在线的上方，客户付的钱比他心里认可的价值要多；在线的下方，客户捡了一个自己都没开口要的便宜。谁站在哪里，一目了然。</p>
+
+  <p>新产品开发，是价值图最常见的用场之一。产品上市之前，团队围着这张图讨论：新产品应该落在哪里，提供多少价值，卖多少钱。</p>
+
+  <p>刚开始用这个工具的公司大多会经历这样一个场景。白板上两根轴画好，老产品和竞品一一落位，然后所有人的目光都不约而同地投向右上角。没有人明说，但大家心里都默认，新产品必须往那个方向走，必须比现有的更好，否则就没有存在的理由。追求更高的价值当然没错，但它不是前提条件。</p>
+
+  <h2>一个不起眼的点</h2>
+
+  <p>设想这样一个产品：跟市场上已有的东西相比，它几乎没有增加什么独特价值。放到价值图上，它紧挨着现有产品，很可能就挨着你自己的老产品。会议室里一下子安静下来，有人低头翻材料，有人开始看手机。从图上看，这个产品实在找不到存在的意义。</p>
+
+  <p>可如果你的公司能用低得多的成本把它做出来呢？也许是新工艺，也许是更简洁的设计，也许是更便宜的供应链，也许这一次，工程师是为工厂设计，而不是为产品手册设计。这时候，图上那个不起眼的点，就成了桌面上最值得多看两眼的选项之一。</p>
+
+  <h2>两种用法</h2>
+
+  <p>它至少有两种用法。</p>
+
+  <p><strong>第一种，利润优先。</strong>新产品原地不动，就待在老产品的位置上，客户看不出区别，价格也一样，省下来的成本直接变成利润。价值图上什么都没变，损益表上却变了不少。这一招不显山不露水，财务看了会很高兴。</p>
+
+  <p><strong>第二种，增长优先。</strong>用一点点价值，换一大截价格：产品在价值轴上稍稍往下退一步，在价格轴上则往下探得更深，于是落在价值线的略下方。那里等着的，是一群对价格更敏感的客户。老产品的功能他们用不全，本来也说服不了自己为这些功能买单，过去只能看看，或者干脆去买别家的。现在门槛降下来了，而因为成本基础更低，降下来的价格依然留得出可观的利润。</p>
+
+  <figure class="figure">
+    <a href="/images/articles/what-the-value-map-doesnt-tell-you-fig1-zh.jpg"><img src="/images/articles/what-the-value-map-doesnt-tell-you-fig1-zh.jpg" width="1520" height="1064" loading="lazy" alt="价值图示意：横轴为感知价值，纵轴为价格，现有产品沿一条虚线价值线分布。一个成本更低的新产品落在老产品的位置附近，标出两种用法：1 利润优先，价值不变、价格不变、成本更低，赚取差额；2 增长优先，价值略降、价格下探，落在价值线略下方，瞄准对价格更敏感的细分客群。两条路线均为示意。"></a>
+    <figcaption>示意图。</figcaption>
+  </figure>
+
+  <p>需要说明的是，这两条路线都只是示意。实际操作中，每家公司都要搭起自己的沙盘演绎：第二条路线可以多保留一点价值，第一条路线可以比老产品略便宜一点，也可以在不同区域、不同渠道把两者搭配起来。具体坐标可以反复推敲，拿到真实的客户数据之后还会再动。但战略意图不能含糊。在大家争论这个点究竟该放在哪儿之前，团队必须先把战略意图说清楚：这个产品，是利润优先，还是增长优先？其他的一切，都从这个答案出发。</p>
+
+  <h2>暗藏的第三根轴</h2>
+
+  <p>说到这里，问题也就清楚了：为什么这两种用法，在价值图上都看不出来？因为价值图只有两根轴，而利润还取决于暗藏的第三根轴：成本。</p>
+
+  <p>成本不在图上，销量也不在。你看不出一个更低的价位，是能把市场放大十倍，还是根本放大不了。你看不出一个更便宜的产品，会把多少老客户从你自己的产品线上拉下来；看不出客户会把低价理解成实惠，还是理解成质量不行；也看不出竞争对手会怎么接招。</p>
+
+  <div class="pullquote">
+    <p>价值图告诉你客户怎么看你。至于这个产品对你的生意划不划算，那是另一个问题。</p>
+  </div>
+
+  <h2>实际工作里该怎么办</h2>
+
+  <p><strong>最简单的一步，是让成本进入每一次价值图讨论。</strong>在每个点旁边标上单位成本或边际贡献，或者干脆用点的大小来表示。数字一上图，讨论的味道就变了，大家的问题会从“产品站在哪里”，变成“每个位置能赚多少钱”。</p>
+
+  <p><strong>第二步更深一些，要动到产品开发流程的关口标准。</strong>很多公司的开发流程只问一个问题：新产品是不是比市场上的更好？不妨再开一条通道：价值相同的前提下，它的交付成本是不是更低？靠经济性取胜的产品，和靠性能取胜的产品一样站得住。如果组织只奖励性能，工程师就只会为性能而设计，成本创新只能靠碰运气。</p>
+
+  <p><strong>第三步由此而来：上市前要把战略意图讲清楚。</strong>利润优先和增长优先，需要不同的价格、不同的渠道，往往还需要不同的品牌，对自我蚕食的容忍度也不一样。最糟糕的结果，是一个谁也没真正拍板的产品，价格最后定在中间，两头不靠，既守不住利润，也打不开新市场。</p>
+
+  <h2>关于竞争对手</h2>
+
+  <p>最后一点，是我最想说的，关于竞争对手。</p>
+
+  <p>过去这些年，不少欧美老牌企业都轻视过新进入者，其中很多来自中国。理由是这些产品在价值图上平平无奇：没什么新东西，无非是同样的东西卖得便宜些。可这些新进入者从来就不是在价值上竞争，他们是在成本上竞争。他们走的正是第二条路，先在价格敏感的客户中把量做起来，再一步一步沿着价值轴往上爬。等威胁终于在价值图上显现出来，生意早已易手。</p>
+
+  <p>这个逻辑，对今天的中国企业同样成立，只不过有时候，轻视人的一方和被轻视的一方换了位置。所以，当一个“跟风”产品出现在你旁边的时候，先别急着摇头，第一个该问的问题是：它的成本是多少？</p>
+
+  <div class="closing">
+    <p>价值图依然是我所知道的、把客户视角带进定价决策的最好工具之一，只是它回答的问题，比很多人以为的要窄。产品组合里最赚钱的产品，有些在图上平淡无奇；最危险的竞争对手，有些也是。在你因为一个产品在图上不够出彩而放弃它之前，先弄清楚做它要花多少钱。</p>
+    <div class="closing-statement">定价，是<em>设计</em>出来的，<br>不是将就出来的。</div>
+    <p>你有没有见过这样的产品？自己的也好，竞争对手的也好，在价值图上毫不起眼，后来却比图上显示的重要得多。</p>
+
+    <p class="credit">首发于微信公众号「定价制胜-Dr. Pricing」，2026年10月。英文版：<a href="/articles/what-the-value-map-doesnt-tell-you.html" lang="en" hreflang="en">What the Value Map Doesn't Tell You</a></p>
+  </div>
+
+</article>
+
+<!-- BRAND FOOTER -->
+<div class="brand-footer">
+  <a href="/zh/" class="brand-logo"><span class="pricing">pricing</span><span class="goat">goat</span></a>
+  <div class="brand-right">
+    <div class="brand-tagline">Pricing by Design</div>
+    <div class="brand-url">PRICINGGOAT.COM</div>
+  </div>
+</div>
+
+</body>
+</html>
