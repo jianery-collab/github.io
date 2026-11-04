@@ -73,6 +73,7 @@
     ],
     "sameAs": [
       "https://www.linkedin.com/in/jan-y-yang/",
+      "https://www.xiaoyuzhoufm.com/podcast/6adb891556fd606d03fbf66b",
       "https://link.springer.com/search?query=jan+yang&search-within=Series",
       "https://link.springer.com/book/10.1007/978-3-031-90418-9",
       "https://link.springer.com/book/10.1007/978-3-031-52060-0"
@@ -241,7 +242,7 @@
         "name": "Where does Dr. Jan Y. Yang write about pricing?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Dr. Jan Y. Yang writes in English on LinkedIn (linkedin.com/in/jan-y-yang/) and in Chinese on his WeChat Official Account 定价制胜-Dr. Pricing, where he shares pricing insights, strategy frameworks, and analysis of pricing decisions in business."
+          "text": "Dr. Jan Y. Yang writes in English on LinkedIn (linkedin.com/in/jan-y-yang/) and in Chinese on his WeChat Official Account 定价制胜-Dr. Pricing, where he shares pricing insights, strategy frameworks, and analysis of pricing decisions in business. He also hosts the Chinese-language podcast Dr. Pricing定价那些事 on 小宇宙 (https://www.xiaoyuzhoufm.com/podcast/6adb891556fd606d03fbf66b)."
         }
       }
     ]
@@ -386,7 +387,7 @@
 
     /* WRITING */
     #writing { border-top: 1px solid var(--line); }
-    .platforms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 4rem; }
+    .platforms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
     .platform-card { border: 1px solid var(--line); padding: 3rem; border-radius: 2px; transition: border-color 0.25s, background 0.25s; display: flex; flex-direction: column; }
     .platform-card:hover { border-color: var(--accent); background: rgba(181,149,106,0.03); }
     .platform-icon { font-size: 1.5rem; margin-bottom: 1.5rem; line-height: 1; }
@@ -757,9 +758,9 @@
   </section>
 
   <!-- WRITING -->
-  <section id="writing" aria-label="Writing and Publications">
+  <section id="writing" aria-label="Writing, publications and podcast">
     <div class="section-label reveal">Writing</div>
-    <h2 class="section-title reveal">Where I <em>write</em></h2>
+    <h2 class="section-title reveal">Where I write and <em>speak</em></h2>
     <div class="platforms-grid">
       <div class="platform-card reveal">
         <div class="platform-icon">in</div>
@@ -779,6 +780,19 @@
           <img src="/wechat-qr.jpg" alt="WeChat QR code — 定价制胜 Dr. Pricing" />
           <span class="wechat-qr-label">Scan to follow on WeChat</span>
         </div>
+      </div>
+      <div class="platform-card reveal">
+        <div class="platform-icon">宇</div>
+        <div class="platform-name">小宇宙 Podcast</div>
+        <div class="platform-handle">Dr. Pricing定价那些事</div>
+        <p class="platform-desc">My Chinese-language podcast on 小宇宙 talks through pricing in conversation: real cases, common mistakes, and the business logic behind price decisions.</p>
+        <div class="wechat-qr-wrap">
+          <img src="/xiaoyuzhou-qr.jpg" alt="小宇宙 QR code, Dr. Pricing定价那些事" />
+          <span class="wechat-qr-label">Scan to listen on 小宇宙</span>
+        </div>
+        <a href="https://www.xiaoyuzhoufm.com/podcast/6adb891556fd606d03fbf66b" target="_blank" rel="noopener noreferrer" class="platform-action">
+          Listen on 小宇宙 →
+        </a>
       </div>
     </div>
   </section>

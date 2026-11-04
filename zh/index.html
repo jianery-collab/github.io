@@ -112,6 +112,7 @@
     ],
     "sameAs": [
       "https://www.linkedin.com/in/jan-y-yang/",
+      "https://www.xiaoyuzhoufm.com/podcast/6adb891556fd606d03fbf66b",
       "https://link.springer.com/search?query=jan+yang&search-within=Series",
       "https://link.springer.com/book/10.1007/978-3-031-90418-9",
       "https://link.springer.com/book/10.1007/978-3-031-52060-0"
@@ -558,7 +559,8 @@
 
     /* WRITING */
     #writing { border-top: 1px solid var(--line); }
-    .platforms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 4rem; }
+    #writing .section-title em { white-space: nowrap; }
+    .platforms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
     .platform-card { border: 1px solid var(--line); padding: 3rem; border-radius: 2px; transition: border-color 0.25s, background 0.25s; display: flex; flex-direction: column; }
     .platform-card:hover { border-color: var(--accent); background: rgba(181,149,106,0.03); }
     .platform-icon { font-size: 1.5rem; margin-bottom: 1.5rem; line-height: 1; }
@@ -913,9 +915,9 @@
   </section>
 
   <!-- WRITING -->
-  <section id="writing" aria-label="Writing and Publications">
+  <section id="writing" aria-label="Writing, publications and podcast">
     <div class="section-label reveal">持续输出</div>
-    <h2 class="section-title reveal">我在哪里<em>写作</em></h2>
+    <h2 class="section-title reveal">我在哪里写作与<em>发声</em></h2>
     <div class="platforms-grid">
       <div class="platform-card reveal">
         <div class="platform-icon">in</div>
@@ -935,6 +937,19 @@
           <img src="/wechat-qr.jpg" alt="WeChat QR code — 定价制胜 Dr. Pricing" />
           <span class="wechat-qr-label">微信扫码关注</span>
         </div>
+      </div>
+      <div class="platform-card reveal">
+        <div class="platform-icon">宇</div>
+        <div class="platform-name">小宇宙播客</div>
+        <div class="platform-handle">Dr. Pricing定价那些事</div>
+        <p class="platform-desc">我的播客「Dr. Pricing定价那些事」，用聊天的方式讲定价：真实案例、常见误区，以及价格背后的商业逻辑。</p>
+        <div class="wechat-qr-wrap">
+          <img src="/xiaoyuzhou-qr.jpg" alt="小宇宙 QR code, Dr. Pricing定价那些事" />
+          <span class="wechat-qr-label">扫码收听</span>
+        </div>
+        <a href="https://www.xiaoyuzhoufm.com/podcast/6adb891556fd606d03fbf66b" target="_blank" rel="noopener noreferrer" class="platform-action">
+          去小宇宙收听 →
+        </a>
       </div>
     </div>
   </section>
